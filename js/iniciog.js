@@ -1,10 +1,9 @@
-function setmarker(e){
-  L.marker(e.latlng, {icon: greenIcon}).addTo(map);
-}
-
 function inicio(dataset){
   if(GeoLayer!= null){
     GeoLayer.clearLayers();
+  }
+  if(markers!= null){
+    markers.clearLayers();
   }
   medias=[];
   for (var i = 0; i < dataset.features.length; i++){
@@ -12,47 +11,26 @@ function inicio(dataset){
     medias.sort(function(a, b){return a - b});
   }
   GeoLayer =L.geoJson(dataset,
-    {style: function(feature){
-      //Style para definir configurações dos polígonos a serem desenhados e colorir com base na escala criada.
-      var total = sum(feature);
-      if(total>=math.max(medias)){
-        return {
-            weight: 2.5,
-            opacity: 1,
-            fillColor: "#"+colorN(probDA(total)),
-            color: 'green',
-            fillOpacity: 0.9
-          };
-      }else if(total<=math.min(medias)){
-        return {
-            weight: 2.5,
-            opacity: 1,
-            fillColor: "#"+colorN(probDA(total)),
-            color: 'orange',
-            fillOpacity: 0.9
-          };
-      }else{
-        return {
-            weight: 0.5,
-            opacity: 1,
-            fillColor: "#"+colorN(probDA(total)),
-            color: 'black',
-            fillOpacity: 0.9
-          };
-      }
-    },
-      onEachFeature: function (feature, layer) {
+    {onEachFeature: function (feature, layer) {
+        cidades.push(feature.properties.name);
         //Criação do Popup de cada feature/polígono contendo o nome do proprietário e o cep de localização do edíficio/lote.
         var total = sum(feature);
-        layer.bindPopup("Probabilidade em "+feature.properties.name+" (2018): "+probDA(total).toFixed(2));
-        layer.on({
-          dblclick: whenClicked,
-          mouseover: highlightFeature,
-          mouseout: resetHighlight,
-          load: setmarker
-        });
+        var prob= probDA(total).toFixed(2);
+        if(prob>=0.8){
+          marker=L.marker(layer.getBounds().getCenter(), {icon: Icon1});
+        }else if(prob>=0.6){
+          marker=L.marker(layer.getBounds().getCenter(), {icon: Icon2});
+        }else if(prob>=0.4){
+          marker=L.marker(layer.getBounds().getCenter(), {icon: Icon3});
+        }else if(prob>=0.2){
+          marker=L.marker(layer.getBounds().getCenter(), {icon: Icon4});
+        }else{
+          marker=L.marker(layer.getBounds().getCenter(), {icon: Icon5});
+        }
+         markers.addLayer(marker);
       }
-  }).addTo(map);
+  });
+  map.addLayer(markers);
 
   info.update = function (props) {
       if(filterbymouth!=undefined && filterbymouth!='off'){

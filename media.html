@@ -4,41 +4,72 @@
 		<meta charset="utf-8">
 	    <meta name="author" content="Edcley José da Silva 032018 POS">
 	    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-	    <link rel="stylesheet" href="./css/dc.css">
-		<link rel="stylesheet" href="./css/projeto.css">
+	    <link rel="stylesheet" href="./css/cloropleth.css">
 		<link rel="stylesheet" href="./css/bootstrap.min.css">
 		<link rel="stylesheet" href="./css/leaflet.css"/>
-		
-		<title>Glyph</title>
-		<script type="text/javascript" src="./js/jquery.min.js"></script>
-		<script type="text/javascript" src="./js/d3.v4.min.js"></script>
-		<script type="text/javascript" src='./js/crossfilter.js'></script>
-		<script type="text/javascript" src='./js/dc.js'></script>
-		<script type="text/javascript" src='./js/dc.graph.js'></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<link rel="shortcut icon" type="image/png" href="./data/favicon-96x96.png"/>
+		<link rel="shortcut icon" type="image/png" href="./data/favicon-96x96.png"/>
+		<title>Média</title>
+		<script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
+		<script type="text/javascript" src="./js/popper.min.js"></script>
 		<script type="text/javascript" src="./js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="./js/color-mixin.js"></script>
-		<script type="text/javascript" src="./js/leaflet-pip.js"></script>
+		<script type="text/javascript" src="./js/buttonsm.js"></script>
+		<script type="text/javascript" src="./js/d3.v4.min.js"></script>
+		<script type="text/javascript" src="./js/math.min.js"></script>
 	    <script type="text/javascript" src="./js/leaflet.js"></script>
-	    <script type="text/javascript" src='./js/dc.graph.js'></script>
-	    <script type="text/javascript" src='./js/dc.leaflet.js'></script>
-		<script type="text/javascript" src="./js/colorbrewer.js"></script>
-		<script type="text/javascript" src="./js/fold-to-ascii.js"></script>
-		<script type="text/javascript" src="./js/index.js"></script>
-		<script type="text/javascript" src='./js/turf.min.js'></script>
-		<script type="text/javascript" src='./js/palette.js'></script>
 	</head>
 	<body >
 		<div class="container">
-			</br>
 			<div class="row">
-				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"> </div>
 				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 panel panel-default">
-					<div id="vis6" style="height:580px;"></div>
+					<div id="vis6" style="height: 500px"></div>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 d-inline-flex d-flex flex-row h-25" >
+					<div class="card  h-25 w-50">
+						<div class="card-body">
+						    <h7 class="card-title"><b>Filtro Trimestre</b></h7>
+						</div>
+						<ul class="list-group list-group-flush">
+						    <li class="list-group-item">
+						    	<div class="custom-control custom-radio">
+								  	<input type="radio" class="custom-control-input" id="dft2" name="tri" checked value="off">
+								  	<label class="custom-control-label" for="dft2">Nenhum</label>
+								</div>
+						    	<div class="custom-control custom-radio">
+								  	<input type="radio" class="custom-control-input" id="trimestre1" name="tri" value="1">
+								  	<label class="custom-control-label" for="trimestre1">1º</label>
+								</div>
+								<div class="custom-control custom-radio">
+								  	<input type="radio" class="custom-control-input" id="trimestre2" name="tri" value="2">
+								  	<label class="custom-control-label" for="trimestre2">2º</label>
+								</div>
+								<div class="custom-control custom-radio">
+								  	<input type="radio" class="custom-control-input" id="trimestre3" name="tri" value="3">
+								  	<label class="custom-control-label" for="trimestre3">3º</label>
+								</div>
+								<div class="custom-control custom-radio">
+								  	<input type="radio" class="custom-control-input" id="trimestre4" name="tri" value="4">
+								  	<label class="custom-control-label" for="trimestre4">4º</label>
+								</div>
+						    </li>
+						</ul>
+					</div>
 				</div>
 			</div>
-			
+			<div class="row">
+				<div class="card" style="width: 58rem; margin-top: 1rem;">
+				<h5 class="card-title" style="margin-left: 1rem;"><b>Overview</b></h5>
+				  <ul class="list-group list-group-flush">
+				    <li class="list-group-item">
+				    	<p>Esta visualização exibe apenas a média acumulada de chuva de cada área.</p> 
+				    	<p>É possível utilizar o filtro trimestre do ano para refinar o valor da média.</p>
+				    	<p>Ao desabilitar o filtro o valor padrão é restaurado.</p>
+				    </li>
+				  </ul>
+				</div>
+			</div>
 		</div>
 	</body>
-	<script type="text/javascript" src="./js/nutesscript.js"></script>
-	
+	<script type="text/javascript" src="./js/media.js"></script>
 </html>

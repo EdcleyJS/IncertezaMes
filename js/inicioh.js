@@ -3,6 +3,10 @@ function setmarker(e){
 }
 
 function inicio(dataset){
+  addressPoints=[];
+  if(heat!= null){
+    map.removeLayer(heat);
+  }
   if(GeoLayer!= null){
     GeoLayer.clearLayers();
   }
@@ -11,48 +15,31 @@ function inicio(dataset){
     medias.push(sum(dataset.features[i]));
     medias.sort(function(a, b){return a - b});
   }
-  GeoLayer =L.geoJson(dataset,
-    {style: function(feature){
-      //Style para definir configurações dos polígonos a serem desenhados e colorir com base na escala criada.
+  GeoLayer =L.geoJson(dataset,{
+    onEachFeature: function (feature, layer) {
+      cidades.push(feature.properties.name);
+      //Criação do Popup de cada feature/polígono contendo o nome do proprietário e o cep de localização do edíficio/lote.
       var total = sum(feature);
-      if(total>=math.max(medias)){
-        return {
-            weight: 2.5,
-            opacity: 1,
-            fillColor: "#"+colorN(probDA(total)),
-            color: 'green',
-            fillOpacity: 0.9
-          };
-      }else if(total<=math.min(medias)){
-        return {
-            weight: 2.5,
-            opacity: 1,
-            fillColor: "#"+colorN(probDA(total)),
-            color: 'orange',
-            fillOpacity: 0.9
-          };
-      }else{
-        return {
-            weight: 0.5,
-            opacity: 1,
-            fillColor: "#"+colorN(probDA(total)),
-            color: 'black',
-            fillOpacity: 0.9
-          };
+      var area= (turf.area(feature.geometry)/1000000);
+      to= layer.getBounds()._southWest.lat;
+      fro= layer.getBounds()._northEast.lat;
+      to2= layer.getBounds()._southWest.lng;
+      fro2= layer.getBounds()._northEast.lng;
+      lat=layer.getBounds().getCenter().lat;
+      lng=layer.getBounds().getCenter().lng;
+      intensity= (probDA(total).toFixed(2)*5);
+      if(area<0){
+        area= (area*-1);
       }
-    },
-      onEachFeature: function (feature, layer) {
-        //Criação do Popup de cada feature/polígono contendo o nome do proprietário e o cep de localização do edíficio/lote.
-        var total = sum(feature);
-        layer.bindPopup("Probabilidade em "+feature.properties.name+" (2018): "+probDA(total).toFixed(2));
-        layer.on({
-          dblclick: whenClicked,
-          mouseover: highlightFeature,
-          mouseout: resetHighlight,
-          load: setmarker
-        });
+      area=area*5;
+      var nump= (probDA(total).toFixed(2)*area);
+      for (var i = 0; i < nump; i++) {
+        addressPoints.push([(Math.random() * (to - fro) + fro).toFixed(6),(Math.random() * (to2 - fro2) + fro2).toFixed(6),3.9]);
       }
-  }).addTo(map);
+    }
+  });
+  addressPoints = addressPoints.map(function (p) { return [p[0], p[1], p[2]]; });
+  heat = L.heatLayer(addressPoints,{radius:15}).addTo(map);
 
   info.update = function (props) {
       if(filterbymouth!=undefined && filterbymouth!='off'){

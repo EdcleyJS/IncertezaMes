@@ -8,8 +8,8 @@ function inicio(dataset){
   }
   medias=[];
   for (var i = 0; i < dataset.features.length; i++){
-    medias.push(sum(dataset.features[i]));
-    medias.sort(function(a, b){return a - b});
+      medias.push(sum(dataset.features[i]));
+      medias.sort(function(a, b){return a - b});
   }
   GeoLayer =L.geoJson(dataset,
     {style: function(feature){

@@ -31,4 +31,21 @@ $(document).ready(function () {
 			}
 		}
 	});
+	$("select.custom-select").change(function(){
+        var selectedCountry = $(this).children("option:selected").val();
+        if(featurename== $(this).children("option:selected").val()){
+		   	featurename=undefined;
+		}else if('off'==$(this).children("option:selected").val()){
+			inicio(dataset);
+		}else{
+		    featurename= $(this).children("option:selected").val();
+		    for (var i = 0; i < dataset.features.length; i++) {
+		    	if(dataset.features[i].properties.name==featurename){
+					filterclick(sum(dataset.features[i]));
+					compare(dataset); 
+					break;
+			  	}
+		    }
+		}
+    });
 });
