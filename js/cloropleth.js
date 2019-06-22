@@ -1,10 +1,10 @@
 var map = L.map('vis6').setView([-8.055213,-34.9724667], 9);
-map.doubleClickZoom.disable();
-var GeoLayer;
-var medias=[];
-var dataset,max;
 var filterbymouth,filterbytri;
+map.doubleClickZoom.disable();
 var featurename;
+var dataset,max;
+var medias=[];
+var GeoLayer;
 
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
   attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
@@ -13,7 +13,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
   accessToken: 'pk.eyJ1IjoiZWRjbGV5OTQ1MiIsImEiOiJjamdvMGdmZ2owaTdiMndwYTJyM2tteTl2In0.2q25nBNRxzFxeaYahFGQ6g'
 }).addTo(map);
 
-d3.json("./data/rmr.json",function(error,dados){
+d3.json("./data/pe.json",function(error,dados){
   dataset=dados;
   inicio(dataset);
 }); 

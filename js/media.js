@@ -2,6 +2,7 @@ var map = L.map('vis6').setView([-8.055213,-34.9724667], 9);
 var GeoLayer,filterbytri,dataset,grades = [],legend = L.control({position: 'bottomright'});
 map.doubleClickZoom.disable();
 var medias=[];
+
 //Escala de cores para o mapa
 function color(d) {
   grades.sort(function(a, b){return a - b});
@@ -59,7 +60,7 @@ function inicio(dados){
     legend.onAdd = function (map) {
       var div = L.DomUtil.create('div', 'info legend'),
         labels = [];
-        for (var i = 1; i < 15; i+=2) {
+        for (var i = 22; i < 184; i+=22) {
           grades.push(Number(medias[i]));
         }
       for (var i = 0; i < grades.length; i++) {
@@ -72,7 +73,7 @@ function inicio(dados){
   GeoLayer= L.geoJson(dados,
     {style: function(feature){
       //Style para definir configurações dos polígonos a serem desenhados e colorir com base na escala criada.
-      var total = sum(feature);     
+      var total = sum(feature);
       if(filterbytri!='off' && filterbytri!= undefined){
         return {
             weight: 0.5,
@@ -104,12 +105,11 @@ function inicio(dados){
   grades=[];
 }
 
-d3.json("./data/rmr.json",function(dados){
+d3.json("./data/pe.json",function(dados){
   dataset=dados;
   inicio(dados);
 }); 
-
-// criação da div que contém o Título e Subtítulo do Mapa. 
+ // criação da div que contém o Título e Subtítulo do Mapa. 
 var info = L.control();
 info.onAdd = function (mymap) {
   this._div = L.DomUtil.create('div', 'info');
@@ -118,7 +118,7 @@ info.onAdd = function (mymap) {
 };
 info.update = function (props) {
   this._div.innerHTML = '<h4> Precipitação Acumulada (mm)</h4>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>'
-  : 'Média por municpíos da RMR/2018.');
+        : 'Média por municpíos da RMR/2018.');
 };
 info.addTo(map);
 // Fim da criação da div que contém o Título e Subtítulo do Mapa.

@@ -31,7 +31,6 @@ function inicio(dataset){
       }
   });
   map.addLayer(markers);
-
   info.update = function (props) {
       if(filterbymouth!=undefined && filterbymouth!='off'){
         if(featurename==undefined){

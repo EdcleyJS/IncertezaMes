@@ -52,7 +52,6 @@ function compare(dataset){
         });
       }
   }).addTo(map);
-
   info.update = function (props) {
       if(filterbymouth!=undefined && filterbymouth!='off'){
         if(featurename==undefined){

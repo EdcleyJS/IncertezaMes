@@ -1,11 +1,12 @@
+var meses=["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
 var map = L.map('vis6').setView([-8.055213,-34.9724667], 9);
 var to,fro,latg,lngg,to2,fro2,dataset,heat;
 var medias=[],lat,lng,intensity;
-var addressPoints=[];
-var meses=["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
-var cidades=[];
 var filterbymouth,filterbytri;
+var dim,Oe,Le,No,Su,zoom;
+var addressPoints=[];
 var featurename;
+var cidades=[];
 var GeoLayer;
 
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
@@ -14,6 +15,10 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
   id: 'mapbox.streets',
   accessToken: 'pk.eyJ1IjoiZWRjbGV5OTQ1MiIsImEiOiJjamdvMGdmZ2owaTdiMndwYTJyM2tteTl2In0.2q25nBNRxzFxeaYahFGQ6g'
 }).addTo(map);
+
+map.on('moveend', function() {
+    compare(dataset);
+});
 
 function probDA(v){
   for (var i = (medias.length-1); i>=0 ; i--) {
@@ -59,7 +64,7 @@ function sum(feature){
   }
 }
 
-d3.json("./data/rmr.json",function(error,dados){
+d3.json("./data/pe.json",function(error,dados){
 	dataset=dados;
   inicio(dataset);
   cidades.forEach(function(item){
@@ -69,7 +74,6 @@ d3.json("./data/rmr.json",function(error,dados){
     }));
   });
 }); 
-
 // criação da div que contém o Título e Subtítulo do Mapa. 
 var info = L.control();
 info.onAdd = function (mymap) {

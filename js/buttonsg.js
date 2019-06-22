@@ -18,6 +18,7 @@ $(document).ready(function () {
    	$( "[name='tri']" ).change(function() {
    		featurename=undefined;
    		filterbytri=this.value;
+   		//alert(filterbytri);
    		inicio(dataset);
    		if(document.getElementById('dft2').checked== false) {
 			document.getElementById("dft").disabled = true;

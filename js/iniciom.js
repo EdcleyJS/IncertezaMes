@@ -1,16 +1,12 @@
-function setmarker(e){
-  L.marker(e.latlng, {icon: greenIcon}).addTo(map);
-}
-
 function inicio(dataset){
   if(GeoLayer!= null){
     GeoLayer.clearLayers();
   }
-  medias=[];
+    medias=[];
   for (var i = 0; i < dataset.features.length; i++){
       medias.push(sum(dataset.features[i]));
       medias.sort(function(a, b){return a - b});
-  }
+    }
   GeoLayer =L.geoJson(dataset,
     {style: function(feature){
       //Style para definir configurações dos polígonos a serem desenhados e colorir com base na escala criada.

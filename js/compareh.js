@@ -7,6 +7,13 @@ function compare(dataset){
   if(GeoLayer!= null){
       GeoLayer.clearLayers();
   }
+  dim= map.getBounds();
+  Le = dim.getEast();
+  Oe= dim.getWest();
+  No= dim.getNorth();
+  Su=dim.getSouth();
+  zoom= map.getZoom();
+
   GeoLayer =L.geoJson(dataset,
     {
       onEachFeature: function (feature,layer) {
@@ -23,15 +30,25 @@ function compare(dataset){
         if(area<0){
           area= (area*-1);
         }
-        area=area*5;
+        if(zoom>=9){
+          area=area*5;
+        }else{
+          area=area*3;
+        }
         var nump= (probDA(total).toFixed(2)*area);
-        for (var i = 0; i < nump; i++) {
-          addressPoints.push([(Math.random() * (to - fro) + fro).toFixed(6),(Math.random() * (to2 - fro2) + fro2).toFixed(6),3.9]);
+        if(No>=fro && Le>=fro2 && Su<=to && Oe<=to2){
+          for (var i = 0; i < nump; i++) {
+            if(zoom>=9){
+              addressPoints.push([(Math.random() * (to - fro) + fro).toFixed(6),(Math.random() * (to2 - fro2) + fro2).toFixed(6),1.9]);
+            }else{
+              addressPoints.push([(Math.random() * (to - fro) + fro).toFixed(6),(Math.random() * (to2 - fro2) + fro2).toFixed(6),2.9]);
+            }
+          }
         }
       }
   });
   addressPoints = addressPoints.map(function (p) { return [p[0], p[1], p[2]]; });
-  heat = L.heatLayer(addressPoints,{radius:15}).addTo(map);
+  heat = L.heatLayer(addressPoints,{maxZoom:18,radius:15}).addTo(map);
   info.update = function (props) {
       if(filterbymouth!=undefined && filterbymouth!='off'){
         if(featurename==undefined){

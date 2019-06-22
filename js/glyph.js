@@ -40,7 +40,6 @@ function filterclick(v){
     }
   }
 }
-
 function sum(feature){
   if(filterbymouth!='off' && filterbymouth!= undefined){ 
     var aux= "feature.properties."+filterbymouth;
@@ -59,8 +58,7 @@ function sum(feature){
     return (Number(feature.properties.Janeiro)+Number(feature.properties.Fevereiro)+Number(feature.properties.Março)+Number(feature.properties.Abril)+Number(feature.properties.Maio)+Number(feature.properties.Junho)+Number(feature.properties.Julho)+Number(feature.properties.Agosto)+Number(feature.properties.Setembro)+Number(feature.properties.Outubro)+Number(feature.properties.Novembro)+Number(feature.properties.Dezembro));
   }
 }
-
-d3.json("./data/rmr.json",function(error,dados){
+d3.json("./data/pe.json",function(error,dados){
 	dataset=dados;
   inicio(dataset);
     cidades.forEach(function(item){
@@ -70,7 +68,6 @@ d3.json("./data/rmr.json",function(error,dados){
       }));
     });
 }); 
-
 // criação da div que contém o Título e Subtítulo do Mapa. 
 var info = L.control();
 info.onAdd = function (mymap) {
