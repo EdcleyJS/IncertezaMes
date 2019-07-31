@@ -55,7 +55,7 @@ function compare(dataset){
         if(zoom>=9){
           area=area*5;
         }else{
-          area=area;
+          area=area*3;
         }
         var nump= (probArea.cdfintervalo().toFixed(2)*area);
         if(No>=fro && Le>=fro2 && Su<=to && Oe<=to2){
