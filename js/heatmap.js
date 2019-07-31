@@ -1,6 +1,6 @@
 var meses=["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
-var map = L.map('vis6').setView([-8.055213,-34.9724667], 9);
-var to,fro,latg,lngg,to2,fro2,dataset,heat;
+var map = L.map('vis6').setView([-8.305448,-37.822426], 8);
+var to,fro,latg,lngg,to2,fro2,dataset,heat,alpha=0,left=60,right=100;
 var medias=[],lat,lng,intensity;
 var filterbymouth,filterbytri;
 var dim,Oe,Le,No,Su,zoom;
@@ -17,52 +17,12 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 }).addTo(map);
 
 map.on('moveend', function() {
+  if(featurename!=undefined || featurename!='off'){
     compare(dataset);
+  }else{
+    inicio(dataset);
+  }
 });
-
-function probDA(v){
-  for (var i = (medias.length-1); i>=0 ; i--) {
-    var percent= (1/medias.length);
-    if(v>=medias[i]){
-      return (percent*(i+1));
-    }
-  }
-}
-
-function filterclick(v){
-  if(v==math.max(medias)){
-    medias=[];
-    for (var i = 0; i < dataset.features.length; i++){
-      medias.push(sum(dataset.features[i]));
-      medias.sort(function(a, b){return a - b});
-    }
-  }else{
-    for (var i = 0; i < medias.length; i++) {
-      if(v<medias[i]){
-        medias.splice(i, (medias.length-i));
-      }
-    }
-  }
-}
-
-function sum(feature){
-  if(filterbymouth!='off' && filterbymouth!= undefined){ 
-    var aux= "feature.properties."+filterbymouth;
-    return Number(feature.properties[filterbymouth]);
-  }else if(filterbytri!='off' && filterbytri!= undefined){
-    if(filterbytri=='1'){
-       return (Number(feature.properties.Janeiro)+Number(feature.properties.Fevereiro)+Number(feature.properties.Março));
-    }else if(filterbytri=='2') {
-      return (Number(feature.properties.Abril)+Number(feature.properties.Maio)+Number(feature.properties.Junho));
-    }else if(filterbytri=='3'){
-      return (Number(feature.properties.Julho)+Number(feature.properties.Agosto)+Number(feature.properties.Setembro));
-    }else if (filterbytri=='4') {
-      return (Number(feature.properties.Outubro)+Number(feature.properties.Novembro)+Number(feature.properties.Dezembro));
-    }
-  }else{
-    return (Number(feature.properties.Janeiro)+Number(feature.properties.Fevereiro)+Number(feature.properties.Março)+Number(feature.properties.Abril)+Number(feature.properties.Maio)+Number(feature.properties.Junho)+Number(feature.properties.Julho)+Number(feature.properties.Agosto)+Number(feature.properties.Setembro)+Number(feature.properties.Outubro)+Number(feature.properties.Novembro)+Number(feature.properties.Dezembro));
-  }
-}
 
 d3.json("./data/pe.json",function(error,dados){
 	dataset=dados;
@@ -74,6 +34,7 @@ d3.json("./data/pe.json",function(error,dados){
     }));
   });
 }); 
+
 // criação da div que contém o Título e Subtítulo do Mapa. 
 var info = L.control();
 info.onAdd = function (mymap) {
@@ -81,3 +42,18 @@ info.onAdd = function (mymap) {
   this.update();
   return this._div;
 };
+
+// criação da div que contém a legenda do Mapa.
+var legend = L.control({position: 'bottomright'});
+legend.onAdd = function (map) {
+  var div = L.DomUtil.create('div', 'info legend'),grades=[],labels = [];
+  div.innerHTML +='<i style="color:#7f7fff; background:#7f7fff"></i>'+"0.14</br>";
+  div.innerHTML +='<i style="color:#6666ff; background:#6666ff"></i>'+"0.28</br>";
+  div.innerHTML +='<i style="color:#00ecff; background:#00ecff"></i>'+"0.42</br>";
+  div.innerHTML +='<i style="color:#4cffb3; background:#4cffb3"></i>'+"0.56</br>";
+  div.innerHTML +='<i style="color:#00e584; background:#00e584"></i>'+"0.70</br>";
+  div.innerHTML +='<i style="color:#ebff4c; background:#ebff4c"></i>'+"0.84</br>";
+  div.innerHTML +='<i style="color:#ff4000; background:#ff4000"></i>'+"1.00</br>";
+  return div;
+};
+legend.addTo(map);

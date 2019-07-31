@@ -9,40 +9,41 @@
 		<link rel="stylesheet" href="./css/leaflet.css"/>
 		<link rel="shortcut icon" type="image/png" href="./data/favicon-96x96.png"/>
 		<link rel="shortcut icon" type="image/png" href="./data/favicon-96x96.png"/>
-		<title>HeatMap</title>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<title>Glyph</title>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 		<!--Plugin CSS file with desired skin-->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.0/css/ion.rangeSlider.min.css"/>
 		<!--Plugin JavaScript file-->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.0/js/ion.rangeSlider.min.js"></script> 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-		<script type="text/javascript" src="./js/buttonsh.js"></script>
+		<script type="text/javascript" src="./js/buttonsg.js"></script>
 		<script type="text/javascript" src="./js/d3.v4.min.js"></script>
 		<script type="text/javascript" src="./js/math.min.js"></script>
 	    <script type="text/javascript" src="./js/leaflet.js"></script>
+	    <script src="https://unpkg.com/leaflet.markercluster@1.3.0/dist/leaflet.markercluster.js"></script>
 		<script type="text/javascript" src='./js/palette.js'></script>
 		<script type="text/javascript" src='./js/leaflet-heat.js'></script>
 		<script type="text/javascript" src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
-		<script type="text/javascript" src="./js/inicioh.js"></script>
-		<script type="text/javascript" src="./js/compareh.js"></script>
+		<script type="text/javascript" src="./js/iniciog.js"></script>
+		<script type="text/javascript" src="./js/compareg.js"></script>
 	</head>
 	<body>
 		<div class="container">
 			</br>
 			<div class="row">
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 panel panel-default">
-					<div id="vis6" style="height: 400px; width: 100%"></div>
+					<div id="vis6" style="width: 100%; height: 400px"></div>
 				</div>
 				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 panel panel-default">
 					<br>
-					<input type="text" id="example_id" name="example_name" value="" />
-					<label for="example_id"> Posicione o ponteiro para escolher um valor.</label>
+					<input type="text" id="sliderrange2" name="example_name" value="" />
+					<label for="sliderrange2"> Posicione os ponteiros para formar o intervalo a ser analisado.</label>
 				</div>
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 panel panel-default">
 					<br>
-					<div class="card h-25">
+					<div class="card h-25 ">
 						<div class="" >
 							<h7 class="card-title" style="margin-left: 10px;"><b> Filtrar por Cidade:</b></h7>
 						</div>
@@ -53,17 +54,28 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="card" style="width: 58rem; margin-top: 1rem;">
+				<div class="card col-lg-12 col-md-12 col-sm-12 col-xs-12" style="width: 58rem; margin-top: 1rem;">
 					<h5 class="card-title" style="margin-left: 1rem;"><b>Overview</b></h5>
-				  	<ul class="list-group list-group-flush">
-				    	<li class="list-group-item">
-				    		<p>Esta visualização exibe a probabilidade acumulada de chuva com base nos dados observados nas áreas.</p>
-				    		<p>As áreas com maiores chances possuem coloraçao mais forte, assim as menores possuem coloração mais fraca.</p>
-				    	</li>
-				  	</ul>
+					<ul class="list-group list-group-flush">
+					    <li class="list-group-item">
+					    	<p>
+					    		Esta visualização exibe a probabilidade acumulada de chuva com base nos dados observados nas áreas.
+					    	</p> 
+					    	<p>Os Glyphs representam faixas de probabilidade.</p>
+					    	<p>
+					    		<img src="./data/1.png" alt="icon1" style="width: 2rem; height: 2rem">100-86%. 
+					    		<img src="./data/2.png" alt="icon2" style="width: 2rem; height: 2rem">85-70%. 
+					    		<img src="./data/3.png" alt="icon3" style="width: 2rem; height: 2rem">69-56%. 
+					    		<img src="./data/4.png" alt="icon4" style="width: 2rem; height: 2rem">55-42%. 
+					    		<img src="./data/5.png" alt="icon5" style="width: 2rem; height: 2rem">41-28%.
+					    		<img src="./data/6.png" alt="icon6" style="width: 2rem; height: 2rem">27-15%. 
+					    		<img src="./data/7.png" alt="icon7" style="width: 2rem; height: 2rem">14-0%.
+					    	</p>
+					    </li>
+					</ul>
 				</div>
 			</div>
 		</div>
 	</body>
-	<script type="text/javascript" src="./js/heatmap.js"></script>
+	<script type="text/javascript" src="./js/glyph.js"></script>
 </html>

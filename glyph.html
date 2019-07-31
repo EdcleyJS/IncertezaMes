@@ -6,14 +6,18 @@
 	    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 		<link rel="stylesheet" href="./css/cloropleth.css">
-		<link rel="stylesheet" href="./css/bootstrap.min.css">
 		<link rel="stylesheet" href="./css/leaflet.css"/>
 		<link rel="shortcut icon" type="image/png" href="./data/favicon-96x96.png"/>
 		<link rel="shortcut icon" type="image/png" href="./data/favicon-96x96.png"/>
 		<title>Glyph</title>
-		<script type="text/javascript" src="./js/jquery-3.3.1.slim.min.js"></script>
-		<script type="text/javascript" src="./js/popper.min.js"></script>
-		<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<!--Plugin CSS file with desired skin-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.0/css/ion.rangeSlider.min.css"/>
+		<!--Plugin JavaScript file-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.0/js/ion.rangeSlider.min.js"></script> 
 		<script type="text/javascript" src="./js/buttonsg.js"></script>
 		<script type="text/javascript" src="./js/d3.v4.min.js"></script>
 		<script type="text/javascript" src="./js/math.min.js"></script>
@@ -29,122 +33,44 @@
 		<div class="container">
 			</br>
 			<div class="row">
-				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 panel panel-default">
-					<div id="vis6" class="h-100 w-100"></div>
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 panel panel-default">
+					<div id="vis6" style="width: 100%; height: 400px"></div>
 				</div>
-				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 d-inline-flex d-flex flex-row h-25" >
-					<div class="card">
-						<div class="card-body">
-						    <h7 class="card-title"><b>Filtro Mês</b></h7>
+				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 panel panel-default">
+					<br>
+					<input type="text" id="example_id" name="example_name" value="" />
+					<label for="example_id"> Posicione o ponteiro para escolher um valor.</label>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 panel panel-default">
+					<br>
+					<div class="card h-25 ">
+						<div class="" >
+							<h7 class="card-title" style="margin-left: 10px;"><b> Filtrar por Cidade:</b></h7>
 						</div>
-						<ul class="list-group list-group-flush">
-						    <li class="list-group-item" id="buttons">
-						    	<div class="custom-control custom-radio">
-								  	<input type="radio" class="custom-control-input" id="dft" name="buttons" checked value="off">
-								  	<label class="custom-control-label" for="dft">Nenhum</label>
-								</div>
-						    	<div class="custom-control custom-radio">
-								  	<input type="radio" class="custom-control-input" id="button1" name="buttons" value="Janeiro">
-								  	<label class="custom-control-label" for="button1">Janeiro</label>
-								</div>
-								<div class="custom-control custom-radio">
-								  	<input type="radio" class="custom-control-input" id="button2" name="buttons" value="Fevereiro">
-								  	<label class="custom-control-label" for="button2">Fevereiro</label>
-								</div>
-								<div class="custom-control custom-radio">
-								  	<input type="radio" class="custom-control-input" id="button3" name="buttons" value="Março">
-								  	<label class="custom-control-label" for="button3">Março</label>
-								</div>
-								<div class="custom-control custom-radio">
-								  	<input type="radio" class="custom-control-input" id="button4" name="buttons" value="Abril">
-								  	<label class="custom-control-label" for="button4">Abril</label>
-								</div>
-								<div class="custom-control custom-radio">
-								  	<input type="radio" class="custom-control-input" id="button5" name="buttons" value="Maio">
-								  	<label class="custom-control-label" for="button5">Maio</label>
-								</div>
-								<div class="custom-control custom-radio">
-								  	<input type="radio" class="custom-control-input" id="button6" name="buttons" value="Junho">
-								  	<label class="custom-control-label" for="button6">Junho</label>
-								</div>
-								<div class="custom-control custom-radio">
-								  	<input type="radio" class="custom-control-input" id="button7" name="buttons" value="Julho">
-								  	<label class="custom-control-label" for="button7">Julho</label>
-								</div>
-								<div class="custom-control custom-radio">
-								  	<input type="radio" class="custom-control-input" id="button8" name="buttons" value="Agosto">
-								  	<label class="custom-control-label" for="button8">Agosto</label>
-								</div>
-								<div class="custom-control custom-radio">
-								  	<input type="radio" class="custom-control-input" id="button9" name="buttons" value="Setembro">
-								  	<label class="custom-control-label" for="button9">Setembro</label>
-								</div>
-								<div class="custom-control custom-radio">
-								  	<input type="radio" class="custom-control-input" id="button10" name="buttons" value="Outubro">
-								  	<label class="custom-control-label" for="button10">Outubro</label>
-								</div>
-								<div class="custom-control custom-radio">
-								  	<input type="radio" class="custom-control-input" id="button11" name="buttons" value="Novembro">
-								  	<label class="custom-control-label" for="button11">Novembro</label>
-								</div>
-								<div class="custom-control custom-radio">
-								  	<input type="radio" class="custom-control-input" id="button12" name="buttons" value="Dezembro">
-								  	<label class="custom-control-label" for="button12">Dezembro</label>
-								</div>
-						    </li>
-						</ul>
-					</div>
-					<div class="card  h-25 w-50">
-						<div class="card">
-							<div class="card-body">
-							    <h7 class="card-title"><b>Filtro Cidades</b></h7>
-							</div>
-							<select class="custom-select">
-						  		<option selected value="off">Desabilitar</option>
-							</select>
-						</div>
-						<div class="card-body">
-						    <h7 class="card-title"><b>Filtro Trimestre</b></h7>
-						</div>
-						<ul class="list-group list-group-flush">
-						    <li class="list-group-item">
-						    	<div class="custom-control custom-radio">
-								  	<input type="radio" class="custom-control-input" id="dft2" name="tri" checked value="off">
-								  	<label class="custom-control-label" for="dft2">Nenhum</label>
-								</div>
-						    	<div class="custom-control custom-radio">
-								  	<input type="radio" class="custom-control-input" id="trimestre1" name="tri" value="1">
-								  	<label class="custom-control-label" for="trimestre1">1º</label>
-								</div>
-								<div class="custom-control custom-radio">
-								  	<input type="radio" class="custom-control-input" id="trimestre2" name="tri" value="2">
-								  	<label class="custom-control-label" for="trimestre2">2º</label>
-								</div>
-								<div class="custom-control custom-radio">
-								  	<input type="radio" class="custom-control-input" id="trimestre3" name="tri" value="3">
-								  	<label class="custom-control-label" for="trimestre3">3º</label>
-								</div>
-								<div class="custom-control custom-radio">
-								  	<input type="radio" class="custom-control-input" id="trimestre4" name="tri" value="4">
-								  	<label class="custom-control-label" for="trimestre4">4º</label>
-								</div>
-						    </li>
-						</ul>
+						<select class="custom-select">
+						  	<option selected value="off">Desabilitar</option>
+						</select>
 					</div>
 				</div>
 			</div>
 			<div class="row">
-				<div class="card" style="width: 58rem; margin-top: 1rem;">
-				<h5 class="card-title" style="margin-left: 1rem;"><b>Overview</b></h5>
-				  <ul class="list-group list-group-flush">
-				    <li class="list-group-item">
-				    	<p>Esta visualização exibe a probabilidade acumulada de chuva com base nos dados observados nas áreas.</p> 
-				    	<p>Os Glyphs representam faixas de probabilidade.</p>
-				    	<p><img src="./data/1.png" alt="Smiley face" style="width: 2rem; height: 2rem">80-100%. <img src="./data/2.png" alt="Smiley face" style="width: 2rem; height: 2rem">60-79%. <img src="./data/3.png" alt="Smiley face" style="width: 2rem; height: 2rem">40-59%. <img src="./data/4.png" alt="Smiley face" style="width: 2rem; height: 2rem">20-39%. <img src="./data/5.png" alt="Smiley face" style="width: 2rem; height: 2rem">0-19%.</p>
-				    	<p>É possível utilizar filtros como mês/trimestre do ano estudado e cidade separadamente.</p>
-				    	<p>Ao desabilitar um filtro os valores padrões são restaurados.</p>
-				    </li>
-				  </ul>
+				<div class="card col-lg-12 col-md-12 col-sm-12 col-xs-12" style="width: 58rem; margin-top: 1rem;">
+					<h5 class="card-title" style="margin-left: 1rem;"><b>Overview</b></h5>
+					<ul class="list-group list-group-flush">
+					    <li class="list-group-item">
+					    	<p>Esta visualização exibe a probabilidade acumulada de chuva com base nos dados observados nas áreas.</p> 
+					    	<p>Os Glyphs representam faixas de probabilidade.</p>
+					    	<p>
+					    		<img src="./data/1.png" alt="icon1" style="width: 2rem; height: 2rem">100-86%. 
+					    		<img src="./data/2.png" alt="icon2" style="width: 2rem; height: 2rem">85-70%. 
+					    		<img src="./data/3.png" alt="icon3" style="width: 2rem; height: 2rem">69-56%. 
+					    		<img src="./data/4.png" alt="icon4" style="width: 2rem; height: 2rem">55-42%. 
+					    		<img src="./data/5.png" alt="icon5" style="width: 2rem; height: 2rem">41-28%.
+					    		<img src="./data/6.png" alt="icon6" style="width: 2rem; height: 2rem">27-15%. 
+					    		<img src="./data/7.png" alt="icon7" style="width: 2rem; height: 2rem">14-0%.
+					    	</p>
+					    </li>
+					</ul>
 				</div>
 			</div>
 		</div>

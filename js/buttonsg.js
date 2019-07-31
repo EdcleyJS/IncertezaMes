@@ -33,20 +33,69 @@ $(document).ready(function () {
 		}
 	});
 	$("select.custom-select").change(function(){
+		var sdr = document.getElementById("example_id");
+		var slider = $("#example_id").data("ionRangeSlider");
+        var slider2 = $("#sliderrange2").data("ionRangeSlider");
         var selectedCountry = $(this).children("option:selected").val();
+
         if(featurename== $(this).children("option:selected").val()){
 		   	featurename=undefined;
 		}else if('off'==$(this).children("option:selected").val()){
 			inicio(dataset);
+			if(sdr){
+		    	slider.reset();
+			    slider.update({
+			      disable:false
+			    });
+		    }else{
+		    	slider2.reset();
+			    slider2.update({
+			      disable:false
+			    });
+		    }
 		}else{
 		    featurename= $(this).children("option:selected").val();
 		    for (var i = 0; i < dataset.features.length; i++) {
 		    	if(dataset.features[i].properties.name==featurename){
-			  		filterclick(sum(dataset.features[i]));
-					compare(dataset); 
+		    		var f=dataset.features[i];
+		    		var dist=[[Number(f.properties.Janeiro)],[Number(f.properties.Fevereiro)],[Number(f.properties.Março)],[Number(f.properties.Abril)],[Number(f.properties.Maio)],[Number(f.properties.Junho)],[Number(f.properties.Julho)],[Number(f.properties.Agosto)],[Number(f.properties.Setembro)],[Number(f.properties.Outubro)],[Number(f.properties.Novembro)],[Number(f.properties.Dezembro)]];       
+		    		dist= dist.sort(function(a, b){return a - b});
+		    		left=Number(dist[0]); right=Number(dist[11]);
 					break;
 			  	}
 		    }
+		    compare(dataset); 
+		    if(sdr){
+		    	slider.update({
+			      disable:true
+			    });
+		    }else{
+		    	slider2.update({
+			      disable:true
+			    });
+		    }
 		}
     });
+    $("#example_id").ionRangeSlider({
+		min: 0,
+        max: 300,
+        skin: "big",
+        onFinish: function (data) {
+            alpha=data.from;
+            inicio(dataset);
+        }
+	});
+	$("#sliderrange2").ionRangeSlider({
+		type: "double",
+		min: 0,
+        max: 300,
+        from: 60,
+        to: 100,
+        skin: "big",
+        onFinish: function (data) {
+            left=data.from;
+            right=data.to;
+            compare(dataset);
+        }
+	});
 });

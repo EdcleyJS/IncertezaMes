@@ -1,4 +1,26 @@
+class distribuicaoIntervalo {
+  constructor(feature,left,right) {
+    this.feature=feature;
+    this.left=left;
+    this.right=right;
+    this.cdfintervalo= function cdfintervalo(){
+                var dist=[[Number(feature.properties.Janeiro)],[Number(feature.properties.Fevereiro)],[Number(feature.properties.Março)],[Number(feature.properties.Abril)],[Number(feature.properties.Maio)],[Number(feature.properties.Junho)],[Number(feature.properties.Julho)],[Number(feature.properties.Agosto)],[Number(feature.properties.Setembro)],[Number(feature.properties.Outubro)],[Number(feature.properties.Novembro)],[Number(feature.properties.Dezembro)]];
+                dist= dist.sort(function(a, b){return a - b});
+                var prob= (d3.bisectRight(dist, right) - d3.bisectLeft(dist, left))/dist.length;
+                return prob;
+              }
+  }
+}
+
 function compare(dataset){
+  for (var i = 0; i < dataset.features.length; i++) {
+    var feature=dataset.features[i];
+    if(feature.properties.name==featurename){
+        var dist=[[Number(feature.properties.Janeiro)],[Number(feature.properties.Fevereiro)],[Number(feature.properties.Março)],[Number(feature.properties.Abril)],[Number(feature.properties.Maio)],[Number(feature.properties.Junho)],[Number(feature.properties.Julho)],[Number(feature.properties.Agosto)],[Number(feature.properties.Setembro)],[Number(feature.properties.Outubro)],[Number(feature.properties.Novembro)],[Number(feature.properties.Dezembro)]];       
+        dist= dist.sort(function(a, b){return a - b});
+        left=Number(dist[0]); right=Number(dist[11]);
+    }
+  }
   addressPoints=[];
   if(heat!= null){
     map.removeLayer(heat);
@@ -18,7 +40,7 @@ function compare(dataset){
     {
       onEachFeature: function (feature,layer) {
         //Criação do Popup de cada feature/polígono contendo o nome do proprietário e o cep de localização do edíficio/lote.
-        var total = sum(feature);
+        var probArea= new distribuicaoIntervalo(feature,left,right);
         var area= (turf.area(feature.geometry)/1000000);
         to= layer.getBounds()._southWest.lat;
         fro= layer.getBounds()._northEast.lat;
@@ -26,16 +48,16 @@ function compare(dataset){
         fro2= layer.getBounds()._northEast.lng;
         lat=layer.getBounds().getCenter().lat;
         lng=layer.getBounds().getCenter().lng;
-        intensity= (probDA(total).toFixed(2)*5);
+        intensity= (probArea.cdfintervalo().toFixed(2)*5);
         if(area<0){
           area= (area*-1);
         }
         if(zoom>=9){
           area=area*5;
         }else{
-          area=area*3;
+          area=area;
         }
-        var nump= (probDA(total).toFixed(2)*area);
+        var nump= (probArea.cdfintervalo().toFixed(2)*area);
         if(No>=fro && Le>=fro2 && Su<=to && Oe<=to2){
           for (var i = 0; i < nump; i++) {
             if(zoom>=9){
@@ -50,25 +72,11 @@ function compare(dataset){
   addressPoints = addressPoints.map(function (p) { return [p[0], p[1], p[2]]; });
   heat = L.heatLayer(addressPoints,{maxZoom:18,radius:15}).addTo(map);
   info.update = function (props) {
-      if(filterbymouth!=undefined && filterbymouth!='off'){
-        if(featurename==undefined){
-          this._div.innerHTML = '<h5>Comparação Probabilidade de Chuva.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade de chuva em '+filterbymouth+'/2018.');
-        }else{
-          this._div.innerHTML = '<h5>Comparação com base em '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade de chuva em '+filterbymouth+'/2018.');
-        }
-      }else if (filterbytri!=undefined && filterbytri!='off') {
-        if (featurename==undefined) {
-          this._div.innerHTML = '<h5>Comparação Probabilidade de Chuva.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade de chuva no '+filterbytri+'º trimestre/2018.');
-        }else{
-          this._div.innerHTML = '<h5>Comparação com base em '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade de chuva no '+filterbytri+'º trimestre/2018.');
-        }
-      }else{
-        if (featurename!=undefined) {
-          this._div.innerHTML = '<h5>Comparação com base em '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade de chuva em 2018.');
-        }else{
-          this._div.innerHTML = '<h5>Comparação com base na RMR.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade de chuva em 2018.');
-        }
-      }
+    if(featurename==undefined){
+      this._div.innerHTML = '<h5>Levantamento com Base em PE.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade de chuva em 2018.');
+    }else{
+      this._div.innerHTML = '<h5>Comparação com base em '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade de chuva em 2018.');
+    }
   };
   info.addTo(map);
 }

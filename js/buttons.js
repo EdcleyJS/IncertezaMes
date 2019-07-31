@@ -31,4 +31,26 @@ $(document).ready(function () {
 			}
 		}
 	});
+	$("#example_id").ionRangeSlider({
+		min: 0,
+        max: 300,
+        skin: "big",
+        onFinish: function (data) {
+            alpha=data.from;
+            inicio(dataset);
+        }
+	});
+	$("#sliderrange2").ionRangeSlider({
+		type: "double",
+		min: 0,
+        max: 300,
+        from: 60,
+        to: 100,
+        skin: "big",
+        onFinish: function (data) {
+            left=data.from;
+            right=data.to;
+            inicio(dataset);
+        }
+	});
 });

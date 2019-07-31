@@ -31,22 +31,22 @@ function colorN(d){
 }
 
 function whenClicked(e) {              
-  var slider = $("#example_id").data("ionRangeSlider");
+  var slider = $("#sliderrange2").data("ionRangeSlider");
   if(featurename==e.target.feature.properties.name){
     featurename=undefined;
     inicio(dataset);
-    slider.update({
-      disable:false
-    });
+      slider.update({
+        disable:false
+      });
   }else{
     featurename=e.target.feature.properties.name;
     var dist=[[Number(e.target.feature.properties.Janeiro)],[Number(e.target.feature.properties.Fevereiro)],[Number(e.target.feature.properties.Março)],[Number(e.target.feature.properties.Abril)],[Number(e.target.feature.properties.Maio)],[Number(e.target.feature.properties.Junho)],[Number(e.target.feature.properties.Julho)],[Number(e.target.feature.properties.Agosto)],[Number(e.target.feature.properties.Setembro)],[Number(e.target.feature.properties.Outubro)],[Number(e.target.feature.properties.Novembro)],[Number(e.target.feature.properties.Dezembro)]];       
     dist= dist.sort(function(a, b){return a - b});
     left=Number(dist[0]); right=Number(dist[11]);
     compare(dataset);
-    slider.update({
-      disable:true
-    });
+      slider.update({
+        disable:true
+      });
   }
 }
 

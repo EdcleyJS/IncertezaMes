@@ -1,11 +1,12 @@
 class distribuicao {
-  constructor(feature,alpha) {
+  constructor(feature,left,right) {
     this.feature=feature;
-    this.alpha=alpha;
-    this.cdf= function cdf(){
+    this.left=left;
+    this.right=right;
+    this.cdfintervalo= function cdfintervalo(){
                 var dist=[[Number(feature.properties.Janeiro)],[Number(feature.properties.Fevereiro)],[Number(feature.properties.Março)],[Number(feature.properties.Abril)],[Number(feature.properties.Maio)],[Number(feature.properties.Junho)],[Number(feature.properties.Julho)],[Number(feature.properties.Agosto)],[Number(feature.properties.Setembro)],[Number(feature.properties.Outubro)],[Number(feature.properties.Novembro)],[Number(feature.properties.Dezembro)]];
                 dist= dist.sort(function(a, b){return a - b});
-                var prob= d3.bisectRight(dist, alpha)/dist.length;
+                var prob= (d3.bisectRight(dist, right) - d3.bisectLeft(dist, left))/dist.length;
                 return prob;
               }
   }
@@ -30,7 +31,7 @@ function inicio(dataset){
     onEachFeature: function (feature, layer) {
       cidades.push(feature.properties.name);
       //Criação do Popup de cada feature/polígono contendo o nome do proprietário e o cep de localização do edíficio/lote.
-      var probArea= new distribuicao(feature,alpha);
+      var probArea= new distribuicao(feature,left,right);
       var area= (turf.area(feature.geometry)/1000000);
       to= layer.getBounds()._southWest.lat;
       fro= layer.getBounds()._northEast.lat;
@@ -38,16 +39,16 @@ function inicio(dataset){
       fro2= layer.getBounds()._northEast.lng;
       lat=layer.getBounds().getCenter().lat;
       lng=layer.getBounds().getCenter().lng;
-      intensity= (probArea.cdf().toFixed(2)*5);
+      intensity= (probArea.cdfintervalo().toFixed(2)*5);
       if(area<0){
         area= (area*-1);
       }
       if(zoom>=9){
         area=area*5;
       }else{
-        area=area;
+        area=area*3;
       }
-      var nump= (probArea.cdf().toFixed(2)*area);
+      var nump= (probArea.cdfintervalo().toFixed(2)*area);
         if(No>=fro && Le>=fro2 && Su<=to && Oe<=to2){
           for (var i = 0; i < nump; i++) {
             if(zoom>=9){
