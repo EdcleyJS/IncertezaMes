@@ -1,8 +1,3 @@
-function setmarker(e){
-  console.log("entrou");
-  L.marker(e.latlng, {icon: greenIcon}).addTo(map);
-}
-
 function inicio(dataset){
   if(GeoLayer!= null){
     GeoLayer.clearLayers();
@@ -50,7 +45,6 @@ function inicio(dataset){
           dblclick: whenClicked,
           mouseover: highlightFeature,
           mouseout: resetHighlight,
-          load: setmarker
         });
       }
   }).addTo(map);

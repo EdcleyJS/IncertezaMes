@@ -1,24 +1,25 @@
-class distribuicao {
-  constructor(feature,left,right) {
-    this.feature=feature;
-    this.left=left;
-    this.right=right;
-    this.cdfintervalo= function cdfintervalo(){
-                var dist=[[Number(feature.properties.Janeiro)],[Number(feature.properties.Fevereiro)],[Number(feature.properties.Março)],[Number(feature.properties.Abril)],[Number(feature.properties.Maio)],[Number(feature.properties.Junho)],[Number(feature.properties.Julho)],[Number(feature.properties.Agosto)],[Number(feature.properties.Setembro)],[Number(feature.properties.Outubro)],[Number(feature.properties.Novembro)],[Number(feature.properties.Dezembro)]];
-                dist= dist.sort(function(a, b){return a - b});
-                var prob= (d3.bisectRight(dist, right) - d3.bisectLeft(dist, left))/dist.length;
-                return prob;
-              }
-  }
-}
-
 function inicio(dataset){
   if(GeoLayer!= null){
     GeoLayer.clearLayers();
   }
   GeoLayer =L.geoJson(dataset,
     {style: function(feature){
-      var area= new distribuicao(feature,left,right);
+      if(anoSelecionado!=undefined){
+        var dist= distribuicaoAno(feature.properties.name);
+      }else if(trimestreSelecionado!=undefined){
+        console.log("entrou");
+        var dist= distribuicaoTri(feature.properties.name);
+      }else if(mesSelecionado!=undefined){
+        var dist= distribuicaoMes(feature.properties.name);
+      }else if(diaSelecionado!=undefined){
+        var dist= distribuicaoDia(feature.properties.name);
+      }else{
+        var dist= distribuicaoMes(feature.properties.name);
+      }
+      if(feature.properties.name=='Recife'){
+              //console.log(dist);
+      }
+      var area= new distribuicaoIntervalo(dist,left,right);
         return {
             weight: 0.5,
             opacity: 1,
@@ -28,7 +29,23 @@ function inicio(dataset){
           };
     },
       onEachFeature: function (feature, layer) {
-        var area= new distribuicao(feature,left,right);
+        if(anoSelecionado!=undefined){
+          var dist= distribuicaoAno(feature.properties.name);
+        }else if(trimestreSelecionado!=undefined){
+          console.log("entrou");
+          var dist= distribuicaoTri(feature.properties.name);
+        }else if(mesSelecionado!=undefined){
+          var dist= distribuicaoMes(feature.properties.name);
+        }else if(diaSelecionado!=undefined){
+          var dist= distribuicaoDia(feature.properties.name);
+        }else{
+          var dist= distribuicaoMes(feature.properties.name);
+        }
+        if(feature.properties.name=='Recife'){
+                //console.log(dist);
+        }
+        var area= new distribuicaoIntervalo(dist,left,right);
+        //console.log(area.desvio());
         //Criação do Popup de cada feature/polígono contendo o nome do proprietário e o cep de localização do edíficio/lote.
         layer.bindPopup("Probabilidade em "+feature.properties.name+" (2018): "+area.cdfintervalo().toFixed(2));
         layer.on({

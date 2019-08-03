@@ -1,5 +1,6 @@
 var map = L.map('vis6').setView([-8.305448,-37.822426], 8);
-var filterbymouth,filterbytri,alpha=0,left=60,right=100;
+var filterbymouth,filterbytri,alpha=0,left=60,right=100,database;
+var mesSelecionado,anoSelecionado,diaSelecionado,trimestreSelecionado;
 map.doubleClickZoom.disable();
 var featurename;
 var dataset,max;
@@ -13,14 +14,34 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
   accessToken: 'pk.eyJ1IjoiZWRjbGV5OTQ1MiIsImEiOiJjamdvMGdmZ2owaTdiMndwYTJyM2tteTl2In0.2q25nBNRxzFxeaYahFGQ6g'
 }).addTo(map);
 
-d3.json("./data/pe.json",function(error,dados){
-  dataset=dados;
-  inicio(dataset);
-}); 
+d3.json("./data/dados.json",function(error,data){
+  database=data;
+  d3.json("./data/pe.json",function(error,dados){
+    dataset=dados;
+    inicio(dataset);
+  });
+});
 
+ 
+function distrib(feature){
+  return [[Number(feature.properties.Janeiro)],[Number(feature.properties.Fevereiro)],[Number(feature.properties.Março)],[Number(feature.properties.Abril)],[Number(feature.properties.Maio)],[Number(feature.properties.Junho)],[Number(feature.properties.Julho)],[Number(feature.properties.Agosto)],[Number(feature.properties.Setembro)],[Number(feature.properties.Outubro)],[Number(feature.properties.Novembro)],[Number(feature.properties.Dezembro)]];
+}
+
+function cmp(dist1,dist2){
+  var count=0;
+  dist1.forEach(function(d,i){
+    if(dist2[i]<dist1[i]){
+      //console.log(""+dist2[i]+" < "+dist1[i]);
+      count++;
+    }
+  });
+  //console.log(count);
+  return (count/dist1.length);
+}
 //Escala de cores para o mapa
 function colorN(d){
   var cbf = palette('cb-RdYlGn', 11);
+  cbf=cbf.reverse();
   for (var i =10; i>=0 ; i--) {
     if(d>(0.09*i)){
       return cbf[i];
@@ -40,9 +61,9 @@ function whenClicked(e) {
       });
   }else{
     featurename=e.target.feature.properties.name;
-    var dist=[[Number(e.target.feature.properties.Janeiro)],[Number(e.target.feature.properties.Fevereiro)],[Number(e.target.feature.properties.Março)],[Number(e.target.feature.properties.Abril)],[Number(e.target.feature.properties.Maio)],[Number(e.target.feature.properties.Junho)],[Number(e.target.feature.properties.Julho)],[Number(e.target.feature.properties.Agosto)],[Number(e.target.feature.properties.Setembro)],[Number(e.target.feature.properties.Outubro)],[Number(e.target.feature.properties.Novembro)],[Number(e.target.feature.properties.Dezembro)]];       
+    /*var dist= distrib(e.target.feature);
     dist= dist.sort(function(a, b){return a - b});
-    left=Number(dist[0]); right=Number(dist[11]);
+    left=Number(dist[0]); right=Number(dist[11]);*/
     compare(dataset);
       slider.update({
         disable:true

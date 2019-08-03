@@ -1,16 +1,3 @@
-class distribuicao {
-  constructor(feature,alpha) {
-    this.feature=feature;
-    this.alpha=alpha;
-    this.cdf= function cdf(){
-                var dist=[[Number(feature.properties.Janeiro)],[Number(feature.properties.Fevereiro)],[Number(feature.properties.Março)],[Number(feature.properties.Abril)],[Number(feature.properties.Maio)],[Number(feature.properties.Junho)],[Number(feature.properties.Julho)],[Number(feature.properties.Agosto)],[Number(feature.properties.Setembro)],[Number(feature.properties.Outubro)],[Number(feature.properties.Novembro)],[Number(feature.properties.Dezembro)]];
-                dist= dist.sort(function(a, b){return a - b});
-                var prob= d3.bisectRight(dist, alpha)/dist.length;
-                return prob;
-              }
-  }
-}
-
 function inicio(dataset){
   addressPoints=[];
   if(heat!= null){
@@ -30,7 +17,42 @@ function inicio(dataset){
     onEachFeature: function (feature, layer) {
       cidades.push(feature.properties.name);
       //Criação do Popup de cada feature/polígono contendo o nome do proprietário e o cep de localização do edíficio/lote.
-      var probArea= new distribuicao(feature,alpha);
+      if(anoSelecionado!=undefined){
+        var dist= distribuicaoAno(feature.properties.name);
+      }else if(trimestreSelecionado!=undefined){
+        console.log("entrou");
+        var dist= distribuicaoTri(feature.properties.name);
+      }else if(mesSelecionado!=undefined){
+        var dist= distribuicaoMes(feature.properties.name);
+      }else if(diaSelecionado!=undefined){
+        var dist= distribuicaoDia(feature.properties.name);
+      }else{
+        var dist= distribuicaoMes(feature.properties.name);
+      }
+
+      if(interOn==true){
+        console.log(left);
+        console.log(right);
+        var probArea= new distribuicaoIntervalo(dist,left,right);
+        var prob= probArea.cdfintervalo().toFixed(2);
+        
+      }else{
+        var sdr = document.getElementById("example_id");
+        //console.log(!sdr);
+        //console.log(sdr);
+        if(typeof(sdr) != 'undefined' && sdr != null){
+          var probArea= new distribuicaoTeste(dist,alpha);
+          var prob= probArea.cdf().toFixed(2);
+            if(feature.properties.name=='Recife'){
+              //console.log(dist);
+            }
+        }else{
+          //console.log("a");
+          var probArea= new distribuicaoIntervalo(dist,left,right);
+          var prob= probArea.cdfintervalo().toFixed(2);
+        }
+      }
+
       var area= (turf.area(feature.geometry)/1000000);
       to= layer.getBounds()._southWest.lat;
       fro= layer.getBounds()._northEast.lat;
@@ -38,7 +60,7 @@ function inicio(dataset){
       fro2= layer.getBounds()._northEast.lng;
       lat=layer.getBounds().getCenter().lat;
       lng=layer.getBounds().getCenter().lng;
-      intensity= (probArea.cdf().toFixed(2)*5);
+      intensity= (prob*5);
       if(area<0){
         area= (area*-1);
       }
@@ -47,7 +69,7 @@ function inicio(dataset){
       }else{
         area=area*3;
       }
-      var nump= (probArea.cdf().toFixed(2)*area);
+      var nump= (prob*area);
         if(No>=fro && Le>=fro2 && Su<=to && Oe<=to2){
           for (var i = 0; i < nump; i++) {
             if(zoom>=9){

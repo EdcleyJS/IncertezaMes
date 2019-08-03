@@ -29,7 +29,10 @@
 		<script type="text/javascript" src='./js/palette.js'></script>
 		<script type="text/javascript" src='./js/leaflet-heat.js'></script>
 		<script type="text/javascript" src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
-		<script type="text/javascript" src="./js/iniciohIntervalo.js"></script>
+		<script type="text/javascript" src="./js/distribuicaoClassTeste.js"></script>
+		<script type="text/javascript" src="./js/distribuicaoIClassTeste.js"></script>
+		<script type="text/javascript" src="./js/funcoesGlobais.js"></script>
+		<script type="text/javascript" src="./js/inicioh.js"></script>
 		<script type="text/javascript" src="./js/compareh.js"></script>
 	</head>
 	<body>
@@ -46,12 +49,106 @@
 				</div>
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 panel panel-default">
 					<br>
-					<div class="card h-25">
+					<div class="card h-25 ">
 						<div class="" >
 							<h7 class="card-title" style="margin-left: 10px;"><b> Filtrar por Cidade:</b></h7>
 						</div>
-						<select class="custom-select">
+						<select class="custom-select" id="cidadesfiltro" name="cidadesfiltro">
 						  	<option selected value="off">Desabilitar</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 panel panel-default">
+					<br>
+					<div class="card h-25">
+						<div class="" >
+							<h7 class="card-title" style="margin-left: 10px;"><b> Filtrar por Ano:</b></h7>
+						</div>
+						<select class="custom-select" id="#anofiltro" name="ano">
+						  	<option selected value="off">Desabilitar</option>
+						  	<option value="2016">2016</option>
+						  	<option value="2017">2017</option>
+						  	<option value="2018">2018</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 panel panel-default">
+					<br>
+					<div class="card h-25">
+						<div class="" >
+							<h7 class="card-title" style="margin-left: 10px;"><b> Filtrar por Trismestre:</b></h7>
+						</div>
+						<select class="custom-select" id="#anofiltro" name="trimestre">
+						  	<option selected value="off">Desabilitar</option>
+						  	<option value="1">1º Trimestre</option>
+						  	<option value="2">2º Trimestre</option>
+						  	<option value="3">3º Trimestre</option>
+						  	<option value="4">4º Trimestre</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 panel panel-default">
+					<br>
+					<div class="card h-25">
+						<div class="" >
+							<h7 class="card-title" style="margin-left: 10px;"><b> Filtrar por Mês:</b></h7>
+						</div>
+						<select class="custom-select" id="#mesesfiltro" name="meses">
+						  	<option selected value="off">Desabilitar</option>
+						  	<option value="Jan">Janeiro</option>
+						  	<option value="Fev">Fevereiro</option>
+						  	<option value="Mar">Março</option>
+						  	<option value="Abr">Abril</option>
+						  	<option value="Mai">Maio</option>
+						  	<option value="Jun">Junho</option>
+						  	<option value="Jul">Julho</option>
+						  	<option value="Ago">Agosto</option>
+						  	<option value="Set">Setembro</option>
+						  	<option value="Out">Outubro</option>
+						  	<option value="Nov">Novembro</option>
+						  	<option value="Dez">Dezembro</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 panel panel-default">
+					<br>
+					<div class="card h-25">
+						<div class="" >
+							<h7 class="card-title" style="margin-left: 10px;"><b> Filtrar por Dia:</b></h7>
+						</div>
+						<select class="custom-select" id="#diasfiltro" name="dias">
+						  	<option selected value="off">Desabilitar</option>
+						  	<option value="1">1</option>
+						  	<option value="2">2</option>
+						  	<option value="3">3</option>
+						  	<option value="4">4</option>
+						  	<option value="5">5</option>
+						  	<option value="6">6</option>
+						  	<option value="7">7</option>
+						  	<option value="8">8</option>
+						  	<option value="9">9</option>
+						  	<option value="10">10</option>
+						  	<option value="11">11</option>
+						  	<option value="12">12</option>
+						  	<option value="13">13</option>
+						  	<option value="14">14</option>
+						  	<option value="15">15</option>
+						  	<option value="16">16</option>
+						  	<option value="17">17</option>
+						  	<option value="18">18</option>
+						  	<option value="19">19</option>
+						  	<option value="20">20</option>
+						  	<option value="21">21</option>
+						  	<option value="22">22</option>
+						  	<option value="23">23</option>
+						  	<option value="24">24</option>
+						  	<option value="25">25</option>
+						  	<option value="26">26</option>
+						  	<option value="27">27</option>
+						  	<option value="28">28</option>
+						  	<option value="29">29</option>
+						  	<option value="30">30</option>
+						  	<option value="31">31</option>
 						</select>
 					</div>
 				</div>

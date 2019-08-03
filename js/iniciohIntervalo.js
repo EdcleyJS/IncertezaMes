@@ -1,17 +1,3 @@
-class distribuicao {
-  constructor(feature,left,right) {
-    this.feature=feature;
-    this.left=left;
-    this.right=right;
-    this.cdfintervalo= function cdfintervalo(){
-                var dist=[[Number(feature.properties.Janeiro)],[Number(feature.properties.Fevereiro)],[Number(feature.properties.Março)],[Number(feature.properties.Abril)],[Number(feature.properties.Maio)],[Number(feature.properties.Junho)],[Number(feature.properties.Julho)],[Number(feature.properties.Agosto)],[Number(feature.properties.Setembro)],[Number(feature.properties.Outubro)],[Number(feature.properties.Novembro)],[Number(feature.properties.Dezembro)]];
-                dist= dist.sort(function(a, b){return a - b});
-                var prob= (d3.bisectRight(dist, right) - d3.bisectLeft(dist, left))/dist.length;
-                return prob;
-              }
-  }
-}
-
 function inicio(dataset){
   addressPoints=[];
   if(heat!= null){
@@ -31,7 +17,7 @@ function inicio(dataset){
     onEachFeature: function (feature, layer) {
       cidades.push(feature.properties.name);
       //Criação do Popup de cada feature/polígono contendo o nome do proprietário e o cep de localização do edíficio/lote.
-      var probArea= new distribuicao(feature,left,right);
+      var probArea= new distribuicaoIntervalo(feature,left,right);
       var area= (turf.area(feature.geometry)/1000000);
       to= layer.getBounds()._southWest.lat;
       fro= layer.getBounds()._northEast.lat;

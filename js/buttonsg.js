@@ -32,7 +32,7 @@ $(document).ready(function () {
 			}
 		}
 	});
-	$("select.custom-select").change(function(){
+	$("[name='cidadesfiltro'").change(function(){
 		var sdr = document.getElementById("example_id");
 		var slider = $("#example_id").data("ionRangeSlider");
         var slider2 = $("#sliderrange2").data("ionRangeSlider");
@@ -53,17 +53,8 @@ $(document).ready(function () {
 			      disable:false
 			    });
 		    }
-		}else{
+		}else{	
 		    featurename= $(this).children("option:selected").val();
-		    for (var i = 0; i < dataset.features.length; i++) {
-		    	if(dataset.features[i].properties.name==featurename){
-		    		var f=dataset.features[i];
-		    		var dist=[[Number(f.properties.Janeiro)],[Number(f.properties.Fevereiro)],[Number(f.properties.Março)],[Number(f.properties.Abril)],[Number(f.properties.Maio)],[Number(f.properties.Junho)],[Number(f.properties.Julho)],[Number(f.properties.Agosto)],[Number(f.properties.Setembro)],[Number(f.properties.Outubro)],[Number(f.properties.Novembro)],[Number(f.properties.Dezembro)]];       
-		    		dist= dist.sort(function(a, b){return a - b});
-		    		left=Number(dist[0]); right=Number(dist[11]);
-					break;
-			  	}
-		    }
 		    compare(dataset); 
 		    if(sdr){
 		    	slider.update({
@@ -75,11 +66,13 @@ $(document).ready(function () {
 			    });
 		    }
 		}
+		
     });
     $("#example_id").ionRangeSlider({
 		min: 0,
         max: 300,
         skin: "big",
+        grid: true,
         onFinish: function (data) {
             alpha=data.from;
             inicio(dataset);
@@ -91,11 +84,75 @@ $(document).ready(function () {
         max: 300,
         from: 60,
         to: 100,
+        drag_interval: true,
+        grid: true,
         skin: "big",
         onFinish: function (data) {
+        	interOn=true;
             left=data.from;
             right=data.to;
-            compare(dataset);
+            inicio(dataset);
+            interOn=false;
         }
 	});
+	$("[name='ano']").change(function(){
+		if('off'==$(this).children("option:selected").val()){
+			anoSelecionado=undefined;
+			inicio(dataset);
+		}else{
+			if(mesSelecionado!=undefined &&diaSelecionado!=undefined){
+				alert("Não é possível comparar apenas um elemento!");
+			}else{
+	        	anoSelecionado=$(this).children("option:selected").val();
+        		inicio(dataset);
+			}
+		}
+    });
+    $("[name='trimestre']").change(function(){
+		if('off'==$(this).children("option:selected").val()){
+			$("[name='meses']").prop('disabled', false);
+			trimestreSelecionado=undefined;
+			inicio(dataset);
+		}else{
+			if(anoSelecionado!=undefined && diaSelecionado!=undefined){
+				alert("Não é possível comparar apenas um elemento!");
+			}else{
+				$("[name='meses']").prop('selectedIndex',0);
+				$("[name='meses']").prop('disabled', true);
+				console.log("entrou");
+				trimestreSelecionado=$(this).children("option:selected").val();
+				inicio(dataset);
+			}
+		}
+    });
+	$("[name='meses']").change(function(){
+		if('off'==$(this).children("option:selected").val()){
+			$("[name='trimestre']").prop('disabled', false);
+			mesSelecionado=undefined;
+			inicio(dataset);
+		}else{
+			if(anoSelecionado!=undefined && diaSelecionado!=undefined){
+				alert("Não é possível comparar apenas um elemento!");
+			}else{
+				$("[name='trimestre']").prop('selectedIndex',0);
+				$("[name='trimestre']").prop('disabled', true);
+				console.log("entrou");
+				mesSelecionado=$(this).children("option:selected").val();
+				inicio(dataset);
+			}
+		}
+    });
+    $("[name='dias']").change(function(){
+    	if('off'==$(this).children("option:selected").val()){
+			diaSelecionado=undefined;
+			inicio(dataset);
+		}else{
+			if(anoSelecionado!=undefined && mesSelecionado!=undefined){
+				alert("Não é possível comparar apenas um elemento!");
+			}else{
+				diaSelecionado=$(this).children("option:selected").val();
+				inicio(dataset);
+			}
+		}
+    });
 });

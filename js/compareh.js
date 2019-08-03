@@ -1,26 +1,5 @@
-class distribuicaoIntervalo {
-  constructor(feature,left,right) {
-    this.feature=feature;
-    this.left=left;
-    this.right=right;
-    this.cdfintervalo= function cdfintervalo(){
-                var dist=[[Number(feature.properties.Janeiro)],[Number(feature.properties.Fevereiro)],[Number(feature.properties.Março)],[Number(feature.properties.Abril)],[Number(feature.properties.Maio)],[Number(feature.properties.Junho)],[Number(feature.properties.Julho)],[Number(feature.properties.Agosto)],[Number(feature.properties.Setembro)],[Number(feature.properties.Outubro)],[Number(feature.properties.Novembro)],[Number(feature.properties.Dezembro)]];
-                dist= dist.sort(function(a, b){return a - b});
-                var prob= (d3.bisectRight(dist, right) - d3.bisectLeft(dist, left))/dist.length;
-                return prob;
-              }
-  }
-}
-
 function compare(dataset){
-  for (var i = 0; i < dataset.features.length; i++) {
-    var feature=dataset.features[i];
-    if(feature.properties.name==featurename){
-        var dist=[[Number(feature.properties.Janeiro)],[Number(feature.properties.Fevereiro)],[Number(feature.properties.Março)],[Number(feature.properties.Abril)],[Number(feature.properties.Maio)],[Number(feature.properties.Junho)],[Number(feature.properties.Julho)],[Number(feature.properties.Agosto)],[Number(feature.properties.Setembro)],[Number(feature.properties.Outubro)],[Number(feature.properties.Novembro)],[Number(feature.properties.Dezembro)]];       
-        dist= dist.sort(function(a, b){return a - b});
-        left=Number(dist[0]); right=Number(dist[11]);
-    }
-  }
+  //console.log(dist1);
   addressPoints=[];
   if(heat!= null){
     map.removeLayer(heat);
@@ -29,18 +8,42 @@ function compare(dataset){
   if(GeoLayer!= null){
       GeoLayer.clearLayers();
   }
-  dim= map.getBounds();
-  Le = dim.getEast();
-  Oe= dim.getWest();
-  No= dim.getNorth();
-  Su=dim.getSouth();
-  zoom= map.getZoom();
+
+  var dist1,dist2;
+  if(anoSelecionado!=undefined){
+    dist1= distribuicaoAno(featurename);
+  }else if(trimestreSelecionado!=undefined){
+    console.log("entrou");
+    dist1= distribuicaoTri(featurename);
+  }else if(mesSelecionado!=undefined){
+    dist1= distribuicaoMes(featurename);
+  }else if(diaSelecionado!=undefined){
+    dist1= distribuicaoDia(featurename);
+  }else{
+    dist1= distribuicaoMes(featurename);
+  }
+
+  dim= map.getBounds(); Le = dim.getEast(); Oe= dim.getWest(); No= dim.getNorth(); Su=dim.getSouth(); zoom= map.getZoom();
 
   GeoLayer =L.geoJson(dataset,
     {
       onEachFeature: function (feature,layer) {
         //Criação do Popup de cada feature/polígono contendo o nome do proprietário e o cep de localização do edíficio/lote.
-        var probArea= new distribuicaoIntervalo(feature,left,right);
+        if(anoSelecionado!=undefined){
+          dist2= distribuicaoAno(feature.properties.name);
+        }else if(trimestreSelecionado!=undefined){
+          //console.log("entrou");
+          dist2= distribuicaoTri(feature.properties.name);
+        }else if(mesSelecionado!=undefined){
+          dist2= distribuicaoMes(feature.properties.name);
+        }else if(diaSelecionado!=undefined){
+          dist2= distribuicaoDia(feature.properties.name);
+        }else{
+          dist2= distribuicaoMes(feature.properties.name);
+        }
+        //console.log(dist2);
+        //console.log(dist1);
+        var probArea= cmp(dist1,dist2).toFixed(2);
         var area= (turf.area(feature.geometry)/1000000);
         to= layer.getBounds()._southWest.lat;
         fro= layer.getBounds()._northEast.lat;
@@ -48,7 +51,7 @@ function compare(dataset){
         fro2= layer.getBounds()._northEast.lng;
         lat=layer.getBounds().getCenter().lat;
         lng=layer.getBounds().getCenter().lng;
-        intensity= (probArea.cdfintervalo().toFixed(2)*5);
+        intensity= (probArea*5);
         if(area<0){
           area= (area*-1);
         }
@@ -57,7 +60,7 @@ function compare(dataset){
         }else{
           area=area*3;
         }
-        var nump= (probArea.cdfintervalo().toFixed(2)*area);
+        var nump= (probArea*area);
         if(No>=fro && Le>=fro2 && Su<=to && Oe<=to2){
           for (var i = 0; i < nump; i++) {
             if(zoom>=9){

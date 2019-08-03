@@ -1,8 +1,9 @@
 var map = L.map('vis6').setView([-8.305448,-37.822426], 8);
 var cidades=[];
-var filterbymouth,filterbytri,featurename,GeoLayer,marker;
+var filterbymouth,filterbytri,featurename,GeoLayer,marker,interOn;
+var mesSelecionado,anoSelecionado,diaSelecionado,trimestreSelecionado;
 var markers = L.layerGroup();
-var medias=[],lat,lng,intensity,alpha=0,left=60,right=100;
+var medias=[],lat,lng,intensity,alpha=0,left=60,right=100,database;
 var Icon1 = L.icon({iconUrl: './data/1.png',iconSize: [43, 55],popupAnchor: [-3, -76]});
 var Icon2 = L.icon({iconUrl: './data/2.png',iconSize: [43, 55],popupAnchor: [-3, -76]});
 var Icon3 = L.icon({iconUrl: './data/3.png',iconSize: [43, 55], popupAnchor: [-3, -76]});
@@ -18,16 +19,38 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
   accessToken: 'pk.eyJ1IjoiZWRjbGV5OTQ1MiIsImEiOiJjamdvMGdmZ2owaTdiMndwYTJyM2tteTl2In0.2q25nBNRxzFxeaYahFGQ6g'
 }).addTo(map);
 
+d3.json("./data/dados.json",function(error,data){
+  database=data;
+});
+
 d3.json("./data/pe.json",function(error,dados){
 	dataset=dados;
   inicio(dataset);
     cidades.forEach(function(item){
-        $('select').append($('<option>', {
+        $('#cidadesfiltro').append($('<option>', {
           value: item,
           text: item
       }));
     });
 }); 
+
+
+
+function distrib(feature){
+  return [[Number(feature.properties.Janeiro)],[Number(feature.properties.Fevereiro)],[Number(feature.properties.Março)],[Number(feature.properties.Abril)],[Number(feature.properties.Maio)],[Number(feature.properties.Junho)],[Number(feature.properties.Julho)],[Number(feature.properties.Agosto)],[Number(feature.properties.Setembro)],[Number(feature.properties.Outubro)],[Number(feature.properties.Novembro)],[Number(feature.properties.Dezembro)]];
+}
+
+function cmp(dist1,dist2){
+  var count=0;
+  dist1.forEach(function(d,i){
+    if(dist2[i]<dist1[i]){
+      //console.log(""+dist2[i]+" < "+dist1[i]);
+      count++;
+    }
+  });
+  //console.log(count);
+  return (count/dist1.length);
+}
 
 // criação da div que contém o Título e Subtítulo do Mapa. 
 var info = L.control();

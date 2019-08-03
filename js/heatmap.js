@@ -1,6 +1,7 @@
 var meses=["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
 var map = L.map('vis6').setView([-8.305448,-37.822426], 8);
-var to,fro,latg,lngg,to2,fro2,dataset,heat,alpha=0,left=60,right=100;
+var to,fro,latg,lngg,to2,fro2,dataset,heat,alpha=0,left=60,right=100,interOn;
+var mesSelecionado,anoSelecionado,diaSelecionado,trimestreSelecionado;
 var medias=[],lat,lng,intensity;
 var filterbymouth,filterbytri;
 var dim,Oe,Le,No,Su,zoom;
@@ -16,19 +17,39 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
   accessToken: 'pk.eyJ1IjoiZWRjbGV5OTQ1MiIsImEiOiJjamdvMGdmZ2owaTdiMndwYTJyM2tteTl2In0.2q25nBNRxzFxeaYahFGQ6g'
 }).addTo(map);
 
+function distrib(feature){
+  return [[Number(feature.properties.Janeiro)],[Number(feature.properties.Fevereiro)],[Number(feature.properties.Março)],[Number(feature.properties.Abril)],[Number(feature.properties.Maio)],[Number(feature.properties.Junho)],[Number(feature.properties.Julho)],[Number(feature.properties.Agosto)],[Number(feature.properties.Setembro)],[Number(feature.properties.Outubro)],[Number(feature.properties.Novembro)],[Number(feature.properties.Dezembro)]];
+}
+
+function cmp(dist1,dist2){
+  var count=0;
+  dist1.forEach(function(d,i){
+    if(dist2[i]<dist1[i]){
+      //console.log(""+dist2[i]+" < "+dist1[i]);
+      count++;
+    }
+  });
+  //console.log(count);
+  return (count/dist1.length);
+}
+
 map.on('moveend', function() {
   if(featurename!=undefined || featurename!='off'){
-    compare(dataset);
-  }else{
     inicio(dataset);
+  }else{
+    compare(dataset);
   }
+});
+
+d3.json("./data/dados.json",function(error,data){
+  database=data;
 });
 
 d3.json("./data/pe.json",function(error,dados){
 	dataset=dados;
   inicio(dataset);
   cidades.forEach(function(item){
-    $('select').append($('<option>', {
+    $('#cidadesfiltro').append($('<option>', {
       value: item,
       text: item
     }));
