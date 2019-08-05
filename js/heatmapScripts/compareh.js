@@ -1,5 +1,4 @@
 function compare(dataset){
-  //console.log(dist1);
   addressPoints=[];
   if(heat!= null){
     map.removeLayer(heat);
@@ -13,7 +12,6 @@ function compare(dataset){
   if(anoSelecionado!=undefined){
     dist1= distribuicaoAno(featurename);
   }else if(trimestreSelecionado!=undefined){
-    console.log("entrou");
     dist1= distribuicaoTri(featurename);
   }else if(mesSelecionado!=undefined){
     dist1= distribuicaoMes(featurename);
@@ -32,7 +30,6 @@ function compare(dataset){
         if(anoSelecionado!=undefined){
           dist2= distribuicaoAno(feature.properties.name);
         }else if(trimestreSelecionado!=undefined){
-          //console.log("entrou");
           dist2= distribuicaoTri(feature.properties.name);
         }else if(mesSelecionado!=undefined){
           dist2= distribuicaoMes(feature.properties.name);
@@ -41,8 +38,6 @@ function compare(dataset){
         }else{
           dist2= distribuicaoMes(feature.properties.name);
         }
-        //console.log(dist2);
-        //console.log(dist1);
         var probArea= cmp(dist1,dist2).toFixed(2);
         var area= (turf.area(feature.geometry)/1000000);
         to= layer.getBounds()._southWest.lat;
@@ -75,10 +70,76 @@ function compare(dataset){
   addressPoints = addressPoints.map(function (p) { return [p[0], p[1], p[2]]; });
   heat = L.heatLayer(addressPoints,{maxZoom:18,radius:15}).addTo(map);
   info.update = function (props) {
-    if(featurename==undefined){
-      this._div.innerHTML = '<h5>Levantamento com Base em PE.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade de chuva em 2018.');
+    if(featurename!=undefined){
+      if(anoSelecionado!=undefined){
+
+        if(mesSelecionado!=undefined){
+          this._div.innerHTML = '<h5>Precipitação com base em '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para '+mesSelecionado+'/'+anoSelecionado+'.');
+        }else if(trimestreSelecionado!=undefined){
+          if(diaSelecionado!=undefined){
+            this._div.innerHTML = '<h5>Precipitação com base em '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para os '+diaSelecionado+'ºs dias do '+trimestreSelecionado+'ºtrimestre/'+anoSelecionado+'.');
+          }else{
+            this._div.innerHTML = '<h5>Precipitação com base em '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para o '+trimestreSelecionado+'º trimestre de '+anoSelecionado+'.');
+          }
+        }else if(diaSelecionado!=undefined){
+          this._div.innerHTML = '<h5>Precipitação com base em '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para os '+diaSelecionado+'ºs dias de '+anoSelecionado+'.');
+        }else{
+          this._div.innerHTML = '<h5>Precipitação com base em '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para '+anoSelecionado+'.');
+        }
+
+      }else if(trimestreSelecionado!=undefined){
+        if(diaSelecionado!=undefined){
+            this._div.innerHTML = '<h5>Precipitação com base em '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para os '+diaSelecionado+'ºs dias dos'+trimestreSelecionado+'º trimestres no período.');
+        }else{
+            this._div.innerHTML = '<h5>Precipitação com base em '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para os '+trimestreSelecionado+'ºs trimestres no período.');
+        }
+
+      }else if(mesSelecionado!=undefined){
+        if(diaSelecionado!=undefined){
+            this._div.innerHTML = '<h5>Precipitação com base em '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para os '+diaSelecionado+'ºs dias dos meses de'+mesSelecionado+' no período.');
+        }else{
+            this._div.innerHTML = '<h5>Precipitação com base em '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para os meses de '+mesSelecionado+' no período.');
+        }
+      }else if(diaSelecionado!==undefined){
+            this._div.innerHTML = '<h5>Precipitação com base em '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para os '+diaSelecionado+'ºs dias dos meses no período.');
+      }else{
+          this._div.innerHTML = '<h4> Precipitação com base em '+featurename+'.</h4>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade no período.');
+      }
     }else{
-      this._div.innerHTML = '<h5>Comparação com base em '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade de chuva em 2018.');
+      if(anoSelecionado!=undefined){
+
+        if(mesSelecionado!=undefined){
+          this._div.innerHTML = '<h5>Precipitação com base em PE.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para '+mesSelecionado+'/'+anoSelecionado+'.');
+        }else if(trimestreSelecionado!=undefined){
+          if(diaSelecionado!=undefined){
+            this._div.innerHTML = '<h5>Precipitação com base em PE.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para os '+diaSelecionado+'ºs dias do '+trimestreSelecionado+'ºtrimestre/'+anoSelecionado+'.');
+          }else{
+            this._div.innerHTML = '<h5>Precipitação com base em PE.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para o '+trimestreSelecionado+'º trimestre de '+anoSelecionado+'.');
+          }
+        }else if(diaSelecionado!=undefined){
+          this._div.innerHTML = '<h5>Precipitação com base em PE.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para os '+diaSelecionado+'ºs dias de '+anoSelecionado+'.');
+        }else{
+          this._div.innerHTML = '<h5>Precipitação com base em PE.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para '+anoSelecionado+'.');
+        }
+
+      }else if(trimestreSelecionado!=undefined){
+        if(diaSelecionado!=undefined){
+            this._div.innerHTML = '<h5>Precipitação com base em PE.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para os '+diaSelecionado+'ºs dias dos'+trimestreSelecionado+'º trimestres no período.');
+        }else{
+            this._div.innerHTML = '<h5>Precipitação com base em PE.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para os '+trimestreSelecionado+'ºs trimestres no período.');
+        }
+
+      }else if(mesSelecionado!=undefined){
+        if(diaSelecionado!=undefined){
+            this._div.innerHTML = '<h5>Precipitação com base em PE.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para os '+diaSelecionado+'ºs dias dos meses de'+mesSelecionado+' no período.');
+        }else{
+            this._div.innerHTML = '<h5>Precipitação com base em PE.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para os meses de '+mesSelecionado+' no período.');
+        }
+      }else if(diaSelecionado!==undefined){
+            this._div.innerHTML = '<h5>Precipitação com base em PE.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para os '+diaSelecionado+'ºs dias dos meses no período.');
+      }else{
+          this._div.innerHTML = '<h4> Precipitação com base em PE.</h4>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade no período.');
+      }
     }
   };
   info.addTo(map);

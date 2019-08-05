@@ -51,19 +51,13 @@ function colorN(d){
   }
 }
 
-function distrib(feature){
-  return [[Number(feature.properties.Janeiro)],[Number(feature.properties.Fevereiro)],[Number(feature.properties.Março)],[Number(feature.properties.Abril)],[Number(feature.properties.Maio)],[Number(feature.properties.Junho)],[Number(feature.properties.Julho)],[Number(feature.properties.Agosto)],[Number(feature.properties.Setembro)],[Number(feature.properties.Outubro)],[Number(feature.properties.Novembro)],[Number(feature.properties.Dezembro)]];
-}
-
 function cmp(dist1,dist2){
   var count=0;
   dist1.forEach(function(d,i){
     if(dist2[i]<dist1[i]){
-      //console.log(""+dist2[i]+" < "+dist1[i]);
       count++;
     }
   });
-  //console.log(count);
   return (count/dist1.length);
 }
 

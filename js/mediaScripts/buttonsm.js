@@ -1,7 +1,7 @@
 $(document).ready(function () {
 	$("[name='ano']").change(function(){
 		if('off'==$(this).children("option:selected").val()){
-			console.log("undefined");
+			//console.log("undefined");
 			anoSelecionado=undefined;
 			inicio(dataset);
 		}else{

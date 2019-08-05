@@ -14,7 +14,6 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
   accessToken: 'pk.eyJ1IjoiZWRjbGV5OTQ1MiIsImEiOiJjamdvMGdmZ2owaTdiMndwYTJyM2tteTl2In0.2q25nBNRxzFxeaYahFGQ6g'
 }).addTo(map);
 
-
 d3.json("./data/dados.json",function(error,data){
   database=data;
   d3.json("./data/pe.json",function(error,dados){
@@ -23,10 +22,7 @@ d3.json("./data/dados.json",function(error,data){
   });
 });
 
-
 function cmp(dist1,dist2){
-  //console.log(dist1);
-  //console.log(dist2);
   var count=0;
   dist1.forEach(function(d,i){
     if(dist2[i]<dist1[i]){

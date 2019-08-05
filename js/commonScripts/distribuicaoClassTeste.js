@@ -1,6 +1,5 @@
 class distribuicaoTeste {
   constructor(dist,alpha) {
-    //this.feature=feature;
     this.alpha=alpha;
     this.dist= dist;//distrib(feature);
     this.dist= this.dist.sort(function(a, b){return a - b});

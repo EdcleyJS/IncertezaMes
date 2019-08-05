@@ -25,11 +25,9 @@ function cmp(dist1,dist2){
   var count=0;
   dist1.forEach(function(d,i){
     if(dist2[i]<dist1[i]){
-      //console.log(""+dist2[i]+" < "+dist1[i]);
       count++;
     }
   });
-  //console.log(count);
   return (count/dist1.length);
 }
 

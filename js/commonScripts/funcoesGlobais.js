@@ -1,12 +1,6 @@
-  //console.log(distribuitionMes);
-  //distribuition.sort(function(a, b){return a - b});
-  //var auxiliar= new distribuicaoTeste(distribuitionMes,90);
-  //console.log(auxiliar.cdf().toFixed(2));
 function distribuicaoAno(featurename){
-  //tipo de visualização
   var distdataAno=[];
   var soma=0,soma1=0,soma2=0;
-  //console.log(database);
 
   if(mesSelecionado!=undefined){
     database.forEach(function(d,i){
@@ -107,16 +101,8 @@ function SomaDias(d){
 }
 
 function distribuicaoTri(featurename){
-  //tipo de visualização
   var distdataTrimestre=[];
-  /*console.log(database);
-    database.forEach(function(d,i){
-      if (d.name==featurename){
-          distdataMes.push(SomaDias(d));
-      }
-    });*/
   if(anoSelecionado!=undefined){
-    console.log("ano selecionado");
     database.forEach(function(d,i){
       if(trimestreSelecionado==1){
         if( d.Mês=='Jan'|| d.Mês=='Fev' || d.Mês=='Mar' ){
@@ -216,16 +202,8 @@ function distribuicaoTri(featurename){
 }
 
 function distribuicaoMes(featurename){
-  //tipo de visualização
   var distdataMes=[];
-  /*console.log(database);
-    database.forEach(function(d,i){
-      if (d.name==featurename){
-          distdataMes.push(SomaDias(d));
-      }
-    });*/
   if(anoSelecionado!=undefined){
-    //console.log("ano selecionado");
     database.forEach(function(d,i){
       if (d.name==featurename && d.Mês==mesSelecionado && d.Ano==anoSelecionado){
           distdataMes.push(SomaDias(d));
@@ -244,7 +222,6 @@ function distribuicaoMes(featurename){
       }
     });
   }else{
-    //console.log(database);
     database.forEach(function(d,i){
       if(d.name==featurename){
           distdataMes.push(SomaDias(d));
@@ -273,17 +250,7 @@ function diasToArray(d){
 }
 
 function distribuicaoDia(featurename){
-  //tipo de visualização
   var distdataDia=[];
-  //console.log(database);
-  /*database.forEach(function(d,i){
-    if (d.name==featurename) {
-      diasToArray(d).forEach(function(d,i){
-        distdataDia.push(d);
-      });
-    }
-  });*/
-
   if(anoSelecionado!=undefined){
     database.forEach(function(d,i){
       if (d.name==featurename && d.Ano==anoSelecionado){

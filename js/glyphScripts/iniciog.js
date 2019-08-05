@@ -11,8 +11,6 @@ function inicio(dataset){
     {onEachFeature: function (feature, layer) {
         cidades.push(feature.properties.name);
         //Criação do Popup de cada feature/polígono contendo o nome do proprietário e o cep de localização do edíficio/lote.
-
-
         if(anoSelecionado!=undefined){
           var dist= distribuicaoAno(feature.properties.name);
         }else if(trimestreSelecionado!=undefined){
@@ -26,15 +24,11 @@ function inicio(dataset){
           var dist= distribuicaoMes(feature.properties.name);
         }
 
-
         if(interOn==true){
           var probArea= new distribuicaoIntervalo(dist,left,right);
           var prob= probArea.cdfintervalo().toFixed(2);
-          //console.log("a");
         }else{
           var sdr = document.getElementById("example_id");
-          //console.log(!sdr);
-          //console.log(sdr);
           if(typeof(sdr) != 'undefined' && sdr != null){
             var probArea= new distribuicaoTeste(dist,alpha);
             var prob= probArea.cdf().toFixed(2);
@@ -75,62 +69,91 @@ function inicio(dataset){
         if(area<0){
           area= (area*-1);
         }
-        /*if(zoom>=9){
-          area=area*5;
-        }else{
-          area=area*3;
-        }*/
         var nump= area;
-        //console.log(nump);
-
-        //var p = L.latLng(bounds._southWest.lat + Math.random() * height, bounds._southWest.lng + Math.random() * width);
-        //console.log(leafletPip.pointInLayer(p, L.geoJSON(layer.toGeoJSON()), true));
-        //console.log(leafletPip.pointInLayer(p, L.geoJSON(layer.toGeoJSON()), true));
         var cont=0;
         var cor= '#'+colorN(prob);
-        //console.log(cor);
         for (var i=0; i < nump; i++) {
           var p = L.latLng(bounds._southWest.lat + Math.random() * height, bounds._southWest.lng + Math.random() * width);
           if (leafletPip.pointInLayer(p, L.geoJSON(layer.toGeoJSON()), true).length > 0) {
             dots.push(L.circleMarker(p, {radius: 3, weight: 3, color: cor,renderer: myRenderer}));
           }
-          /*
-          if (leafletPip.pointInLayer(p, L.geoJSON(layer.toGeoJSON()), true).length > 0) {
-
-            // check distance to other dots
-            // for (let j=0; j<dots.length; j++) {
-            //   let dx = p[0]-dots[j][0],
-            //       dy = p[1]-dots[j][1]
-            //   if (Math.sqrt(dx*dx+dy*dy) < options.distance) 
-            //     // continue outer
-            // }
-            // check distance to polygon edge
-            // for (let j=0; j<polygon.length-1; j++) {
-            //   if (distPointEdge(p, polygon[j], polygon[j+1]) < options.edgeDistance) continue outer;
-            // }
-            dots.push(p);
-            if (dots.length == 20) break;
-          }*/
         }
-        /*console.log(cont);
-        dots.forEach(function(d,i){
-          L.circleMarker(d, {radius: 1, weight: 1, color: 'black',renderer: myRenderer}).addTo(map);
-        });*/
-
-        //console.log(dots);
-
-      }
   });
   pontos = L.layerGroup(dots);
   pontos.addTo(map);
 
-  //map.addLayer(markers);
   info.update = function (props) {
-        if(featurename==undefined){
-          this._div.innerHTML = '<h5>Levantamento com base em PE.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade de chuva em 2018.');
+    if(featurename!=undefined){
+      if(anoSelecionado!=undefined){
+
+        if(mesSelecionado!=undefined){
+          this._div.innerHTML = '<h5>Precipitação com base em '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para '+mesSelecionado+'/'+anoSelecionado+'.');
+        }else if(trimestreSelecionado!=undefined){
+          if(diaSelecionado!=undefined){
+            this._div.innerHTML = '<h5>Precipitação com base em '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para os '+diaSelecionado+'ºs dias do '+trimestreSelecionado+'ºtrimestre/'+anoSelecionado+'.');
+          }else{
+            this._div.innerHTML = '<h5>Precipitação com base em '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para o '+trimestreSelecionado+'º trimestre de '+anoSelecionado+'.');
+          }
+        }else if(diaSelecionado!=undefined){
+          this._div.innerHTML = '<h5>Precipitação com base em '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para os '+diaSelecionado+'ºs dias de '+anoSelecionado+'.');
         }else{
-          this._div.innerHTML = '<h5>Comparação com base em '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade de chuva em 2018.');
+          this._div.innerHTML = '<h5>Precipitação com base em '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para '+anoSelecionado+'.');
         }
+
+      }else if(trimestreSelecionado!=undefined){
+        if(diaSelecionado!=undefined){
+            this._div.innerHTML = '<h5>Precipitação com base em '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para os '+diaSelecionado+'ºs dias dos'+trimestreSelecionado+'º trimestres no período.');
+        }else{
+            this._div.innerHTML = '<h5>Precipitação com base em '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para os '+trimestreSelecionado+'ºs trimestres no período.');
+        }
+
+      }else if(mesSelecionado!=undefined){
+        if(diaSelecionado!=undefined){
+            this._div.innerHTML = '<h5>Precipitação com base em '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para os '+diaSelecionado+'ºs dias dos meses de'+mesSelecionado+' no período.');
+        }else{
+            this._div.innerHTML = '<h5>Precipitação com base em '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para os meses de '+mesSelecionado+' no período.');
+        }
+      }else if(diaSelecionado!==undefined){
+            this._div.innerHTML = '<h5>Precipitação com base em '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para os '+diaSelecionado+'ºs dias dos meses no período.');
+      }else{
+          this._div.innerHTML = '<h4> Precipitação com base em '+featurename+'.</h4>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade no período.');
+      }
+    }else{
+      if(anoSelecionado!=undefined){
+
+        if(mesSelecionado!=undefined){
+          this._div.innerHTML = '<h5>Precipitação com base em PE.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para '+mesSelecionado+'/'+anoSelecionado+'.');
+        }else if(trimestreSelecionado!=undefined){
+          if(diaSelecionado!=undefined){
+            this._div.innerHTML = '<h5>Precipitação com base em PE.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para os '+diaSelecionado+'ºs dias do '+trimestreSelecionado+'ºtrimestre/'+anoSelecionado+'.');
+          }else{
+            this._div.innerHTML = '<h5>Precipitação com base em PE.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para o '+trimestreSelecionado+'º trimestre de '+anoSelecionado+'.');
+          }
+        }else if(diaSelecionado!=undefined){
+          this._div.innerHTML = '<h5>Precipitação com base em PE.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para os '+diaSelecionado+'ºs dias de '+anoSelecionado+'.');
+        }else{
+          this._div.innerHTML = '<h5>Precipitação com base em PE.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para '+anoSelecionado+'.');
+        }
+
+      }else if(trimestreSelecionado!=undefined){
+        if(diaSelecionado!=undefined){
+            this._div.innerHTML = '<h5>Precipitação com base em PE.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para os '+diaSelecionado+'ºs dias dos'+trimestreSelecionado+'º trimestres no período.');
+        }else{
+            this._div.innerHTML = '<h5>Precipitação com base em PE.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para os '+trimestreSelecionado+'ºs trimestres no período.');
+        }
+
+      }else if(mesSelecionado!=undefined){
+        if(diaSelecionado!=undefined){
+            this._div.innerHTML = '<h5>Precipitação com base em PE.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para os '+diaSelecionado+'ºs dias dos meses de'+mesSelecionado+' no período.');
+        }else{
+            this._div.innerHTML = '<h5>Precipitação com base em PE.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para os meses de '+mesSelecionado+' no período.');
+        }
+      }else if(diaSelecionado!==undefined){
+            this._div.innerHTML = '<h5>Precipitação com base em PE.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para os '+diaSelecionado+'ºs dias dos meses no período.');
+      }else{
+          this._div.innerHTML = '<h4> Precipitação com base em PE.</h4>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade no período.');
+      }
+    }
   };
   info.addTo(map);
 }
