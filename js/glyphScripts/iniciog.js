@@ -78,7 +78,7 @@ function inicio(dataset){
             dots.push(L.circleMarker(p, {radius: 3, weight: 3, color: cor,renderer: myRenderer}));
           }
         }
-  });
+  }});
   pontos = L.layerGroup(dots);
   pontos.addTo(map);
 
@@ -155,5 +155,7 @@ function inicio(dataset){
       }
     }
   };
+
   info.addTo(map);
+
 }
