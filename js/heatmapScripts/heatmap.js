@@ -43,18 +43,17 @@ map.on('moveend', function() {
 
 d3.json("./data/dados.json",function(error,data){
   database=data;
+  d3.json("./data/pe.json",function(error,dados){
+    dataset=dados;
+    inicio(dataset);
+    cidades.forEach(function(item){
+      $('#cidadesfiltro').append($('<option>', {
+        value: item,
+        text: item
+      }));
+    });
+  }); 
 });
-
-d3.json("./data/pe.json",function(error,dados){
-	dataset=dados;
-  inicio(dataset);
-  cidades.forEach(function(item){
-    $('#cidadesfiltro').append($('<option>', {
-      value: item,
-      text: item
-    }));
-  });
-}); 
 
 // criação da div que contém o Título e Subtítulo do Mapa. 
 var info = L.control();

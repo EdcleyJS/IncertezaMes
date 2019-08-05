@@ -2,10 +2,11 @@ function compare(dataset){
   info.remove();
   if(GeoLayer!= null){
       GeoLayer.clearLayers();
+      pontos.clearLayers();
   }
-  if(markers!= null){
+  /*if(markers!= null){
     markers.clearLayers();
-  }
+  }*/
   var dist1,dist2;
   if(anoSelecionado!=undefined){
     dist1= distribuicaoAno(featurename);
@@ -19,6 +20,7 @@ function compare(dataset){
   }else{
     dist1= distribuicaoMes(featurename);
   }
+  var dots = [];
   GeoLayer =L.geoJson(dataset,
     { onEachFeature: function (feature, layer) {
         //Criação do Popup de cada feature/polígono contendo o nome do proprietário e o cep de localização do edíficio/lote.
@@ -34,8 +36,9 @@ function compare(dataset){
         }else{
           dist2= distribuicaoMes(feature.properties.name);
         }
-        //console.log(dist2);
         var prob= cmp(dist1,dist2).toFixed(2);
+        //console.log(dist2);
+        /*
         if(prob>=0.86){
           marker=L.marker(layer.getBounds().getCenter(), {icon: Icon1});
         }else if(prob>=0.7){
@@ -51,10 +54,32 @@ function compare(dataset){
         }else{
           marker=L.marker(layer.getBounds().getCenter(), {icon: Icon7});
         }
-        markers.addLayer(marker);
+        markers.addLayer(marker);*/
+        var bounds = layer.getBounds();
+        var width = Math.abs(bounds._northEast.lng - bounds._southWest.lng);
+        var height = Math.abs(bounds._northEast.lat - bounds._southWest.lat);
+        var area= (turf.area(feature.geometry)/10000000);
+        area= area/2;
+        var intensity= (prob*5);
+        var zoom= map.getZoom();
+        if(area<0){
+          area= (area*-1);
+        }
+        var nump= area;
+        var cont=0;
+        var cor= '#'+colorN(prob);
+        for (var i=0; i < nump; i++) {
+          var p = L.latLng(bounds._southWest.lat + Math.random() * height, bounds._southWest.lng + Math.random() * width);
+          if (leafletPip.pointInLayer(p, L.geoJSON(layer.toGeoJSON()), true).length > 0) {
+            dots.push(L.circleMarker(p, {radius: 3, weight: 3, color: cor,renderer: myRenderer}));
+          }
+        }
+
       }
   });
-  map.addLayer(markers);
+  pontos = L.layerGroup(dots);
+  pontos.addTo(map);
+  //map.addLayer(markers);
   info.update = function (props) {
     if(featurename==undefined){
       this._div.innerHTML = '<h5>Levantamento com base em PE.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade de chuva em 2018.');

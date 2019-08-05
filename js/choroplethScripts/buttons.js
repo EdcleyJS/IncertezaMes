@@ -1,36 +1,4 @@
 $(document).ready(function () {
-   	$( "[name='buttons']" ).change(function() {
-   		featurename=undefined;
-   		filterbymouth=this.value;
-   		inicio(dataset);
-   		if(document.getElementById('dft').checked== false) {
-		  	document.getElementById("dft2").disabled = true;
-		  	for (var i = 1; i < 5; i++) {
-				document.getElementById("trimestre"+i).disabled = true;
-			}
-		}else if(document.getElementById('dft').checked == true) {
-		  	document.getElementById("dft2").disabled = false;
-	  		for (var i = 1; i < 5; i++) {
-				document.getElementById("trimestre"+i).disabled = false;
-			}
-		}
-	});
-   	$( "[name='tri']" ).change(function() {
-   		featurename=undefined;
-   		filterbytri=this.value;
-   		inicio(dataset);
-   		if(document.getElementById('dft2').checked== false) {
-			document.getElementById("dft").disabled = true;
-			for (var i = 1; i < 13; i++) {
-				document.getElementById("button"+i).disabled = true;
-			}
-		}else if(document.getElementById('dft2').checked== true) {
-		  	document.getElementById("dft").disabled = false;
-			for (var i = 1; i < 13; i++) {
-				document.getElementById("button"+i).disabled = false;
-			}
-		}
-	});
 	$("#example_id").ionRangeSlider({
 		min: 0,
         max: 300,
@@ -51,9 +19,11 @@ $(document).ready(function () {
         skin: "big",
         grid: true,
         onFinish: function (data) {
+        	interOn=true;
             left=data.from;
             right=data.to;
             inicio(dataset);
+            interOn=false;
         }
 	});
 	$("[name='ano']").change(function(){
@@ -80,7 +50,7 @@ $(document).ready(function () {
 			}else{
 				$("[name='meses']").prop('selectedIndex',0);
 				$("[name='meses']").prop('disabled', true);
-				console.log("entrou");
+				//console.log("entrou");
 				trimestreSelecionado=$(this).children("option:selected").val();
 				inicio(dataset);
 			}
@@ -97,7 +67,7 @@ $(document).ready(function () {
 			}else{
 				$("[name='trimestre']").prop('selectedIndex',0);
 				$("[name='trimestre']").prop('disabled', true);
-				console.log("entrou");
+				//console.log("entrou");
 				mesSelecionado=$(this).children("option:selected").val();
 				inicio(dataset);
 			}

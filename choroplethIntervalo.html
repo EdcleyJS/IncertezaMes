@@ -2,9 +2,10 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-	    <meta name="author" content="Edcley José da Silva 032018 POS">
+	    <meta name="author" content="Edcley José da Silva 032019 POS">
 	    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-	    <title>Média</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	    <title>Choropleth</title>
 	    <!--CSS-->
 		<link rel="stylesheet" href="./css/cloropleth.css">
 		<link rel="stylesheet" href="./css/leaflet.css"/>
@@ -18,20 +19,27 @@
 		<script type="text/javascript" src="./js/commonScripts/bootstrap.min.js"></script>
 		<script type="text/javascript" src="./js/commonScripts/ion.rangeSlider.min.js"></script> 
 		<!-- JQuery Specific-->
-		<script type="text/javascript" src="./js/mediaScripts/buttonsm.js"></script>
+		<script type="text/javascript" src="./js/choroplethScripts/buttons.js"></script>
 		<!-- JavaScript-->
 		<script type="text/javascript" src="./js/commonScripts/d3.v4.min.js"></script>
 		<script type="text/javascript" src="./js/commonScripts/math.min.js"></script>
 		<script type="text/javascript" src="./js/leafletScripts/leaflet.js"></script>
 		<script type="text/javascript" src='./js/commonScripts/palette.js'></script>
+		<script type="text/javascript" src="./js/commonScripts/distribuicaoIClassTeste.js"></script>
 		<script type="text/javascript" src="./js/commonScripts/distribuicaoClassTeste.js"></script>
 		<script type="text/javascript" src="./js/commonScripts/funcoesGlobais.js"></script>
+		<!-- Specific Scripts-->
+		<script type="text/javascript" src="./js/choroplethScripts/compare.js"></script>
+		<script type="text/javascript" src="./js/choroplethScripts/inicio.js"></script>
 	</head>
 	<body >
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
-				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 panel panel-default">
-					<div id="vis6" style="height: 500px"></div>
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 panel panel-default">
+					<div id="vis6" style="height: 400px; width: 100%"></div>
+					<br>
+					<input type="text" id="sliderrange2" name="example_name" value="" />
+					<label for="sliderrange"> Posicione os ponteiros para formar o intervalo a ser analisado.</label>
 				</div>
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 panel panel-default">
 					<br>
@@ -39,7 +47,7 @@
 						<div class="" >
 							<h7 class="card-title" style="margin-left: 10px;"><b> Filtrar por Ano:</b></h7>
 						</div>
-						<select class="custom-select" id="#anofiltro" name="ano">
+						<select class="custom-select" id="anofiltro" name="ano">
 						  	<option selected value="off">Desabilitar</option>
 						  	<option value="2016">2016</option>
 						  	<option value="2017">2017</option>
@@ -53,7 +61,7 @@
 						<div class="" >
 							<h7 class="card-title" style="margin-left: 10px;"><b> Filtrar por Trismestre:</b></h7>
 						</div>
-						<select class="custom-select" id="#anofiltro" name="trimestre">
+						<select class="custom-select" id="trimestre" name="trimestre">
 						  	<option selected value="off">Desabilitar</option>
 						  	<option value="1">1º Trimestre</option>
 						  	<option value="2">2º Trimestre</option>
@@ -68,7 +76,7 @@
 						<div class="" >
 							<h7 class="card-title" style="margin-left: 10px;"><b> Filtrar por Mês:</b></h7>
 						</div>
-						<select class="custom-select" id="#mesesfiltro" name="meses">
+						<select class="custom-select" id="mesesfiltro" name="meses">
 						  	<option selected value="off">Desabilitar</option>
 						  	<option value="Jan">Janeiro</option>
 						  	<option value="Fev">Fevereiro</option>
@@ -91,7 +99,7 @@
 						<div class="" >
 							<h7 class="card-title" style="margin-left: 10px;"><b> Filtrar por Dia:</b></h7>
 						</div>
-						<select class="custom-select" id="#diasfiltro" name="dias">
+						<select class="custom-select" id="diasfiltro" name="dias">
 						  	<option selected value="off">Desabilitar</option>
 						  	<option value="1">1</option>
 						  	<option value="2">2</option>
@@ -129,18 +137,18 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="card" style="width: 58rem; margin-top: 1rem;">
-				<h5 class="card-title" style="margin-left: 1rem;"><b>Overview</b></h5>
-				  <ul class="list-group list-group-flush">
+				<div class="card col-lg-12 col-md-12 col-sm-12 col-xs-12 panel panel-default" style="width: 58rem; margin-top: 1rem;">
+					<h5 class="card-title" style="margin-left: 1rem;"><b>Overview</b></h5>
+				  	<ul class="list-group list-group-flush">
 				    <li class="list-group-item">
-				    	<p>Esta visualização exibe apenas a média acumulada de chuva de cada área.</p> 
-				    	<p>É possível utilizar o filtro trimestre do ano para refinar o valor da média.</p>
-				    	<p>Ao desabilitar o filtro o valor padrão é restaurado.</p>
+				    	<p>Esta visualização exibe a probabilidade acumulada de chuva com base nos dados observados nas áreas.</p>
+				    	<p>Clicando 2X em uma área as demais são comparadas com relação ao range da área escolhida.</p> 
+				    	<p>Ao clicar novamente, duas vezes na mesma área a comparação é desfeita.</p>
 				    </li>
-				  </ul>
+				 	</ul>
 				</div>
 			</div>
 		</div>
 	</body>
-	<script type="text/javascript" src="./js/mediaScripts/media.js"></script>
+	<script type="text/javascript" src="./js/choroplethScripts/choropleth.js"></script>
 </html>

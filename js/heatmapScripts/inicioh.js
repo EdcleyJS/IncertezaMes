@@ -47,9 +47,8 @@ function inicio(dataset){
               //console.log(dist);
             }
         }else{
-          //console.log("a");
-          var probArea= new distribuicaoIntervalo(dist,left,right);
-          var prob= probArea.cdfintervalo().toFixed(2);
+          var probArea= new distribuicaoTeste(dist,alpha);
+          var prob= probArea.cdf().toFixed(2);
         }
       }
 

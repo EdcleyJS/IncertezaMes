@@ -79,7 +79,6 @@ function colorN(d){
     }
   }
 }
-/*
 function whenClicked(e) {              
   var slider = $("#example_id").data("ionRangeSlider");
   if(featurename==e.target.feature.properties.name){
@@ -90,7 +89,7 @@ function whenClicked(e) {
     });
   }else{
     featurename=e.target.feature.properties.name;
-    /*var dist= distrib(e.target.feature);
+    var dist= distrib(e.target.feature);
     dist= dist.sort(function(a, b){return a - b});
     left=Number(dist[0]); right=Number(dist[11]);
     compare(dataset);
@@ -99,7 +98,6 @@ function whenClicked(e) {
     });
   }
 }
-*/
 // criação da div que contém o Título e Subtítulo do Mapa. 
 var info = L.control();
 info.onAdd = function (mymap) {

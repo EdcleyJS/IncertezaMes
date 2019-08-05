@@ -2,6 +2,7 @@ function inicio(dataset){
   if(GeoLayer!= null){
     GeoLayer.clearLayers();
   }
+  var str = ""+window.location.href;
   GeoLayer =L.geoJson(dataset,
     {style: function(feature){
       //Style para definir configurações dos polígonos a serem desenhados e colorir com base na escala criada.
@@ -17,15 +18,31 @@ function inicio(dataset){
       }else{
         var dist= distribuicaoMes(feature.properties.name);
       }
-      if(feature.properties.name=='Recife'){
+
+      if(interOn==true){
+        var probArea= new distribuicaoIntervalo(dist,left,right);
+        var prob= probArea.cdfintervalo().toFixed(2);
+        //console.log("a");
+      }else{
+        var sdr = document.getElementById("example_id");
+        //console.log(!sdr);
+        //console.log(sdr);
+        if(typeof(sdr) != 'undefined' && sdr != null){
+          var probArea= new distribuicaoTeste(dist,alpha);
+          var prob= probArea.cdf().toFixed(2);
+            if(feature.properties.name=='Recife'){
               //console.log(dist);
+            }
+        }else{
+          var probArea= new distribuicaoTeste(dist,alpha);
+          var prob= probArea.cdf().toFixed(2);
+        }
       }
 
-      var area= new distribuicaoTeste(dist,alpha);
         return {
             weight: 0.5,
             opacity: 1,
-            fillColor: "#"+colorN(area.cdf()),
+            fillColor: "#"+colorN(prob),
             color: 'black',
             fillOpacity: 0.9
           };
@@ -42,16 +59,34 @@ function inicio(dataset){
         }else{
           var dist= distribuicaoMes(feature.properties.name);
         }
-        if(feature.properties.name=='Recife'){
+        if(interOn==true){
+          var probArea= new distribuicaoIntervalo(dist,left,right);
+          var prob= probArea.cdfintervalo().toFixed(2);
+          //console.log("a");
+        }else{
+          var sdr = document.getElementById("example_id");
+          //console.log(!sdr);
+          //console.log(sdr);
+          if(typeof(sdr) != 'undefined' && sdr != null){
+            var probArea= new distribuicaoTeste(dist,alpha);
+            var prob= probArea.cdf().toFixed(2);
+              if(feature.properties.name=='Recife'){
                 //console.log(dist);
+              }
+          }else{
+            var probArea= new distribuicaoIntervalo(dist,left,right);
+            var prob= probArea.cdfintervalo().toFixed(2);
+          }
         }
         
         var area= new distribuicaoTeste(dist,alpha);
         //Criação do Popup de cada feature/polígono contendo o nome do proprietário e o cep de localização do edíficio/lote.
-        layer.bindPopup("Probabilidade em "+feature.properties.name+" (2018): "+area.cdf().toFixed(2));
-        /*layer.on({
-          dblclick: whenClicked
-        });*/
+        layer.bindPopup("Probabilidade em "+feature.properties.name+" (2018): "+prob);
+        if(str.includes("choroplethCompare.html")){
+          layer.on({
+            dblclick: whenClicked
+          });
+        }
         layer.on('mouseover', function (e) {
             highlightFeature(e);
             this.openPopup();

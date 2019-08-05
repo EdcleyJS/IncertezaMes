@@ -5,164 +5,196 @@
 	    <meta name="author" content="Edcley José da Silva 032018 POS">
 	    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	    <title>HeatMap</title>
+	    <!--CSS-->
 		<link rel="stylesheet" href="./css/cloropleth.css">
 		<link rel="stylesheet" href="./css/leaflet.css"/>
 		<link rel="shortcut icon" type="image/png" href="./data/favicon-96x96.png"/>
 		<link rel="shortcut icon" type="image/png" href="./data/favicon-96x96.png"/>
-		<title>HeatMap</title>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-		<!--Plugin CSS file with desired skin-->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.0/css/ion.rangeSlider.min.css"/>
-		<!--Plugin JavaScript file-->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.0/js/ion.rangeSlider.min.js"></script> 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-		
-		<script type="text/javascript" src="./js/d3.v4.min.js"></script>
-		<script type="text/javascript" src="./js/math.min.js"></script>
-	    <script type="text/javascript" src="./js/leaflet.js"></script>
-		<script type="text/javascript" src='./js/palette.js'></script>
-		<script type="text/javascript" src='./js/leaflet-heat.js'></script>
-		<script type="text/javascript" src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
-		<script type="text/javascript" src="./js/distribuicaoClassTeste.js"></script>
-		<script type="text/javascript" src="./js/distribuicaoIClassTeste.js"></script>
-		<script type="text/javascript" src="./js/funcoesGlobais.js"></script>
-		<script type="text/javascript" src="./js/inicioh.js"></script>
-		<script type="text/javascript" src="./js/compareh.js"></script>
-		<script type="text/javascript" src="./js/buttonsh.js"></script>
+		<link rel="stylesheet" href="./css/bootstrap.min.css">
+		<link rel="stylesheet" href="./css/ion.rangeSlider.min.css"/>
+		<!-- JavaScript-->
+		<script type="text/javascript" src="./js/commonScripts/jquery.min.js"></script>
+		<script type="text/javascript" src="./js/commonScripts/popper.min.js"></script>
+		<script type="text/javascript" src="./js/commonScripts/bootstrap.min.js"></script>
+		<script type="text/javascript" src="./js/commonScripts/ion.rangeSlider.min.js"></script> 
+		<!-- JQuery Specific-->
+		<script type="text/javascript" src="./js/heatmapScripts/buttonsh.js"></script>
+		<!-- JavaScript-->
+		<script type="text/javascript" src="./js/commonScripts/d3.v4.min.js"></script>
+		<script type="text/javascript" src="./js/commonScripts/math.min.js"></script>
+		<script type="text/javascript" src="./js/leafletScripts/leaflet.js"></script>
+		<script type="text/javascript" src='./js/heatmapScripts/turf.min.js'></script>
+		<script type="text/javascript" src='./js/heatmapScripts/leaflet-heat.js'></script>		
+		<script type="text/javascript" src='./js/commonScripts/palette.js'></script>
+		<script type="text/javascript" src="./js/commonScripts/distribuicaoIClassTeste.js"></script>
+		<script type="text/javascript" src="./js/commonScripts/distribuicaoClassTeste.js"></script>
+		<script type="text/javascript" src="./js/commonScripts/funcoesGlobais.js"></script>
+		<!-- Specific Scripts-->
+		<script type="text/javascript" src="./js/heatmapScripts/inicioh.js"></script>
+		<script type="text/javascript" src="./js/heatmapScripts/compareh.js"></script>
 	</head>
 	<body>
 		<div class="container">
 			</br>
-			<div class="row">
-				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 panel panel-default">
-					<div id="vis6" style="height: 400px; width: 100%"></div>
-				</div>
-				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 panel panel-default">
-					<br>
-					<input type="text" id="example_id" name="example_name" value="" />
-					<label for="example_id"> Posicione o ponteiro para escolher um valor.</label>
-				</div>
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 panel panel-default">
-					<br>
-					<div class="card h-25 ">
-						<div class="" >
-							<h7 class="card-title" style="margin-left: 10px;"><b> Filtrar por Cidade:</b></h7>
+			<ul class="nav nav-pills" id="myTab" role="tablist">
+				<li class="nav-item">
+				    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Range Simples</a>
+				</li>
+				<li class="nav-item">
+				    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#perfil" role="tab" aria-controls="profile" aria-selected="false">Range de Intervalo</a>
+				</li>
+				<li class="nav-item">
+				    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contato" role="tab" aria-controls="contact" aria-selected="false">Comparação de Áreas</a>
+				</li>
+			</ul>
+			<div class="tab-content" id="myTabContent">
+				<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 panel panel-default">
+							<div id="vis6" style="height: 400px; width: 100%"></div>
 						</div>
-						<select class="custom-select" id="cidadesfiltro" name="cidadesfiltro">
-						  	<option selected value="off">Desabilitar</option>
-						</select>
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 panel panel-default">
+							<br>
+							<input type="text" id="example_id" name="example_name" value="" />
+							<label for="example_id"> Posicione o ponteiro para escolher um valor.</label>
+						</div>
+						<!--<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 panel panel-default">
+							<br>
+							<div class="card h-25 ">
+								<div class="" >
+									<h7 class="card-title" style="margin-left: 10px;"><b> Filtrar por Cidade:</b></h7>
+								</div>
+								<select class="custom-select" id="cidadesfiltro" name="cidadesfiltro">
+								  	<option selected value="off">Desabilitar</option>
+								</select>
+							</div>
+						</div>-->
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 panel panel-default">
+							<br>
+							<div class="card h-25">
+								<div class="" >
+									<h7 class="card-title" style="margin-left: 10px;"><b> Filtrar por Ano:</b></h7>
+								</div>
+								<select class="custom-select" id="#anofiltro" name="ano">
+								  	<option selected value="off">Desabilitar</option>
+								  	<option value="2016">2016</option>
+								  	<option value="2017">2017</option>
+								  	<option value="2018">2018</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 panel panel-default">
+							<br>
+							<div class="card h-25">
+								<div class="" >
+									<h7 class="card-title" style="margin-left: 10px;"><b> Filtrar por Trismestre:</b></h7>
+								</div>
+								<select class="custom-select" id="#anofiltro" name="trimestre">
+								  	<option selected value="off">Desabilitar</option>
+								  	<option value="1">1º Trimestre</option>
+								  	<option value="2">2º Trimestre</option>
+								  	<option value="3">3º Trimestre</option>
+								  	<option value="4">4º Trimestre</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 panel panel-default">
+							<br>
+							<div class="card h-25">
+								<div class="" >
+									<h7 class="card-title" style="margin-left: 10px;"><b> Filtrar por Mês:</b></h7>
+								</div>
+								<select class="custom-select" id="#mesesfiltro" name="meses">
+								  	<option selected value="off">Desabilitar</option>
+								  	<option value="Jan">Janeiro</option>
+								  	<option value="Fev">Fevereiro</option>
+								  	<option value="Mar">Março</option>
+								  	<option value="Abr">Abril</option>
+								  	<option value="Mai">Maio</option>
+								  	<option value="Jun">Junho</option>
+								  	<option value="Jul">Julho</option>
+								  	<option value="Ago">Agosto</option>
+								  	<option value="Set">Setembro</option>
+								  	<option value="Out">Outubro</option>
+								  	<option value="Nov">Novembro</option>
+								  	<option value="Dez">Dezembro</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 panel panel-default">
+							<br>
+							<div class="card h-25">
+								<div class="" >
+									<h7 class="card-title" style="margin-left: 10px;"><b> Filtrar por Dia:</b></h7>
+								</div>
+								<select class="custom-select" id="#diasfiltro" name="dias">
+								  	<option selected value="off">Desabilitar</option>
+								  	<option value="1">1</option>
+								  	<option value="2">2</option>
+								  	<option value="3">3</option>
+								  	<option value="4">4</option>
+								  	<option value="5">5</option>
+								  	<option value="6">6</option>
+								  	<option value="7">7</option>
+								  	<option value="8">8</option>
+								  	<option value="9">9</option>
+								  	<option value="10">10</option>
+								  	<option value="11">11</option>
+								  	<option value="12">12</option>
+								  	<option value="13">13</option>
+								  	<option value="14">14</option>
+								  	<option value="15">15</option>
+								  	<option value="16">16</option>
+								  	<option value="17">17</option>
+								  	<option value="18">18</option>
+								  	<option value="19">19</option>
+								  	<option value="20">20</option>
+								  	<option value="21">21</option>
+								  	<option value="22">22</option>
+								  	<option value="23">23</option>
+								  	<option value="24">24</option>
+								  	<option value="25">25</option>
+								  	<option value="26">26</option>
+								  	<option value="27">27</option>
+								  	<option value="28">28</option>
+								  	<option value="29">29</option>
+								  	<option value="30">30</option>
+								  	<option value="31">31</option>
+								</select>
+							</div>
+						</div>
+						
+					</div>
+					<div class="row">
+						<div class="card" style="width: 58rem; margin-top: 1rem;">
+							<h5 class="card-title" style="margin-left: 1rem;"><b>Overview</b></h5>
+						  	<ul class="list-group list-group-flush">
+						    	<li class="list-group-item">
+						    		<p>Esta visualização exibe a probabilidade acumulada de chuva com base nos dados observados nas áreas.</p>
+						    		<p>As áreas com maiores chances possuem coloraçao mais forte, assim as menores possuem coloração mais fraca.</p>
+						    	</li>
+						  	</ul>
+						</div>
 					</div>
 				</div>
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 panel panel-default">
-					<br>
-					<div class="card h-25">
-						<div class="" >
-							<h7 class="card-title" style="margin-left: 10px;"><b> Filtrar por Ano:</b></h7>
+				<div class="tab-pane fade" id="perfil" role="tabpanel" aria-labelledby="profile-tab">
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">	
+							<iframe src="./heatmapIntervalo.html" width="103%" height="496%" allowTransparency="true" scrolling="no" frameborder="0" 
+							marginheight="0" marginwidth='0' style="margin-left: -1.5%"></iframe>
 						</div>
-						<select class="custom-select" id="#anofiltro" name="ano">
-						  	<option selected value="off">Desabilitar</option>
-						  	<option value="2016">2016</option>
-						  	<option value="2017">2017</option>
-						  	<option value="2018">2018</option>
-						</select>
 					</div>
 				</div>
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 panel panel-default">
-					<br>
-					<div class="card h-25">
-						<div class="" >
-							<h7 class="card-title" style="margin-left: 10px;"><b> Filtrar por Trismestre:</b></h7>
+				<div class="tab-pane fade" id="contato" role="tabpanel" aria-labelledby="contact-tab">
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<iframe src="./heatmapCompare.html" width="103%" height="471%" allowTransparency="true" scrolling="no" frameborder="0" marginheight="0" marginwidth='0' style="margin-left: -1.5%"></iframe>
 						</div>
-						<select class="custom-select" id="#anofiltro" name="trimestre">
-						  	<option selected value="off">Desabilitar</option>
-						  	<option value="1">1º Trimestre</option>
-						  	<option value="2">2º Trimestre</option>
-						  	<option value="3">3º Trimestre</option>
-						  	<option value="4">4º Trimestre</option>
-						</select>
 					</div>
-				</div>
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 panel panel-default">
-					<br>
-					<div class="card h-25">
-						<div class="" >
-							<h7 class="card-title" style="margin-left: 10px;"><b> Filtrar por Mês:</b></h7>
-						</div>
-						<select class="custom-select" id="#mesesfiltro" name="meses">
-						  	<option selected value="off">Desabilitar</option>
-						  	<option value="Jan">Janeiro</option>
-						  	<option value="Fev">Fevereiro</option>
-						  	<option value="Mar">Março</option>
-						  	<option value="Abr">Abril</option>
-						  	<option value="Mai">Maio</option>
-						  	<option value="Jun">Junho</option>
-						  	<option value="Jul">Julho</option>
-						  	<option value="Ago">Agosto</option>
-						  	<option value="Set">Setembro</option>
-						  	<option value="Out">Outubro</option>
-						  	<option value="Nov">Novembro</option>
-						  	<option value="Dez">Dezembro</option>
-						</select>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 panel panel-default">
-					<br>
-					<div class="card h-25">
-						<div class="" >
-							<h7 class="card-title" style="margin-left: 10px;"><b> Filtrar por Dia:</b></h7>
-						</div>
-						<select class="custom-select" id="#diasfiltro" name="dias">
-						  	<option selected value="off">Desabilitar</option>
-						  	<option value="1">1</option>
-						  	<option value="2">2</option>
-						  	<option value="3">3</option>
-						  	<option value="4">4</option>
-						  	<option value="5">5</option>
-						  	<option value="6">6</option>
-						  	<option value="7">7</option>
-						  	<option value="8">8</option>
-						  	<option value="9">9</option>
-						  	<option value="10">10</option>
-						  	<option value="11">11</option>
-						  	<option value="12">12</option>
-						  	<option value="13">13</option>
-						  	<option value="14">14</option>
-						  	<option value="15">15</option>
-						  	<option value="16">16</option>
-						  	<option value="17">17</option>
-						  	<option value="18">18</option>
-						  	<option value="19">19</option>
-						  	<option value="20">20</option>
-						  	<option value="21">21</option>
-						  	<option value="22">22</option>
-						  	<option value="23">23</option>
-						  	<option value="24">24</option>
-						  	<option value="25">25</option>
-						  	<option value="26">26</option>
-						  	<option value="27">27</option>
-						  	<option value="28">28</option>
-						  	<option value="29">29</option>
-						  	<option value="30">30</option>
-						  	<option value="31">31</option>
-						</select>
-					</div>
-				</div>
-				
-			</div>
-			<div class="row">
-				<div class="card" style="width: 58rem; margin-top: 1rem;">
-					<h5 class="card-title" style="margin-left: 1rem;"><b>Overview</b></h5>
-				  	<ul class="list-group list-group-flush">
-				    	<li class="list-group-item">
-				    		<p>Esta visualização exibe a probabilidade acumulada de chuva com base nos dados observados nas áreas.</p>
-				    		<p>As áreas com maiores chances possuem coloraçao mais forte, assim as menores possuem coloração mais fraca.</p>
-				    	</li>
-				  	</ul>
 				</div>
 			</div>
 		</div>
 	</body>
-	<script type="text/javascript" src="./js/heatmap.js"></script>
+	<script type="text/javascript" src="./js/heatmapScripts/heatmap.js"></script>
 </html>
