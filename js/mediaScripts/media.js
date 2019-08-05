@@ -111,6 +111,12 @@ function inicio(dados){
           var probArea= new distribuicaoTeste(dist,0);
           var media= probArea.media().toFixed(2);
           layer.bindPopup("Precipitação média acumulada em "+feature.properties.name+" (período de 2018): "+media+" mm.");
+          layer.on('mouseover', function (e) {
+              this.openPopup();
+          });
+          layer.on('mouseout', function (e) {
+              this.closePopup();
+          });
         }
     }).addTo(map);
   grades=[];
