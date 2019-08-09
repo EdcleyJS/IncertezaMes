@@ -1,7 +1,6 @@
 function distribuicaoAno(featurename){
   var distdataAno=[];
   var soma=0,soma1=0,soma2=0;
-
   if(mesSelecionado!=undefined){
     database.forEach(function(d,i){
       if (d.name==featurename && d.Ano==anoSelecionado && d.Mês==mesSelecionado){
@@ -81,7 +80,6 @@ function distribuicaoAno(featurename){
   }
   return distdataAno;
 }
-
 function SomaDias(d){
   var soma=0;
   if(d.Mês=='Abr'||d.Mês=='Jun'||d.Mês=='Set'||d.Mês=='Nov'){
@@ -99,7 +97,6 @@ function SomaDias(d){
   }
   return soma;
 }
-
 function distribuicaoTri(featurename){
   var distdataTrimestre=[];
   if(anoSelecionado!=undefined){
@@ -200,7 +197,6 @@ function distribuicaoTri(featurename){
   }
   return distdataTrimestre;
 }
-
 function distribuicaoMes(featurename){
   var distdataMes=[];
   if(anoSelecionado!=undefined){
@@ -230,7 +226,6 @@ function distribuicaoMes(featurename){
   }
   return distdataMes;
 }
-
 function diasToArray(d){
   var diasArray=[];
   if(d.Mês=='Abr'||d.Mês=='Jun'||d.Mês=='Set'||d.Mês=='Nov'){
@@ -248,7 +243,6 @@ function diasToArray(d){
   }
   return diasArray;
 }
-
 function distribuicaoDia(featurename){
   var distdataDia=[];
   if(anoSelecionado!=undefined){
@@ -357,4 +351,108 @@ function distribuicaoDia(featurename){
     });
   }
   return distdataDia;
+}
+function dotMapPrep(dist){
+  var round=[];
+  var uniqueArray;
+  dist.forEach(function(d,i){
+    round.push(Math.ceil(d/10)*10);
+  });
+  uniqueArray = round.filter(function(item, pos) {
+      return round.indexOf(item) == pos;
+  });
+  var probs = {};
+  //round.forEach(function(x) { counts[x] = (counts[x] || 0)+1; });
+  round.forEach(function(x) {
+    var num=(probs[x] || 0)+1; 
+    num= num/dist.length;
+    probs[x]=num;
+  });
+  uniqueArray.forEach(function(d,i){
+    uniqueArray[i]=[d,probs[d]];
+  });
+  return uniqueArray;
+}
+function infoprops(props){
+    if(featurename!=undefined){
+      if(anoSelecionado!=undefined){
+        if(mesSelecionado!=undefined){
+          return '<h5>Precipitação com base em '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para '+mesSelecionado+'/'+anoSelecionado+'.');
+        }else if(trimestreSelecionado!=undefined){
+          if(diaSelecionado!=undefined){
+            return '<h5>Precipitação com base em '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para os '+diaSelecionado+'ºs dias do '+trimestreSelecionado+'ºtrimestre/'+anoSelecionado+'.');
+          }else{
+            return '<h5>Precipitação com base em '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para o '+trimestreSelecionado+'º trimestre de '+anoSelecionado+'.');
+          }
+        }else if(diaSelecionado!=undefined){
+          return '<h5>Precipitação com base em '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para os '+diaSelecionado+'ºs dias de '+anoSelecionado+'.');
+        }else{
+          return '<h5>Precipitação com base em '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para '+anoSelecionado+'.');
+        }
+      }else if(trimestreSelecionado!=undefined){
+        if(diaSelecionado!=undefined){
+            return '<h5>Precipitação com base em '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para os '+diaSelecionado+'ºs dias dos'+trimestreSelecionado+'º trimestres no período.');
+        }else{
+            return '<h5>Precipitação com base em '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para os '+trimestreSelecionado+'ºs trimestres no período.');
+        }
+      }else if(mesSelecionado!=undefined){
+        if(diaSelecionado!=undefined){
+            return '<h5>Precipitação com base em '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para os '+diaSelecionado+'ºs dias dos meses de'+mesSelecionado+' no período.');
+        }else{
+            return '<h5>Precipitação com base em '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para os meses de '+mesSelecionado+' no período.');
+        }
+      }else if(diaSelecionado!==undefined){
+            return '<h5>Precipitação com base em '+featurename+'.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para os '+diaSelecionado+'ºs dias dos meses no período.');
+      }else{
+          return '<h4> Precipitação com base em '+featurename+'.</h4>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade no período.');
+      }
+    }else{
+      if(anoSelecionado!=undefined){
+
+        if(mesSelecionado!=undefined){
+          return '<h5>Precipitação com base em PE.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para '+mesSelecionado+'/'+anoSelecionado+'.');
+        }else if(trimestreSelecionado!=undefined){
+          if(diaSelecionado!=undefined){
+            return '<h5>Precipitação com base em PE.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para os '+diaSelecionado+'ºs dias do '+trimestreSelecionado+'ºtrimestre/'+anoSelecionado+'.');
+          }else{
+            return '<h5>Precipitação com base em PE.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para o '+trimestreSelecionado+'º trimestre de '+anoSelecionado+'.');
+          }
+        }else if(diaSelecionado!=undefined){
+          return '<h5>Precipitação com base em PE.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para os '+diaSelecionado+'ºs dias de '+anoSelecionado+'.');
+        }else{
+          return '<h5>Precipitação com base em PE.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para '+anoSelecionado+'.');
+        }
+
+      }else if(trimestreSelecionado!=undefined){
+        if(diaSelecionado!=undefined){
+            return '<h5>Precipitação com base em PE.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para os '+diaSelecionado+'ºs dias dos'+trimestreSelecionado+'º trimestres no período.');
+        }else{
+            return '<h5>Precipitação com base em PE.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para os '+trimestreSelecionado+'ºs trimestres no período.');
+        }
+      }else if(mesSelecionado!=undefined){
+        if(diaSelecionado!=undefined){
+            return '<h5>Precipitação com base em PE.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para os '+diaSelecionado+'ºs dias dos meses de'+mesSelecionado+' no período.');
+        }else{
+            return '<h5>Precipitação com base em PE.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para os meses de '+mesSelecionado+' no período.');
+        }
+      }else if(diaSelecionado!==undefined){
+            return '<h5>Precipitação com base em PE.</h5>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade para os '+diaSelecionado+'ºs dias dos meses no período.');
+      }else{
+          return '<h4> Precipitação com base em PE.</h4>' +  (props ?'<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>': ' Probabilidade no período.');
+      }
+    }
+}
+function highlightFeature(e) {
+  var layer = e.target;
+  layer.setStyle({
+    weight: 1.5,
+    color: 'black',
+    fillOpacity: 0.7
+  });
+  if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+    layer.bringToFront();
+  }
+}
+function resetHighlight(e) {
+  GeoLayer.resetStyle(e.target);
 }

@@ -30,6 +30,7 @@
 		<script type="text/javascript" src="./js/commonScripts/distribuicaoIClassTeste.js"></script>
 		<script type="text/javascript" src="./js/commonScripts/distribuicaoClassTeste.js"></script>
 		<script type="text/javascript" src="./js/commonScripts/funcoesGlobais.js"></script>
+		<script type="text/javascript" src="./js/leafletScripts/leaflet-pip.js"></script>
 		<!-- Specific Scripts-->
 		<script type="text/javascript" src="./js/heatmapScripts/inicioh.js"></script>
 		<script type="text/javascript" src="./js/heatmapScripts/compareh.js"></script>
@@ -39,16 +40,16 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 panel panel-default">
-					<div id="vis6" style="height: 400px; width: 100%"></div>
+					<div id="vis6" style="height: 450px; width: 100%"></div>
 				</div>
 				<!--<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 panel panel-default">
 					<br>
 					<input type="text" id="example_id" name="example_name" value="" />
 					<label for="example_id"> Posicione o ponteiro para escolher um valor.</label>
 				</div>-->
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 panel panel-default">
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 panel panel-default h-25 ">
 					<br>
-					<div class="card h-25 ">
+					<div class="card">
 						<div class="" >
 							<h7 class="card-title" style="margin-left: 10px;"><b> Filtrar por Cidade:</b></h7>
 						</div>
@@ -57,9 +58,9 @@
 						</select>
 					</div>
 				</div>
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 panel panel-default">
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 panel panel-default h-25">
 					<br>
-					<div class="card h-25">
+					<div class="card">
 						<div class="" >
 							<h7 class="card-title" style="margin-left: 10px;"><b> Filtrar por Ano:</b></h7>
 						</div>
@@ -71,9 +72,9 @@
 						</select>
 					</div>
 				</div>
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 panel panel-default">
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 panel panel-default h-25">
 					<br>
-					<div class="card h-25">
+					<div class="card">
 						<div class="" >
 							<h7 class="card-title" style="margin-left: 10px;"><b> Filtrar por Trismestre:</b></h7>
 						</div>
@@ -86,9 +87,9 @@
 						</select>
 					</div>
 				</div>
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 panel panel-default">
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 panel panel-default h-25">
 					<br>
-					<div class="card h-25">
+					<div class="card">
 						<div class="" >
 							<h7 class="card-title" style="margin-left: 10px;"><b> Filtrar por Mês:</b></h7>
 						</div>
@@ -109,9 +110,9 @@
 						</select>
 					</div>
 				</div>
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 panel panel-default">
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 panel panel-default h-25">
 					<br>
-					<div class="card h-25">
+					<div class="card">
 						<div class="" >
 							<h7 class="card-title" style="margin-left: 10px;"><b> Filtrar por Dia:</b></h7>
 						</div>
@@ -154,12 +155,13 @@
 				
 			</div>
 			<div class="row">
-				<div class="card col-lg-12 col-md-12 col-sm-12 col-xs-12 panel panel-default" style="width: 58rem; margin-top: 1rem;">
-					<h5 class="card-title" style="margin-left: 1rem;"><b>Overview</b></h5>
-				  	<ul class="list-group list-group-flush">
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
+				<div class="card col-lg-6 col-md-6 col-sm-6 col-xs-6 panel panel-default" style="width: 58rem; margin-top: 1rem;">
+					<h5 class="card-title" style="margin-left: 1rem;text-align: center"><b>Overview</b></h5>
+				  	<ul class="list-group list-group-flush" style="text-align: center">
 				    	<li class="list-group-item">
-				    		<p>Esta visualização exibe a probabilidade acumulada de chuva com base nos dados observados nas áreas.</p>
-				    		<p>As áreas com maiores chances possuem coloraçao mais forte, assim as menores possuem coloração mais fraca.</p>
+						    <p>Esta visualização exibe a probabilidade de chuva em forma de calor para as áreas.</p>
+						    <p>Quanto maior a probabilidade na área a colaração aumenta.</p>
 				    	</li>
 				  	</ul>
 				</div>

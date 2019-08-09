@@ -17,10 +17,6 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
   accessToken: 'pk.eyJ1IjoiZWRjbGV5OTQ1MiIsImEiOiJjamdvMGdmZ2owaTdiMndwYTJyM2tteTl2In0.2q25nBNRxzFxeaYahFGQ6g'
 }).addTo(map);
 
-function distrib(feature){
-  return [[Number(feature.properties.Janeiro)],[Number(feature.properties.Fevereiro)],[Number(feature.properties.Março)],[Number(feature.properties.Abril)],[Number(feature.properties.Maio)],[Number(feature.properties.Junho)],[Number(feature.properties.Julho)],[Number(feature.properties.Agosto)],[Number(feature.properties.Setembro)],[Number(feature.properties.Outubro)],[Number(feature.properties.Novembro)],[Number(feature.properties.Dezembro)]];
-}
-
 function cmp(dist1,dist2){
   var count=0;
   dist1.forEach(function(d,i){
@@ -31,13 +27,13 @@ function cmp(dist1,dist2){
   return (count/dist1.length);
 }
 
-map.on('moveend', function() {
+/*map.on('moveend', function() {
   if(featurename!=undefined || featurename!='off'){
     inicio(dataset);
   }else{
     compare(dataset);
   }
-});
+});*/
 
 d3.json("./data/dados.json",function(error,data){
   database=data;

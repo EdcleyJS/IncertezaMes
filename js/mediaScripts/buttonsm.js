@@ -1,7 +1,6 @@
 $(document).ready(function () {
 	$("[name='ano']").change(function(){
 		if('off'==$(this).children("option:selected").val()){
-			//console.log("undefined");
 			anoSelecionado=undefined;
 			inicio(dataset);
 		}else{
@@ -24,7 +23,6 @@ $(document).ready(function () {
 			}else{
 				$("[name='meses']").prop('selectedIndex',0);
 				$("[name='meses']").prop('disabled', true);
-				//console.log("entrou");
 				trimestreSelecionado=$(this).children("option:selected").val();
 				inicio(dataset);
 			}
@@ -41,7 +39,6 @@ $(document).ready(function () {
 			}else{
 				$("[name='trimestre']").prop('selectedIndex',0);
 				$("[name='trimestre']").prop('disabled', true);
-				//console.log("entrou");
 				mesSelecionado=$(this).children("option:selected").val();
 				inicio(dataset);
 			}

@@ -5,7 +5,7 @@
 	    <meta name="author" content="Edcley José da Silva 032018 POS">
 	    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-		<title>Glyph</title>
+	    <title>Dotmap</title>
 	    <!--CSS-->
 		<link rel="stylesheet" href="./css/cloropleth.css">
 		<link rel="stylesheet" href="./css/leaflet.css"/>
@@ -19,19 +19,21 @@
 		<script type="text/javascript" src="./js/commonScripts/bootstrap.min.js"></script>
 		<script type="text/javascript" src="./js/commonScripts/ion.rangeSlider.min.js"></script> 
 		<!-- JQuery Specific-->
-		<script type="text/javascript" src="./js/glyphScripts/buttonsg.js"></script>
+		<script type="text/javascript" src="./js/dotmapScripts/buttonsd.js"></script>
 		<!-- JavaScript-->
 		<script type="text/javascript" src="./js/commonScripts/d3.v4.min.js"></script>
 		<script type="text/javascript" src="./js/commonScripts/math.min.js"></script>
+		<script type="text/javascript" src='./js/heatmapScripts/turf.min.js'></script>
 		<script type="text/javascript" src="./js/leafletScripts/leaflet.js"></script>
 		<script type="text/javascript" src="./js/leafletScripts/leaflet-pip.js"></script>
 		<script type="text/javascript" src='./js/commonScripts/palette.js'></script>
 		<script type="text/javascript" src="./js/commonScripts/distribuicaoClassTeste.js"></script>
+		<script type="text/javascript" src="./js/commonScripts/distribuicaoIClassTeste.js"></script>
 		<script type="text/javascript" src="./js/commonScripts/funcoesGlobais.js"></script>
 		<!-- Specific Scripts-->
-		<script type="text/javascript" src='./js/heatmapScripts/turf.min.js'></script>
-		<script type="text/javascript" src="./js/glyphScripts/iniciog.js"></script>
-		<script type="text/javascript" src="./js/glyphScripts/compareg.js"></script>
+
+		<script type="text/javascript" src="./js/dotmapScripts/iniciod.js"></script>
+		<script type="text/javascript" src="./js/dotmapScripts/compared.js"></script>
 	</head>
 	<body>
 		<div class="container-fluid">
@@ -39,25 +41,24 @@
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 panel panel-default">
 					<div id="vis6" style="width: 100%; height: 400px"></div>
 				</div>
-				<!--<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 panel panel-default">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 panel panel-default">
 					<br>
-					<input type="text" id="example_id" name="example_name" value="" />
-					<label for="example_id"> Posicione o ponteiro para escolher um valor.</label>
-				</div>-->
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 panel panel-default">
+					<input type="text" id="sliderrange2" name="example_name" value="" />
+					<label for="sliderrange2"> Posicione os ponteiros para formar o intervalo a ser analisado.</label>
+				</div>
+				<!--<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 panel panel-default">
 					<br>
 					<div class="card h-25 ">
 						<div class="" >
 							<h7 class="card-title" style="margin-left: 10px;"><b> Filtrar por Cidade:</b></h7>
 						</div>
-						<select class="custom-select" id="cidadesfiltro" name="cidadesfiltro">
+						<select class="custom-select" id="#anofiltro" name="trimestre">
 						  	<option selected value="off">Desabilitar</option>
 						</select>
 					</div>
-				</div>
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 panel panel-default">
-					<br>
-					<div class="card h-25">
+				</div>-->
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 panel panel-default h-25">
+					<div class="card">
 						<div class="" >
 							<h7 class="card-title" style="margin-left: 10px;"><b> Filtrar por Ano:</b></h7>
 						</div>
@@ -69,9 +70,8 @@
 						</select>
 					</div>
 				</div>
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 panel panel-default">
-					<br>
-					<div class="card h-25">
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 panel panel-default h-25">
+					<div class="card">
 						<div class="" >
 							<h7 class="card-title" style="margin-left: 10px;"><b> Filtrar por Trismestre:</b></h7>
 						</div>
@@ -80,13 +80,12 @@
 						  	<option value="1">1º Trimestre</option>
 						  	<option value="2">2º Trimestre</option>
 						  	<option value="3">3º Trimestre</option>
-						  	<option value="4">4º Trimestre</option>
+						  	<option value="4">3º Trimestre</option>
 						</select>
 					</div>
 				</div>
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 panel panel-default">
-					<br>
-					<div class="card h-25">
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 panel panel-default h-25">
+					<div class="card">
 						<div class="" >
 							<h7 class="card-title" style="margin-left: 10px;"><b> Filtrar por Mês:</b></h7>
 						</div>
@@ -107,9 +106,8 @@
 						</select>
 					</div>
 				</div>
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 panel panel-default">
-					<br>
-					<div class="card h-25">
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 panel panel-default h-25">
+					<div class="card">
 						<div class="" >
 							<h7 class="card-title" style="margin-left: 10px;"><b> Filtrar por Dia:</b></h7>
 						</div>
@@ -155,8 +153,10 @@
 					<h5 class="card-title" style="margin-left: 1rem;"><b>Overview</b></h5>
 					<ul class="list-group list-group-flush">
 					    <li class="list-group-item">
-					    	<p>Esta visualização exibe a probabilidade acumulada de chuva com base nos dados observados nas áreas.</p> 
-					    	<p>Os Glyphs representam faixas de probabilidade.</p>
+					    	<p>
+					    		Esta visualização exibe a probabilidade acumulada de chuva com base nos dados observados nas áreas.
+					    	</p> 
+					    	<p>Os dotmaps representam faixas de probabilidade.</p>
 					    	<!--<p>
 					    		<img src="./data/1.png" alt="icon1" style="width: 2rem; height: 2rem">100-86%. 
 					    		<img src="./data/2.png" alt="icon2" style="width: 2rem; height: 2rem">85-70%. 
@@ -172,5 +172,5 @@
 			</div>
 		</div>
 	</body>
-	<script type="text/javascript" src="./js/glyphScripts/glyph.js"></script>
+	<script type="text/javascript" src="./js/dotmapScripts/dotmap.js"></script>
 </html>

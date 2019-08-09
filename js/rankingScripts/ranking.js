@@ -1,8 +1,7 @@
-var filterbymouth,filterbytri,alpha=0,left=60,right=100,database,interOn;
-var mesSelecionado,anoSelecionado,diaSelecionado,trimestreSelecionado;
 var map = L.map('vis6').setView([-8.305448,-37.822426], 8);
+var filterbymouth,filterbytri,alpha=0,left=60,right=100,database,interOn;
 map.doubleClickZoom.disable();
-var selecionados=[];
+var mesSelecionado,anoSelecionado,diaSelecionado,trimestreSelecionado;
 var featurename;
 var dataset,max;
 var medias=[];
@@ -22,15 +21,14 @@ d3.json("./data/dados.json",function(error,data){
     inicio(dataset);
   });
 });
-
-function cmp(dist1,dist2){
+function cmpM(dist1,dist2){
   var count=0;
   dist1.forEach(function(d,i){
-    if(dist2[i]<dist1[i]){
+    if(dist2[i]==dist1[i]){
       count++;
     }
   });
-  return (count/dist1.length);
+  return (count/dist1.length).toFixed(2);
 }
 //Escala de cores para o mapa
 function colorN(d){
@@ -102,39 +100,3 @@ legend.onAdd = function (map) {
   return div;
 };
 legend.addTo(map);
-
-function comparando(e){
-  var exists=false;
-    selecionados.forEach(function(d,i){
-      if(e.target.feature.properties.name==d.target.feature.properties.name){
-        exists=true;
-      }
-    });
-    if(exists==false && selecionados.length<3){
-      var layer = e.target;
-      layer.setStyle({
-        weight: 1.5,
-        color: 'black',
-        fillOpacity: 0.7
-      });
-      if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
-        layer.bringToFront();
-      }
-      selecionados.push(e);
-      if(selecionados.length==2){
-        GeoLayer.clearLayers();
-        var newdata=[];
-        selecionados.forEach(function(d,i){
-          newdata.push(d.target.feature);
-        });
-        compare(newdata);
-      }
-    }else if(exists==true && selecionados.length==2){
-      selecionados=[];
-      inicio(dataset);
-    }else if(exists){
-      var filtered = selecionados.filter(function(el) { return el.target.feature.properties.name != e.target.feature.properties.name; }); 
-      selecionados=filtered;
-      GeoLayer.resetStyle(e.target);
-    }
-}
