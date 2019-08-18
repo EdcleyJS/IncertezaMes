@@ -1,5 +1,6 @@
 var map = L.map('vis6').setView([-8.305448,-37.822426], 8);
-var GeoLayer,filterbytri,dataset,database,legend = L.control({position: 'bottomright'});
+var GeoLayer,GeoLayer2,GeoLayer3,filterbytri,dataset,database;
+var legend = L.control({position: 'bottomright'});
 var mesSelecionado,anoSelecionado,diaSelecionado,trimestreSelecionado,featurename;
 var grades=[0,30,60,90,120,150,180,210,240,250,280];
 map.doubleClickZoom.disable();
@@ -37,7 +38,6 @@ legend.onAdd = function (map) {
   return div;
 };
 legend.addTo(map);
-
 d3.json("./data/dados.json",function(error,data){
   database=data;
   d3.json("./data/pe.json",function(error,dados){

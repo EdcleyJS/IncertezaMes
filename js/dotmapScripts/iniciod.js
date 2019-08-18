@@ -11,18 +11,7 @@ function inicio(dataset){
     {onEachFeature: function (feature, layer) {
         cidades.push(feature.properties.name);
         //Criação do Popup de cada feature/polígono contendo o nome do proprietário e o cep de localização do edíficio/lote.
-        if(anoSelecionado!=undefined){
-          var dist= distribuicaoAno(feature.properties.name);
-        }else if(trimestreSelecionado!=undefined){
-          var dist= distribuicaoTri(feature.properties.name);
-        }else if(mesSelecionado!=undefined){
-          var dist= distribuicaoMes(feature.properties.name);
-        }else if(diaSelecionado!=undefined){
-          var dist= distribuicaoDia(feature.properties.name);
-        }else{
-          var dist= distribuicaoMes(feature.properties.name);
-        }
-        var novaDist= dotMapPrep(dist);  
+        var novaDist= dotMapPrep(getDis(feature.properties.name));  
         /*if(prob>=0.86){
           marker=L.marker(layer.getBounds().getCenter(), {icon: Icon1});
         }else if(prob>=0.7){

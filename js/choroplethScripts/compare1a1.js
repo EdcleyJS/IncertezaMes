@@ -6,24 +6,8 @@ function compare(dataset){
   var dist1,dist2;
   var feature1=dataset[0];
   var feature2=dataset[1];
-  if(anoSelecionado!=undefined){
-    dist1= distribuicaoAno(feature1.properties.name);
-    dist2= distribuicaoAno(feature2.properties.name);
-  }else if(trimestreSelecionado!=undefined){
-    dist1= distribuicaoTri(feature1.properties.name);
-    dist2= distribuicaoTri(feature2.properties.name);
-  }else if(mesSelecionado!=undefined){
-    dist1= distribuicaoMes(feature1.properties.name);
-    dist2= distribuicaoMes(feature2.properties.name);
-  }else if(diaSelecionado!=undefined){
-    dist1= distribuicaoDia(feature1.properties.name);
-    dist2= distribuicaoDia(feature2.properties.name);
-  }else{
-    dist1= distribuicaoMes(feature1.properties.name);
-    dist2= distribuicaoMes(feature2.properties.name);
-  }
-  var prob= cmp(dist1,dist2);
-  var prob2= cmp(dist2,dist1);
+  var prob= cmp(getDis(feature1.properties.name),getDis(feature2.properties.name));
+  var prob2= cmp(getDis(feature2.properties.name),getDis(feature1.properties.name));
   GeoLayer =L.geoJson(dataset,
     {style: function(feature){
       //Style para definir configurações dos polígonos a serem desenhados e colorir com base na escala criada.

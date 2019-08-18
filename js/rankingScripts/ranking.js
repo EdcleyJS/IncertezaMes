@@ -32,30 +32,32 @@ function cmpM(dist1,dist2){
 }
 //Escala de cores para o mapa
 function colorN(d){
-  var cbf = palette('cb-RdYlGn', 11);
-  cbf.reverse();
-  if(d>0.9){
+  var cbf = palette('cb-YlOrRd', 9);
+  //cbf.reverse();
+  /*if(d>0.9){
     cor= cbf[10];   
   }else if (d>0.81) {
     cor= cbf[9];  
-  }else if(d>0.72){
+  }else */if(d>0.88){
     cor= cbf[8];  
-  }else if(d>0.63){
+  }else if(d>0.77){
     cor= cbf[7];  
-  }else if(d>0.54){
+  }else if(d>0.66){
     cor= cbf[6];  
-  }else if(d>0.45){
+  }else if(d>0.55){
     cor= cbf[5];  
-  }else if(d>0.36){
+  }else if(d>0.44){
     cor= cbf[4];  
-  }else if(d>0.27){
+  }else if(d>0.33){
     cor= cbf[3];  
-  }else if(d>0.18){
+  }else if(d>0.22){
     cor= cbf[2];  
-  }else if (d>0.09) {
+  }else if (d>0.11) {
     cor= cbf[1];  
-  }else{
+  }else if(d>0){
     cor= cbf[0];  
+  }else{
+    cor= false;
   }
   return cor;
 }
@@ -91,8 +93,8 @@ info.onAdd = function (mymap) {
 var legend = L.control({position: 'bottomright'});
 legend.onAdd = function (map) {
   var div = L.DomUtil.create('div', 'info legend'),grades=[],labels = [];
-  for (var i = 11; i > 0; i--) {
-    grades.push(0.09*i);
+  for (var i = 9; i > 0; i--) {
+    grades.push(0.11*i);
   }
   for (var i = 0; i < grades.length; i++) {
     div.innerHTML +='<i style="color:#'+colorN(grades[i])+'; background:#'+colorN(grades[i])+'"></i>'+"<"+grades[i].toFixed(2) +'</br>';

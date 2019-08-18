@@ -17,28 +17,17 @@ function inicio(dataset){
       var str = ""+window.location.href;
       cidades.push(feature.properties.name);
       //Criação do Popup de cada feature/polígono contendo o nome do proprietário e o cep de localização do edíficio/lote.
-      if(anoSelecionado!=undefined){
-        var dist= distribuicaoAno(feature.properties.name);
-      }else if(trimestreSelecionado!=undefined){
-        var dist= distribuicaoTri(feature.properties.name);
-      }else if(mesSelecionado!=undefined){
-        var dist= distribuicaoMes(feature.properties.name);
-      }else if(diaSelecionado!=undefined){
-        var dist= distribuicaoDia(feature.properties.name);
-      }else{
-        var dist= distribuicaoMes(feature.properties.name);
-      }
       if(str.includes("heatmapIntervalo.html")){interOn=true;}
       if(interOn==true){
-        var probArea= new distribuicaoIntervalo(dist,left,right);
+        var probArea= new distribuicaoIntervalo(getDis(feature.properties.name),left,right);
         var prob= probArea.cdfintervalo().toFixed(2);
       }else{
         var sdr = document.getElementById("example_id");
         if(typeof(sdr) != 'undefined' && sdr != null){
-          var probArea= new distribuicaoTeste(dist,alpha);
+          var probArea= new distribuicaoTeste(getDis(feature.properties.name),alpha);
           var prob= probArea.cdf().toFixed(2);
         }else{
-          var probArea= new distribuicaoTeste(dist,alpha);
+          var probArea= new distribuicaoTeste(getDis(feature.properties.name),alpha);
           var prob= probArea.cdf().toFixed(2);
         }
       }

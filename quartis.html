@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 	    <meta name="author" content="Edcley José da Silva 032018 POS">
 	    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-	    <title>Glyph</title>
+	    <title>Quartis</title>
 	    <!--CSS-->
 		<link rel="stylesheet" href="./css/cloropleth.css">
 		<link rel="stylesheet" href="./css/leaflet.css"/>
@@ -18,7 +18,7 @@
 		<script type="text/javascript" src="./js/commonScripts/bootstrap.min.js"></script>
 		<script type="text/javascript" src="./js/commonScripts/ion.rangeSlider.min.js"></script> 
 		<!-- JQuery Specific-->
-		<script type="text/javascript" src="./js/glyphScripts/buttonsg.js"></script>
+		<script type="text/javascript" src="./js/mediaScripts/buttonsm.js"></script>
 		<!-- JavaScript-->
 		<script type="text/javascript" src="./js/commonScripts/d3.v4.min.js"></script>
 		<script type="text/javascript" src="./js/commonScripts/math.min.js"></script>
@@ -26,7 +26,7 @@
 		<script type="text/javascript" src='./js/commonScripts/palette.js'></script>
 		<script type="text/javascript" src="./js/commonScripts/distribuicaoClassTeste.js"></script>
 		<script type="text/javascript" src="./js/commonScripts/funcoesGlobais.js"></script>
-		<script type="text/javascript" src="./js/glyphScripts/iniciog.js"></script>
+		<script type="text/javascript" src="./js/mediaScripts/inicioq.js"></script>
 	</head>
 	<body >
 		<div class="container-fluid">
@@ -34,7 +34,16 @@
 				<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 					<div class="row">
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 panel panel-default">
+							<h4>Amplitude 1º-3º Quartis</h4>
 							<div id="vis6" style="height: 450px; width: 100%"></div>
+						</div>
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 panel panel-default">
+							<h4>2º Quartil (Mediana)</h4>
+							<div id="vis7" style="height: 450px; width: 100%"></div>
+						</div>
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 panel panel-default">
+							<h4>3º Quartil</h4>
+							<div id="vis8" style="height: 450px; width: 100%"></div>
 						</div>
 						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 panel panel-default h-25">
 							<div class="card">
@@ -130,14 +139,12 @@
 					<div class="row">
 						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
 						<div class="card col-lg-6 col-md-6 col-sm-6 col-xs-6" style="width: 58rem; margin-top: 1rem;">
-							<h5 class="card-title" style="margin-left: 1rem;text-align: center;"><b>Overview</b></h5>
+							<h5 class="card-title" style="margin-left: 1rem;text-align: center"><b>Overview</b></h5>
 							<ul class="list-group list-group-flush">
 							    <li class="list-group-item" style="text-align: center">
-							    	<p>Esta visualização exibe glyphs para representar a média e o desvio para cada área.</p>
-							    	<p><b>Quanto maior a média o ponto se desloca para cima.</b></p>
-							    	<p><b>Quanto maior o desvio o ponto se desloca para direita.</b></p>
+							    	<p>Esta visualização exibe apenas os Quartis de cada área.</p> 
 							    	<p>É possível utilizar filtros para refinar os valores.</p>
-							    	<p>Ao desabilitar os filtros o valor padrão é restaurado.</p>
+							    	<p>Ao desabilitar um filtro os valores são restaurados.</p>
 							    </li>
 							</ul>
 						</div>
@@ -146,6 +153,6 @@
 			</div>
 		</div>
 	</body>
-	<script type="text/javascript" src="./js/glyphScripts/glyph.js"></script>
+	<script type="text/javascript" src="./js/mediaScripts/quartis.js"></script>
 	<!--<script type="text/javascript" src="./js/commonScripts/animacao.js"></script>-->
 </html>

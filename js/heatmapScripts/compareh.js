@@ -7,35 +7,12 @@ function compare(dataset){
   if(GeoLayer!= null){
       GeoLayer.clearLayers();
   }
-  var dist1,dist2;
-  if(anoSelecionado!=undefined){
-    dist1= distribuicaoAno(featurename);
-  }else if(trimestreSelecionado!=undefined){
-    dist1= distribuicaoTri(featurename);
-  }else if(mesSelecionado!=undefined){
-    dist1= distribuicaoMes(featurename);
-  }else if(diaSelecionado!=undefined){
-    dist1= distribuicaoDia(featurename);
-  }else{
-    dist1= distribuicaoMes(featurename);
-  }
   dim= map.getBounds(); Le = dim.getEast(); Oe= dim.getWest(); No= dim.getNorth(); Su=dim.getSouth(); zoom= map.getZoom();
   GeoLayer =L.geoJson(dataset,
     {
       onEachFeature: function (feature,layer) {
         //Criação do Popup de cada feature/polígono contendo o nome do proprietário e o cep de localização do edíficio/lote.
-        if(anoSelecionado!=undefined){
-          dist2= distribuicaoAno(feature.properties.name);
-        }else if(trimestreSelecionado!=undefined){
-          dist2= distribuicaoTri(feature.properties.name);
-        }else if(mesSelecionado!=undefined){
-          dist2= distribuicaoMes(feature.properties.name);
-        }else if(diaSelecionado!=undefined){
-          dist2= distribuicaoDia(feature.properties.name);
-        }else{
-          dist2= distribuicaoMes(feature.properties.name);
-        }
-        var probArea= cmp(dist1,dist2).toFixed(2);
+        var probArea= cmp(getDis(featurename),getDis(feature.properties.name)).toFixed(2);
         var area= (turf.area(feature.geometry)/1000000);
         to= layer.getBounds()._southWest.lat;
         fro= layer.getBounds()._northEast.lat;

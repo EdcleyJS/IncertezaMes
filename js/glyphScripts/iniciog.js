@@ -20,18 +20,7 @@ function inicio(dados){
   GeoLayer= L.geoJson(dados,
     {onEachFeature: function (feature, layer) {
           //Criação do Popup de cada feature/polígono contendo o nome do proprietário e o cep de localização do edíficio/lote.
-          if(anoSelecionado!=undefined){
-            var dist= distribuicaoAno(feature.properties.name);
-          }else if(trimestreSelecionado!=undefined){
-            var dist= distribuicaoTri(feature.properties.name);
-          }else if(mesSelecionado!=undefined){
-            var dist= distribuicaoMes(feature.properties.name);
-          }else if(diaSelecionado!=undefined){
-            var dist= distribuicaoDia(feature.properties.name);
-          }else{
-            var dist= distribuicaoMes(feature.properties.name);
-          }
-          var probArea= new distribuicaoTeste(dist,0);
+          var probArea= new distribuicaoTeste(getDis(feature.properties.name),0);
           var media= Number(probArea.media().toFixed(2));
           var desvio= Number(probArea.desvio());
           if(media>=200){

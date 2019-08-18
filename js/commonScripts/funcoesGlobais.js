@@ -84,15 +84,15 @@ function SomaDias(d){
   var soma=0;
   if(d.Mês=='Abr'||d.Mês=='Jun'||d.Mês=='Set'||d.Mês=='Nov'){
     for (var i = 1; i < 31; i++) {
-      soma+=d[i];
+      soma=soma+Number(d[i]);
     }
   }else if(d.Mês=='Fev'){
     for (var i = 1; i < 29; i++) {
-      soma+=d[i];
+      soma+=Number(d[i]);
     }
   }else{
     for (var i = 1; i < 32; i++) {
-      soma+=d[i];
+      soma=soma+Number(d[i]);
     }
   }
   return soma;
@@ -200,11 +200,19 @@ function distribuicaoTri(featurename){
 function distribuicaoMes(featurename){
   var distdataMes=[];
   if(anoSelecionado!=undefined){
-    database.forEach(function(d,i){
-      if (d.name==featurename && d.Mês==mesSelecionado && d.Ano==anoSelecionado){
-          distdataMes.push(SomaDias(d));
-      }
-    });
+    if (mesSelecionado==undefined) {
+      database.forEach(function(d,i){
+        if (d.name==featurename && d.Ano==anoSelecionado){
+            distdataMes.push(SomaDias(d));
+        }
+      });  
+    }else{
+      database.forEach(function(d,i){
+        if (d.name==featurename && d.Mês==mesSelecionado && d.Ano==anoSelecionado){
+            distdataMes.push(SomaDias(d));
+        }
+      });
+    }
   }else if(diaSelecionado!=undefined){
     database.forEach(function(d,i){
       if (d.name==featurename && d.Mês==mesSelecionado){
@@ -218,9 +226,11 @@ function distribuicaoMes(featurename){
       }
     });
   }else{
+
     database.forEach(function(d,i){
       if(d.name==featurename){
-          distdataMes.push(SomaDias(d));
+          var m= SomaDias(d);
+          distdataMes.push(Number(m.toFixed(2)));
       }
     });
   }
@@ -454,5 +464,21 @@ function highlightFeature(e) {
   }
 }
 function resetHighlight(e) {
+  console.log(this);
   GeoLayer.resetStyle(e.target);
+}
+
+function getDis(featurename){
+  if(anoSelecionado!=undefined){
+    var dist= distribuicaoAno(featurename);
+  }else if(trimestreSelecionado!=undefined){
+    var dist= distribuicaoTri(featurename);
+  }else if(mesSelecionado!=undefined){
+    var dist= distribuicaoMes(featurename);
+  }else if(diaSelecionado!=undefined){
+    var dist= distribuicaoDia(featurename);
+  }else{
+    var dist= distribuicaoMes(featurename);
+  }
+  return dist;
 }
