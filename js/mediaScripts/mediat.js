@@ -15,25 +15,19 @@ var medias=[];
 
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
   attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-  maxZoom: 18,
-  id: 'mapbox.streets',
-  accessToken: 'pk.eyJ1IjoiZWRjbGV5OTQ1MiIsImEiOiJjamdvMGdmZ2owaTdiMndwYTJyM2tteTl2In0.2q25nBNRxzFxeaYahFGQ6g'
+  maxZoom: 18, id: 'mapbox.streets', accessToken: 'pk.eyJ1IjoiZWRjbGV5OTQ1MiIsImEiOiJjamdvMGdmZ2owaTdiMndwYTJyM2tteTl2In0.2q25nBNRxzFxeaYahFGQ6g'
   }).addTo(map);
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
   attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-  maxZoom: 18,
-  id: 'mapbox.streets',
-  accessToken: 'pk.eyJ1IjoiZWRjbGV5OTQ1MiIsImEiOiJjamdvMGdmZ2owaTdiMndwYTJyM2tteTl2In0.2q25nBNRxzFxeaYahFGQ6g'
+  maxZoom: 18, id: 'mapbox.streets', accessToken: 'pk.eyJ1IjoiZWRjbGV5OTQ1MiIsImEiOiJjamdvMGdmZ2owaTdiMndwYTJyM2tteTl2In0.2q25nBNRxzFxeaYahFGQ6g'
   }).addTo(map2);
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
   attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-  maxZoom: 18,
-  id: 'mapbox.streets',
-  accessToken: 'pk.eyJ1IjoiZWRjbGV5OTQ1MiIsImEiOiJjamdvMGdmZ2owaTdiMndwYTJyM2tteTl2In0.2q25nBNRxzFxeaYahFGQ6g'
-  }).addTo(map3);
+  maxZoom: 18, id: 'mapbox.streets', accessToken: 'pk.eyJ1IjoiZWRjbGV5OTQ1MiIsImEiOiJjamdvMGdmZ2owaTdiMndwYTJyM2tteTl2In0.2q25nBNRxzFxeaYahFGQ6g'
+   }).addTo(map3);
 //Escala de cores para o mapa
 function colorN(media){
-  var cbf = palette('cb-RdYlGn', 11);
+  var cbf = palette('tol-sq', 11);
   var color;
   grades.forEach(function(d,i){
     if(Number(media)>=d){
@@ -42,46 +36,54 @@ function colorN(media){
   });
   return color;
 }
+map.on("mouseup", function () {
+  map2.setView(map.getCenter(), map.getZoom());
+  map3.setView(map.getCenter(), map.getZoom());
+});
+map.on("mouseout", function () {
+  map2.setView(map.getCenter(), map.getZoom());
+  map3.setView(map.getCenter(), map.getZoom());
+});
+map2.on("mouseup", function () {
+  map.setView(map2.getCenter(), map2.getZoom());
+  map3.setView(map2.getCenter(), map2.getZoom());
+});
+map2.on("mouseout", function () {
+  map.setView(map2.getCenter(), map2.getZoom());
+  map3.setView(map2.getCenter(), map2.getZoom());
+});
+map3.on("mouseup", function () {
+  map.setView(map3.getCenter(), map3.getZoom());
+  map2.setView(map3.getCenter(), map3.getZoom());
+});
+map3.on("mouseout", function () {
+  map.setView(map3.getCenter(), map3.getZoom());
+  map2.setView(map3.getCenter(), map3.getZoom());
+});
 // criação da div que contém o Título e Subtítulo do Mapa. 
-info.onAdd = function (mymap) {
+info.onAdd = function (map) {
   this._div = L.DomUtil.create('div', 'info');
   this.update();
   return this._div;
 };
-info2.onAdd = function (mymap) {
+info2.onAdd = function (map2) {   
   this._div = L.DomUtil.create('div', 'info');
   this.update();
   return this._div;
 };
-info3.onAdd = function (mymap) {
+info3.onAdd = function (map3) { 
   this._div = L.DomUtil.create('div', 'info');
   this.update();
   return this._div;
 };
-legend.onAdd = function (map) {
-  var div = L.DomUtil.create('div', 'info legend');
-  for (var i = (grades.length-1); i >=0 ; i--) {
-    div.innerHTML +='<i style="color:'+colorN(grades[i])+'; background:'+colorN(grades[i])+'"></i>'+">"+grades[i]+'</br>';
-  }
-  return div;
-};
+
+legend.onAdd = function (map) { return legendonAdd(map);};
 legend.addTo(map);
-legend2.onAdd = function (map2) {
-  var div = L.DomUtil.create('div', 'info legend');
-  for (var i = (grades.length-1); i >=0 ; i--) {
-    div.innerHTML +='<i style="color:'+colorN(grades[i])+'; background:'+colorN(grades[i])+'"></i>'+">"+grades[i]+'</br>';
-  }
-  return div;
-};
+legend2.onAdd = function (map2) { return legendonAdd(map2);};
 legend2.addTo(map2);
-legend3.onAdd = function (map3) {
-  var div = L.DomUtil.create('div', 'info legend');
-  for (var i = (grades.length-1); i >=0 ; i--) {
-    div.innerHTML +='<i style="color:'+colorN(grades[i])+'; background:'+colorN(grades[i])+'"></i>'+">"+grades[i]+'</br>';
-  }
-  return div;
-};
+legend3.onAdd = function (map3) { return legendonAdd(map3);};
 legend3.addTo(map3);
+
 d3.json("./data/dados.json",function(error,data){
   database=data;
   d3.json("./data/pe.json",function(error,dados){

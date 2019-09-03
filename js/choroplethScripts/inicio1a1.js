@@ -26,7 +26,6 @@ function inicio(dataset){
           layer.bindPopup(feature.properties.name);
           if(str.includes("choropleth1a1.html")){
             layer.on({
-              dblclick: whenClicked,
               click: comparando
             });
           }

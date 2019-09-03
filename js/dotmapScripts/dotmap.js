@@ -1,6 +1,7 @@
 var filterbymouth,filterbytri,featurename,GeoLayer,marker,interOn,pontos;
 var mesSelecionado,anoSelecionado,diaSelecionado,trimestreSelecionado;
 var medias=[],lat,lng,intensity,alpha=0,left=60,right=100,database;
+var grades=[0,30,60,90,120,150,180,210,240,250,280];
 var map = L.map('vis6').setView([-8.305448,-37.822426], 8);
 var myRenderer = L.canvas({ padding: 0.5 });
 var markers = L.layerGroup();
@@ -26,18 +27,17 @@ d3.json("./data/dados.json",function(error,data){
       });
   }); 
 });
-//Escala de cores para o mapa
-function colorN(d){
+function colorN(media){
   var cbf = palette('cb-RdYlGn', 11);
-  cbf.reverse();
-  for (var i =10; i>=0 ; i--) {
-    if(d>(0.09*i)){
-      return cbf[i];
-    }else if(d==0){
-      return cbf[0];
+  var color;
+  grades.forEach(function(d,i){
+    if(Number(media)>=d){
+      color="#"+cbf[i];
     }
-  }
+  });
+  return color;
 }
+
 function cmp(dist1,dist2){
   var count=0;
   dist1.forEach(function(d,i){
@@ -47,6 +47,7 @@ function cmp(dist1,dist2){
   });
   return (count/dist1.length);
 }
+
 // criação da div que contém o Título e Subtítulo do Mapa. 
 var info = L.control();
 info.onAdd = function (mymap) {
@@ -54,6 +55,7 @@ info.onAdd = function (mymap) {
   this.update();
   return this._div;
 };
+
 // criação da div que contém a legenda do Mapa.
 /*var legend = L.control({position: 'bottomright'});
 legend.onAdd = function (map) {
@@ -71,12 +73,9 @@ legend.addTo(map);*/
 // criação da div que contém a legenda do Mapa.
 var legend = L.control({position: 'bottomright'});
 legend.onAdd = function (map) {
-  var div = L.DomUtil.create('div', 'info legend'),grades=[],labels = [];
-  for (var i = 11; i > 0; i--) {
-    grades.push(0.09*i);
-  }
-  for (var i = 0; i < grades.length; i++) {
-    div.innerHTML +='<i style="color:#'+colorN(grades[i])+'; background:#'+colorN(grades[i])+'"></i>'+">"+grades[i].toFixed(2) +'</br>';
+  var div = L.DomUtil.create('div', 'info legend');
+  for (var i = (grades.length-1); i >=0 ; i--) {
+    div.innerHTML +='<i style="color:'+colorN(grades[i])+'; background:'+colorN(grades[i])+'"></i>'+">"+grades[i]+'</br>';
   }
   return div;
 };

@@ -39,7 +39,7 @@ function inicio(dados){
       return {
             weight: 0.5,
             opacity: 1,
-            fillColor: colorN(probArea.quartil()[0]),
+            fillColor: colorN2(probArea.quartil()[0]),
             color: 'black',
             fillOpacity: 0.9
         };

@@ -464,7 +464,6 @@ function highlightFeature(e) {
   }
 }
 function resetHighlight(e) {
-  console.log(this);
   GeoLayer.resetStyle(e.target);
 }
 
@@ -482,3 +481,24 @@ function getDis(featurename){
   }
   return dist;
 }
+
+function getDis2(featurename){
+  if(trimestreSelecionado!=undefined){
+    var dist= distribuicaoTri(featurename);
+  }else if(mesSelecionado!=undefined){
+    var dist= distribuicaoMes(featurename);
+  }else if(diaSelecionado!=undefined){
+    var dist= distribuicaoDia(featurename);
+  }else{
+    var dist= distribuicaoMes(featurename);
+  }
+  return dist;
+};
+
+function legendonAdd(map) {
+  var div = L.DomUtil.create('div', 'info legend');
+  for (var i = (grades.length-1); i >=0 ; i--) {
+    div.innerHTML +='<i style="color:'+colorN(grades[i])+'; background:'+colorN(grades[i])+'"></i>'+">"+grades[i]+'</br>';
+  }
+  return div;
+};

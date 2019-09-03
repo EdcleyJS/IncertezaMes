@@ -8,21 +8,31 @@ $(document).ready(function () {
 	}
 
 	//var laço= anos.length;
-	var laço= meses.length;
 	//var laço= trimestre.length;
 	//var laço= dias.length;
 	//console.log(laço);
+	var sorteados=[];
+	for (var i = 0; i <3; i++) {
+		n=true;
+		while(n==true){
+			var s= Math.floor((Math.random()*12));
+			n = sorteados.includes(meses[s]);
+			if (n==false) {
+				sorteados.push(meses[s]);
+			}
+		}
+	}
 	async function animacao(){
-		for (var i = 0; i < laço; i++) {
+		for (var i = 0; i < sorteados.length; i++) {
 			//anoSelecionado=anos[i];
 			//trimestreSelecionado= trimestre[i];
-			mesSelecionado= meses[i];
+			mesSelecionado= sorteados[i];
 			//diaSelecionado= dias[i];
-			await sleep(2000);
-			if(i==(laço-1)){
+			if(i==(sorteados.length-1)){
 				i=-1;
 			}
 			inicio(dataset);
+			await sleep(2000);
 		}
 	}
 	animacao();

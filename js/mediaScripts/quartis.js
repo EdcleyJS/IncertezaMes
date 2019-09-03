@@ -32,19 +32,8 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
   accessToken: 'pk.eyJ1IjoiZWRjbGV5OTQ1MiIsImEiOiJjamdvMGdmZ2owaTdiMndwYTJyM2tteTl2In0.2q25nBNRxzFxeaYahFGQ6g'
   }).addTo(map3);
 //Escala de cores para o mapa
-function colorN(media){
-  var cbf = palette('cb-RdYlGn', 11);
-  cbf.reverse();
-  var color;
-  grades.forEach(function(d,i){
-    if(Number(media)>=d){
-      color="#"+cbf[i];
-    }
-  });
-  return color;
-}
 function colorN2(media){
-  var cbf = palette('cb-RdYlGn', 11);
+  var cbf = palette('tol-sq', 11);
   var color;
   grades.forEach(function(d,i){
     if(Number(media)>=d){
@@ -72,7 +61,7 @@ info3.onAdd = function (map3) {
 legend.onAdd = function (map) {
   var div = L.DomUtil.create('div', 'info legend');
   for (var i = (grades.length-1); i >=0 ; i--) {
-    div.innerHTML +='<i style="color:'+colorN(grades[i])+'; background:'+colorN(grades[i])+'"></i>'+">"+grades[i]+'</br>';
+    div.innerHTML +='<i style="color:'+colorN2(grades[i])+'; background:'+colorN2(grades[i])+'"></i>'+">"+grades[i]+'</br>';
   }
   return div;
 };

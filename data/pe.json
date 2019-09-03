@@ -7,18 +7,18 @@
         "id": "2600054",
         "name": "Abreu e Lima",
         "description": "Abreu e Lima",
-	    "Janeiro": 122.1,
-	    "Fevereiro": 55.1,
-	    "Março": 221.2,
-	    "Abril": 517.9,
-	    "Maio": 159.5,
-	    "Junho": 136.4,
-	    "Julho": 135.5,
-	    "Agosto": 32.9,
-	    "Setembro": 59.1,
-	    "Outubro": 13.1,
-	    "Novembro": 51,
-	    "Dezembro": 21.6
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -250,18 +250,18 @@
         "id": "2600104",
         "name": "Afogados da Ingazeira",
         "description": "Afogados da Ingazeira",
-	    "Janeiro": 104.4,
-	    "Fevereiro": 216,
-	    "Março": 181,
-	    "Abril": 259,
-	    "Maio": 45,
-	    "Junho": 0,
-	    "Julho": 2,
-	    "Agosto": 0,
-	    "Setembro": 2,
-	    "Outubro": 0,
-	    "Novembro": 70.5,
-	    "Dezembro": 13
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -629,18 +629,18 @@
         "id": "2600203",
         "name": "Afrânio",
         "description": "Afrânio",
-	    "Janeiro": 54.8,
-	    "Fevereiro": 96,
-	    "Março": 143.9,
-	    "Abril": 91.6,
-	    "Maio": 0,
-	    "Junho": 0,
-	    "Julho": 0,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 32.5,
-	    "Novembro": 1,
-	    "Dezembro": 103.5
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -1196,18 +1196,18 @@
         "id": "2600302",
         "name": "Agrestina",
         "description": "Agrestina",
-	    "Janeiro": 36.2,
-	    "Fevereiro": 97.2,
-	    "Março": 89.4,
-	    "Abril": 168.7,
-	    "Maio": 78.1,
-	    "Junho": 84.4,
-	    "Julho": 48.7,
-	    "Agosto": 15,
-	    "Setembro": 10.1,
-	    "Outubro": 0,
-	    "Novembro": 11,
-	    "Dezembro": 48.3
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -1471,18 +1471,18 @@
         "id": "2600401",
         "name": "Água Preta",
         "description": "Água Preta",
-	    "Janeiro": 136,
-	    "Fevereiro": 133,
-	    "Março": 207.2,
-	    "Abril": 323,
-	    "Maio": 225.1,
-	    "Junho": 68,
-	    "Julho": 90.6,
-	    "Agosto": 29.8,
-	    "Setembro": 26.4,
-	    "Outubro": 1,
-	    "Novembro": 62.8,
-	    "Dezembro": 35.7
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -1862,18 +1862,18 @@
         "id": "2600500",
         "name": "Águas Belas",
         "description": "Águas Belas",
-	    "Janeiro": 52.6,
-	    "Fevereiro": 81.8,
-	    "Março": 59.6,
-	    "Abril": 54.8,
-	    "Maio": 96.6,
-	    "Junho": 31.2,
-	    "Julho": 36.6,
-	    "Agosto": 3.8,
-	    "Setembro": 11.6,
-	    "Outubro": 0,
-	    "Novembro": 15.6,
-	    "Dezembro": 34
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -2317,18 +2317,18 @@
         "id": "2600609",
         "name": "Alagoinha",
         "description": "Alagoinha",
-	    "Janeiro": 19.7,
-	    "Fevereiro": 86.9,
-	    "Março": 41.1,
-	    "Abril": 161.4,
-	    "Maio": 59.7,
-	    "Junho": 16.3,
-	    "Julho": 19.6,
-	    "Agosto": 1.1,
-	    "Setembro": 4.9,
-	    "Outubro": 3.9,
-	    "Novembro": 11.5,
-	    "Dezembro": 66.6
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -2476,18 +2476,18 @@
         "id": "2600708",
         "name": "Aliança",
         "description": "Aliança",
-	    "Janeiro": 94.4,
-	    "Fevereiro": 162.4,
-	    "Março": 85.1,
-	    "Abril": 242.5,
-	    "Maio": 104,
-	    "Junho": 75.5,
-	    "Julho": 65.2,
-	    "Agosto": 17.1,
-	    "Setembro": 11.9,
-	    "Outubro": 1.8,
-	    "Novembro": 16.8,
-	    "Dezembro": 44.8
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -2847,18 +2847,18 @@
         "id": "2600807",
         "name": "Altinho",
         "description": "Altinho",
-	    "Janeiro": 81,
-	    "Fevereiro": 85.2,
-	    "Março": 101.8,
-	    "Abril": 149.9,
-	    "Maio": 62.3,
-	    "Junho": 48.8,
-	    "Julho": 35.1,
-	    "Agosto": 13.5,
-	    "Setembro": 6.3,
-	    "Outubro": 0.2,
-	    "Novembro": 10.1,
-	    "Dezembro": 26.4
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -3142,18 +3142,18 @@
         "id": "2600906",
         "name": "Amaraji",
         "description": "Amaraji",
-        "Janeiro": 278.5,
-	    "Fevereiro": 306,
-	    "Março": 283.5,
-	    "Abril": 466.5,
-	    "Maio": 307,
-	    "Junho": 200,
-	    "Julho": 172.5,
-	    "Agosto": 97.5,
-	    "Setembro": 52,
-	    "Outubro": 1,
-	    "Novembro": 106.5,
-	    "Dezembro": 56.9
+        "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -3863,18 +3863,18 @@
         "id": "2601003",
         "name": "Angelim",
         "description": "Angelim",
-	    "Janeiro": 100.3,
-	    "Fevereiro": 97.9,
-	    "Março": 52.9,
-	    "Abril": 118.1,
-	    "Maio": 115.7,
-	    "Junho": 63.8,
-	    "Julho": 52.9,
-	    "Agosto": 31.9,
-	    "Setembro": 12.6,
-	    "Outubro": 1.4,
-	    "Novembro": 6.5,
-	    "Dezembro": 38.8
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -4066,18 +4066,18 @@
         "id": "2601052",
         "name": "Araçoiaba",
         "description": "Araçoiaba",
-	    "Janeiro": 99.9,
-	    "Fevereiro": 136.4,
-	    "Março": 115.2,
-	    "Abril": 392.1,
-	    "Maio": 190.8,
-	    "Junho": 97.6,
-	    "Julho": 66.2,
-	    "Agosto": 24.4,
-	    "Setembro": 25.2,
-	    "Outubro": 8.2,
-	    "Novembro": 27.7,
-	    "Dezembro": 36.7
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -4193,18 +4193,18 @@
         "id": "2601102",
         "name": "Araripina",
         "description": "Araripina",
-	    "Janeiro": 43.4,
-	    "Fevereiro": 132.4,
-	    "Março": 125.8,
-	    "Abril": 143,
-	    "Maio": 9.6,
-	    "Junho": 3.6,
-	    "Julho": 0.2,
-	    "Agosto": 0.2,
-	    "Setembro": 0,
-	    "Outubro": 19,
-	    "Novembro": 20.4,
-	    "Dezembro": 223.8
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -4512,18 +4512,18 @@
         "id": "2601201",
         "name": "Arcoverde",
         "description": "Arcoverde",
-	    "Janeiro": 45.9,
-	    "Fevereiro": 157.9,
-	    "Março": 124.6,
-	    "Abril": 87,
-	    "Maio": 70.1,
-	    "Junho": 8.6,
-	    "Julho": 26,
-	    "Agosto": 5.3,
-	    "Setembro": 18,
-	    "Outubro": 14.7,
-	    "Novembro": 31,
-	    "Dezembro": 23.6
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -4538,18 +4538,18 @@
         "id": "2601300",
         "name": "Barra de Guabiraba",
         "description": "Barra de Guabiraba",
-	    "Janeiro": 133.1,
-	    "Fevereiro": 142.8,
-	    "Março": 134.5,
-	    "Abril": 276.3,
-	    "Maio": 175.8,
-	    "Junho": 104.3,
-	    "Julho": 95,
-	    "Agosto": 43.6,
-	    "Setembro": 30.4,
-	    "Outubro": 3.6,
-	    "Novembro": 51.1,
-	    "Dezembro": 51.2
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -5085,18 +5085,18 @@
         "id": "2601409",
         "name": "Barreiros",
         "description": "Barreiros",
-	    "Janeiro": 221.8,
-	    "Fevereiro": 161.4,
-	    "Março": 179.2,
-	    "Abril": 489.6,
-	    "Maio": 317.1,
-	    "Junho": 104.1,
-	    "Julho": 103.7,
-	    "Agosto": 59.3,
-	    "Setembro": 42.3,
-	    "Outubro": 10.2,
-	    "Novembro": 44,
-	    "Dezembro": 44.2
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -5368,18 +5368,18 @@
         "id": "2601508",
         "name": "Belém de Maria",
         "description": "Belém de Maria",
-	    "Janeiro": 115.7,
-	    "Fevereiro": 158.7,
-	    "Março": 133.2,
-	    "Abril": 256.8,
-	    "Maio": 186.1,
-	    "Junho": 83,
-	    "Julho": 79.3,
-	    "Agosto": 36.6,
-	    "Setembro": 38.7,
-	    "Outubro": 0,
-	    "Novembro": 93.2,
-	    "Dezembro": 41.7
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -5837,18 +5837,18 @@
         "id": "2601607",
         "name": "Belém de São Francisco",
         "description": "Belém de São Francisco",
-	    "Janeiro": 14.6,
-	    "Fevereiro": 122.9,
-	    "Março": 73,
-	    "Abril": 27.8,
-	    "Maio": 3.7,
-	    "Junho": 3.1,
-	    "Julho": 0,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 9.3,
-	    "Novembro": 7.3,
-	    "Dezembro": 50.2
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -6504,18 +6504,18 @@
         "id": "2601706",
         "name": "Belo Jardim",
         "description": "Belo Jardim",
-	    "Janeiro": 34.8,
-	    "Fevereiro": 35.5,
-	    "Março": 125.5,
-	    "Abril": 150.1,
-	    "Maio": 38.3,
-	    "Junho": 28.8,
-	    "Julho": 28.6,
-	    "Agosto": 9,
-	    "Setembro": 2.8,
-	    "Outubro": 0,
-	    "Novembro": 5.1,
-	    "Dezembro": 33.4
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -6963,18 +6963,18 @@
         "id": "2601805",
         "name": "Betânia",
         "description": "Betânia",
-	    "Janeiro": 46.8,
-	    "Fevereiro": 196.9,
-	    "Março": 120.3,
-	    "Abril": 67.5,
-	    "Maio": 5.9,
-	    "Junho": 0,
-	    "Julho": 0,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 6.3,
-	    "Novembro": 25.4,
-	    "Dezembro": 30.4
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -7378,18 +7378,18 @@
         "id": "2601904",
         "name": "Bezerros",
         "description": "Bezerros",
-	    "Janeiro": 17.5,
-	    "Fevereiro": 140.5,
-	    "Março": 49,
-	    "Abril": 186,
-	    "Maio": 44.5,
-	    "Junho": 21,
-	    "Julho": 10,
-	    "Agosto": 10,
-	    "Setembro": 3.5,
-	    "Outubro": 1,
-	    "Novembro": 3,
-	    "Dezembro": 17
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -7733,18 +7733,18 @@
         "id": "2602001",
         "name": "Bodocó",
         "description": "Bodocó",
-	    "Janeiro": 40.2,
-	    "Fevereiro": 73.2,
-	    "Março": 106.8,
-	    "Abril": 256.5,
-	    "Maio": 16,
-	    "Junho": 0,
-	    "Julho": 0,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 84.2,
-	    "Novembro": 0,
-	    "Dezembro": 247
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -8088,18 +8088,18 @@
         "id": "2602100",
         "name": "Bom Conselho",
         "description": "Bom Conselho",
-	    "Janeiro": 50.1,
-	    "Fevereiro": 43.3,
-	    "Março": 11.6,
-	    "Abril": 93.8,
-	    "Maio": 64.7,
-	    "Junho": 31,
-	    "Julho": 26.3,
-	    "Agosto": 11.1,
-	    "Setembro": 3,
-	    "Outubro": 0,
-	    "Novembro": 3.4,
-	    "Dezembro": 13.2
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -8547,18 +8547,18 @@
         "id": "2602209",
         "name": "Bom Jardim",
         "description": "Bom Jardim",
-	    "Janeiro": 91.5,
-	    "Fevereiro": 84.8,
-	    "Março": 95.3,
-	    "Abril": 205,
-	    "Maio": 65.7,
-	    "Junho": 62.7,
-	    "Julho": 17.5,
-	    "Agosto": 14.2,
-	    "Setembro": 11.8,
-	    "Outubro": 9.5,
-	    "Novembro": 23.3,
-	    "Dezembro": 25.3
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -9346,18 +9346,18 @@
         "id": "2602308",
         "name": "Bonito",
         "description": "Bonito",
-	    "Janeiro": 109.5,
-	    "Fevereiro": 175.5,
-	    "Março": 149.7,
-	    "Abril": 263,
-	    "Maio": 150,
-	    "Junho": 103,
-	    "Julho": 69.6,
-	    "Agosto": 33.2,
-	    "Setembro": 24.2,
-	    "Outubro": 0,
-	    "Novembro": 18.2,
-	    "Dezembro": 45.6
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -11265,18 +11265,18 @@
         "id": "2602407",
         "name": "Brejão",
         "description": "Brejão",
-	    "Janeiro": 48.2,
-	    "Fevereiro": 79.5,
-	    "Março": 65,
-	    "Abril": 187.9,
-	    "Maio": 164,
-	    "Junho": 74.3,
-	    "Julho": 122.5,
-	    "Agosto": 39,
-	    "Setembro": 17.5,
-	    "Outubro": 0,
-	    "Novembro": 7,
-	    "Dezembro": 42.7
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -11504,18 +11504,18 @@
         "id": "2602506",
         "name": "Brejinho",
         "description": "Brejinho",
-	    "Janeiro": 88,
-	    "Fevereiro": 180.4,
-	    "Março": 174.4,
-	    "Abril": 193.8,
-	    "Maio": 70.6,
-	    "Junho": 0,
-	    "Julho": 0,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 30,
-	    "Novembro": 9,
-	    "Dezembro": 45.8
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -11687,18 +11687,18 @@
         "id": "2602605",
         "name": "Brejo da Madre de Deus",
         "description": "Brejo da Madre de Deus",
-	    "Janeiro": 12,
-	    "Fevereiro": 101,
-	    "Março": 165.5,
-	    "Abril": 163,
-	    "Maio": 57.5,
-	    "Junho": 21.5,
-	    "Julho": 12.5,
-	    "Agosto": 0,
-	    "Setembro": 9.5,
-	    "Outubro": 2,
-	    "Novembro": 2.5,
-	    "Dezembro": 48
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -12130,18 +12130,18 @@
         "id": "2602704",
         "name": "Buenos Aires",
         "description": "Buenos Aires",
-	    "Janeiro": 9.9,
-	    "Fevereiro": 133.6,
-	    "Março": 78.9,
-	    "Abril": 217.2,
-	    "Maio": 75.2,
-	    "Junho": 47.8,
-	    "Julho": 43.7,
-	    "Agosto": 21.3,
-	    "Setembro": 6,
-	    "Outubro": 2.7,
-	    "Novembro": 15.6,
-	    "Dezembro": 38.3
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -12309,18 +12309,18 @@
         "id": "2602803",
         "name": "Buíque",
         "description": "Buíque",
-	    "Janeiro": 99.8,
-	    "Fevereiro": 146.1,
-	    "Março": 83.4,
-	    "Abril": 41.2,
-	    "Maio": 113.8,
-	    "Junho": 10.7,
-	    "Julho": 29,
-	    "Agosto": 12.1,
-	    "Setembro": 3.1,
-	    "Outubro": 32,
-	    "Novembro": 67,
-	    "Dezembro": 26.7
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -12335,18 +12335,18 @@
         "id": "2602902",
         "name": "Cabo de Santo Agostinho",
         "description": "Cabo de Santo Agostinho",
-	    "Janeiro": 145.7,
-	    "Fevereiro": 310.4,
-	    "Março": 178.8,
-	    "Abril": 601.3,
-	    "Maio": 216.3,
-	    "Junho": 128.5,
-	    "Julho": 115.3,
-	    "Agosto": 52.8,
-	    "Setembro": 29.9,
-	    "Outubro": 19.2,
-	    "Novembro": 89.3,
-	    "Dezembro": 83.1
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -12790,18 +12790,18 @@
         "id": "2603009",
         "name": "Cabrobó",
         "description": "Cabrobó",
-	    "Janeiro": 29.5,
-	    "Fevereiro": 184.1,
-	    "Março": 40.1,
-	    "Abril": 61,
-	    "Maio": 0,
-	    "Junho": 0,
-	    "Julho": 0,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 7.5,
-	    "Novembro": 0,
-	    "Dezembro": 155.2
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -13397,18 +13397,18 @@
         "id": "2603108",
         "name": "Cachoeirinha",
         "description": "Cachoeirinha",
-	    "Janeiro": 24.4,
-	    "Fevereiro": 37.7,
-	    "Março": 146.3,
-	    "Abril": 217.7,
-	    "Maio": 70.4,
-	    "Junho": 27.6,
-	    "Julho": 32.7,
-	    "Agosto": 3.3,
-	    "Setembro": 2.2,
-	    "Outubro": 0,
-	    "Novembro": 2.5,
-	    "Dezembro": 28.3
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -13624,18 +13624,18 @@
         "id": "2603207",
         "name": "Caetés",
         "description": "Caetés",
-	    "Janeiro": 30.5,
-	    "Fevereiro": 118.8,
-	    "Março": 96.9,
-	    "Abril": 110.6,
-	    "Maio": 84.1,
-	    "Junho": 24.7,
-	    "Julho": 28.6,
-	    "Agosto": 16.5,
-	    "Setembro": 14.1,
-	    "Outubro": 3.3,
-	    "Novembro": 10,
-	    "Dezembro": 26.5
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -13883,18 +13883,18 @@
         "id": "2603306",
         "name": "Calçado",
         "description": "Calçado",
-	    "Janeiro": 28,
-	    "Fevereiro": 101,
-	    "Março": 29,
-	    "Abril": 130,
-	    "Maio": 85,
-	    "Junho": 31,
-	    "Julho": 44,
-	    "Agosto": 22,
-	    "Setembro": 7,
-	    "Outubro": 0,
-	    "Novembro": 25,
-	    "Dezembro": 25
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -14026,18 +14026,18 @@
         "id": "2603405",
         "name": "Calumbi",
         "description": "Calumbi",
-	    "Janeiro": 69.8,
-	    "Fevereiro": 231.7,
-	    "Março": 62.6,
-	    "Abril": 79.1,
-	    "Maio": 28.1,
-	    "Junho": 0,
-	    "Julho": 14,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 16.2,
-	    "Novembro": 36,
-	    "Dezembro": 126.4
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -14241,18 +14241,18 @@
         "id": "2603454",
         "name": "Camaragibe",
         "description": "Camaragibe",
-	    "Janeiro": 156.5,
-	    "Fevereiro": 164.8,
-	    "Março": 176.4,
-	    "Abril": 447.4,
-	    "Maio": 200.1,
-	    "Junho": 152.8,
-	    "Julho": 97.2,
-	    "Agosto": 80.9,
-	    "Setembro": 40,
-	    "Outubro": 29.5,
-	    "Novembro": 58,
-	    "Dezembro": 79.7
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -14396,18 +14396,18 @@
         "id": "2603504",
         "name": "Camocim de São Félix",
         "description": "Camocim de São Félix",
-	    "Janeiro": 59.5,
-	    "Fevereiro": 66.2,
-	    "Março": 114.8,
-	    "Abril": 210,
-	    "Maio": 110.8,
-	    "Junho": 71.9,
-	    "Julho": 70.7,
-	    "Agosto": 28.7,
-	    "Setembro": 17.1,
-	    "Outubro": 0.2,
-	    "Novembro": 25.9,
-	    "Dezembro": 36.4
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -14643,18 +14643,18 @@
         "id": "2603603",
         "name": "Camutanga",
         "description": "Camutanga",
-	    "Janeiro": 110,
-	    "Fevereiro": 145.6,
-	    "Março": 123.9,
-	    "Abril": 204.6,
-	    "Maio": 97.2,
-	    "Junho": 81.5,
-	    "Julho": 60.2,
-	    "Agosto": 15.1,
-	    "Setembro": 9.3,
-	    "Outubro": 9.3,
-	    "Novembro": 14.5,
-	    "Dezembro": 77.2
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -14754,18 +14754,18 @@
         "id": "2603702",
         "name": "Canhotinho",
         "description": "Canhotinho",
-	    "Janeiro": 70.7,
-	    "Fevereiro": 118,
-	    "Março": 70.8,
-	    "Abril": 162.4,
-	    "Maio": 153.8,
-	    "Junho": 65.5,
-	    "Julho": 94.1,
-	    "Agosto": 24.9,
-	    "Setembro": 21.6,
-	    "Outubro": 1.3,
-	    "Novembro": 10,
-	    "Dezembro": 42
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -15137,18 +15137,18 @@
         "id": "2603801",
         "name": "Capoeiras",
         "description": "Capoeiras",
-	    "Janeiro": 13.4,
-	    "Fevereiro": 93,
-	    "Março": 168.6,
-	    "Abril": 191.1,
-	    "Maio": 136.6,
-	    "Junho": 33.3,
-	    "Julho": 38.2,
-	    "Agosto": 25.3,
-	    "Setembro": 23.8,
-	    "Outubro": 10.8,
-	    "Novembro": 10.1,
-	    "Dezembro": 34.9
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -15452,18 +15452,18 @@
         "id": "2603900",
         "name": "Carnaíba",
         "description": "Carnaíba",
-	    "Janeiro": 46.5,
-	    "Fevereiro": 315,
-	    "Março": 295,
-	    "Abril": 234,
-	    "Maio": 59,
-	    "Junho": 0,
-	    "Julho": 32,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 3,
-	    "Novembro": 78,
-	    "Dezembro": 35.5
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -15751,18 +15751,18 @@
         "id": "2603926",
         "name": "Carnaubeira da Penha",
         "description": "Carnaubeira da Penha",
-	    "Janeiro": 44,
-	    "Fevereiro": 176.5,
-	    "Março": 80,
-	    "Abril": 23,
-	    "Maio": 25.1,
-	    "Junho": 3,
-	    "Julho": 1,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 9.5,
-	    "Novembro": 13,
-	    "Dezembro": 89
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -16098,18 +16098,18 @@
         "id": "2604007",
         "name": "Carpina",
         "description": "Carpina",
-	    "Janeiro": 74.1,
-	    "Fevereiro": 105.2,
-	    "Março": 146.2,
-	    "Abril": 187.2,
-	    "Maio": 108.5,
-	    "Junho": 66.8,
-	    "Julho": 32.1,
-	    "Agosto": 20.3,
-	    "Setembro": 20.8,
-	    "Outubro": 7.5,
-	    "Novembro": 14.3,
-	    "Dezembro": 50.5
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -16833,18 +16833,18 @@
         "id": "2604106",
         "name": "Caruaru",
         "description": "Caruaru",
-	    "Janeiro": 29.6,
-	    "Fevereiro": 42.7,
-	    "Março": 62.5,
-	    "Abril": 197.2,
-	    "Maio": 62.6,
-	    "Junho": 40.3,
-	    "Julho": 32.9,
-	    "Agosto": 14.9,
-	    "Setembro": 10.9,
-	    "Outubro": 3.8,
-	    "Novembro": 8.1,
-	    "Dezembro": 14.1
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -17392,18 +17392,18 @@
         "id": "2604155",
         "name": "Casinhas",
         "description": "Casinhas",
-	    "Janeiro": 87.7,
-	    "Fevereiro": 68.1,
-	    "Março": 167.4,
-	    "Abril": 182,
-	    "Maio": 78.2,
-	    "Junho": 35.5,
-	    "Julho": 17.9,
-	    "Agosto": 0,
-	    "Setembro": 3.4,
-	    "Outubro": 0,
-	    "Novembro": 11.4,
-	    "Dezembro": 20.3
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -18123,18 +18123,18 @@
         "id": "2604205",
         "name": "Catende",
         "description": "Catende",
-	    "Janeiro": 102.8,
-	    "Fevereiro": 138,
-	    "Março": 149.5,
-	    "Abril": 359.5,
-	    "Maio": 169.3,
-	    "Junho": 95.6,
-	    "Julho": 91.1,
-	    "Agosto": 33.7,
-	    "Setembro": 31.3,
-	    "Outubro": 0.6,
-	    "Novembro": 70.8,
-	    "Dezembro": 53.6
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -18754,18 +18754,18 @@
         "id": "2604304",
         "name": "Cedro",
         "description": "Cedro",
-	    "Janeiro": 29.5,
-	    "Fevereiro": 309,
-	    "Março": 18,
-	    "Abril": 243,
-	    "Maio": 20,
-	    "Junho": 0,
-	    "Julho": 0,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 69.9,
-	    "Novembro": 4.5,
-	    "Dezembro": 125
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -18905,18 +18905,18 @@
         "id": "2604403",
         "name": "Chã de Alegria",
         "description": "Chã de Alegria",
-	    "Janeiro": 85,
-	    "Fevereiro": 58,
-	    "Março": 117.7,
-	    "Abril": 301.3,
-	    "Maio": 126.9,
-	    "Junho": 43.1,
-	    "Julho": 27.4,
-	    "Agosto": 19.5,
-	    "Setembro": 23.1,
-	    "Outubro": 2.8,
-	    "Novembro": 31.2,
-	    "Dezembro": 97.6
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -19052,18 +19052,18 @@
         "id": "2604502",
         "name": "Chã Grande",
         "description": "Chã Grande",
-	    "Janeiro": 202.9,
-	    "Fevereiro": 106.3,
-	    "Março": 111.8,
-	    "Abril": 270.4,
-	    "Maio": 119.9,
-	    "Junho": 77.9,
-	    "Julho": 55.2,
-	    "Agosto": 16.3,
-	    "Setembro": 12.9,
-	    "Outubro": 2.1,
-	    "Novembro": 40.1,
-	    "Dezembro": 34.2
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -19231,18 +19231,18 @@
         "id": "2604601",
         "name": "Condado",
         "description": "Condado",
-	    "Janeiro": 114,
-	    "Fevereiro": 210.5,
-	    "Março": 284,
-	    "Abril": 298,
-	    "Maio": 155.9,
-	    "Junho": 108.5,
-	    "Julho": 106.3,
-	    "Agosto": 27,
-	    "Setembro": 18,
-	    "Outubro": 8,
-	    "Novembro": 18,
-	    "Dezembro": 41
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -19442,18 +19442,18 @@
         "id": "2604700",
         "name": "Correntes",
         "description": "Correntes",
-	    "Janeiro": 131.4,
-	    "Fevereiro": 128,
-	    "Março": 52,
-	    "Abril": 179.5,
-	    "Maio": 225.5,
-	    "Junho": 116,
-	    "Julho": 126.5,
-	    "Agosto": 44.7,
-	    "Setembro": 32.3,
-	    "Outubro": 0,
-	    "Novembro": 20.2,
-	    "Dezembro": 85.5
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -19765,18 +19765,18 @@
         "id": "2604809",
         "name": "Cortês",
         "description": "Cortês",
-	    "Janeiro": 128.6,
-	    "Fevereiro": 211.1,
-	    "Março": 154.8,
-	    "Abril": 291,
-	    "Maio": 157.8,
-	    "Junho": 109,
-	    "Julho": 181.5,
-	    "Agosto": 49.9,
-	    "Setembro": 22.2,
-	    "Outubro": 4.6,
-	    "Novembro": 0,
-	    "Dezembro": 36
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -21332,18 +21332,18 @@
         "id": "2604908",
         "name": "Cumaru",
         "description": "Cumaru",
-	    "Janeiro": 74.4,
-	    "Fevereiro": 66.7,
-	    "Março": 81.1,
-	    "Abril": 140,
-	    "Maio": 86.3,
-	    "Junho": 28.2,
-	    "Julho": 13.8,
-	    "Agosto": 2.4,
-	    "Setembro": 0.5,
-	    "Outubro": 0,
-	    "Novembro": 11.3,
-	    "Dezembro": 27.9
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -21623,18 +21623,18 @@
         "id": "2605004",
         "name": "Cupira",
         "description": "Cupira",
-	    "Janeiro": 57,
-	    "Fevereiro": 148.5,
-	    "Março": 89.3,
-	    "Abril": 153.1,
-	    "Maio": 64.3,
-	    "Junho": 57.5,
-	    "Julho": 56.5,
-	    "Agosto": 13.1,
-	    "Setembro": 10.5,
-	    "Outubro": 0,
-	    "Novembro": 37,
-	    "Dezembro": 21.2
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -21810,18 +21810,18 @@
         "id": "2605103",
         "name": "Custódia",
         "description": "Custódia",
-	    "Janeiro": 55.5,
-	    "Fevereiro": 157.9,
-	    "Março": 150,
-	    "Abril": 129.8,
-	    "Maio": 107.4,
-	    "Junho": 1,
-	    "Julho": 11.8,
-	    "Agosto": 0,
-	    "Setembro": 10.2,
-	    "Outubro": 0,
-	    "Novembro": 24.3,
-	    "Dezembro": 42.4
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -22265,18 +22265,18 @@
         "id": "2605152",
         "name": "Dormentes",
         "description": "Dormentes",
-	    "Janeiro": 56,
-	    "Fevereiro": 98.2,
-	    "Março": 105,
-	    "Abril": 222.5,
-	    "Maio": 0,
-	    "Junho": 0,
-	    "Julho": 0,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 37.1,
-	    "Novembro": 0,
-	    "Dezembro": 102.8
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -22764,18 +22764,18 @@
         "id": "2605202",
         "name": "Escada",
         "description": "Escada",
-	    "Janeiro": 153,
-	    "Fevereiro": 138.4,
-	    "Março": 122.4,
-	    "Abril": 164.1,
-	    "Maio": 158.7,
-	    "Junho": 74.8,
-	    "Julho": 109.9,
-	    "Agosto": 33.7,
-	    "Setembro": 28.1,
-	    "Outubro": 5.8,
-	    "Novembro": 25,
-	    "Dezembro": 57.3
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -23087,18 +23087,18 @@
         "id": "2605301",
         "name": "Exu",
         "description": "Exu",
-	    "Janeiro": 64,
-	    "Fevereiro": 301,
-	    "Março": 42,
-	    "Abril": 232,
-	    "Maio": 26.2,
-	    "Junho": 0,
-	    "Julho": 0,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 71,
-	    "Novembro": 30,
-	    "Dezembro": 193
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -23454,18 +23454,18 @@
         "id": "2605400",
         "name": "Feira Nova",
         "description": "Feira Nova",
-	    "Janeiro": 74.6,
-	    "Fevereiro": 56.7,
-	    "Março": 75,
-	    "Abril": 159.4,
-	    "Maio": 91.3,
-	    "Junho": 32,
-	    "Julho": 11.1,
-	    "Agosto": 2.3,
-	    "Setembro": 2.2,
-	    "Outubro": 4.9,
-	    "Novembro": 19.9,
-	    "Dezembro": 47.8
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -24201,18 +24201,18 @@
         "id": "2605509",
         "name": "Ferreiros",
         "description": "Ferreiros",
-	    "Janeiro": 107.4,
-	    "Fevereiro": 213,
-	    "Março": 105.8,
-	    "Abril": 218.9,
-	    "Maio": 111.7,
-	    "Junho": 103.4,
-	    "Julho": 63.9,
-	    "Agosto": 13.6,
-	    "Setembro": 4.3,
-	    "Outubro": 6.3,
-	    "Novembro": 14.7,
-	    "Dezembro": 47.1
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -24372,18 +24372,18 @@
         "id": "2605608",
         "name": "Flores",
         "description": "Flores",
-	    "Janeiro": 9.3,
-	    "Fevereiro": 292.5,
-	    "Março": 40.4,
-	    "Abril": 119.2,
-	    "Maio": 41.7,
-	    "Junho": 0,
-	    "Julho": 10.4,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 0,
-	    "Novembro": 20.6,
-	    "Dezembro": 72.6
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -24731,18 +24731,18 @@
         "id": "2605707",
         "name": "Floresta",
         "description": "Floresta",
-	    "Janeiro": 26.3,
-	    "Fevereiro": 130.7,
-	    "Março": 126.3,
-	    "Abril": 143.1,
-	    "Maio": 3.9,
-	    "Junho": 8.9,
-	    "Julho": 5.9,
-	    "Agosto": 0.4,
-	    "Setembro": 0,
-	    "Outubro": 14.7,
-	    "Novembro": 23.7,
-	    "Dezembro": 169.6
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -24958,18 +24958,18 @@
         "id": "2605806",
         "name": "Frei Miguelinho",
         "description": "Frei Miguelinho",
-	    "Janeiro": 40.2,
-	    "Fevereiro": 80.4,
-	    "Março": 74.4,
-	    "Abril": 160.1,
-	    "Maio": 87.2,
-	    "Junho": 21.9,
-	    "Julho": 19.6,
-	    "Agosto": 3.8,
-	    "Setembro": 2.7,
-	    "Outubro": 2.2,
-	    "Novembro": 4.4,
-	    "Dezembro": 20.7
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -25249,18 +25249,18 @@
         "id": "2605905",
         "name": "Gameleira",
         "description": "Gameleira",
-	    "Janeiro": 171,
-	    "Fevereiro": 217.3,
-	    "Março": 207.5,
-	    "Abril": 332.3,
-	    "Maio": 202,
-	    "Junho": 78.8,
-	    "Julho": 90.4,
-	    "Agosto": 50.4,
-	    "Setembro": 29.6,
-	    "Outubro": 10,
-	    "Novembro": 47.2,
-	    "Dezembro": 56.3
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -25480,18 +25480,18 @@
         "id": "2606002",
         "name": "Garanhuns",
         "description": "Garanhuns",
-	    "Janeiro": 49.2,
-	    "Fevereiro": 79.4,
-	    "Março": 53.7,
-	    "Abril": 177.2,
-	    "Maio": 128.8,
-	    "Junho": 78.1,
-	    "Julho": 86.2,
-	    "Agosto": 37.8,
-	    "Setembro": 20,
-	    "Outubro": 5,
-	    "Novembro": 10.2,
-	    "Dezembro": 30.8
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -25919,18 +25919,18 @@
         "id": "2606101",
         "name": "Glória do Goitá",
         "description": "Glória do Goitá",
-	    "Janeiro": 119,
-	    "Fevereiro": 57.2,
-	    "Março": 91.6,
-	    "Abril": 175.9,
-	    "Maio": 87.7,
-	    "Junho": 52,
-	    "Julho": 19.7,
-	    "Agosto": 6.4,
-	    "Setembro": 15.6,
-	    "Outubro": 0.5,
-	    "Novembro": 22.6,
-	    "Dezembro": 96.9
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -26130,18 +26130,18 @@
         "id": "2606200",
         "name": "Goiana",
         "description": "Goiana",
-	    "Janeiro": 162,
-	    "Fevereiro": 190.8,
-	    "Março": 82.6,
-	    "Abril": 289,
-	    "Maio": 202.6,
-	    "Junho": 134.7,
-	    "Julho": 124.6,
-	    "Agosto": 63,
-	    "Setembro": 34.6,
-	    "Outubro": 15.6,
-	    "Novembro": 26.6,
-	    "Dezembro": 66
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -26505,18 +26505,18 @@
         "id": "2606309",
         "name": "Granito",
         "description": "Granito",
-	    "Janeiro": 92,
-	    "Fevereiro": 269,
-	    "Março": 75,
-	    "Abril": 137,
-	    "Maio": 0,
-	    "Junho": 0,
-	    "Julho": 0,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 57,
-	    "Novembro": 0,
-	    "Dezembro": 244
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -26752,18 +26752,18 @@
         "id": "2606408",
         "name": "Gravatá",
         "description": "Gravatá",
-	    "Janeiro": 127,
-	    "Fevereiro": 27,
-	    "Março": 50.8,
-	    "Abril": 89.3,
-	    "Maio": 57.8,
-	    "Junho": 13.3,
-	    "Julho": 3.1,
-	    "Agosto": 2.5,
-	    "Setembro": 0.4,
-	    "Outubro": 0,
-	    "Novembro": 8,
-	    "Dezembro": 13.2
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -27067,18 +27067,18 @@
         "id": "2606507",
         "name": "Iati",
         "description": "Iati",
-	    "Janeiro": 20.6,
-	    "Fevereiro": 30,
-	    "Março": 51,
-	    "Abril": 118.6,
-	    "Maio": 74.2,
-	    "Junho": 29.7,
-	    "Julho": 24.1,
-	    "Agosto": 3.5,
-	    "Setembro": 0,
-	    "Outubro": 0,
-	    "Novembro": 9.9,
-	    "Dezembro": 21.9
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -27430,18 +27430,18 @@
         "id": "2606606",
         "name": "Ibimirim",
         "description": "Ibimirim",
-	    "Janeiro": 11.9,
-	    "Fevereiro": 131,
-	    "Março": 136.6,
-	    "Abril": 173.2,
-	    "Maio": 13,
-	    "Junho": 0.8,
-	    "Julho": 4.2,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 0.2,
-	    "Novembro": 10.6,
-	    "Dezembro": 45
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -27553,18 +27553,18 @@
         "id": "2606705",
         "name": "Ibirajuba",
         "description": "Ibirajuba",
-	    "Janeiro": 49,
-	    "Fevereiro": 64,
-	    "Março": 95,
-	    "Abril": 173.5,
-	    "Maio": 124.5,
-	    "Junho": 41.5,
-	    "Julho": 64,
-	    "Agosto": 10.5,
-	    "Setembro": 4.5,
-	    "Outubro": 0,
-	    "Novembro": 11,
-	    "Dezembro": 10
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -27724,18 +27724,18 @@
         "id": "2606804",
         "name": "Igarassu",
         "description": "Igarassu",
-	    "Janeiro": 147,
-	    "Fevereiro": 67.2,
-	    "Março": 96.9,
-	    "Abril": 546.1,
-	    "Maio": 274.8,
-	    "Junho": 144.7,
-	    "Julho": 63.3,
-	    "Agosto": 51.1,
-	    "Setembro": 36.6,
-	    "Outubro": 19.7,
-	    "Novembro": 50.1,
-	    "Dezembro": 64.3
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -27975,18 +27975,18 @@
         "id": "2606903",
         "name": "Iguaraci",
         "description": "Iguaraci",
-	    "Janeiro": 131,
-	    "Fevereiro": 242.6,
-	    "Março": 105,
-	    "Abril": 92.1,
-	    "Maio": 16,
-	    "Junho": 0,
-	    "Julho": 16,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 4.1,
-	    "Novembro": 88.8,
-	    "Dezembro": 45.5
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -28526,18 +28526,18 @@
         "id": "2607000",
         "name": "Inajá",
         "description": "Inajá",
-	    "Janeiro": 11.2,
-	    "Fevereiro": 87.6,
-	    "Março": 114.9,
-	    "Abril": 30.9,
-	    "Maio": 16,
-	    "Junho": 0.5,
-	    "Julho": 5.5,
-	    "Agosto": 1.5,
-	    "Setembro": 1.2,
-	    "Outubro": 0,
-	    "Novembro": 32.2,
-	    "Dezembro": 45
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -28917,18 +28917,18 @@
         "id": "2607109",
         "name": "Ingazeira",
         "description": "Ingazeira",
-	    "Janeiro": 62,
-	    "Fevereiro": 273.9,
-	    "Março": 233.5,
-	    "Abril": 204,
-	    "Maio": 45,
-	    "Junho": 0,
-	    "Julho": 0,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 0,
-	    "Novembro": 8,
-	    "Dezembro": 50.5
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -29148,477 +29148,40 @@
         "id": "2607208",
         "name": "Ipojuca",
         "description": "Ipojuca",
-	    "Janeiro": 130.4,
-	    "Fevereiro": 191.3,
-	    "Março": 242.5,
-	    "Abril": 534.4,
-	    "Maio": 221.3,
-	    "Junho": 87.3,
-	    "Julho": 174.8,
-	    "Agosto": 65.4,
-	    "Setembro": 36.3,
-	    "Outubro": 11.7,
-	    "Novembro": 42.6,
-	    "Dezembro": 63.5
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
-          [
-            [
-              -34.9996337168,
-              -8.4503597232
-            ],
-            [
-              -35.0066950734,
-              -8.4574055155
-            ],
-            [
-              -35.0269053238,
-              -8.4553872572
-            ],
-            [
-              -35.0259734267,
-              -8.4506697159
-            ],
-            [
-              -35.0310848119,
-              -8.4400042528
-            ],
-            [
-              -35.0115679708,
-              -8.4368805038
-            ],
-            [
-              -35.0079929072,
-              -8.4442250631
-            ],
-            [
-              -34.9999959236,
-              -8.4452455797
-            ],
-            [
-              -34.9996337168,
-              -8.4503597232
-            ]
-          ],
-          [
-            [
-              -35.1169092423,
-              -8.3268273817
-            ],
-            [
-              -35.1079015053,
-              -8.3336297407
-            ],
-            [
-              -35.1065983713,
-              -8.3290199015
-            ],
-            [
-              -35.1013136490,
-              -8.3263265434
-            ],
-            [
-              -35.0937996980,
-              -8.3297523635
-            ],
-            [
-              -35.0806100078,
-              -8.3323307434
-            ],
-            [
-              -35.0697424447,
-              -8.3474396703
-            ],
-            [
-              -35.0630094870,
-              -8.3498725483
-            ],
-            [
-              -35.0507588912,
-              -8.3516757272
-            ],
-            [
-              -35.0444434269,
-              -8.3487185353
-            ],
-            [
-              -35.0283694286,
-              -8.3609809696
-            ],
-            [
-              -35.0232428663,
-              -8.3631031984
-            ],
-            [
-              -35.0156967531,
-              -8.3598224972
-            ],
-            [
-              -35.0119240828,
-              -8.3571328421
-            ],
-            [
-              -34.9923126284,
-              -8.3613697325
-            ],
-            [
-              -34.9888988829,
-              -8.3559162965
-            ],
-            [
-              -34.9859202485,
-              -8.3527848071
-            ],
-            [
-              -34.9775795219,
-              -8.3535697009
-            ],
-            [
-              -34.9754261619,
-              -8.3595226839
-            ],
-            [
-              -34.9655692316,
-              -8.3612259642
-            ],
-            [
-              -34.9609136483,
-              -8.3656303823
-            ],
-            [
-              -34.9519263563,
-              -8.3753211700
-            ],
-            [
-              -34.9671165764,
-              -8.4093671485
-            ],
-            [
-              -34.9770740659,
-              -8.4063581153
-            ],
-            [
-              -34.9851642954,
-              -8.4102899686
-            ],
-            [
-              -35.0006114237,
-              -8.4111358773
-            ],
-            [
-              -35.0055597803,
-              -8.4142815624
-            ],
-            [
-              -35.0082332776,
-              -8.4120881407
-            ],
-            [
-              -35.0145039087,
-              -8.4228920459
-            ],
-            [
-              -35.0054723226,
-              -8.4273405449
-            ],
-            [
-              -35.0058131569,
-              -8.4309173710
-            ],
-            [
-              -35.0121819612,
-              -8.4331387437
-            ],
-            [
-              -35.0185605082,
-              -8.4252637898
-            ],
-            [
-              -35.0279394437,
-              -8.4267298492
-            ],
-            [
-              -35.0295543699,
-              -8.4211072472
-            ],
-            [
-              -35.0335650176,
-              -8.4275410059
-            ],
-            [
-              -35.0570231247,
-              -8.4651915877
-            ],
-            [
-              -35.0488590406,
-              -8.4700184715
-            ],
-            [
-              -35.0277114903,
-              -8.4660379983
-            ],
-            [
-              -35.0267641385,
-              -8.4728573808
-            ],
-            [
-              -35.0334037656,
-              -8.4871057996
-            ],
-            [
-              -35.0263205692,
-              -8.5071781653
-            ],
-            [
-              -35.0218013287,
-              -8.5079239045
-            ],
-            [
-              -35.0214386873,
-              -8.5052653209
-            ],
-            [
-              -35.0189164064,
-              -8.4959728389
-            ],
-            [
-              -35.0095354856,
-              -8.4960729201
-            ],
-            [
-              -34.9979328036,
-              -8.4727178064
-            ],
-            [
-              -34.9939486079,
-              -8.4634582087
-            ],
-            [
-              -34.9953699030,
-              -8.4521632031
-            ],
-            [
-              -34.9853971184,
-              -8.4602995132
-            ],
-            [
-              -35.0003709180,
-              -8.4908620615
-            ],
-            [
-              -34.9962658434,
-              -8.5076129157
-            ],
-            [
-              -35.0018798618,
-              -8.5157643021
-            ],
-            [
-              -35.0037082926,
-              -8.5257575631
-            ],
-            [
-              -34.9989223152,
-              -8.5391514976
-            ],
-            [
-              -35.0016645810,
-              -8.5470844099
-            ],
-            [
-              -35.0061035733,
-              -8.5576738714
-            ],
-            [
-              -35.0044119300,
-              -8.5655636636
-            ],
-            [
-              -35.0089670608,
-              -8.5671468619
-            ],
-            [
-              -35.0156893753,
-              -8.5626827911
-            ],
-            [
-              -35.0229582982,
-              -8.5650296841
-            ],
-            [
-              -35.0301863949,
-              -8.5728794463
-            ],
-            [
-              -35.0368897894,
-              -8.5889270048
-            ],
-            [
-              -35.0427722898,
-              -8.5954533712
-            ],
-            [
-              -35.0430404145,
-              -8.6045109143
-            ],
-            [
-              -35.0459784421,
-              -8.6055150843
-            ],
-            [
-              -35.0470346806,
-              -8.6053875452
-            ],
-            [
-              -35.0580594364,
-              -8.6024807395
-            ],
-            [
-              -35.0649676493,
-              -8.5964198084
-            ],
-            [
-              -35.0631273936,
-              -8.5934362529
-            ],
-            [
-              -35.0689962730,
-              -8.5836760422
-            ],
-            [
-              -35.0730632045,
-              -8.5821972363
-            ],
-            [
-              -35.0715822142,
-              -8.5795277339
-            ],
-            [
-              -35.0696101500,
-              -8.5665538839
-            ],
-            [
-              -35.0744752333,
-              -8.5588601514
-            ],
-            [
-              -35.0805188628,
-              -8.5560111890
-            ],
-            [
-              -35.0826299661,
-              -8.5460444837
-            ],
-            [
-              -35.0756203348,
-              -8.5364272660
-            ],
-            [
-              -35.0764827635,
-              -8.5306657483
-            ],
-            [
-              -35.0903182513,
-              -8.5246144428
-            ],
-            [
-              -35.1177117827,
-              -8.5161942266
-            ],
-            [
-              -35.1255407203,
-              -8.5137867948
-            ],
-            [
-              -35.1289350470,
-              -8.5116772971
-            ],
-            [
-              -35.1420759724,
-              -8.5001364646
-            ],
-            [
-              -35.1440033362,
-              -8.4899202327
-            ],
-            [
-              -35.1529109155,
-              -8.4874126337
-            ],
-            [
-              -35.1629261387,
-              -8.4854204132
-            ],
-            [
-              -35.1676277939,
-              -8.4781431378
-            ],
-            [
-              -35.1917810051,
-              -8.4784633020
-            ],
-            [
-              -35.2026727859,
-              -8.4786069099
-            ],
-            [
-              -35.2289236784,
-              -8.4364399588
-            ],
-            [
-              -35.2299558195,
-              -8.4348525245
-            ],
-            [
-              -35.2356826083,
-              -8.4217236968
-            ],
-            [
-              -35.2377282944,
-              -8.4170353337
-            ],
-            [
-              -35.2254438068,
-              -8.4048621821
-            ],
-            [
-              -35.1967295986,
-              -8.3796237864
-            ],
-            [
-              -35.1926477117,
-              -8.3760549374
-            ],
-            [
-              -35.1927128221,
-              -8.3591083234
-            ],
-            [
-              -35.1899451967,
-              -8.3543650284
-            ],
-            [
-              -35.1815441209,
-              -8.3526981837
-            ],
-            [
-              -35.1694573751,
-              -8.3529911178
-            ],
-            [
-              -35.1537238377,
-              -8.3204310752
-            ],
-            [
-              -35.1398248647,
-              -8.3095173806
-            ],
-            [
-              -35.1169092423,
-              -8.3268273817
-            ]
+          [ 
+            [ -34.955780665145539, -8.369704152624479 ],
+            [ -34.996193999953107, -8.479533000447589 ],
+            [ -35.006330999775791, -8.525520999694322 ],
+            [ -35.044716820225005, -8.611332297547449 ],
+            [ -35.065315034461207, -8.597214162703381 ],
+            [ -35.077504582170654, -8.52931930344306 ],
+            [ -35.126100000214819, -8.519310000156338 ],
+            [ -35.145338391853265, -8.489452022592729 ],
+            [ -35.202997038082799, -8.479023673004065 ],
+            [ -35.238052813786283, -8.417451583723562 ],
+            [ -35.17072132942576, -8.355121033209059 ],
+            [ -35.140148406124013, -8.309932864909738 ],
+            [ -35.108224776652094, -8.334045440844363 ],
+            [ -35.078718639953252, -8.334505167079726 ],
+            [ -35.024385439336527, -8.363552256531362 ],
+            [ -34.977901624959991, -8.35398566430689 ],
+            [ -34.955780665145539, -8.369704152624479 ] 
           ]
         ]
       }
@@ -29629,18 +29192,18 @@
         "id": "2607307",
         "name": "Ipubi",
         "description": "Ipubi",
-	    "Janeiro": 45,
-	    "Fevereiro": 263,
-	    "Março": 122,
-	    "Abril": 211,
-	    "Maio": 27,
-	    "Junho": 0,
-	    "Julho": 0,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 30,
-	    "Novembro": 0,
-	    "Dezembro": 269
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -29812,18 +29375,18 @@
         "id": "2607406",
         "name": "Itacuruba",
         "description": "Itacuruba",
-	    "Janeiro": 16,
-	    "Fevereiro": 99,
-	    "Março": 76,
-	    "Abril": 56,
-	    "Maio": 7.5,
-	    "Junho": 0,
-	    "Julho": 3,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 0,
-	    "Novembro": 0,
-	    "Dezembro": 79
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -29995,18 +29558,18 @@
         "id": "2607505",
         "name": "Itaíba",
         "description": "Itaíba",
-	    "Janeiro": 15,
-	    "Fevereiro": 58,
-	    "Março": 42.8,
-	    "Abril": 66.5,
-	    "Maio": 62,
-	    "Junho": 19.5,
-	    "Julho": 12,
-	    "Agosto": 0,
-	    "Setembro": 2,
-	    "Outubro": 0,
-	    "Novembro": 59,
-	    "Dezembro": 114
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -30582,18 +30145,18 @@
         "id": "2607604",
         "name": "Ilha de Itamaracá",
         "description": "Ilha de Itamaracá",
-	    "Janeiro": 121.1,
-	    "Fevereiro": 72,
-	    "Março": 89.3,
-	    "Abril": 405.6,
-	    "Maio": 253.2,
-	    "Junho": 110.6,
-	    "Julho": 78.3,
-	    "Agosto": 80.8,
-	    "Setembro": 35.9,
-	    "Outubro": 57,
-	    "Novembro": 22.1,
-	    "Dezembro": 37.2
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -30705,18 +30268,18 @@
         "id": "2607653",
         "name": "Itambé",
         "description": "Itambé",
-	    "Janeiro": 201.9,
-	    "Fevereiro": 217,
-	    "Março": 105,
-	    "Abril": 235,
-	    "Maio": 175,
-	    "Junho": 136.8,
-	    "Julho": 124,
-	    "Agosto": 2,
-	    "Setembro": 4.5,
-	    "Outubro": 3,
-	    "Novembro": 4.7,
-	    "Dezembro": 48
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -31008,18 +30571,18 @@
         "id": "2607703",
         "name": "Itapetim",
         "description": "Itapetim",
-	    "Janeiro": 26,
-	    "Fevereiro": 169,
-	    "Março": 162,
-	    "Abril": 326,
-	    "Maio": 97,
-	    "Junho": 0,
-	    "Julho": 3,
-	    "Agosto": 1,
-	    "Setembro": 0,
-	    "Outubro": 0,
-	    "Novembro": 13.5,
-	    "Dezembro": 40
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -31331,18 +30894,18 @@
         "id": "2607752",
         "name": "Itapissuma",
         "description": "Itapissuma",
-	    "Janeiro": 168.8,
-	    "Fevereiro": 95.4,
-	    "Março": 88.6,
-	    "Abril": 393.1,
-	    "Maio": 200.1,
-	    "Junho": 109.5,
-	    "Julho": 85.7,
-	    "Agosto": 53.3,
-	    "Setembro": 31.5,
-	    "Outubro": 20,
-	    "Novembro": 22.1,
-	    "Dezembro": 40.3
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -31462,18 +31025,18 @@
         "id": "2607802",
         "name": "Itaquitinga",
         "description": "Itaquitinga",
-	    "Janeiro": 53.5,
-	    "Fevereiro": 170.7,
-	    "Março": 124.1,
-	    "Abril": 333.9,
-	    "Maio": 119,
-	    "Junho": 96.6,
-	    "Julho": 56.6,
-	    "Agosto": 11.5,
-	    "Setembro": 26.1,
-	    "Outubro": 1.9,
-	    "Novembro": 25.1,
-	    "Dezembro": 58.3
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -31625,18 +31188,18 @@
         "id": "2607901",
         "name": "Jaboatão dos Guararapes",
         "description": "Jaboatão dos Guararapes",
-	    "Janeiro": 194.5,
-	    "Fevereiro": 137.2,
-	    "Março": 208.2,
-	    "Abril": 511.4,
-	    "Maio": 211.6,
-	    "Junho": 139.8,
-	    "Julho": 113.8,
-	    "Agosto": 97.4,
-	    "Setembro": 54.8,
-	    "Outubro": 16.6,
-	    "Novembro": 59.4,
-	    "Dezembro": 74.6
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -31852,18 +31415,18 @@
         "id": "2607950",
         "name": "Jaqueira",
         "description": "Jaqueira",
-	    "Janeiro": 124.3,
-	    "Fevereiro": 101.6,
-	    "Março": 169.8,
-	    "Abril": 432.3,
-	    "Maio": 158.3,
-	    "Junho": 82,
-	    "Julho": 93.2,
-	    "Agosto": 33.2,
-	    "Setembro": 15.8,
-	    "Outubro": 0.2,
-	    "Novembro": 67.5,
-	    "Dezembro": 74.3
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -32071,18 +31634,18 @@
         "id": "2608008",
         "name": "Jataúba",
         "description": "Jataúba",
-	    "Janeiro": 5.5,
-	    "Fevereiro": 57.6,
-	    "Março": 53.3,
-	    "Abril": 141.5,
-	    "Maio": 7.2,
-	    "Junho": 0,
-	    "Julho": 0,
-	    "Agosto": 0,
-	    "Setembro": 2,
-	    "Outubro": 0.5,
-	    "Novembro": 0,
-	    "Dezembro": 7.8
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -32370,18 +31933,18 @@
         "id": "2608057",
         "name": "Jatobá",
         "description": "Jatobá",
-	    "Janeiro": 7.3,
-	    "Fevereiro": 30.5,
-	    "Março": 20.1,
-	    "Abril": 0.8,
-	    "Maio": 10.4,
-	    "Junho": 16,
-	    "Julho": 9.3,
-	    "Agosto": 3.9,
-	    "Setembro": 0,
-	    "Outubro": 0,
-	    "Novembro": 65,
-	    "Dezembro": 57.7
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -32525,18 +32088,18 @@
         "id": "2608107",
         "name": "João Alfredo",
         "description": "João Alfredo",
-	    "Janeiro": 134.5,
-	    "Fevereiro": 113,
-	    "Março": 163,
-	    "Abril": 264.5,
-	    "Maio": 111,
-	    "Junho": 86,
-	    "Julho": 49,
-	    "Agosto": 17,
-	    "Setembro": 12.5,
-	    "Outubro": 8.5,
-	    "Novembro": 30,
-	    "Dezembro": 33
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -32816,18 +32379,18 @@
         "id": "2608206",
         "name": "Joaquim Nabuco",
         "description": "Joaquim Nabuco",
-	    "Janeiro": 99.6,
-	    "Fevereiro": 109.1,
-	    "Março": 108.1,
-	    "Abril": 239.2,
-	    "Maio": 230.4,
-	    "Junho": 60.1,
-	    "Julho": 66.3,
-	    "Agosto": 24.5,
-	    "Setembro": 20.4,
-	    "Outubro": 0.4,
-	    "Novembro": 48.6,
-	    "Dezembro": 37.9
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -33371,18 +32934,18 @@
         "id": "2608255",
         "name": "Jucati",
         "description": "Jucati",
-	    "Janeiro": 39.7,
-	    "Fevereiro": 70.8,
-	    "Março": 67.8,
-	    "Abril": 103.9,
-	    "Maio": 71.1,
-	    "Junho": 27,
-	    "Julho": 50,
-	    "Agosto": 18.7,
-	    "Setembro": 5.5,
-	    "Outubro": 7.5,
-	    "Novembro": 5.4,
-	    "Dezembro": 11.5
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -33562,18 +33125,18 @@
         "id": "2608305",
         "name": "Jupi",
         "description": "Jupi",
-	    "Janeiro": 37.3,
-	    "Fevereiro": 60,
-	    "Março": 34.6,
-	    "Abril": 99.2,
-	    "Maio": 80.2,
-	    "Junho": 27.8,
-	    "Julho": 53.8,
-	    "Agosto": 23.8,
-	    "Setembro": 5.8,
-	    "Outubro": 0,
-	    "Novembro": 10,
-	    "Dezembro": 28.8
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -33741,18 +33304,18 @@
         "id": "2608404",
         "name": "Jurema",
         "description": "Jurema",
-	    "Janeiro": 36.2,
-	    "Fevereiro": 79.7,
-	    "Março": 37.1,
-	    "Abril": 153.4,
-	    "Maio": 124.3,
-	    "Junho": 59.8,
-	    "Julho": 74.8,
-	    "Agosto": 45,
-	    "Setembro": 21.5,
-	    "Outubro": 0,
-	    "Novembro": 16.2,
-	    "Dezembro": 35.5
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -33928,18 +33491,18 @@
         "id": "2608453",
         "name": "Lagoa do Carro",
         "description": "Lagoa do Carro",
-	    "Janeiro": 22.4,
-	    "Fevereiro": 104.4,
-	    "Março": 108.9,
-	    "Abril": 184.7,
-	    "Maio": 84.3,
-	    "Junho": 61.7,
-	    "Julho": 26.5,
-	    "Agosto": 10.9,
-	    "Setembro": 18.2,
-	    "Outubro": 4.1,
-	    "Novembro": 7.8,
-	    "Dezembro": 39.7
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -34435,18 +33998,18 @@
         "id": "2608503",
         "name": "Lagoa do Itaenga",
         "description": "Lagoa do Itaenga",
-	    "Janeiro": 90.4,
-	    "Fevereiro": 41.3,
-	    "Março": 155.5,
-	    "Abril": 156,
-	    "Maio": 49.9,
-	    "Junho": 26.4,
-	    "Julho": 6.6,
-	    "Agosto": 3.8,
-	    "Setembro": 1.6,
-	    "Outubro": 1.2,
-	    "Novembro": 19.9,
-	    "Dezembro": 52.6
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -34746,18 +34309,18 @@
         "id": "2608602",
         "name": "Lagoa do Ouro",
         "description": "Lagoa do Ouro",
-	    "Janeiro": 52.9,
-	    "Fevereiro": 44.4,
-	    "Março": 54.2,
-	    "Abril": 99.9,
-	    "Maio": 121.9,
-	    "Junho": 47.7,
-	    "Julho": 66.2,
-	    "Agosto": 10.6,
-	    "Setembro": 2,
-	    "Outubro": 0,
-	    "Novembro": 40.3,
-	    "Dezembro": 37.2
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -35045,18 +34608,18 @@
         "id": "2608701",
         "name": "Lagoa dos Gatos",
         "description": "Lagoa dos Gatos",
-	    "Janeiro": 81,
-	    "Fevereiro": 101.8,
-	    "Março": 100.8,
-	    "Abril": 161.4,
-	    "Maio": 73.4,
-	    "Junho": 57.8,
-	    "Julho": 45.3,
-	    "Agosto": 14.6,
-	    "Setembro": 13.1,
-	    "Outubro": 1.7,
-	    "Novembro": 60.7,
-	    "Dezembro": 29.1
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -35300,18 +34863,18 @@
         "id": "2608750",
         "name": "Lagoa Grande",
         "description": "Lagoa Grande",
-	    "Janeiro": 71.9,
-	    "Fevereiro": 80.9,
-	    "Março": 95.7,
-	    "Abril": 145.9,
-	    "Maio": 24.3,
-	    "Junho": 2.5,
-	    "Julho": 0,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 39.8,
-	    "Novembro": 4.2,
-	    "Dezembro": 83.1
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -35863,18 +35426,18 @@
         "id": "2608800",
         "name": "Lajedo",
         "description": "Lajedo",
-	    "Janeiro": 62.3,
-	    "Fevereiro": 66.7,
-	    "Março": 75.3,
-	    "Abril": 118.7,
-	    "Maio": 54.7,
-	    "Junho": 21.5,
-	    "Julho": 30.6,
-	    "Agosto": 19.7,
-	    "Setembro": 6.1,
-	    "Outubro": 0,
-	    "Novembro": 5.2,
-	    "Dezembro": 17.4
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -36006,18 +35569,18 @@
         "id": "2608909",
         "name": "Limoeiro",
         "description": "Limoeiro",
-	    "Janeiro": 101.3,
-	    "Fevereiro": 63.6,
-	    "Março": 108.3,
-	    "Abril": 151.5,
-	    "Maio": 86.7,
-	    "Junho": 48.6,
-	    "Julho": 24,
-	    "Agosto": 7.9,
-	    "Setembro": 9.8,
-	    "Outubro": 14.4,
-	    "Novembro": 15,
-	    "Dezembro": 48.4
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -36993,18 +36556,18 @@
         "id": "2609006",
         "name": "Macaparana",
         "description": "Macaparana",
-	    "Janeiro": 76.4,
-	    "Fevereiro": 103.9,
-	    "Março": 143.5,
-	    "Abril": 442.4,
-	    "Maio": 87,
-	    "Junho": 72.4,
-	    "Julho": 24,
-	    "Agosto": 22.5,
-	    "Setembro": 11.4,
-	    "Outubro": 5.9,
-	    "Novembro": 7,
-	    "Dezembro": 35.3
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -37188,18 +36751,18 @@
         "id": "2609105",
         "name": "Machados",
         "description": "Machados",
-	    "Janeiro": 8.6,
-	    "Fevereiro": 87.2,
-	    "Março": 71.5,
-	    "Abril": 288.6,
-	    "Maio": 131.5,
-	    "Junho": 107.7,
-	    "Julho": 75,
-	    "Agosto": 42.5,
-	    "Setembro": 43.5,
-	    "Outubro": 1,
-	    "Novembro": 36.6,
-	    "Dezembro": 68.7
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -37379,18 +36942,18 @@
         "id": "2609154",
         "name": "Manari",
         "description": "Manari",
-	    "Janeiro": 16,
-	    "Fevereiro": 74,
-	    "Março": 74,
-	    "Abril": 62,
-	    "Maio": 46,
-	    "Junho": 20,
-	    "Julho": 43,
-	    "Agosto": 7,
-	    "Setembro": 5,
-	    "Outubro": 0,
-	    "Novembro": 13,
-	    "Dezembro": 114
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -37714,18 +37277,18 @@
         "id": "2609204",
         "name": "Maraial",
         "description": "Maraial",
-	    "Janeiro": 116.9,
-	    "Fevereiro": 116.7,
-	    "Março": 138.9,
-	    "Abril": 356.3,
-	    "Maio": 140.8,
-	    "Junho": 80.2,
-	    "Julho": 85.5,
-	    "Agosto": 30.3,
-	    "Setembro": 20.8,
-	    "Outubro": 1.5,
-	    "Novembro": 41.3,
-	    "Dezembro": 62.2
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -37921,18 +37484,18 @@
         "id": "2609303",
         "name": "Mirandiba",
         "description": "Mirandiba",
-	    "Janeiro": 90,
-	    "Fevereiro": 258,
-	    "Março": 26,
-	    "Abril": 93,
-	    "Maio": 7,
-	    "Junho": 0,
-	    "Julho": 0,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 43,
-	    "Novembro": 0,
-	    "Dezembro": 98
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -38272,18 +37835,18 @@
         "id": "2609402",
         "name": "Moreno",
         "description": "Moreno",
-	    "Janeiro": 135.3,
-	    "Fevereiro": 133.2,
-	    "Março": 140.8,
-	    "Abril": 358.7,
-	    "Maio": 221.8,
-	    "Junho": 105.5,
-	    "Julho": 63.1,
-	    "Agosto": 23.1,
-	    "Setembro": 14.5,
-	    "Outubro": 10.8,
-	    "Novembro": 26.1,
-	    "Dezembro": 70.8
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -38535,18 +38098,18 @@
         "id": "2609501",
         "name": "Nazaré da Mata",
         "description": "Nazaré da Mata",
-	    "Janeiro": 102.4,
-	    "Fevereiro": 192.8,
-	    "Março": 171.6,
-	    "Abril": 301.6,
-	    "Maio": 128.6,
-	    "Junho": 91.5,
-	    "Julho": 51.8,
-	    "Agosto": 26.7,
-	    "Setembro": 12.1,
-	    "Outubro": 3.2,
-	    "Novembro": 16.5,
-	    "Dezembro": 41
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -38798,18 +38361,18 @@
         "id": "2609600",
         "name": "Olinda",
         "description": "Olinda",
-	    "Janeiro": 91.8,
-	    "Fevereiro": 69.8,
-	    "Março": 137.3,
-	    "Abril": 474.2,
-	    "Maio": 146.9,
-	    "Junho": 153.4,
-	    "Julho": 65.9,
-	    "Agosto": 61.9,
-	    "Setembro": 46,
-	    "Outubro": 5.9,
-	    "Novembro": 41.9,
-	    "Dezembro": 35.8
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -38941,18 +38504,18 @@
         "id": "2609709",
         "name": "Orobó",
         "description": "Orobó",
-	    "Janeiro": 74.5,
-	    "Fevereiro": 116.5,
-	    "Março": 139.5,
-	    "Abril": 215,
-	    "Maio": 93.5,
-	    "Junho": 74,
-	    "Julho": 19.5,
-	    "Agosto": 3,
-	    "Setembro": 3,
-	    "Outubro": 1,
-	    "Novembro": 21.5,
-	    "Dezembro": 23.5
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -39372,18 +38935,18 @@
         "id": "2609808",
         "name": "Orocó",
         "description": "Orocó",
-	    "Janeiro": 54.5,
-	    "Fevereiro": 150.6,
-	    "Março": 18.9,
-	    "Abril": 145.5,
-	    "Maio": 4.5,
-	    "Junho": 0,
-	    "Julho": 0,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 27,
-	    "Novembro": 3.3,
-	    "Dezembro": 94.8
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -39643,18 +39206,18 @@
         "id": "2609907",
         "name": "Ouricuri",
         "description": "Ouricuri",
-	    "Janeiro": 12.2,
-	    "Fevereiro": 66.6,
-	    "Março": 125.6,
-	    "Abril": 105.3,
-	    "Maio": 4.6,
-	    "Junho": 0.3,
-	    "Julho": 0,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 56.4,
-	    "Novembro": 2,
-	    "Dezembro": 253.8
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -40366,18 +39929,18 @@
         "id": "2610004",
         "name": "Palmares",
         "description": "Palmares",
-	    "Janeiro": 114.4,
-	    "Fevereiro": 125,
-	    "Março": 162,
-	    "Abril": 308.5,
-	    "Maio": 243,
-	    "Junho": 68.6,
-	    "Julho": 86.1,
-	    "Agosto": 34,
-	    "Setembro": 30.4,
-	    "Outubro": 1.1,
-	    "Novembro": 65.8,
-	    "Dezembro": 53.3
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -40897,18 +40460,18 @@
         "id": "2610103",
         "name": "Palmeirina",
         "description": "Palmeirina",
-	    "Janeiro": 95.9,
-	    "Fevereiro": 59,
-	    "Março": 33,
-	    "Abril": 226.7,
-	    "Maio": 226,
-	    "Junho": 91.5,
-	    "Julho": 116.4,
-	    "Agosto": 27.9,
-	    "Setembro": 8.2,
-	    "Outubro": 0,
-	    "Novembro": 12.2,
-	    "Dezembro": 90.2
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -41128,18 +40691,18 @@
         "id": "2610202",
         "name": "Panelas",
         "description": "Panelas",
-	    "Janeiro": 73.5,
-	    "Fevereiro": 72.4,
-	    "Março": 98.4,
-	    "Abril": 101.1,
-	    "Maio": 71.7,
-	    "Junho": 46,
-	    "Julho": 45.6,
-	    "Agosto": 14.1,
-	    "Setembro": 12.6,
-	    "Outubro": 2.9,
-	    "Novembro": 10.6,
-	    "Dezembro": 29.6
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -41427,18 +40990,18 @@
         "id": "2610301",
         "name": "Paranatama",
         "description": "Paranatama",
-	    "Janeiro": 47.3,
-	    "Fevereiro": 64.5,
-	    "Março": 148.6,
-	    "Abril": 102.5,
-	    "Maio": 119.1,
-	    "Junho": 46.2,
-	    "Julho": 71,
-	    "Agosto": 22.6,
-	    "Setembro": 16.3,
-	    "Outubro": 0.9,
-	    "Novembro": 21.6,
-	    "Dezembro": 39.2
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -41646,18 +41209,18 @@
         "id": "2610400",
         "name": "Parnamirim",
         "description": "Parnamirim",
-	    "Janeiro": 21,
-	    "Fevereiro": 161.7,
-	    "Março": 3,
-	    "Abril": 46.4,
-	    "Maio": 7.5,
-	    "Junho": 0,
-	    "Julho": 0,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 50,
-	    "Novembro": 0,
-	    "Dezembro": 105.2
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -42441,18 +42004,18 @@
         "id": "2610509",
         "name": "Passira",
         "description": "Passira",
-	    "Janeiro": 70.2,
-	    "Fevereiro": 73,
-	    "Março": 108.8,
-	    "Abril": 164.2,
-	    "Maio": 100.1,
-	    "Junho": 19.3,
-	    "Julho": 25,
-	    "Agosto": 0.7,
-	    "Setembro": 7,
-	    "Outubro": 4.2,
-	    "Novembro": 10,
-	    "Dezembro": 41.5
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -42884,18 +42447,18 @@
         "id": "2610608",
         "name": "Paudalho",
         "description": "Paudalho",
-	    "Janeiro": 87.7,
-	    "Fevereiro": 88.5,
-	    "Março": 162.9,
-	    "Abril": 225,
-	    "Maio": 141.4,
-	    "Junho": 54,
-	    "Julho": 39.8,
-	    "Agosto": 27.6,
-	    "Setembro": 18.3,
-	    "Outubro": 9.3,
-	    "Novembro": 50.9,
-	    "Dezembro": 32.9
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -43075,18 +42638,18 @@
         "id": "2610707",
         "name": "Paulista",
         "description": "Paulista",
-	    "Janeiro": 121.7,
-	    "Fevereiro": 53.9,
-	    "Março": 218,
-	    "Abril": 466.3,
-	    "Maio": 131.1,
-	    "Junho": 151.9,
-	    "Julho": 87.3,
-	    "Agosto": 48.9,
-	    "Setembro": 47.6,
-	    "Outubro": 13.5,
-	    "Novembro": 50.1,
-	    "Dezembro": 44.7
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -43354,18 +42917,18 @@
         "id": "2610806",
         "name": "Pedra",
         "description": "Pedra",
-	    "Janeiro": 26.2,
-	    "Fevereiro": 51.2,
-	    "Março": 24,
-	    "Abril": 138.4,
-	    "Maio": 26.2,
-	    "Junho": 16,
-	    "Julho": 0,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 5,
-	    "Novembro": 26,
-	    "Dezembro": 42.2
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -43380,18 +42943,18 @@
         "id": "2610905",
         "name": "Pesqueira",
         "description": "Pesqueira",
-	    "Janeiro": 23.2,
-	    "Fevereiro": 52.7,
-	    "Março": 53.8,
-	    "Abril": 96.5,
-	    "Maio": 67.4,
-	    "Junho": 26.9,
-	    "Julho": 12.8,
-	    "Agosto": 31.7,
-	    "Setembro": 0,
-	    "Outubro": 55,
-	    "Novembro": 16.4,
-	    "Dezembro": 20.7
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -43851,18 +43414,18 @@
         "id": "2611002",
         "name": "Petrolândia",
         "description": "Petrolândia",
-	    "Janeiro": 10.2,
-	    "Fevereiro": 63.8,
-	    "Março": 30.2,
-	    "Abril": 28.6,
-	    "Maio": 0.8,
-	    "Junho": 10.9,
-	    "Julho": 1,
-	    "Agosto": 0.4,
-	    "Setembro": 0,
-	    "Outubro": 3.2,
-	    "Novembro": 9.8,
-	    "Dezembro": 157.7
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -43978,18 +43541,18 @@
         "id": "2611101",
         "name": "Petrolina",
         "description": "Petrolina",
-	    "Janeiro": 34,
-	    "Fevereiro": 162.1,
-	    "Março": 59.5,
-	    "Abril": 30.5,
-	    "Maio": 8.5,
-	    "Junho": 2.7,
-	    "Julho": 0,
-	    "Agosto": 1,
-	    "Setembro": 0,
-	    "Outubro": 16.5,
-	    "Novembro": 0,
-	    "Dezembro": 61.8
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -44753,18 +44316,18 @@
         "id": "2611200",
         "name": "Poção",
         "description": "Poção",
-	    "Janeiro": 4,
-	    "Fevereiro": 178,
-	    "Março": 78.4,
-	    "Abril": 164.6,
-	    "Maio": 76.3,
-	    "Junho": 32,
-	    "Julho": 9.8,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 0,
-	    "Novembro": 14.5,
-	    "Dezembro": 29.5
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -45020,18 +44583,18 @@
         "id": "2611309",
         "name": "Pombos",
         "description": "Pombos",
-	    "Janeiro": 53.8,
-	    "Fevereiro": 86.2,
-	    "Março": 37.4,
-	    "Abril": 121.5,
-	    "Maio": 75.6,
-	    "Junho": 15.4,
-	    "Julho": 30.4,
-	    "Agosto": 2.3,
-	    "Setembro": 24.1,
-	    "Outubro": 0.4,
-	    "Novembro": 37.1,
-	    "Dezembro": 88.4
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -45279,18 +44842,18 @@
         "id": "2611408",
         "name": "Primavera",
         "description": "Primavera",
-	    "Janeiro": 134.4,
-	    "Fevereiro": 201.4,
-	    "Março": 181.8,
-	    "Abril": 456.4,
-	    "Maio": 233.8,
-	    "Junho": 120.4,
-	    "Julho": 125.3,
-	    "Agosto": 81.4,
-	    "Setembro": 34.6,
-	    "Outubro": 3.1,
-	    "Novembro": 28.5,
-	    "Dezembro": 52.6
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -45488,18 +45051,18 @@
         "id": "2611507",
         "name": "Quipapá",
         "description": "Quipapá",
-	    "Janeiro": 125.5,
-	    "Fevereiro": 106.9,
-	    "Março": 72.5,
-	    "Abril": 247.8,
-	    "Maio": 178.4,
-	    "Junho": 62.7,
-	    "Julho": 58.2,
-	    "Agosto": 22.8,
-	    "Setembro": 16.5,
-	    "Outubro": 4,
-	    "Novembro": 22.9,
-	    "Dezembro": 57.8
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -45675,18 +45238,18 @@
         "id": "2611533",
         "name": "Quixaba",
         "description": "Quixaba",
-	    "Janeiro": 26.8,
-	    "Fevereiro": 176.9,
-	    "Março": 133.3,
-	    "Abril": 164.1,
-	    "Maio": 60.5,
-	    "Junho": 0,
-	    "Julho": 24,
-	    "Agosto": 0,
-	    "Setembro": 5.5,
-	    "Outubro": 0,
-	    "Novembro": 73,
-	    "Dezembro": 43.5
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -45898,18 +45461,18 @@
         "id": "2611606",
         "name": "Recife",
         "description": "Recife",
-	    "Janeiro": 153.6,
-	    "Fevereiro": 119.8,
-	    "Março": 120.6,
-	    "Abril": 466.4,
-	    "Maio": 183.1,
-	    "Junho": 133.6,
-	    "Julho": 94.2,
-	    "Agosto": 105.5,
-	    "Setembro": 50.3,
-	    "Outubro": 21.1,
-	    "Novembro": 37.4,
-	    "Dezembro": 74.5
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -46153,18 +45716,18 @@
         "id": "2611705",
         "name": "Riacho das Almas",
         "description": "Riacho das Almas",
-	    "Janeiro": 20.6,
-	    "Fevereiro": 45.5,
-	    "Março": 37,
-	    "Abril": 125,
-	    "Maio": 40,
-	    "Junho": 8,
-	    "Julho": 0,
-	    "Agosto": 0,
-	    "Setembro": 1,
-	    "Outubro": 1,
-	    "Novembro": 1,
-	    "Dezembro": 9.2
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -46504,18 +46067,18 @@
         "id": "2611804",
         "name": "Ribeirão",
         "description": "Ribeirão",
-	    "Janeiro": 179.1,
-	    "Fevereiro": 250.5,
-	    "Março": 149.4,
-	    "Abril": 302.5,
-	    "Maio": 129,
-	    "Junho": 93,
-	    "Julho": 98.5,
-	    "Agosto": 50.5,
-	    "Setembro": 22,
-	    "Outubro": 3.5,
-	    "Novembro": 37.5,
-	    "Dezembro": 51
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -47009,18 +46572,18 @@
         "id": "2611903",
         "name": "Rio Formoso",
         "description": "Rio Formoso",
-	    "Janeiro": 226.2,
-	    "Fevereiro": 238,
-	    "Março": 202.3,
-	    "Abril": 428.5,
-	    "Maio": 213.6,
-	    "Junho": 111.9,
-	    "Julho": 81.1,
-	    "Agosto": 66.8,
-	    "Setembro": 45.4,
-	    "Outubro": 11,
-	    "Novembro": 63.5,
-	    "Dezembro": 49
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -47248,18 +46811,18 @@
         "id": "2612000",
         "name": "Sairé",
         "description": "Sairé",
-	    "Janeiro": 77.6,
-	    "Fevereiro": 40.7,
-	    "Março": 70.3,
-	    "Abril": 186.6,
-	    "Maio": 93.2,
-	    "Junho": 72.6,
-	    "Julho": 63.4,
-	    "Agosto": 36.5,
-	    "Setembro": 14.8,
-	    "Outubro": 0,
-	    "Novembro": 18.3,
-	    "Dezembro": 19.1
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -47595,18 +47158,18 @@
         "id": "2612109",
         "name": "Salgadinho",
         "description": "Salgadinho",
-	    "Janeiro": 65.4,
-	    "Fevereiro": 48.6,
-	    "Março": 83.2,
-	    "Abril": 121.6,
-	    "Maio": 65.6,
-	    "Junho": 22.3,
-	    "Julho": 6.8,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 0,
-	    "Novembro": 9.2,
-	    "Dezembro": 35.5
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -48062,18 +47625,18 @@
         "id": "2612208",
         "name": "Salgueiro",
         "description": "Salgueiro",
-	    "Janeiro": 40.2,
-	    "Fevereiro": 323.4,
-	    "Março": 21,
-	    "Abril": 110.4,
-	    "Maio": 10.4,
-	    "Junho": 9.4,
-	    "Julho": 0.6,
-	    "Agosto": 0.8,
-	    "Setembro": 0,
-	    "Outubro": 19.2,
-	    "Novembro": 0,
-	    "Dezembro": 221
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -48757,18 +48320,18 @@
         "id": "2612307",
         "name": "Saloá",
         "description": "Saloá",
-	    "Janeiro": 39.5,
-	    "Fevereiro": 28.3,
-	    "Março": 108,
-	    "Abril": 169.2,
-	    "Maio": 58.5,
-	    "Junho": 28.3,
-	    "Julho": 33.4,
-	    "Agosto": 5,
-	    "Setembro": 6,
-	    "Outubro": 0,
-	    "Novembro": 10.9,
-	    "Dezembro": 20.2
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -48960,18 +48523,18 @@
         "id": "2612406",
         "name": "Sanharó",
         "description": "Sanharó",
-	    "Janeiro": 25,
-	    "Fevereiro": 50.5,
-	    "Março": 83.1,
-	    "Abril": 153.1,
-	    "Maio": 54.5,
-	    "Junho": 14.3,
-	    "Julho": 10,
-	    "Agosto": 4,
-	    "Setembro": 0,
-	    "Outubro": 0,
-	    "Novembro": 0,
-	    "Dezembro": 20.8
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -49183,18 +48746,18 @@
         "id": "2612455",
         "name": "Santa Cruz",
         "description": "Santa Cruz da Venerada",
-	    "Janeiro": 79,
-	    "Fevereiro": 84.8,
-	    "Março": 83.5,
-	    "Abril": 78,
-	    "Maio": 0,
-	    "Junho": 0,
-	    "Julho": 0,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 54,
-	    "Novembro": 0,
-	    "Dezembro": 131
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -49642,18 +49205,18 @@
         "id": "2612471",
         "name": "Santa Cruz da Baixa Verde",
         "description": "Santa Cruz da Baixa Verde",
-	    "Janeiro": 50,
-	    "Fevereiro": 166,
-	    "Março": 112,
-	    "Abril": 174,
-	    "Maio": 72,
-	    "Junho": 0,
-	    "Julho": 14,
-	    "Agosto": 0,
-	    "Setembro": 3,
-	    "Outubro": 4,
-	    "Novembro": 9.8,
-	    "Dezembro": 96.5
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -49789,18 +49352,18 @@
         "id": "2612505",
         "name": "Santa Cruz do Capibaribe",
         "description": "Santa Cruz do Capibaribe",
-	    "Janeiro": 21.9,
-	    "Fevereiro": 64.3,
-	    "Março": 56.9,
-	    "Abril": 309.6,
-	    "Maio": 60,
-	    "Junho": 7.4,
-	    "Julho": 14.3,
-	    "Agosto": 1,
-	    "Setembro": 0,
-	    "Outubro": 1,
-	    "Novembro": 0,
-	    "Dezembro": 10.2
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -50020,18 +49583,18 @@
         "id": "2612554",
         "name": "Santa Filomena",
         "description": "Santa Filomena",
-	    "Janeiro": 55,
-	    "Fevereiro": 230.5,
-	    "Março": 31,
-	    "Abril": 122.5,
-	    "Maio": 0,
-	    "Junho": 0,
-	    "Julho": 0,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 109,
-	    "Novembro": 0,
-	    "Dezembro": 150
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -50491,18 +50054,18 @@
         "id": "2612604",
         "name": "Santa Maria da Boa Vista",
         "description": "Santa Maria da Boa Vista",
-	    "Janeiro": 46.3,
-	    "Fevereiro": 182.2,
-	    "Março": 11.9,
-	    "Abril": 165.7,
-	    "Maio": 7.6,
-	    "Junho": 0,
-	    "Julho": 0,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 46.1,
-	    "Novembro": 11.6,
-	    "Dezembro": 101.2
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -51070,18 +50633,18 @@
         "id": "2612703",
         "name": "Santa Maria do Cambucá",
         "description": "Santa Maria do Cambucá",
-	    "Janeiro": 58.1,
-	    "Fevereiro": 62.3,
-	    "Março": 68.8,
-	    "Abril": 119.4,
-	    "Maio": 59.8,
-	    "Junho": 27.4,
-	    "Julho": 12.1,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 5.4,
-	    "Novembro": 10.5,
-	    "Dezembro": 26
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -51269,18 +50832,18 @@
         "id": "2612802",
         "name": "Santa Terezinha",
         "description": "Santa Terezinha",
-	    "Janeiro": 36.5,
-	    "Fevereiro": 165.5,
-	    "Março": 106.5,
-	    "Abril": 251.5,
-	    "Maio": 59.5,
-	    "Junho": 2.5,
-	    "Julho": 3,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 0,
-	    "Novembro": 1,
-	    "Dezembro": 8
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -51464,18 +51027,18 @@
         "id": "2612901",
         "name": "São Benedito do Sul",
         "description": "São Benedito do Sul",
-	    "Janeiro": 71.7,
-	    "Fevereiro": 122.3,
-	    "Março": 186.3,
-	    "Abril": 238.9,
-	    "Maio": 153.7,
-	    "Junho": 98,
-	    "Julho": 81.8,
-	    "Agosto": 24.8,
-	    "Setembro": 35.4,
-	    "Outubro": 3,
-	    "Novembro": 32.4,
-	    "Dezembro": 80.2
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -51639,18 +51202,18 @@
         "id": "2613008",
         "name": "São Bento do Una",
         "description": "São Bento do Una",
-	    "Janeiro": 45.6,
-	    "Fevereiro": 80.6,
-	    "Março": 33.4,
-	    "Abril": 132.5,
-	    "Maio": 59.3,
-	    "Junho": 15.2,
-	    "Julho": 12.1,
-	    "Agosto": 8.7,
-	    "Setembro": 8.7,
-	    "Outubro": 0,
-	    "Novembro": 6.4,
-	    "Dezembro": 19.6
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -52102,18 +51665,18 @@
         "id": "2613107",
         "name": "São Caetano",
         "description": "São Caetano",
-	    "Janeiro": 35,
-	    "Fevereiro": 135,
-	    "Março": 14,
-	    "Abril": 128.7,
-	    "Maio": 16,
-	    "Junho": 14,
-	    "Julho": 5,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 0,
-	    "Novembro": 1,
-	    "Dezembro": 31
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -52413,18 +51976,18 @@
         "id": "2613206",
         "name": "São João",
         "description": "São João",
-	    "Janeiro": 52.7,
-	    "Fevereiro": 68.4,
-	    "Março": 43.5,
-	    "Abril": 74.6,
-	    "Maio": 127.3,
-	    "Junho": 51.1,
-	    "Julho": 52.4,
-	    "Agosto": 36.8,
-	    "Setembro": 14.1,
-	    "Outubro": 0,
-	    "Novembro": 9.9,
-	    "Dezembro": 23.7
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -52660,18 +52223,18 @@
         "id": "2613305",
         "name": "São Joaquim do Monte",
         "description": "São Joaquim do Monte",
-	    "Janeiro": 58.6,
-	    "Fevereiro": 76.5,
-	    "Março": 105.7,
-	    "Abril": 132.8,
-	    "Maio": 88,
-	    "Junho": 73.5,
-	    "Julho": 54.2,
-	    "Agosto": 30.3,
-	    "Setembro": 18.7,
-	    "Outubro": 0.2,
-	    "Novembro": 18.1,
-	    "Dezembro": 27.3
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -53479,18 +53042,18 @@
         "id": "2613404",
         "name": "São José da Coroa Grande",
         "description": "São José da Coroa Grande",
-	    "Janeiro": 129.4,
-	    "Fevereiro": 144.8,
-	    "Março": 185.9,
-	    "Abril": 442.1,
-	    "Maio": 269.8,
-	    "Junho": 95.5,
-	    "Julho": 108.6,
-	    "Agosto": 25.5,
-	    "Setembro": 32.9,
-	    "Outubro": 17.1,
-	    "Novembro": 34.4,
-	    "Dezembro": 31.1
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -53598,18 +53161,18 @@
         "id": "2613503",
         "name": "São José do Belmonte",
         "description": "São José do Belmonte",
-	    "Janeiro": 82.5,
-	    "Fevereiro": 265.5,
-	    "Março": 97,
-	    "Abril": 144,
-	    "Maio": 6.5,
-	    "Junho": 0,
-	    "Julho": 0,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 50,
-	    "Novembro": 0,
-	    "Dezembro": 163.5
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -54113,18 +53676,18 @@
         "id": "2613602",
         "name": "São José do Egito",
         "description": "São José do Egito",
-	    "Janeiro": 16,
-	    "Fevereiro": 100.6,
-	    "Março": 139.4,
-	    "Abril": 287.5,
-	    "Maio": 73.8,
-	    "Junho": 2,
-	    "Julho": 4,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 2.3,
-	    "Novembro": 8.3,
-	    "Dezembro": 97.3
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -54532,18 +54095,18 @@
         "id": "2613701",
         "name": "São Lourenço da Mata",
         "description": "São Lourenço da Mata",
-	    "Janeiro": 118.8,
-	    "Fevereiro": 73.2,
-	    "Março": 65.6,
-	    "Abril": 323.4,
-	    "Maio": 136.9,
-	    "Junho": 56.9,
-	    "Julho": 26.7,
-	    "Agosto": 20.4,
-	    "Setembro": 18.3,
-	    "Outubro": 8.4,
-	    "Novembro": 38.5,
-	    "Dezembro": 106.3
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -54807,18 +54370,18 @@
         "id": "2613800",
         "name": "São Vicente Ferrer",
         "description": "São Vicente Ferrer",
-	    "Janeiro": 145.2,
-	    "Fevereiro": 97.8,
-	    "Março": 180.5,
-	    "Abril": 301.2,
-	    "Maio": 127.1,
-	    "Junho": 77.5,
-	    "Julho": 42.7,
-	    "Agosto": 19.7,
-	    "Setembro": 25.4,
-	    "Outubro": 0,
-	    "Novembro": 33.6,
-	    "Dezembro": 42.1
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -55038,18 +54601,18 @@
         "id": "2613909",
         "name": "Serra Talhada",
         "description": "Serra Talhada",
-	    "Janeiro": 31.6,
-	    "Fevereiro": 188,
-	    "Março": 118,
-	    "Abril": 150.4,
-	    "Maio": 19.9,
-	    "Junho": 0.8,
-	    "Julho": 1.3,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 1.5,
-	    "Novembro": 124.9,
-	    "Dezembro": 96.4
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -55769,18 +55332,18 @@
         "id": "2614006",
         "name": "Serrita",
         "description": "Serrita",
-	    "Janeiro": 5,
-	    "Fevereiro": 229.3,
-	    "Março": 38,
-	    "Abril": 125,
-	    "Maio": 10,
-	    "Junho": 0,
-	    "Julho": 0,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 47,
-	    "Novembro": 2,
-	    "Dezembro": 154
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -56328,18 +55891,18 @@
         "id": "2614105",
         "name": "Sertânia",
         "description": "Sertânia",
-	    "Janeiro": 22,
-	    "Fevereiro": 111.5,
-	    "Março": 171.2,
-	    "Abril": 87.2,
-	    "Maio": 46.4,
-	    "Junho": 0.5,
-	    "Julho": 1.8,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 24.3,
-	    "Novembro": 22,
-	    "Dezembro": 47.3
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -57051,18 +56614,18 @@
         "id": "2614204",
         "name": "Sirinhaém",
         "description": "Sirinhaém",
-	    "Janeiro": 175.1,
-	    "Fevereiro": 175,
-	    "Março": 223.3,
-	    "Abril": 564,
-	    "Maio": 235.6,
-	    "Junho": 104.6,
-	    "Julho": 124.3,
-	    "Agosto": 80.2,
-	    "Setembro": 39.3,
-	    "Outubro": 17.9,
-	    "Novembro": 41.7,
-	    "Dezembro": 56.3
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -57322,18 +56885,18 @@
         "id": "2614303",
         "name": "Moreilândia",
         "description": "Moreilândia",
-	    "Janeiro": 80,
-	    "Fevereiro": 235.1,
-	    "Março": 107,
-	    "Abril": 171,
-	    "Maio": 0.7,
-	    "Junho": 0,
-	    "Julho": 0,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 10,
-	    "Novembro": 0,
-	    "Dezembro": 247
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -57665,18 +57228,18 @@
         "id": "2614402",
         "name": "Solidão",
         "description": "Solidão",
-	    "Janeiro": 65.2,
-	    "Fevereiro": 139.4,
-	    "Março": 179.5,
-	    "Abril": 146.2,
-	    "Maio": 60.2,
-	    "Junho": 2.1,
-	    "Julho": 7.6,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 0,
-	    "Novembro": 79,
-	    "Dezembro": 38.6
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -57872,18 +57435,18 @@
         "id": "2614501",
         "name": "Surubim",
         "description": "Surubim",
-	    "Janeiro": 59.2,
-	    "Fevereiro": 45.5,
-	    "Março": 113.2,
-	    "Abril": 227,
-	    "Maio": 77.6,
-	    "Junho": 30.2,
-	    "Julho": 14.9,
-	    "Agosto": 7.3,
-	    "Setembro": 1.5,
-	    "Outubro": 0,
-	    "Novembro": 8,
-	    "Dezembro": 30.1
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -58499,18 +58062,18 @@
         "id": "2614600",
         "name": "Tabira",
         "description": "Tabira",
-	    "Janeiro": 47.9,
-	    "Fevereiro": 145,
-	    "Março": 214.5,
-	    "Abril": 140.8,
-	    "Maio": 55,
-	    "Junho": 0,
-	    "Julho": 0,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 3,
-	    "Novembro": 19.5,
-	    "Dezembro": 27
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -58786,18 +58349,18 @@
         "id": "2614709",
         "name": "Tacaimbó",
         "description": "Tacaimbó",
-	    "Janeiro": 52,
-	    "Fevereiro": 40.2,
-	    "Março": 90.9,
-	    "Abril": 83.5,
-	    "Maio": 44.2,
-	    "Junho": 29.3,
-	    "Julho": 13.5,
-	    "Agosto": 5,
-	    "Setembro": 4.7,
-	    "Outubro": 0,
-	    "Novembro": 2.4,
-	    "Dezembro": 28.1
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -59017,18 +58580,18 @@
         "id": "2614808",
         "name": "Tacaratu",
         "description": "Tacaratu",
-	    "Janeiro": 30,
-	    "Fevereiro": 122.5,
-	    "Março": 33.5,
-	    "Abril": 66.5,
-	    "Maio": 31.5,
-	    "Junho": 36,
-	    "Julho": 31,
-	    "Agosto": 9.5,
-	    "Setembro": 13.3,
-	    "Outubro": 2,
-	    "Novembro": 118.5,
-	    "Dezembro": 84.5
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -59360,18 +58923,18 @@
         "id": "2614857",
         "name": "Tamandaré",
         "description": "Tamandaré",
-	    "Janeiro": 250.4,
-	    "Fevereiro": 194.2,
-	    "Março": 189,
-	    "Abril": 432,
-	    "Maio": 218.2,
-	    "Junho": 81.6,
-	    "Julho": 84.3,
-	    "Agosto": 40,
-	    "Setembro": 38.8,
-	    "Outubro": 7.3,
-	    "Novembro": 40.4,
-	    "Dezembro": 29.1
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -59623,18 +59186,18 @@
         "id": "2615003",
         "name": "Taquaritinga do Norte",
         "description": "Taquaritinga do Norte",
-	    "Janeiro": 51.5,
-	    "Fevereiro": 99.5,
-	    "Março": 180.5,
-	    "Abril": 225,
-	    "Maio": 79.5,
-	    "Junho": 50.2,
-	    "Julho": 49,
-	    "Agosto": 10.5,
-	    "Setembro": 5.5,
-	    "Outubro": 3,
-	    "Novembro": 9,
-	    "Dezembro": 6
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -59922,18 +59485,18 @@
         "id": "2615102",
         "name": "Terezinha",
         "description": "Terezinha",
-	    "Janeiro": 19.5,
-	    "Fevereiro": 63,
-	    "Março": 98.2,
-	    "Abril": 105.5,
-	    "Maio": 125.2,
-	    "Junho": 51.1,
-	    "Julho": 70.5,
-	    "Agosto": 53.1,
-	    "Setembro": 88.2,
-	    "Outubro": 0,
-	    "Novembro": 12.6,
-	    "Dezembro": 57.6
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -60121,18 +59684,18 @@
         "id": "2615201",
         "name": "Terra Nova",
         "description": "Terra Nova",
-	    "Janeiro": 32.8,
-	    "Fevereiro": 236.8,
-	    "Março": 20.5,
-	    "Abril": 45.4,
-	    "Maio": 4.3,
-	    "Junho": 0,
-	    "Julho": 0,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 198.8,
-	    "Novembro": 6,
-	    "Dezembro": 132
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -60488,18 +60051,18 @@
         "id": "2615300",
         "name": "Timbaúba",
         "description": "Timbaúba",
-	    "Janeiro": 79,
-	    "Fevereiro": 144.2,
-	    "Março": 143.5,
-	    "Abril": 241,
-	    "Maio": 99.9,
-	    "Junho": 93.5,
-	    "Julho": 42.4,
-	    "Agosto": 1.4,
-	    "Setembro": 7.9,
-	    "Outubro": 3.8,
-	    "Novembro": 19,
-	    "Dezembro": 67
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -60879,18 +60442,18 @@
         "id": "2615409",
         "name": "Toritama",
         "description": "Toritama",
-	    "Janeiro": 75.3,
-	    "Fevereiro": 74.3,
-	    "Março": 89.3,
-	    "Abril": 159.9,
-	    "Maio": 42.7,
-	    "Junho": 18.2,
-	    "Julho": 25.9,
-	    "Agosto": 1,
-	    "Setembro": 1.1,
-	    "Outubro": 0.2,
-	    "Novembro": 0.2,
-	    "Dezembro": 1.9
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -60982,18 +60545,18 @@
         "id": "2615508",
         "name": "Tracunhaém",
         "description": "Tracunhaém",
-	    "Janeiro": 108.6,
-	    "Fevereiro": 197.7,
-	    "Março": 128.4,
-	    "Abril": 238.2,
-	    "Maio": 117.4,
-	    "Junho": 70.6,
-	    "Julho": 35.3,
-	    "Agosto": 19.9,
-	    "Setembro": 16.7,
-	    "Outubro": 2.8,
-	    "Novembro": 21.3,
-	    "Dezembro": 44.3
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -61173,18 +60736,18 @@
         "id": "2615607",
         "name": "Trindade",
         "description": "Trindade",
-	    "Janeiro": 86,
-	    "Fevereiro": 144.5,
-	    "Março": 55,
-	    "Abril": 319,
-	    "Maio": 3,
-	    "Junho": 0,
-	    "Julho": 0,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 24,
-	    "Novembro": 2,
-	    "Dezembro": 217
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -61292,18 +60855,18 @@
         "id": "2615706",
         "name": "Triunfo",
         "description": "Triunfo",
-	    "Janeiro": 81.2,
-	    "Fevereiro": 210.6,
-	    "Março": 98.9,
-	    "Abril": 289,
-	    "Maio": 109.8,
-	    "Junho": 2,
-	    "Julho": 46.1,
-	    "Agosto": 0,
-	    "Setembro": 7,
-	    "Outubro": 5.5,
-	    "Novembro": 48,
-	    "Dezembro": 58
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -61519,18 +61082,18 @@
         "id": "2615805",
         "name": "Tupanatinga",
         "description": "Tupanatinga",
-	    "Janeiro": 43.4,
-	    "Fevereiro": 92,
-	    "Março": 223.8,
-	    "Abril": 130.5,
-	    "Maio": 133.7,
-	    "Junho": 14,
-	    "Julho": 44.6,
-	    "Agosto": 0,
-	    "Setembro": 9,
-	    "Outubro": 20.5,
-	    "Novembro": 48.5,
-	    "Dezembro": 122.6
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -61545,18 +61108,18 @@
         "id": "2615904",
         "name": "Tuparetama",
         "description": "Tuparetama",
-	    "Janeiro": 6,
-	    "Fevereiro": 116,
-	    "Março": 174,
-	    "Abril": 152,
-	    "Maio": 14,
-	    "Junho": 0,
-	    "Julho": 0,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 0,
-	    "Novembro": 0,
-	    "Dezembro": 30
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -61772,18 +61335,18 @@
         "id": "2616001",
         "name": "Venturosa",
         "description": "Venturosa",
-	    "Janeiro": 32,
-	    "Fevereiro": 64,
-	    "Março": 145,
-	    "Abril": 153,
-	    "Maio": 41,
-	    "Junho": 2,
-	    "Julho": 5,
-	    "Agosto": 3,
-	    "Setembro": 0,
-	    "Outubro": 0,
-	    "Novembro": 96,
-	    "Dezembro": 24
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -62011,18 +61574,18 @@
         "id": "2616100",
         "name": "Verdejante",
         "description": "Verdejante",
-	    "Janeiro": 60,
-	    "Fevereiro": 351,
-	    "Março": 53.5,
-	    "Abril": 137.5,
-	    "Maio": 7,
-	    "Junho": 0,
-	    "Julho": 0,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 33.5,
-	    "Novembro": 2.5,
-	    "Dezembro": 119.5
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -62374,18 +61937,18 @@
         "id": "2616183",
         "name": "Vertente do Lério",
         "description": "Vertente do Lério",
-	    "Janeiro": 0,
-	    "Fevereiro": 37.9,
-	    "Março": 136,
-	    "Abril": 131.3,
-	    "Maio": 60.1,
-	    "Junho": 22.6,
-	    "Julho": 7.5,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 0,
-	    "Novembro": 10,
-	    "Dezembro": 32.2
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -62889,18 +62452,18 @@
         "id": "2616209",
         "name": "Vertentes",
         "description": "Vertentes",
-	    "Janeiro": 21.9,
-	    "Fevereiro": 58.8,
-	    "Março": 56.2,
-	    "Abril": 153.2,
-	    "Maio": 70.9,
-	    "Junho": 11.3,
-	    "Julho": 21.7,
-	    "Agosto": 0,
-	    "Setembro": 0,
-	    "Outubro": 0,
-	    "Novembro": 3.5,
-	    "Dezembro": 10.5
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -63180,18 +62743,18 @@
         "id": "2616308",
         "name": "Vicência",
         "description": "Vicência",
-	    "Janeiro": 98.7,
-	    "Fevereiro": 109.5,
-	    "Março": 135.2,
-	    "Abril": 260.2,
-	    "Maio": 130.5,
-	    "Junho": 106.8,
-	    "Julho": 28.5,
-	    "Agosto": 15,
-	    "Setembro": 16,
-	    "Outubro": 18,
-	    "Novembro": 27,
-	    "Dezembro": 41
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -63431,18 +62994,18 @@
         "id": "2616407",
         "name": "Vitória de Santo Antão",
         "description": "Vitória de Santo Antão",
-	    "Janeiro": 103.6,
-	    "Fevereiro": 63.2,
-	    "Março": 57.2,
-	    "Abril": 179.4,
-	    "Maio": 79.2,
-	    "Junho": 49.4,
-	    "Julho": 27.6,
-	    "Agosto": 18.8,
-	    "Setembro": 7.8,
-	    "Outubro": 8.6,
-	    "Novembro": 40,
-	    "Dezembro": 73.4
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",
@@ -63742,18 +63305,18 @@
         "id": "2616506",
         "name": "Xexéu",
         "description": "Xexéu",
-	    "Janeiro": 132.8,
-	    "Fevereiro": 230.1,
-	    "Março": 178.4,
-	    "Abril": 374.1,
-	    "Maio": 170.7,
-	    "Junho": 95.2,
-	    "Julho": 145.7,
-	    "Agosto": 57.5,
-	    "Setembro": 28.1,
-	    "Outubro": 2.3,
-	    "Novembro": 73.6,
-	    "Dezembro": 33.9
+	    "fonte":"apac"
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       },
       "geometry": {
         "type": "Polygon",

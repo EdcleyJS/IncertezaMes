@@ -15,7 +15,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
   }).addTo(map);
 //Escala de cores para o mapa
 function colorN(media){
-  var cbf = palette('cb-RdYlGn', 11);
+  var cbf = palette('tol-sq', 11);
   var color;
   grades.forEach(function(d,i){
     if(Number(media)>=d){
