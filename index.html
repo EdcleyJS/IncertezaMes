@@ -5,7 +5,7 @@
 	    <meta name="author" content="Edcley José da Silva 032019 POS">
 	    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-	    <title>Choropleth</title>
+	    <title>Estudo Risco e Incerteza em Mapas</title>
 	    <!--CSS-->
 		<link rel="stylesheet" href="./css/cloropleth.css">
 		<link rel="stylesheet" href="./css/leaflet.css"/>
@@ -14,33 +14,87 @@
 		<link rel="stylesheet" href="./css/bootstrap.min.css">
 		<link rel="stylesheet" href="./css/ion.rangeSlider.min.css"/>
 		<!-- JavaScript-->
-		<script type="text/javascript" src="./js/commonScripts/jquery.min.js"></script>
+		<!--<script type="text/javascript" src="./js/commonScripts/jquery.min.js"></script>-->
+		<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
 		<script type="text/javascript" src="./js/commonScripts/popper.min.js"></script>
 		<script type="text/javascript" src="./js/commonScripts/bootstrap.min.js"></script>
 		<script type="text/javascript" src="./js/commonScripts/ion.rangeSlider.min.js"></script> 
+
+		<!--<script src="https://d3js.org/d3.v5.min.js"></script>-->
 		<!-- JQuery Specific-->
 		<script type="text/javascript" src="./js/choroplethScripts/buttons.js"></script>
 		<!-- JavaScript-->
-		<script type="text/javascript" src="./js/commonScripts/d3.v4.min.js"></script>
+
 		<script type="text/javascript" src="./js/commonScripts/math.min.js"></script>
 		<script type="text/javascript" src="./js/leafletScripts/leaflet.js"></script>
 		<script type="text/javascript" src='./js/commonScripts/palette.js'></script>
 		<script type="text/javascript" src="./js/commonScripts/distribuicaoClassTeste.js"></script>
 		<script type="text/javascript" src="./js/commonScripts/funcoesGlobais.js"></script>
+		<script type="text/javascript" src="./js/commonScripts/d3.v4.min.js"></script>
 		<!-- Specific Scripts-->
+
 		<script type="text/javascript" src="./js/choroplethScripts/compare.js"></script>
 		<script type="text/javascript" src="./js/choroplethScripts/inicio.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bs-stepper/dist/css/bs-stepper.min.css">
+		<script type="text/javascript" src="./js/commonScripts/form.js"></script>
+		<!--<script src='https://www.google.com/recaptcha/api.js'></script>-->
+		<style>
+		body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+		.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+		.fa-anchor,.fa-coffee {font-size:200px}
+		</style>
 	</head>
+	<style>
+	    .disabled {
+	        pointer-events: none;
+	        background-color: black;
+	        border-radius: 5px;
+	        cursor: default;
+	        opacity: 0.6;
+	    }
+	</style>
 	<body >
-		<div class="container-fluid">
+		<!--<header class="w3-container w3-sand w3-center" style="padding:28px 16px" id='header'>
+		  	<h1 class="w3-margin w3-jumbo">Estudo CIn-UFPE</h1>
+		  	<p class="w3-xlarge">Risco e Incerteza em Mapas.</p>
+		  	<div class="w3-row-padding w3-padding-64 w3-container">
+			  	<div class="w3-content">
+			    	<div class="w3-twothird">
+
+				      	<h1>Apresentação</h1>
+
+				      	<h5 class="w3-padding-32">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
+
+				      	<p class="w3-text-black">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
+				        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+				        laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+				    </div>
+
+				    <div class="w3-third w3-center">
+				      	<i class="fa fa-anchor w3-padding-64 w3-text-red"></i>
+				    </div>
+			  	</div>
+			</div>
+		  	<button class="w3-button w3-green w3-padding-large w3-large w3-margin-top" id="iniciar">Iniciar Estudo</button>
+		</header>-->
+		<div class="container-fluid" id='vis'>
 			<ul class="nav nav-pills" id="pills-tab" role="tablist">
-				<li class="nav-item">
-				    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Comparação com Uma Constante</a>
+				<li class="nav-item" >
+				    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true"><b>Comparação com Uma Constante</b></a>
 				</li>
 				<li class="nav-item">
 				    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Intervalo</a>
 				</li>
-				<li class="nav-item">
+				<!--<li class="nav-item">
 				    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Comparação Um com Todos</a>
 				</li>
 				<li class="nav-item">
@@ -51,14 +105,14 @@
 				</li>
 				<li class="nav-item">
 				    <a class="nav-link" id="pills-min-tab" data-toggle="pill" href="#pills-min" role="tab" aria-controls="pills-min" aria-selected="false">Probabilidade de Minimo</a>
-				</li>						
+				</li>-->						
 				<li class="nav-item">
 				    <a class="nav-link" id="pills-dotmap-tab" data-toggle="pill" href="#pills-dotmap" role="tab" aria-controls="pills-dotmap" aria-selected="false">Mapa de Pontos</a>
 				</li>
 				<li class="nav-item">
 				    <a class="nav-link" id="pills-media-tab" data-toggle="pill" href="#pills-media" role="tab" aria-controls="pills-media" aria-selected="false">Média</a>
 				</li>
-				<li class="nav-item">
+				<!--<li class="nav-item">
 				    <a class="nav-link" id="pills-mediat-tab" data-toggle="pill" href="#pills-mediat" role="tab" aria-controls="pills-mediat" aria-selected="false">Média Temporal</a>
 				</li>
 				<li class="nav-item">
@@ -66,7 +120,7 @@
 				</li>
 				<li class="nav-item">
 				    <a class="nav-link" id="pills-glyph-tab" data-toggle="pill" href="#pills-glyph" role="tab" aria-controls="pills-glyph" aria-selected="false">Glyph</a>
-				</li>		
+				</li>-->		
 			</ul>
 			<div class="tab-content" id="pills-tabContent">
 				<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
@@ -168,28 +222,140 @@
 							</div>
 						</div>
 					</div>
-					<div class="row">
+					<!--<div class="row">
 						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
 						<div class="card col-lg-6 col-md-6 col-sm-6 col-xs-6 panel panel-default" style="width: 58rem; margin-top: 1rem;">
 							<h5 class="card-title" style="margin-left: 1rem;text-align: center"><b>Overview</b></h5>
 				  			<ul class="list-group list-group-flush" style="text-align: center">
 						    <li class="list-group-item">
 						    	<p>Esta visualização exibe a probabilidade acumulada de chuva com base nos dados observados nas áreas.</p>
-						    	<!--<p>Clicando 2X em uma área as demais são comparadas com relação ao range da área escolhida.</p>
-						    	<p>Ao clicar novamente, duas vezes na mesma área a comparação é desfeita.</p>-->
+
 						    </li>
 						  	</ul>
+						</div>
+					</div>-->
+					<div id="stepperForm" class="bs-stepper linear">
+					    <div class="bs-stepper-header" role="tablist">
+					        <div class="step active" data-target="#test-form-1">
+					            <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger1" aria-controls="test-form-1" aria-selected="true">
+					                <span class="bs-stepper-circle">1ª</span>
+					                <span class="bs-stepper-label">Pergunta</span>
+					            </button>
+					        </div>
+					    	<div class="bs-stepper-line"></div>
+					        <div class="step" data-target="#test-form-2">
+					            <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger2" aria-controls="test-form-2" aria-selected="false" disabled="disabled">
+					                <span class="bs-stepper-circle">2ª</span>
+					                <span class="bs-stepper-label">Pergunta</span>
+					            </button>
+					        </div>
+					        <div class="bs-stepper-line"></div>
+					        <div class="step" data-target="#test-form-3">
+					            <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger3" aria-controls="test-form-3" aria-selected="false" disabled="disabled">
+					                <span class="bs-stepper-circle">3ª</span>
+					                <span class="bs-stepper-label">Pergunta</span>
+					            </button>
+					        </div>
+					    </div>
+						<div class="bs-stepper-content">
+						    <form class="needs-validation" onSubmit="return false" novalidate="" id="Form"
+						    method="post" action="https://script.google.com/macros/s/AKfycby_DzDKpY66Ti9OBL9s22I8u06XgPFP_SyUnuhCbB7bl3rzwRMc/exec">
+						        <div id="test-form-1" role="tabpanel" class="bs-stepper-pane fade active dstepper-block" aria-labelledby="stepperFormTrigger1">
+						            <div class="form-group" id="1p">
+							    		<!--<input type="hidden" id="clicksp1" name="clicksp1" value="">
+							        	<input type="hidden" id="tempop1" name="tempop1" value="">
+							          	<label for="confianca"> De 1 a 5 sendo 1 pouco confiante e 5 muito confiante, quão confiante você está da sua resposta?</label>
+							        	<input type="text" id="confianca" name="confianca" value="" />-->
+						            </div>
+						            <button type="button" class="btn btn-primary btn-next-form" id="next1">Próxima</button>
+						        </div>
+						        <div id="test-form-2" role="tabpanel" class="bs-stepper-pane fade dstepper-none" aria-labelledby="stepperFormTrigger2">
+						            <div class="form-group" id="2p">
+							    		<!--<input type="hidden" id="clicksp2" name="clicksp2" value="">
+							        	<input type="hidden" id="tempop2" name="tempop2" value="">
+							          	<label for="2confianca"> De 1 a 5 sendo 1 pouco confiante e 5 muito confiante, quão confiante você está da sua resposta?</label>
+							          	<input type="text" id="2confianca" name="confianca2p" value="" />-->
+						            </div>
+						            <button type="button" class="btn btn-primary btn-next-form" id="next2">Próxima</button>
+						        </div>
+						        <div id="test-form-3" role="tabpanel" class="bs-stepper-pane fade dstepper-none" aria-labelledby="stepperFormTrigger3">
+						      		<div class="form-group" id='3p'>
+							    		<!--<input type="hidden" id="clicksp3" name="clicksp3" value="">
+							        	<input type="hidden" id="tempop3" name="tempop3" value="">
+							    		<label for="3confianca"> De 1 a 5 sendo 1 pouco confiante e 5 muito confiante, quão confiante você está da sua resposta?</label>
+							          	<input type="text" id="3confianca" name="confianca3p" value="" />-->
+						            </div>
+						            <button type="button" class="btn btn-primary" id="btn1">Concluir</button>
+						        </div>
+						    </form>
 						</div>
 					</div>
 				</div>
 				<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
 					<div class="row">
-						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">	
-							<iframe src="./choroplethIntervalo.html" width="102%" height="517%" allowTransparency="true" scrolling="no" frameborder="0" 
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<iframe src="./choroplethIntervalo.html" width="102.1%" height="140%" allowTransparency="true" scrolling="no" frameborder="0" 
 							marginheight="0" marginwidth='0' style="margin-left: -1.1%"></iframe>
+							<div id="stepperForm2" class="bs-stepper linear">
+							    <div class="bs-stepper-header" role="tablist">
+							        <div class="step active" data-target="#test-form-4">
+							            <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger4" aria-controls="test-form-4" aria-selected="true">
+							                <span class="bs-stepper-circle">1ª</span>
+							                <span class="bs-stepper-label">Pergunta</span>
+							            </button>
+							        </div>
+							    	<div class="bs-stepper-line"></div>
+							        <div class="step" data-target="#test-form-5">
+							            <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger5" aria-controls="test-form-5" aria-selected="false" disabled="disabled">
+							                <span class="bs-stepper-circle">2ª</span>
+							                <span class="bs-stepper-label">Pergunta</span>
+							            </button>
+							        </div>
+							        <div class="bs-stepper-line"></div>
+							        <div class="step" data-target="#test-form-6">
+							            <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger6" aria-controls="test-form-6" aria-selected="false" disabled="disabled">
+							                <span class="bs-stepper-circle">3ª</span>
+							                <span class="bs-stepper-label">Pergunta</span>
+							            </button>
+							        </div>
+							    </div>
+								<div class="bs-stepper-content">
+								    <form class="needs-validation" onSubmit="return false" novalidate="" id="2Form"
+								    method="post" action="https://script.google.com/macros/s/AKfycbyJ_tdnNY0RDjfrxT9bcdXhcq927uRd9uK_LqBj1Qn-WZse6ko/exec">
+								        <div id="test-form-4" role="tabpanel" class="bs-stepper-pane fade active dstepper-block" aria-labelledby="stepperFormTrigger4">
+								            <div class="form-group" id="4p">
+									    		<!--<input type="hidden" id="2clicksp1" name="clicksp1" value="">
+									        	<input type="hidden" id="2tempop1" name="tempop1" value="">
+									          	<label for="4confianca"> De 1 a 5 sendo 1 pouco confiante e 5 muito confiante, quão confiante você está da sua resposta?</label>
+									        	<input type="text" id="4confianca" name="confianca" value="" />-->
+								            </div>
+								            <button type="button" class="btn btn-primary btn-next-form" id="2next1">Próxima</button>
+								        </div>
+								        <div id="test-form-5" role="tabpanel" class="bs-stepper-pane fade dstepper-none" aria-labelledby="stepperFormTrigger5">
+								            <div class="form-group" id="5p">
+									    		<!--<input type="hidden" id="2clicksp2" name="clicksp2" value="">
+									        	<input type="hidden" id="2tempop2" name="tempop2" value="">
+									          	<label for="5confianca"> De 1 a 5 sendo 1 pouco confiante e 5 muito confiante, quão confiante você está da sua resposta?</label>
+									          	<input type="text" id="5confianca" name="confianca2p" value="" />-->
+								            </div>
+								            <button type="button" class="btn btn-primary btn-next-form" id="2next2">Próxima</button>
+								        </div>
+								        <div id="test-form-6" role="tabpanel" class="bs-stepper-pane fade dstepper-none" aria-labelledby="stepperFormTrigger6">
+								      		<div class="form-group" id='6p'>
+									    		<!--<input type="hidden" id="2clicksp3" name="clicksp3" value="">
+									        	<input type="hidden" id="2tempop3" name="tempop3" value="">
+									    		<label for="6confianca"> De 1 a 5 sendo 1 pouco confiante e 5 muito confiante, quão confiante você está da sua resposta?</label>
+									          	<input type="text" id="6confianca" name="confianca3p" value="" />-->
+								            </div>
+								            <button type="button" class="btn btn-primary" id="2btn1">Concluir</button>
+								        </div>
+								    </form>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
+				<!--
 				<div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
 					<div class="row">
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -197,6 +363,7 @@
 						</div>
 					</div>
 				</div>
+
 				<div class="tab-pane fade" id="pills-comp1a1" role="tabpanel" aria-labelledby="pills-comp1a1-tab">
 					<div class="row">
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -217,21 +384,170 @@
 							<iframe src="./rankingMinimo.html" width="102%" height="503%" allowTransparency="true" scrolling="no" frameborder="0" marginheight="0" marginwidth='0' style="margin-left: -1.1%"></iframe>
 						</div>
 					</div>
-				</div>
+				</div>-->
 				<div class="tab-pane fade" id="pills-dotmap" role="tabpanel" aria-labelledby="pills-dotmap-tab">
 					<div class="row">
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-							<iframe src="./dotmap.html" width="102%" height="503%" allowTransparency="true" scrolling="no" frameborder="0" marginheight="0" marginwidth='0' style="margin-left: -1.1%"></iframe>
+							<iframe src="./dotmap.html" width="102.1%" height="113%" allowTransparency="true" scrolling="no" frameborder="0" marginheight="0" marginwidth='0' style="margin-left: -1.1%"></iframe>				
+							<div id="stepperForm3" class="bs-stepper linear">
+							    <div class="bs-stepper-header" role="tablist">
+							        <div class="step active" data-target="#test-form-7">
+							            <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger7" aria-controls="test-form-7" aria-selected="true">
+							                <span class="bs-stepper-circle">1ª</span>
+							                <span class="bs-stepper-label">Pergunta</span>
+							            </button>
+							        </div>
+							    	<div class="bs-stepper-line"></div>
+							        <div class="step" data-target="#test-form-8">
+							            <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger8" aria-controls="test-form-8" aria-selected="false" disabled="disabled">
+							                <span class="bs-stepper-circle">2ª</span>
+							                <span class="bs-stepper-label">Pergunta</span>
+							            </button>
+							        </div>
+							        <div class="bs-stepper-line"></div>
+							        <div class="step" data-target="#test-form-9">
+							            <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger9" aria-controls="test-form-9" aria-selected="false" disabled="disabled">
+							                <span class="bs-stepper-circle">3ª</span>
+							                <span class="bs-stepper-label">Pergunta</span>
+							            </button>
+							        </div>
+							    </div>
+								<div class="bs-stepper-content">
+								    <form class="needs-validation" onSubmit="return false" novalidate="" id="3Form"
+								    method="post" action="https://script.google.com/macros/s/AKfycbxGJMYtzRu_4AgM8vhk38rpdI-bMVK5dGnCGJqiJvMv6ZC7nWNp/exec">
+								        <div id="test-form-7" role="tabpanel" class="bs-stepper-pane fade active dstepper-block" aria-labelledby="stepperFormTrigger7">
+								            <div class="form-group" id="7p">
+									    		<!--<input type="hidden" id="3clicksp1" name="clicksp1" value="">
+									        	<input type="hidden" id="3tempop1" name="tempop1" value="">
+									          	<label for="7confianca"> De 1 a 5 sendo 1 pouco confiante e 5 muito confiante, quão confiante você está da sua resposta?</label>
+									        	<input type="text" id="7confianca" name="confianca" value="" />-->
+								            </div>
+								            <button type="button" class="btn btn-primary btn-next-form" id="3next1">Próxima</button>
+								        </div>
+								        <div id="test-form-8" role="tabpanel" class="bs-stepper-pane fade dstepper-none" aria-labelledby="stepperFormTrigger8">
+								            <div class="form-group" id="8p">
+									    		<!--<input type="hidden" id="3clicksp2" name="clicksp2" value="">
+									        	<input type="hidden" id="3tempop2" name="tempop2" value="">
+									          	<label for="8confianca"> De 1 a 5 sendo 1 pouco confiante e 5 muito confiante, quão confiante você está da sua resposta?</label>
+									          	<input type="text" id="8confianca" name="confianca2p" value="" />-->
+								            </div>
+								            <button type="button" class="btn btn-primary btn-next-form" id="3next2">Próxima</button>
+								        </div>
+								        <div id="test-form-9" role="tabpanel" class="bs-stepper-pane fade dstepper-none" aria-labelledby="stepperFormTrigger9">
+								      		<div class="form-group" id='9p'>
+									    		<!--<input type="hidden" id="3clicksp3" name="clicksp3" value="">
+									        	<input type="hidden" id="3tempop3" name="tempop3" value="">
+									    		<label for="9confianca"> De 1 a 5 sendo 1 pouco confiante e 5 muito confiante, quão confiante você está da sua resposta?</label>
+									          	<input type="text" id="9confianca" name="confianca3p" value="" />-->
+								            </div>
+								            <button type="button" class="btn btn-primary" id="3btn1">Concluir</button>
+								        </div>
+								    </form>
+								</div>
+							</div>	
 						</div>
 					</div>
 				</div>
 				<div class="tab-pane fade" id="pills-media" role="tabpanel" aria-labelledby="pills-media-tab">
 					<div class="row">
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-							<iframe src="./media.html" width="102%" height="503%" allowTransparency="true" scrolling="no" frameborder="0" marginheight="0" marginwidth='0' style="margin-left: -1.1%"></iframe>
+							<iframe src="./media.html" width="102.1%" height="113%" allowTransparency="true" scrolling="no" frameborder="0" marginheight="0" marginwidth='0' style="margin-left: -1.1%"></iframe>
+							<div id="stepperForm4" class="bs-stepper linear">
+							    <div class="bs-stepper-header" role="tablist">
+							        <div class="step active" data-target="#test-form-10">
+							            <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger10" aria-controls="test-form-10" aria-selected="true">
+							                <span class="bs-stepper-circle">1ª</span>
+							                <span class="bs-stepper-label">Pergunta</span>
+							            </button>
+							        </div>
+							    	<div class="bs-stepper-line"></div>
+							        <div class="step" data-target="#test-form-11">
+							            <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger11" aria-controls="test-form-11" aria-selected="false" disabled="disabled">
+							                <span class="bs-stepper-circle">2ª</span>
+							                <span class="bs-stepper-label">Pergunta</span>
+							            </button>
+							        </div>
+							        <div class="bs-stepper-line"></div>
+							        <div class="step" data-target="#test-form-12">
+							            <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger12" aria-controls="test-form-12" aria-selected="false" disabled="disabled">
+							                <span class="bs-stepper-circle">3ª</span>
+							                <span class="bs-stepper-label">Pergunta</span>
+							            </button>
+							        </div>
+							        <div class="bs-stepper-line"></div>
+							        <div class="step" data-target="#test-form-13">
+							            <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger13" aria-controls="test-form-13" aria-selected="false" disabled="disabled">
+							                <span class="bs-stepper-circle">4ª</span>
+							                <span class="bs-stepper-label">Pergunta</span>
+							            </button>
+							        </div>
+							     	<div class="bs-stepper-line"></div>
+							        <div class="step" data-target="#test-form-14">
+							            <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger14" aria-controls="test-form-14" aria-selected="false" disabled="disabled">
+							                <span class="bs-stepper-circle">5ª</span>
+							                <span class="bs-stepper-label">Confirmar</span>
+							            </button>
+							        </div>
+							    </div>
+								<div class="bs-stepper-content">
+								    <form class="needs-validation" onsubmit="return false" novalidate="" id="4Form"
+								    method="post" action="https://script.google.com/macros/s/AKfycbzLOg-MT8Zic3zc1fQGDCPl6Upu769FP75yT3KPlpb1LYO0NNTh/exec">
+								        <div id="test-form-10" role="tabpanel" class="bs-stepper-pane fade active dstepper-block" aria-labelledby="stepperFormTrigger10">
+								            <div class="form-group" id="10p">
+									    		<!--<input type="hidden" id="4clicksp1" name="clicksp1" value="">
+									        	<input type="hidden" id="4tempop1" name="tempop1" value="">
+									          	<label for="10confianca"> De 1 a 5 sendo 1 pouco confiante e 5 muito confiante, quão confiante você está da sua resposta?</label>
+									        	<input type="text" id="10confianca" name="confianca" value="" />-->
+								            </div>
+								            <button type="button" class="btn btn-primary btn-next-form" id="4next1">Próxima</button>
+								        </div>
+								        <div id="test-form-11" role="tabpanel" class="bs-stepper-pane fade dstepper-none" aria-labelledby="stepperFormTrigger11">
+								            <div class="form-group" id="11p">
+									    		<!--<input type="hidden" id="4clicksp2" name="clicksp2" value="">
+									        	<input type="hidden" id="4tempop2" name="tempop2" value="">
+									          	<label for="11confianca"> De 1 a 5 sendo 1 pouco confiante e 5 muito confiante, quão confiante você está da sua resposta?</label>
+									          	<input type="text" id="11confianca" name="confianca2p" value="" />-->
+								            </div>
+								            <button type="button" class="btn btn-primary btn-next-form" id="4next2">Próxima</button>
+								        </div>
+								        <div id="test-form-12" role="tabpanel" class="bs-stepper-pane fade dstepper-none" aria-labelledby="stepperFormTrigger12">
+								      		<div class="form-group" id='12p'>
+									    		<!--<input type="hidden" id="4clicksp3" name="clicksp3" value="">
+									        	<input type="hidden" id="4tempop3" name="tempop3" value="">
+									    		<label for="12confianca"> De 1 a 5 sendo 1 pouco confiante e 5 muito confiante, quão confiante você está da sua resposta?</label>
+									          	<input type="text" id="12confianca" name="confianca3p" value="" />-->
+								            </div>
+								            <button type="button" class="btn btn-primary" id="4next3">Próxima</button>
+								        </div>
+								        <div id="test-form-13" role="tabpanel" class="bs-stepper-pane fade dstepper-none" aria-labelledby="stepperFormTrigger13">
+								      		<div class="form-group" id='13p'>
+									    		<!--<input type="hidden" id="4clicksp3" name="clicksp3" value="">
+									        	<input type="hidden" id="4tempop3" name="tempop3" value="">-->
+									    		<label for="feedback"> Gostaria de fazer algum comentário sobre este trabalho? Se sim escreva a baixo</label>
+									    		<textarea class="form-control" id="feedback" name="feedback" rows="3"></textarea>
+								            </div>
+								            <button type="button" class="btn btn-primary" id="4next4">Próxima</button>
+								        </div>
+								        <div id="test-form-14" role="tabpanel" class="bs-stepper-pane fade dstepper-none" aria-labelledby="stepperFormTrigger14">
+								      		<div class="form-group" id='14p'>
+								      			<!--<div class="g-recaptcha" data-callback="recaptcha_callback" id="captcha" data-sitekey="6LeFOLcUAAAAAJ7Ud3pw1qem9GT1PTClG-MTcQih" name='captcha'></div>-->
+								      			<div class="invalid-feedback" id="captchaError">
+												    O captcha não pode ficar vazio
+												</div>
+									    		<input type="hidden" id="captcha" name="captcha" value="5">
+									        	<!--<input type="hidden" id="4tempop3" name="tempop3" value="">
+									    		<label for="feedback"> Gostaria de fazer algum comentário sobre este trabalho? Se sim escreva a baixo</label>
+									          	<input type="text" id="feedback" name="feedback" value="" />-->
+								            </div>
+								            <button type="submit" class="btn btn-primary" id="4btn1">Enviar</button>
+								        </div>
+								    </form>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
+				<!--
 				<div class="tab-pane fade" id="pills-mediat" role="tabpanel" aria-labelledby="pills-mediat-tab">
 					<div class="row">
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -252,10 +568,33 @@
 							<iframe src="./glyph.html" width="102%" height="505%" allowTransparency="true" scrolling="no" frameborder="0" marginheight="0" marginwidth='0' style="margin-left: -1.1%"></iframe>
 						</div>
 					</div>
-				</div>								
+				</div>
+				-->								
 			</div>
 			<!---->
 		</div>
+		<footer class="w3-container w3-sand w3-center" style="padding:28px 16px" id='footer'>
+		  	<div class="w3-row-padding w3-padding-64 w3-container">
+			  	<div class="w3-content">
+			    	<div class="w3-twothird">
+
+				      	<h1>Obrigado pela sua participação!</h1>
+
+				      	<h5 class="w3-padding-32">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
+
+				      	<p class="w3-text-black">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
+				        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+				        laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+				    </div>
+
+				    <div class="w3-third w3-center">
+				      	<i class="fa fa-anchor w3-padding-64 w3-text-red"></i>
+				    </div>
+			  	</div>
+			</div>
+		</footer>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bs-stepper/dist/js/bs-stepper.min.js"></script>
 	</body>
 	<script type="text/javascript" src="./js/choroplethScripts/choropleth.js"></script>
 </html>

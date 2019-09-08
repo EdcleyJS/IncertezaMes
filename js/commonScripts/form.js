@@ -3,20 +3,11 @@ perguntas.push(['Título1','001','Sim','Não']);
 perguntas.push(['Título2','002','Recife','Vitória','Cabo','Caruaru']);
 perguntas.push(['Título3','003','Escada','Floresta','Petrolina']);
 
-
-
-	var arr = [0,1,2];
-/*while(arr.length < 4){
-	var r = Math.floor(Math.random()*3) + 1;
-	if(arr.indexOf(r) === -1) arr.push(r);
-}*/
+var arr = [0,1,2];
 function shuffle(array) {
 	var m = array.length, t, i;
-	  // While there remain elements to shuffle…
 	while (m) {
-	    // Pick a remaining element…
 		i = Math.floor(Math.random() * m--);
-	    // And swap it with the current element.
 	    t = array[m];
 	    array[m] = array[i];
 	    array[i] = t;
@@ -24,224 +15,367 @@ function shuffle(array) {
 	return array;
 }
 arr= shuffle(arr);
-console.log(arr);
+var clicks=0;
+var d1 = new Date();
+var stepper1,stepper2,stepper3,stepper4,d4,list,d2,diff,post_url,request_method,form_data,forms;
 
-function geraperguntas(perguntas,index){
-	//var index=Math.floor((Math.random()*1)+1);
-	var d1= document.createElement("div");
-	var d2= document.createElement("div");
-	d2.setAttribute('class','card');
-	console.log(index);
-	var pergunta= perguntas[index];
-	var label = document.createElement("label");//label antes com a pergunta
-	label.setAttribute('style',"font-weight:bold;");
-	//label.setAttribute('class',"custom-control-label");
-	label.setAttribute('for',"pergunta1");
-	label.setAttribute('id',"pergunta1");
-	label.innerText= pergunta[0];//"Pergunta 1 ?";
-	for (var i = 2; i < pergunta.length; i++) {
-		var div1 = document.createElement("div");
-		div1.setAttribute('class',"custom-control custom-radio custom-control-inline ");
-		var radio1 = document.createElement("input"); //input element, text
-		if(i==2){
-			radio1.required = true;
-		}
-		radio1.setAttribute('type',"radio");
-		radio1.setAttribute('class',"custom-control-input form-check-input");
-		radio1.setAttribute('name',"pergunta"+pergunta[1]);
-		radio1.setAttribute('id',""+pergunta[1]+pergunta[i]);
-		radio1.setAttribute('value',pergunta[i]);
-		var label1 = document.createElement("label");
-		label1.setAttribute('class',"custom-control-label form-check-label");
-		label1.setAttribute('for',""+pergunta[1]+pergunta[i]);
-		label1.setAttribute('style',"font-weight:bold;");
-		label1.innerText=pergunta[i];
-
-		div1.appendChild(radio1);
-		div1.appendChild(label1);
-
-		d2.appendChild(label);
-		d1.appendChild(div1);
-		d2.appendChild(d1);
-	}
-	return d2;
-
-}
-//geraperguntas(perguntas);
-var stepper1;
 $(document).ready(function () {
-  	stepper1 = new Stepper($('.bs-stepper')[0]);
-  	$("#confianca,#confianca2p,#confianca3p").ionRangeSlider({
-		min: 0,
-        max: 5,
-        skin: "big",
-        grid: true,
-	});
 	arr.forEach(function(d,i){
 		switch(i) {
 		  	case 0:
-		  		var d3= geraperguntas(perguntas,d);
-		  		var list = document.getElementById("1p");
-				list.insertBefore(d3, list.childNodes[0]);
+		  		d4= geraperguntas(perguntas,d,1);
+		  		list = document.getElementById("1p");
+				list.insertBefore(d4, list.childNodes[0]);
+		  		d4= geraperguntas(perguntas,d,2);
+		  		list = document.getElementById("4p");
+				list.insertBefore(d4, list.childNodes[0]);
+		  		d4= geraperguntas(perguntas,d,3);
+		  		list = document.getElementById("7p");
+				list.insertBefore(d4, list.childNodes[0]);
+		  		d4= geraperguntas(perguntas,d,4);
+		  		list = document.getElementById("10p");
+				list.insertBefore(d4, list.childNodes[0]);
 		    break;
 		  	case 1:
-		  		var d3= geraperguntas(perguntas,d);
-		  		var list = document.getElementById("2p");
-				list.insertBefore(d3, list.childNodes[0]);
+		  		d4= geraperguntas(perguntas,d,1);
+		  		list = document.getElementById("2p");
+				list.insertBefore(d4, list.childNodes[0]);
+		  		d4= geraperguntas(perguntas,d,2);
+		  		list = document.getElementById("5p");
+				list.insertBefore(d4, list.childNodes[0]);
+		  		d4= geraperguntas(perguntas,d,3);
+		  		list = document.getElementById("8p");
+				list.insertBefore(d4, list.childNodes[0]);
+		  		d4= geraperguntas(perguntas,d,4);
+		  		list = document.getElementById("11p");
+				list.insertBefore(d4, list.childNodes[0]);
 		    break;
 		  	case 2:
-		  		var d3= geraperguntas(perguntas,d);
-		  		var list = document.getElementById("3p");
-				list.insertBefore(d3, list.childNodes[0]);
+		  		d4= geraperguntas(perguntas,d,1);
+		  		list = document.getElementById("3p");
+				list.insertBefore(d4, list.childNodes[0]);
+		  		d4= geraperguntas(perguntas,d,2);
+		  		list = document.getElementById("6p");
+				list.insertBefore(d4, list.childNodes[0]);
+		  		d4= geraperguntas(perguntas,d,3);
+		  		list = document.getElementById("9p");
+				list.insertBefore(d4, list.childNodes[0]);
+		  		d4= geraperguntas(perguntas,d,4);
+		  		list = document.getElementById("12p");
+				list.insertBefore(d4, list.childNodes[0]);
 		    break;
 		  default:
 		}
 	});
 
+	stepper1 = new Stepper($('.bs-stepper')[0]);
+	stepper2 = new Stepper($('.bs-stepper')[1]);
+	stepper3 = new Stepper($('.bs-stepper')[2]);
+	 stepper4 = new Stepper($('.bs-stepper')[3]);
+  	$(".ioRangerSlider").ionRangeSlider({
+		min: 0,
+        max: 5,
+        skin: "big",
+        grid: true,
+        onFinish: function (data) {
+        	$('#'+data.input[0].id).value=data.input[0].value; 
+        }
+	});
+/*
+  	$("#4confianca,#5confianca,#6confianca").ionRangeSlider({
+		min: 0,
+        max: 5,
+        skin: "big",
+        grid: true,
+	});
+
+  	$("#7confianca,#8confianca,#9confianca").ionRangeSlider({
+		min: 0,
+        max: 5,
+        skin: "big",
+        grid: true,
+	});
+  	$("#10confianca,#11confianca,#12confianca").ionRangeSlider({
+		min: 0,
+        max: 5,
+        skin: "big",
+        grid: true,
+	});
+*/
 	$("#next1").click(function() {
-		document.getElementById("clicksp1").value = clicks;
-		var d2 = new Date();  // some date
-		var diff = Math.abs(d1-d2);  // difference in milliseconds
-		document.getElementById("tempop1").value = (Math.round(diff/60));
-		clicks=-1;
-		d1 = new Date();
-		console.log(document.getElementById("clicksp1").value);
-		console.log(document.getElementById("tempop1").value);
+		if($('input[type="radio"]:checked')[0]==undefined){
+			document.getElementById("Form").classList.add('was-validated');
+		}else{
+			stepper1.next();
+			if($("#Form").hasClass('was-validated')){
+				document.getElementById("Form").classList.remove("was-validated");
+			}
+			$('#1p> div > input')[1].value = clicks;
+			d2 = new Date();
+			diff = Math.abs(d1-d2);
+			$('#1p> div > input')[2].value = (Math.round(diff/60));
+			clicks=-1;
+			d1 = new Date();		
+		}
 	});
 
 	$("#next2").click(function() {
-		document.getElementById("clicksp2").value = clicks;
-		var d2 = new Date();  // some date
-		var diff = Math.abs(d1-d2);  // difference in milliseconds
-		document.getElementById("tempop2").value = (Math.round(diff/60));
-		clicks=-1;
-		d1 = new Date();
-			console.log(document.getElementById("clicksp2").value);
-		console.log(document.getElementById("tempop2").value);
-	});
-    $("#pergunta1Form").submit(function(event){
-		event.preventDefault(); //prevent default action 
-		var post_url = $(this).attr("action"); //get form action url
-		var request_method = $(this).attr("method"); //get form GET/POST method
-		var form_data = $(this).serialize(); //Encode form elements for submission
-		console.log(JSON.stringify($(this).serializeArray()));
-		$.ajax({
-			url : post_url,
-/*			headers: {
-	            'Access-Control-Allow-Origin': '*',
-	            'Content-Type':'application/json',
-	            'Access-Control-Allow-Credentials': 'true'
-	        },*/
-	        data :  form_data,
-	        method: 'POST',
-	        dataType: 'json',
-	        type: request_method,
-	        success: function(data){
-	          	console.log('success: '+data);
-	        }
-			//crossDomain: true,
-			//
-			
-			//contentType: 'application/json',
-    		//cache: false,
-    		
+		if($('input[type="radio"]:checked')[1]==undefined){
+			document.getElementById("Form").classList.add('was-validated');
+		}else{
+			stepper1.next();
+			if($("#Form").hasClass('was-validated')){
+				document.getElementById("Form").classList.remove("was-validated");
+			}
 
-		});
+			d2 = new Date();
+			diff = Math.abs(d1-d2);
+			$('#2p> div > input')[1].value = clicks;
+			$('#2p> div > input')[2].value = (Math.round(diff/60));
+			clicks=-1;
+			d1 = new Date();
+		}
 	});
+	$("#btn1").click(function() {
+		if($('input[type="radio"]:checked')[2]==undefined){
+			document.getElementById("Form").classList.add('was-validated');
+		}else{
 
-});
-var clicks=0;
-var d1 = new Date();
-$(document).ready(function() {
-    $(document).on("click",function() {
+			/*$('li')[1].classList.remove("disabled");
+			$('li')[1].classList.remove("btn-secondary");*/
+			d2 = new Date();
+			diff = Math.abs(d1-d2);
+			$('#3p> div > input')[1].value = clicks;
+			$('#3p> div > input')[2].value = (Math.round(diff/60));
+			$('li > a')[1].click();
+			$('li > a')[0].classList.add("disabled");
+			//$('li > a')[0].classList.add("btn-secondary");
+			//stepper1.next();
+			if($("#Form").hasClass('was-validated')){
+				document.getElementById("Form").classList.remove("was-validated");
+			}
+			clicks=-1;
+			d1 = new Date();
+		}
+	});
+	$(document).on("click",function() {
         clicks+=1;
-        console.log(clicks);
-		//console.log(Math.round(diff/60));
     });
     $(".custom-control-input").click(function() {
     	clicks-=1;
     });
-    
+	$("#2next1").click(function() {
+		if($('input[type="radio"]:checked')[0]==undefined){
+			document.getElementById("2Form").classList.add('was-validated');
+		}else{
+			stepper2.next();
+			if($("#2Form").hasClass('was-validated')){
+				document.getElementById("2Form").classList.remove("was-validated");
+			}
+			d2 = new Date();
+			diff = Math.abs(d1-d2);
+			$('#4p> div > input')[1].value = clicks;
+			$('#4p> div > input')[2].value = (Math.round(diff/60));
+			clicks=-1;
+			d1 = new Date();		
+		}
+	});
+	$("#2next2").click(function() {
+		if($('input[type="radio"]:checked')[1]==undefined){
+			document.getElementById("2Form").classList.add('was-validated');
+		}else{
+			stepper2.next();
+			if($("#2Form").hasClass('was-validated')){
+				document.getElementById("2Form").classList.remove("was-validated");
+			}
+			d2 = new Date();
+			diff = Math.abs(d1-d2);
+			$('#5p> div > input')[1].value = clicks;
+			$('#5p> div > input')[2].value = (Math.round(diff/60));
+			clicks=-1;
+			d1 = new Date();
+		}
+	});
+	$("#2btn1").click(function() {
+		if($('input[type="radio"]:checked')[2]==undefined){
+			document.getElementById("2Form").classList.add('was-validated');
+		}else{
+			/*$('li')[1].classList.remove("disabled");
+			$('li')[1].classList.remove("btn-secondary");*/
+			d2 = new Date();
+			diff = Math.abs(d1-d2);
+			$('#6p> div > input')[1].value = clicks;
+			$('#6p> div > input')[2].value = (Math.round(diff/60));
+			$('li > a')[2].click();
+			$('li > a')[1].classList.add("disabled");
+			//$('li > a')[0].classList.add("btn-secondary");
+			//stepper2.next();
+			if($("#2Form").hasClass('was-validated')){
+				document.getElementById("2Form").classList.remove("was-validated");
+			}
+
+			clicks=-1;
+			d1 = new Date();
+		}
+	});
+	$("#3next1").click(function() {
+		if($('input[type="radio"]:checked')[0]==undefined){
+			document.getElementById("3Form").classList.add('was-validated');
+		}else{
+			stepper3.next();
+			if($("#3Form").hasClass('was-validated')){
+				document.getElementById("3Form").classList.remove("was-validated");
+			}
+			d2 = new Date();
+			diff = Math.abs(d1-d2);
+			$('#7p> div > input')[1].value = clicks;
+			$('#7p> div > input')[2].value = (Math.round(diff/60));
+			clicks=-1;
+			d1 = new Date();		
+		}
+	});
+	$("#3next2").click(function() {
+		if($('input[type="radio"]:checked')[1]==undefined){
+			document.getElementById("3Form").classList.add('was-validated');
+		}else{
+			stepper3.next();
+			if($("#3Form").hasClass('was-validated')){
+				document.getElementById("3Form").classList.remove("was-validated");
+			}
+			d2 = new Date();
+			diff = Math.abs(d1-d2);
+			$('#8p> div > input')[1].value = clicks;
+			$('#8p> div > input')[2].value = (Math.round(diff/60));
+			clicks=-1;
+			d1 = new Date();
+		}
+	});
+	$("#3btn1").click(function() {
+		if($('input[type="radio"]:checked')[2]==undefined){
+			document.getElementById("3Form").classList.add('was-validated');
+		}else{
+			/*$('li')[1].classList.remove("disabled");
+			$('li')[1].classList.remove("btn-secondary");*/
+			d2 = new Date();
+			diff = Math.abs(d1-d2);
+			$('#9p> div > input')[1].value = clicks;
+			$('#9p> div > input')[2].value = (Math.round(diff/60));
+			$('li > a')[3].click();
+			$('li > a')[2].classList.add("disabled");
+			//$('li > a')[0].classList.add("btn-secondary");
+			if($("#3Form").hasClass('was-validated')){
+				document.getElementById("2Form").classList.remove("was-validated");
+			}
+
+			clicks=-1;
+			d1 = new Date();
+		}
+	});
+	$("#4next1").click(function() {
+		if($('input[type="radio"]:checked')[0]==undefined){
+			document.getElementById("4Form").classList.add('was-validated');
+		}else{
+			stepper4.next();
+			if($("#4Form").hasClass('was-validated')){
+				document.getElementById("4Form").classList.remove("was-validated");
+			}
+			d2 = new Date();
+			diff = Math.abs(d1-d2);
+			$('#10p> div > input')[1].value = clicks;
+			$('#10p> div > input')[2].value = (Math.round(diff/60));
+			clicks=-1;
+			d1 = new Date();		
+		}
+	});
+
+	$("#4next2").click(function() {
+		if($('input[type="radio"]:checked')[1]==undefined){
+			document.getElementById("4Form").classList.add('was-validated');
+		}else{
+			stepper4.next();
+			if($("#4Form").hasClass('was-validated')){
+				document.getElementById("4Form").classList.remove("was-validated");
+			}
+			d2 = new Date();
+			diff = Math.abs(d1-d2);
+			$('#11p> div > input')[1].value = clicks;
+			$('#11p> div > input')[2].value = (Math.round(diff/60));
+			clicks=-1;
+			d1 = new Date();
+		}
+	});
+	$("#4next3").click(function() {
+		stepper4.next();
+	});
+	$("#4next4").click(function() {
+		stepper4.next();
+	});
+	$('#captchaError').hide();
+	/*$('#recaptcha-anchor > div').click(function(){
+		
+	});*/
+	$("#4btn1").click(function() {
+		//var v = grecaptcha.getResponse();
+		if($('input[type="radio"]:checked')[2]==undefined){
+			document.getElementById("4Form").classList.add('was-validated');
+		}/*else if(v.length == 0){
+		        $('#captchaError').show();
+			    //else
+			    {
+			        document.getElementById('captcha').innerHTML="Captcha completado!";
+			        return true; 
+			    }
+		}*/else{
+
+			/*$('li')[1].classList.remove("disabled");
+			$('li')[1].classList.remove("btn-secondary");*/
+			//$('li > a')[3].click();
+			//$('li > a')[2].classList.add("disabled");
+			//$('li > a')[0].classList.add("btn-secondary");
+			if($("#4Form").hasClass('was-validated')){
+				document.getElementById("4Form").classList.remove("was-validated");
+			}
+			forms = document.getElementsByClassName('needs-validation');
+			d2 = new Date();
+			diff = Math.abs(d1-d2);
+			$('#12p> div > input')[1].value = clicks;
+			$('#12p> div > input')[2].value = (Math.round(diff/60));
+			clicks=-1;
+			d1 = new Date();
+			Array.prototype.filter.call(forms, function(form) {
+				if (form.checkValidity() === false) {
+		          	event.preventDefault();
+		          	event.stopPropagation();
+		        }else{
+		        	event.preventDefault();
+		        	event.stopPropagation();
+		        	form.reset();
+		        	post_url = $(this).attr("action"); //get form action url
+					request_method = $(this).attr("method"); //get form GET/POST method
+					form_data = $(this).serialize(); //Encode form elements for submission
+					//console.log(JSON.stringify($(this).serializeArray()));
+					$.ajax({
+						url : post_url,
+						//type: request_method,
+						//contentType: "application/json",
+						//crossDomain : true,
+						dataType: 'json',
+				        data :  form_data,
+				        method: 'post',
+				        success: function(data){
+				          	console.log('success: '+data);
+				        },
+				        error: function (request, status, error) {
+			                console.log(error);
+			            }
+					});
+					d1 = new Date();
+					clicks=0;
+					console.log(form);
+		        }
+			});
+			$('#vis').hide();
+    		$('#footer').show();
+		}
+	});
 });
-//"idform" is the id of the form
-
-/*
-
-//d1.setAttribute('class',"col-lg-3 col-md-3 col-sm-3 col-xs-3");
-
-var f = document.createElement("form");
-f.setAttribute('method',"post");
-f.setAttribute('action',"submit.php");
-
-var div1 = document.createElement("div");
-div1.setAttribute('class',"custom-control custom-radio custom-control-inline");
-var div2 = document.createElement("div");
-div2.setAttribute('class',"custom-control custom-radio custom-control-inline");
-var div3 = document.createElement("div");
-div3.setAttribute('class',"custom-control custom-radio custom-control-inline");
-var div4 = document.createElement("div");
-div4.setAttribute('class',"custom-control custom-radio custom-control-inline");
-
-
-
-*/
-
-
-
-/*
-
-var radio3 = document.createElement("input"); //input element, text
-radio3.setAttribute('type',"radio");
-radio3.setAttribute('class',"custom-control-input");
-radio3.setAttribute('name',"pergunta1");
-radio3.setAttribute('id',"3radiopergunta1");
-radio3.setAttribute('value',"R3");
-
-var label3 = document.createElement("label");
-label3.setAttribute('class',"custom-control-label");
-label3.setAttribute('for',"3radiopergunta1");
-label3.setAttribute('style',"font-weight:bold;");
-label3.innerText="R3";
-
-var radio4 = document.createElement("input"); //input element, text
-radio4.setAttribute('type',"radio");
-radio4.setAttribute('class',"custom-control-input");
-radio4.setAttribute('name',"pergunta1");
-radio4.setAttribute('id',"4radiopergunta1");
-radio4.setAttribute('value',"R4");
-
-var label4 = document.createElement("label");
-label4.setAttribute('class',"custom-control-label");
-label4.setAttribute('for',"4radiopergunta1");
-label4.setAttribute('style',"font-weight:bold;");
-label4.innerText="R4";
-
-
-//var s = document.createElement("input"); //input element, Submit button
-//s.setAttribute('type',"submit");
-//s.setAttribute('value',"Submit");
-
-
-
-div2.appendChild(radio2);
-div2.appendChild(label2);
-
-div3.appendChild(radio3);
-div3.appendChild(label3);
-
-div4.appendChild(radio4);
-div4.appendChild(label4);
-//d.appendChild(s);
-
-
-
-d1.appendChild(div1);
-d1.appendChild(div2);
-d1.appendChild(div3);
-d1.appendChild(div4);
-
-//d1.appendChild(f);
-//and some more input elements here
-//and dont forget to add a submit button
-*/
-

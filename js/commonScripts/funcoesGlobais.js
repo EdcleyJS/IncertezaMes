@@ -502,3 +502,75 @@ function legendonAdd(map) {
   }
   return div;
 };
+
+function geraperguntas(perguntas,index,vis){
+  var d1= document.createElement("div");
+  var d2= document.createElement("div");
+  d2.setAttribute('class','card');
+  var pergunta= perguntas[index];
+  var label = document.createElement("label");//label antes com a pergunta
+  label.setAttribute('style',"font-weight:bold;");
+  label.setAttribute('for',"pergunta1");
+  label.setAttribute('id',"pergunta1");
+  label.innerText= pergunta[0];//"Pergunta 1 ?";
+
+  for (var i = 2; i < pergunta.length; i++) {
+    var div1 = document.createElement("div");
+    div1.setAttribute('class',"custom-control custom-radio custom-control-inline ");
+    var input1= document.createElement("input");
+    input1.setAttribute('type','hidden');
+    input1.setAttribute('id','CLC'+pergunta[1]+vis);
+    input1.setAttribute('name','CLC'+pergunta[1]+vis);
+    input1.setAttribute('value','');
+
+    var input2= document.createElement("input");
+    input2.setAttribute('type','hidden');
+    input2.setAttribute('id','TMP'+pergunta[1]+vis);
+    input2.setAttribute('name','TMP'+pergunta[1]+vis);
+    input2.setAttribute('value','');
+
+    var label2 = document.createElement("label");
+    label2.setAttribute('for','CNFC'+pergunta[1]+vis);
+    label2.setAttribute('style',"font-weight:bold;");
+    label2.innerText='De 1 a 5 sendo 1 pouco confiante e 5 muito confiante, quão confiante você está da sua resposta?';
+
+    var input3= document.createElement("input");
+    input3.setAttribute('type','text');
+    input3.setAttribute('class','ioRangerSlider');
+    input3.setAttribute('id','CNFC'+pergunta[1]+vis);
+    input3.setAttribute('name','CNFC'+pergunta[1]+vis);
+    input3.setAttribute('value','');
+
+    var radio1 = document.createElement("input"); //input element, text
+    if(i==2){
+      radio1.required = true;
+    }
+    radio1.setAttribute('type',"radio");
+    radio1.setAttribute('class',"custom-control-input form-check-input form-control");
+    radio1.setAttribute('name',"pergunta"+pergunta[1]+vis);
+    radio1.setAttribute('id',""+pergunta[1]+pergunta[i]+vis);
+    radio1.setAttribute('value',pergunta[i]);
+    var label1 = document.createElement("label");
+    label1.setAttribute('class',"custom-control-label form-check-label");
+    label1.setAttribute('for',""+pergunta[1]+pergunta[i]+vis);
+    label1.setAttribute('style',"font-weight:bold;");
+    label1.innerText=pergunta[i];
+
+    div1.appendChild(radio1);
+    div1.appendChild(label1);
+
+    d2.appendChild(label);
+    d1.appendChild(div1);
+    d2.appendChild(d1);
+  }
+  d2.appendChild(label2);
+  d2.appendChild(input3);
+  d2.appendChild(input1);
+  d2.appendChild(input2);
+  return d2;
+
+}
+
+function recaptcha_callback(){
+  $('#captchaError').hide();
+}
