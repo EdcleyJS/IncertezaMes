@@ -45,7 +45,7 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bs-stepper/dist/css/bs-stepper.min.css">
 		<script type="text/javascript" src="./js/commonScripts/form.js"></script>
-		<!--<script src='https://www.google.com/recaptcha/api.js'></script>-->
+		<script src='https://www.google.com/recaptcha/api.js'></script>
 		<style>
 		body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 		.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
@@ -62,7 +62,7 @@
 	    }
 	</style>
 	<body >
-		<!--<header class="w3-container w3-sand w3-center" style="padding:28px 16px" id='header'>
+		<header class="w3-container w3-sand w3-center" style="padding:28px 16px" id='header'>
 		  	<h1 class="w3-margin w3-jumbo">Estudo CIn-UFPE</h1>
 		  	<p class="w3-xlarge">Risco e Incerteza em Mapas.</p>
 		  	<div class="w3-row-padding w3-padding-64 w3-container">
@@ -85,14 +85,14 @@
 			  	</div>
 			</div>
 		  	<button class="w3-button w3-green w3-padding-large w3-large w3-margin-top" id="iniciar">Iniciar Estudo</button>
-		</header>-->
+		</header>
 		<div class="container-fluid" id='vis'>
 			<ul class="nav nav-pills" id="pills-tab" role="tablist">
 				<li class="nav-item" >
 				    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true"><b>Comparação com Uma Constante</b></a>
 				</li>
 				<li class="nav-item">
-				    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Intervalo</a>
+				    <a class="nav-link disabled" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Intervalo</a>
 				</li>
 				<!--<li class="nav-item">
 				    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Comparação Um com Todos</a>
@@ -107,10 +107,10 @@
 				    <a class="nav-link" id="pills-min-tab" data-toggle="pill" href="#pills-min" role="tab" aria-controls="pills-min" aria-selected="false">Probabilidade de Minimo</a>
 				</li>-->						
 				<li class="nav-item">
-				    <a class="nav-link" id="pills-dotmap-tab" data-toggle="pill" href="#pills-dotmap" role="tab" aria-controls="pills-dotmap" aria-selected="false">Mapa de Pontos</a>
+				    <a class="nav-link disabled" id="pills-dotmap-tab" data-toggle="pill" href="#pills-dotmap" role="tab" aria-controls="pills-dotmap" aria-selected="false">Mapa de Pontos</a>
 				</li>
 				<li class="nav-item">
-				    <a class="nav-link" id="pills-media-tab" data-toggle="pill" href="#pills-media" role="tab" aria-controls="pills-media" aria-selected="false">Média</a>
+				    <a class="nav-link disabled" id="pills-media-tab" data-toggle="pill" href="#pills-media" role="tab" aria-controls="pills-media" aria-selected="false">Média</a>
 				</li>
 				<!--<li class="nav-item">
 				    <a class="nav-link" id="pills-mediat-tab" data-toggle="pill" href="#pills-mediat" role="tab" aria-controls="pills-mediat" aria-selected="false">Média Temporal</a>
@@ -258,7 +258,7 @@
 					        </div>
 					    </div>
 						<div class="bs-stepper-content">
-						    <form class="needs-validation" onSubmit="return false" novalidate="" id="Form"
+						    <form class="needs-validation"  novalidate="" id="Form"
 						    method="post" action="https://script.google.com/macros/s/AKfycby_DzDKpY66Ti9OBL9s22I8u06XgPFP_SyUnuhCbB7bl3rzwRMc/exec">
 						        <div id="test-form-1" role="tabpanel" class="bs-stepper-pane fade active dstepper-block" aria-labelledby="stepperFormTrigger1">
 						            <div class="form-group" id="1p">
@@ -267,7 +267,7 @@
 							          	<label for="confianca"> De 1 a 5 sendo 1 pouco confiante e 5 muito confiante, quão confiante você está da sua resposta?</label>
 							        	<input type="text" id="confianca" name="confianca" value="" />-->
 						            </div>
-						            <button type="button" class="btn btn-primary btn-next-form" id="next1">Próxima</button>
+						            <button type="button" class="btn btn-primary btn-next-form" id="next1">Avançar</button>
 						        </div>
 						        <div id="test-form-2" role="tabpanel" class="bs-stepper-pane fade dstepper-none" aria-labelledby="stepperFormTrigger2">
 						            <div class="form-group" id="2p">
@@ -276,7 +276,7 @@
 							          	<label for="2confianca"> De 1 a 5 sendo 1 pouco confiante e 5 muito confiante, quão confiante você está da sua resposta?</label>
 							          	<input type="text" id="2confianca" name="confianca2p" value="" />-->
 						            </div>
-						            <button type="button" class="btn btn-primary btn-next-form" id="next2">Próxima</button>
+						            <button type="button" class="btn btn-primary btn-next-form" id="next2">Avançar</button>
 						        </div>
 						        <div id="test-form-3" role="tabpanel" class="bs-stepper-pane fade dstepper-none" aria-labelledby="stepperFormTrigger3">
 						      		<div class="form-group" id='3p'>
@@ -285,7 +285,7 @@
 							    		<label for="3confianca"> De 1 a 5 sendo 1 pouco confiante e 5 muito confiante, quão confiante você está da sua resposta?</label>
 							          	<input type="text" id="3confianca" name="confianca3p" value="" />-->
 						            </div>
-						            <button type="button" class="btn btn-primary" id="btn1">Concluir</button>
+						            <button type="button" class="btn btn-primary" id="btn1">Avançar</button>
 						        </div>
 						    </form>
 						</div>
@@ -320,7 +320,7 @@
 							        </div>
 							    </div>
 								<div class="bs-stepper-content">
-								    <form class="needs-validation" onSubmit="return false" novalidate="" id="2Form"
+								    <form class="needs-validation"  novalidate="" id="2Form"
 								    method="post" action="https://script.google.com/macros/s/AKfycbyJ_tdnNY0RDjfrxT9bcdXhcq927uRd9uK_LqBj1Qn-WZse6ko/exec">
 								        <div id="test-form-4" role="tabpanel" class="bs-stepper-pane fade active dstepper-block" aria-labelledby="stepperFormTrigger4">
 								            <div class="form-group" id="4p">
@@ -329,7 +329,7 @@
 									          	<label for="4confianca"> De 1 a 5 sendo 1 pouco confiante e 5 muito confiante, quão confiante você está da sua resposta?</label>
 									        	<input type="text" id="4confianca" name="confianca" value="" />-->
 								            </div>
-								            <button type="button" class="btn btn-primary btn-next-form" id="2next1">Próxima</button>
+								            <button type="button" class="btn btn-primary btn-next-form" id="2next1">Avançar</button>
 								        </div>
 								        <div id="test-form-5" role="tabpanel" class="bs-stepper-pane fade dstepper-none" aria-labelledby="stepperFormTrigger5">
 								            <div class="form-group" id="5p">
@@ -338,7 +338,7 @@
 									          	<label for="5confianca"> De 1 a 5 sendo 1 pouco confiante e 5 muito confiante, quão confiante você está da sua resposta?</label>
 									          	<input type="text" id="5confianca" name="confianca2p" value="" />-->
 								            </div>
-								            <button type="button" class="btn btn-primary btn-next-form" id="2next2">Próxima</button>
+								            <button type="button" class="btn btn-primary btn-next-form" id="2next2">Avançar</button>
 								        </div>
 								        <div id="test-form-6" role="tabpanel" class="bs-stepper-pane fade dstepper-none" aria-labelledby="stepperFormTrigger6">
 								      		<div class="form-group" id='6p'>
@@ -347,7 +347,7 @@
 									    		<label for="6confianca"> De 1 a 5 sendo 1 pouco confiante e 5 muito confiante, quão confiante você está da sua resposta?</label>
 									          	<input type="text" id="6confianca" name="confianca3p" value="" />-->
 								            </div>
-								            <button type="button" class="btn btn-primary" id="2btn1">Concluir</button>
+								            <button type="button" class="btn btn-primary" id="2btn1">Avançar</button>
 								        </div>
 								    </form>
 								</div>
@@ -413,7 +413,7 @@
 							        </div>
 							    </div>
 								<div class="bs-stepper-content">
-								    <form class="needs-validation" onSubmit="return false" novalidate="" id="3Form"
+								    <form class="needs-validation"  novalidate="" id="3Form"
 								    method="post" action="https://script.google.com/macros/s/AKfycbxGJMYtzRu_4AgM8vhk38rpdI-bMVK5dGnCGJqiJvMv6ZC7nWNp/exec">
 								        <div id="test-form-7" role="tabpanel" class="bs-stepper-pane fade active dstepper-block" aria-labelledby="stepperFormTrigger7">
 								            <div class="form-group" id="7p">
@@ -422,7 +422,7 @@
 									          	<label for="7confianca"> De 1 a 5 sendo 1 pouco confiante e 5 muito confiante, quão confiante você está da sua resposta?</label>
 									        	<input type="text" id="7confianca" name="confianca" value="" />-->
 								            </div>
-								            <button type="button" class="btn btn-primary btn-next-form" id="3next1">Próxima</button>
+								            <button type="button" class="btn btn-primary btn-next-form" id="3next1">Avançar</button>
 								        </div>
 								        <div id="test-form-8" role="tabpanel" class="bs-stepper-pane fade dstepper-none" aria-labelledby="stepperFormTrigger8">
 								            <div class="form-group" id="8p">
@@ -431,7 +431,7 @@
 									          	<label for="8confianca"> De 1 a 5 sendo 1 pouco confiante e 5 muito confiante, quão confiante você está da sua resposta?</label>
 									          	<input type="text" id="8confianca" name="confianca2p" value="" />-->
 								            </div>
-								            <button type="button" class="btn btn-primary btn-next-form" id="3next2">Próxima</button>
+								            <button type="button" class="btn btn-primary btn-next-form" id="3next2">Avançar</button>
 								        </div>
 								        <div id="test-form-9" role="tabpanel" class="bs-stepper-pane fade dstepper-none" aria-labelledby="stepperFormTrigger9">
 								      		<div class="form-group" id='9p'>
@@ -440,7 +440,7 @@
 									    		<label for="9confianca"> De 1 a 5 sendo 1 pouco confiante e 5 muito confiante, quão confiante você está da sua resposta?</label>
 									          	<input type="text" id="9confianca" name="confianca3p" value="" />-->
 								            </div>
-								            <button type="button" class="btn btn-primary" id="3btn1">Concluir</button>
+								            <button type="button" class="btn btn-primary" id="3btn1">Avançar</button>
 								        </div>
 								    </form>
 								</div>
@@ -490,7 +490,7 @@
 							        </div>
 							    </div>
 								<div class="bs-stepper-content">
-								    <form class="needs-validation" onsubmit="return false" novalidate="" id="4Form"
+								    <form class="needs-validation"  novalidate="" id="4Form"
 								    method="post" action="https://script.google.com/macros/s/AKfycbzLOg-MT8Zic3zc1fQGDCPl6Upu769FP75yT3KPlpb1LYO0NNTh/exec">
 								        <div id="test-form-10" role="tabpanel" class="bs-stepper-pane fade active dstepper-block" aria-labelledby="stepperFormTrigger10">
 								            <div class="form-group" id="10p">
@@ -499,7 +499,7 @@
 									          	<label for="10confianca"> De 1 a 5 sendo 1 pouco confiante e 5 muito confiante, quão confiante você está da sua resposta?</label>
 									        	<input type="text" id="10confianca" name="confianca" value="" />-->
 								            </div>
-								            <button type="button" class="btn btn-primary btn-next-form" id="4next1">Próxima</button>
+								            <button type="button" class="btn btn-primary btn-next-form" id="4next1">Avançar</button>
 								        </div>
 								        <div id="test-form-11" role="tabpanel" class="bs-stepper-pane fade dstepper-none" aria-labelledby="stepperFormTrigger11">
 								            <div class="form-group" id="11p">
@@ -508,7 +508,7 @@
 									          	<label for="11confianca"> De 1 a 5 sendo 1 pouco confiante e 5 muito confiante, quão confiante você está da sua resposta?</label>
 									          	<input type="text" id="11confianca" name="confianca2p" value="" />-->
 								            </div>
-								            <button type="button" class="btn btn-primary btn-next-form" id="4next2">Próxima</button>
+								            <button type="button" class="btn btn-primary btn-next-form" id="4next2">Avançar</button>
 								        </div>
 								        <div id="test-form-12" role="tabpanel" class="bs-stepper-pane fade dstepper-none" aria-labelledby="stepperFormTrigger12">
 								      		<div class="form-group" id='12p'>
@@ -517,7 +517,7 @@
 									    		<label for="12confianca"> De 1 a 5 sendo 1 pouco confiante e 5 muito confiante, quão confiante você está da sua resposta?</label>
 									          	<input type="text" id="12confianca" name="confianca3p" value="" />-->
 								            </div>
-								            <button type="button" class="btn btn-primary" id="4next3">Próxima</button>
+								            <button type="button" class="btn btn-primary" id="4next3">Avançar</button>
 								        </div>
 								        <div id="test-form-13" role="tabpanel" class="bs-stepper-pane fade dstepper-none" aria-labelledby="stepperFormTrigger13">
 								      		<div class="form-group" id='13p'>
@@ -526,20 +526,20 @@
 									    		<label for="feedback"> Gostaria de fazer algum comentário sobre este trabalho? Se sim escreva a baixo</label>
 									    		<textarea class="form-control" id="feedback" name="feedback" rows="3"></textarea>
 								            </div>
-								            <button type="button" class="btn btn-primary" id="4next4">Próxima</button>
+								            <button type="button" class="btn btn-primary" id="4next4">Avançar</button>
 								        </div>
 								        <div id="test-form-14" role="tabpanel" class="bs-stepper-pane fade dstepper-none" aria-labelledby="stepperFormTrigger14">
 								      		<div class="form-group" id='14p'>
-								      			<!--<div class="g-recaptcha" data-callback="recaptcha_callback" id="captcha" data-sitekey="6LeFOLcUAAAAAJ7Ud3pw1qem9GT1PTClG-MTcQih" name='captcha'></div>-->
+								      			<div class="g-recaptcha" data-callback="recaptcha_callback" id="captcha" data-sitekey="6LeFOLcUAAAAAJ7Ud3pw1qem9GT1PTClG-MTcQih" name='captcha'></div>
 								      			<div class="invalid-feedback" id="captchaError">
 												    O captcha não pode ficar vazio
 												</div>
-									    		<input type="hidden" id="captcha" name="captcha" value="5">
-									        	<!--<input type="hidden" id="4tempop3" name="tempop3" value="">
+									    		<!--<input type="hidden" id="captcha" name="captcha" value="5">
+									        	<input type="hidden" id="4tempop3" name="tempop3" value="">
 									    		<label for="feedback"> Gostaria de fazer algum comentário sobre este trabalho? Se sim escreva a baixo</label>
 									          	<input type="text" id="feedback" name="feedback" value="" />-->
 								            </div>
-								            <button type="submit" class="btn btn-primary" id="4btn1">Enviar</button>
+								            <button type="button" class="btn btn-success" id="4btn1">Terminar</button>
 								        </div>
 								    </form>
 								</div>

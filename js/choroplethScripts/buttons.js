@@ -84,12 +84,12 @@ $(document).ready(function () {
 			}
 		}
     });
-    /*$('#vis').hide();
+    $('#vis').hide();
     $('#iniciar').click(function(){
     	$('#header').hide();
     	//$("#vis").css("display", "");
     	$('#vis').show();
     	//$("#header").css("display", "none");
-    });*/
+    });
     $('#footer').hide();
 });

@@ -540,6 +540,7 @@ function geraperguntas(perguntas,index,vis){
     input3.setAttribute('id','CNFC'+pergunta[1]+vis);
     input3.setAttribute('name','CNFC'+pergunta[1]+vis);
     input3.setAttribute('value','');
+    input3.required=true;
 
     var radio1 = document.createElement("input"); //input element, text
     if(i==2){
@@ -558,13 +559,23 @@ function geraperguntas(perguntas,index,vis){
 
     div1.appendChild(radio1);
     div1.appendChild(label1);
-
+    if(i==pergunta.length-1){
+      var input4= document.createElement("div");
+      input4.setAttribute('class','invalid-feedback');
+      input4.innerText='Você precisa escolher um';
+      div1.appendChild(input4);
+    }
     d2.appendChild(label);
     d1.appendChild(div1);
     d2.appendChild(d1);
   }
+
   d2.appendChild(label2);
   d2.appendChild(input3);
+  var input5= document.createElement("div");
+  input5.setAttribute('class','invalid-feedback');
+  input5.innerText='Você precisa escolher um';
+  d2.appendChild(input5);
   d2.appendChild(input1);
   d2.appendChild(input2);
   return d2;

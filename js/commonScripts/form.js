@@ -147,6 +147,7 @@ $(document).ready(function () {
 			diff = Math.abs(d1-d2);
 			$('#3p> div > input')[1].value = clicks;
 			$('#3p> div > input')[2].value = (Math.round(diff/60));
+			$('li > a')[1].classList.remove("disabled");
 			$('li > a')[1].click();
 			$('li > a')[0].classList.add("disabled");
 			//$('li > a')[0].classList.add("btn-secondary");
@@ -206,6 +207,7 @@ $(document).ready(function () {
 			diff = Math.abs(d1-d2);
 			$('#6p> div > input')[1].value = clicks;
 			$('#6p> div > input')[2].value = (Math.round(diff/60));
+			$('li > a')[2].classList.remove("disabled");
 			$('li > a')[2].click();
 			$('li > a')[1].classList.add("disabled");
 			//$('li > a')[0].classList.add("btn-secondary");
@@ -260,6 +262,7 @@ $(document).ready(function () {
 			diff = Math.abs(d1-d2);
 			$('#9p> div > input')[1].value = clicks;
 			$('#9p> div > input')[2].value = (Math.round(diff/60));
+			$('li > a')[3].classList.remove("disabled");
 			$('li > a')[3].click();
 			$('li > a')[2].classList.add("disabled");
 			//$('li > a')[0].classList.add("btn-secondary");
@@ -314,18 +317,19 @@ $(document).ready(function () {
 	/*$('#recaptcha-anchor > div').click(function(){
 		
 	});*/
+
 	$("#4btn1").click(function() {
-		//var v = grecaptcha.getResponse();
+		var v = grecaptcha.getResponse();
 		if($('input[type="radio"]:checked')[2]==undefined){
 			document.getElementById("4Form").classList.add('was-validated');
-		}/*else if(v.length == 0){
+		}else if(v.length == 0){
 		        $('#captchaError').show();
-			    //else
+			    /*else
 			    {
 			        document.getElementById('captcha').innerHTML="Captcha completado!";
 			        return true; 
-			    }
-		}*/else{
+			    }*/
+		}else{
 
 			/*$('li')[1].classList.remove("disabled");
 			$('li')[1].classList.remove("btn-secondary");*/
@@ -335,47 +339,64 @@ $(document).ready(function () {
 			if($("#4Form").hasClass('was-validated')){
 				document.getElementById("4Form").classList.remove("was-validated");
 			}
-			forms = document.getElementsByClassName('needs-validation');
 			d2 = new Date();
 			diff = Math.abs(d1-d2);
 			$('#12p> div > input')[1].value = clicks;
 			$('#12p> div > input')[2].value = (Math.round(diff/60));
 			clicks=-1;
+			//forms = document.getElementsByClassName('needs-validation');
 			d1 = new Date();
-			Array.prototype.filter.call(forms, function(form) {
-				if (form.checkValidity() === false) {
-		          	event.preventDefault();
-		          	event.stopPropagation();
-		        }else{
-		        	event.preventDefault();
-		        	event.stopPropagation();
-		        	form.reset();
-		        	post_url = $(this).attr("action"); //get form action url
-					request_method = $(this).attr("method"); //get form GET/POST method
-					form_data = $(this).serialize(); //Encode form elements for submission
-					//console.log(JSON.stringify($(this).serializeArray()));
-					$.ajax({
-						url : post_url,
-						//type: request_method,
-						//contentType: "application/json",
-						//crossDomain : true,
-						dataType: 'json',
-				        data :  form_data,
-				        method: 'post',
-				        success: function(data){
-				          	console.log('success: '+data);
-				        },
-				        error: function (request, status, error) {
-			                console.log(error);
-			            }
-					});
-					d1 = new Date();
-					clicks=0;
-					console.log(form);
-		        }
-			});
+			clicks=0;
 			$('#vis').hide();
     		$('#footer').show();
+    		$('#Form').submit();
+    		$('#2Form').submit();
+    		$('#3Form').submit();
+    		$('#4Form').submit();
 		}
+	});
+	$('#Form').submit(function(){
+	    $.ajax({
+	      url: $('#Form').attr('action'),
+	      type: 'POST',
+	      data : $('#Form').serialize(),
+	      success: function(){
+	        console.log('form submitted.');
+	      }
+	    });
+	    return false;
+	});
+	$('#2Form').submit(function(){
+	    $.ajax({
+	      url: $('#2Form').attr('action'),
+	      type: 'POST',
+	      data : $('#2Form').serialize(),
+	      success: function(){
+	        console.log('form submitted.');
+	      }
+	    });
+	    return false;
+	});
+	$('#3Form').submit(function(){
+	    $.ajax({
+	      url: $('#3Form').attr('action'),
+	      type: 'POST',
+	      data : $('#3Form').serialize(),
+	      success: function(){
+	        console.log('form submitted.');
+	      }
+	    });
+	    return false;
+	});
+	$('#4Form').submit(function(){
+	    $.ajax({
+	      url: $('#4Form').attr('action'),
+	      type: 'POST',
+	      data : $('#4Form').serialize(),
+	      success: function(){
+	        console.log('form submitted.');
+	      }
+	    });
+	    return false;
 	});
 });
