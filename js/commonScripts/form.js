@@ -76,7 +76,8 @@ $(document).ready(function () {
         }
 	});
 	$("#next1").click(function() {
-		if($('input[type="radio"]:checked')[0]==undefined){
+		var ent= $('#1p> div > div> div >input')[0].name;
+		if($('input[name='+ent+']:checked').val()==undefined){
 			document.getElementById("Form").classList.add('was-validated');
 		}else{
 			stepper1.next();
@@ -92,7 +93,8 @@ $(document).ready(function () {
 		}
 	});
 	$("#next2").click(function() {
-		if($('input[type="radio"]:checked')[1]==undefined){
+		var ent= $('#2p> div > div> div >input')[0].name;
+		if($('input[name='+ent+']:checked').val()==undefined){
 			document.getElementById("Form").classList.add('was-validated');
 		}else{
 			stepper1.next();
@@ -109,14 +111,15 @@ $(document).ready(function () {
 		}
 	});
 	$("#btn1").click(function() {
-		if($('input[type="radio"]:checked')[2]==undefined){
+		var ent= $('#3p> div > div> div >input')[0].name;
+		if($('input[name='+ent+']:checked').val()==undefined){
 			document.getElementById("Form").classList.add('was-validated');
 		}else{
 			d2 = new Date();
 			diff = Math.abs(d1-d2);
 			$('#3p> div > input')[1].value = clicks;
 			$('#3p> div > input')[2].value = (Math.round(diff/60));
-			//$('li > a')[1].classList.remove("disabled");
+			$('li > a')[1].classList.remove("disabled");
 			$('li > a')[1].click();
 			$('li > a')[0].classList.add("disabled");
 			if($("#Form").hasClass('was-validated')){
@@ -133,7 +136,8 @@ $(document).ready(function () {
     	clicks-=1;
     });
 	$("#2next1").click(function() {
-		if($('input[type="radio"]:checked')[3]==undefined){
+		var ent= $('#4p> div > div> div >input')[0].name;
+		if($('input[name='+ent+']:checked').val()==undefined){
 			document.getElementById("2Form").classList.add('was-validated');
 		}else{
 			stepper2.next();
@@ -149,7 +153,8 @@ $(document).ready(function () {
 		}
 	});
 	$("#2next2").click(function() {
-		if($('input[type="radio"]:checked')[4]==undefined){
+		var ent= $('#5p> div > div> div >input')[0].name;
+		if($('input[name='+ent+']:checked').val()==undefined){
 			document.getElementById("2Form").classList.add('was-validated');
 		}else{
 			stepper2.next();
@@ -165,14 +170,15 @@ $(document).ready(function () {
 		}
 	});
 	$("#2btn1").click(function() {
-		if($('input[type="radio"]:checked')[5]==undefined){
+		var ent= $('#6p> div > div> div >input')[0].name;
+		if($('input[name='+ent+']:checked').val()==undefined){
 			document.getElementById("2Form").classList.add('was-validated');
 		}else{
 			d2 = new Date();
 			diff = Math.abs(d1-d2);
 			$('#6p> div > input')[1].value = clicks;
 			$('#6p> div > input')[2].value = (Math.round(diff/60));
-			//$('li > a')[2].classList.remove("disabled");
+			$('li > a')[2].classList.remove("disabled");
 			$('li > a')[2].click();
 			$('li > a')[1].classList.add("disabled");
 			if($("#2Form").hasClass('was-validated')){
@@ -183,7 +189,8 @@ $(document).ready(function () {
 		}
 	});
 	$("#3next1").click(function() {
-		if($('input[type="radio"]:checked')[6]==undefined){
+		var ent= $('#7p> div > div> div >input')[0].name;
+		if($('input[name='+ent+']:checked').val()==undefined){
 			document.getElementById("3Form").classList.add('was-validated');
 		}else{
 			stepper3.next();
@@ -199,7 +206,8 @@ $(document).ready(function () {
 		}
 	});
 	$("#3next2").click(function() {
-		if($('input[type="radio"]:checked')[7]==undefined){
+		var ent= $('#8p> div > div> div >input')[0].name;
+		if($('input[name='+ent+']:checked').val()==undefined){
 			document.getElementById("3Form").classList.add('was-validated');
 		}else{
 			stepper3.next();
@@ -215,7 +223,8 @@ $(document).ready(function () {
 		}
 	});
 	$("#3btn1").click(function() {
-		if($('input[type="radio"]:checked')[8]==undefined){
+		var ent= $('#9p> div > div> div >input')[0].name;
+		if($('input[name='+ent+']:checked').val()==undefined){
 			document.getElementById("3Form").classList.add('was-validated');
 		}else{
 			d2 = new Date();
@@ -233,7 +242,8 @@ $(document).ready(function () {
 		}
 	});
 	$("#4next1").click(function() {
-		if($('input[type="radio"]:checked')[9]==undefined){
+		var ent= $('#10p> div > div> div >input')[0].name;
+		if($('input[name='+ent+']:checked').val()==undefined){
 			document.getElementById("4Form").classList.add('was-validated');
 		}else{
 			stepper4.next();
@@ -250,7 +260,8 @@ $(document).ready(function () {
 	});
 
 	$("#4next2").click(function() {
-		if($('input[type="radio"]:checked')[10]==undefined){
+		var ent= $('#11p> div > div> div >input')[0].name;
+		if($('input[name='+ent+']:checked').val()==undefined){
 			document.getElementById("4Form").classList.add('was-validated');
 		}else{
 			stepper4.next();
@@ -266,7 +277,8 @@ $(document).ready(function () {
 		}
 	});
 	$("#4next3").click(function() {
-		if($('input[type="radio"]:checked')[11]==undefined){
+		var ent= $('#12p> div > div> div >input')[0].name;
+		if($('input[name='+ent+']:checked').val()==undefined){
 			document.getElementById("4Form").classList.add('was-validated');
 		}else{
 			if($("#4Form").hasClass('was-validated')){
@@ -294,8 +306,8 @@ $(document).ready(function () {
 			clicks=-1;
 			d1 = new Date();
 			clicks=0;
-			$('#vis').hide();
-    		$('#footer').show();
+			$('#vis').css('display','none');
+    		$('#footer').css('display','');
     		$('#Form').submit();
     		$('#2Form').submit();
     		$('#3Form').submit();

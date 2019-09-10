@@ -1,4 +1,6 @@
 $(document).ready(function () {
+	//$('#vis').hide();
+    //$('#footer').hide();
 	$("#example_id").ionRangeSlider({
 		min: 0,
         max: 300,
@@ -84,12 +86,11 @@ $(document).ready(function () {
 			}
 		}
     });
-    $('#vis').hide();
     $('#iniciar').click(function(){
-    	$('#header').hide();
+    	$('#header').css('display','none');
     	//$("#vis").css("display", "");
-    	$('#vis').show();
+    	$('#vis').css('display','');
+    	map.invalidateSize();
     	//$("#header").css("display", "none");
     });
-    $('#footer').hide();
 });
