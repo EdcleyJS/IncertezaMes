@@ -561,8 +561,12 @@ function geraperguntas(perguntas,index,vis){
     div1.appendChild(label1);
     if(i==pergunta.length-1){
       var input4= document.createElement("div");
+      var input7= document.createElement("br");
+      var input6= document.createElement("p");
       input4.setAttribute('class','invalid-feedback');
-      input4.innerText='Você precisa escolher um';
+      input6.innerText='Você precisa escolher um.';
+      input4.appendChild(input7);
+      input4.appendChild(input6);
       div1.appendChild(input4);
     }
     d2.appendChild(label);

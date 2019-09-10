@@ -44,6 +44,7 @@
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bs-stepper/dist/css/bs-stepper.min.css">
+		<script type="text/javascript" src="./js/commonScripts/perguntas.js"></script>
 		<script type="text/javascript" src="./js/commonScripts/form.js"></script>
 		<script src='https://www.google.com/recaptcha/api.js'></script>
 		<style>
@@ -91,36 +92,15 @@
 				<li class="nav-item" >
 				    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true"><b>Comparação com Uma Constante</b></a>
 				</li>
-				<li class="nav-item">
-				    <a class="nav-link disabled" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Intervalo</a>
+				<li class="nav-item disabled">
+				    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Intervalo</a>
+				</li>					
+				<li class="nav-item disabled">
+				    <a class="nav-link" id="pills-dotmap-tab" data-toggle="pill" href="#pills-dotmap" role="tab" aria-controls="pills-dotmap" aria-selected="false">Mapa de Pontos</a>
 				</li>
-				<!--<li class="nav-item">
-				    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Comparação Um com Todos</a>
-				</li>
-				<li class="nav-item">
-				    <a class="nav-link" id="pills-comp1a1-tab" data-toggle="pill" href="#pills-comp1a1" role="tab" aria-controls="pills-comp1a1" aria-selected="false">Comparação Um a Um</a>
-				</li>
-				<li class="nav-item">
-				    <a class="nav-link" id="pills-max-tab" data-toggle="pill" href="#pills-max" role="tab" aria-controls="pills-max" aria-selected="false">Probabilidade de Máximo</a>
-				</li>
-				<li class="nav-item">
-				    <a class="nav-link" id="pills-min-tab" data-toggle="pill" href="#pills-min" role="tab" aria-controls="pills-min" aria-selected="false">Probabilidade de Minimo</a>
-				</li>-->						
-				<li class="nav-item">
-				    <a class="nav-link disabled" id="pills-dotmap-tab" data-toggle="pill" href="#pills-dotmap" role="tab" aria-controls="pills-dotmap" aria-selected="false">Mapa de Pontos</a>
-				</li>
-				<li class="nav-item">
-				    <a class="nav-link disabled" id="pills-media-tab" data-toggle="pill" href="#pills-media" role="tab" aria-controls="pills-media" aria-selected="false">Média</a>
-				</li>
-				<!--<li class="nav-item">
-				    <a class="nav-link" id="pills-mediat-tab" data-toggle="pill" href="#pills-mediat" role="tab" aria-controls="pills-mediat" aria-selected="false">Média Temporal</a>
-				</li>
-				<li class="nav-item">
-				    <a class="nav-link" id="pills-quartil-tab" data-toggle="pill" href="#pills-quartil" role="tab" aria-controls="pills-quartil" aria-selected="false">Quartis</a>
-				</li>
-				<li class="nav-item">
-				    <a class="nav-link" id="pills-glyph-tab" data-toggle="pill" href="#pills-glyph" role="tab" aria-controls="pills-glyph" aria-selected="false">Glyph</a>
-				</li>-->		
+				<li class="nav-item disabled">
+				    <a class="nav-link" id="pills-media-tab" data-toggle="pill" href="#pills-media" role="tab" aria-controls="pills-media" aria-selected="false">Média</a>
+				</li>		
 			</ul>
 			<div class="tab-content" id="pills-tabContent">
 				<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
@@ -222,18 +202,6 @@
 							</div>
 						</div>
 					</div>
-					<!--<div class="row">
-						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
-						<div class="card col-lg-6 col-md-6 col-sm-6 col-xs-6 panel panel-default" style="width: 58rem; margin-top: 1rem;">
-							<h5 class="card-title" style="margin-left: 1rem;text-align: center"><b>Overview</b></h5>
-				  			<ul class="list-group list-group-flush" style="text-align: center">
-						    <li class="list-group-item">
-						    	<p>Esta visualização exibe a probabilidade acumulada de chuva com base nos dados observados nas áreas.</p>
-
-						    </li>
-						  	</ul>
-						</div>
-					</div>-->
 					<div id="stepperForm" class="bs-stepper linear">
 					    <div class="bs-stepper-header" role="tablist">
 					        <div class="step active" data-target="#test-form-1">
@@ -258,32 +226,20 @@
 					        </div>
 					    </div>
 						<div class="bs-stepper-content">
-						    <form class="needs-validation"  novalidate="" id="Form"
+						    <form class="needs-validation" id="Form"
 						    method="post" action="https://script.google.com/macros/s/AKfycby_DzDKpY66Ti9OBL9s22I8u06XgPFP_SyUnuhCbB7bl3rzwRMc/exec">
 						        <div id="test-form-1" role="tabpanel" class="bs-stepper-pane fade active dstepper-block" aria-labelledby="stepperFormTrigger1">
 						            <div class="form-group" id="1p">
-							    		<!--<input type="hidden" id="clicksp1" name="clicksp1" value="">
-							        	<input type="hidden" id="tempop1" name="tempop1" value="">
-							          	<label for="confianca"> De 1 a 5 sendo 1 pouco confiante e 5 muito confiante, quão confiante você está da sua resposta?</label>
-							        	<input type="text" id="confianca" name="confianca" value="" />-->
 						            </div>
 						            <button type="button" class="btn btn-primary btn-next-form" id="next1">Avançar</button>
 						        </div>
 						        <div id="test-form-2" role="tabpanel" class="bs-stepper-pane fade dstepper-none" aria-labelledby="stepperFormTrigger2">
 						            <div class="form-group" id="2p">
-							    		<!--<input type="hidden" id="clicksp2" name="clicksp2" value="">
-							        	<input type="hidden" id="tempop2" name="tempop2" value="">
-							          	<label for="2confianca"> De 1 a 5 sendo 1 pouco confiante e 5 muito confiante, quão confiante você está da sua resposta?</label>
-							          	<input type="text" id="2confianca" name="confianca2p" value="" />-->
 						            </div>
 						            <button type="button" class="btn btn-primary btn-next-form" id="next2">Avançar</button>
 						        </div>
 						        <div id="test-form-3" role="tabpanel" class="bs-stepper-pane fade dstepper-none" aria-labelledby="stepperFormTrigger3">
 						      		<div class="form-group" id='3p'>
-							    		<!--<input type="hidden" id="clicksp3" name="clicksp3" value="">
-							        	<input type="hidden" id="tempop3" name="tempop3" value="">
-							    		<label for="3confianca"> De 1 a 5 sendo 1 pouco confiante e 5 muito confiante, quão confiante você está da sua resposta?</label>
-							          	<input type="text" id="3confianca" name="confianca3p" value="" />-->
 						            </div>
 						            <button type="button" class="btn btn-primary" id="btn1">Avançar</button>
 						        </div>
@@ -324,28 +280,16 @@
 								    method="post" action="https://script.google.com/macros/s/AKfycbyJ_tdnNY0RDjfrxT9bcdXhcq927uRd9uK_LqBj1Qn-WZse6ko/exec">
 								        <div id="test-form-4" role="tabpanel" class="bs-stepper-pane fade active dstepper-block" aria-labelledby="stepperFormTrigger4">
 								            <div class="form-group" id="4p">
-									    		<!--<input type="hidden" id="2clicksp1" name="clicksp1" value="">
-									        	<input type="hidden" id="2tempop1" name="tempop1" value="">
-									          	<label for="4confianca"> De 1 a 5 sendo 1 pouco confiante e 5 muito confiante, quão confiante você está da sua resposta?</label>
-									        	<input type="text" id="4confianca" name="confianca" value="" />-->
 								            </div>
 								            <button type="button" class="btn btn-primary btn-next-form" id="2next1">Avançar</button>
 								        </div>
 								        <div id="test-form-5" role="tabpanel" class="bs-stepper-pane fade dstepper-none" aria-labelledby="stepperFormTrigger5">
 								            <div class="form-group" id="5p">
-									    		<!--<input type="hidden" id="2clicksp2" name="clicksp2" value="">
-									        	<input type="hidden" id="2tempop2" name="tempop2" value="">
-									          	<label for="5confianca"> De 1 a 5 sendo 1 pouco confiante e 5 muito confiante, quão confiante você está da sua resposta?</label>
-									          	<input type="text" id="5confianca" name="confianca2p" value="" />-->
 								            </div>
 								            <button type="button" class="btn btn-primary btn-next-form" id="2next2">Avançar</button>
 								        </div>
 								        <div id="test-form-6" role="tabpanel" class="bs-stepper-pane fade dstepper-none" aria-labelledby="stepperFormTrigger6">
 								      		<div class="form-group" id='6p'>
-									    		<!--<input type="hidden" id="2clicksp3" name="clicksp3" value="">
-									        	<input type="hidden" id="2tempop3" name="tempop3" value="">
-									    		<label for="6confianca"> De 1 a 5 sendo 1 pouco confiante e 5 muito confiante, quão confiante você está da sua resposta?</label>
-									          	<input type="text" id="6confianca" name="confianca3p" value="" />-->
 								            </div>
 								            <button type="button" class="btn btn-primary" id="2btn1">Avançar</button>
 								        </div>
@@ -355,36 +299,6 @@
 						</div>
 					</div>
 				</div>
-				<!--
-				<div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-					<div class="row">
-						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-							<iframe src="./choroplethCompare.html" width="102%" height="503%" allowTransparency="true" scrolling="no" frameborder="0" marginheight="0" marginwidth='0' style="margin-left: -1.1%"></iframe>
-						</div>
-					</div>
-				</div>
-
-				<div class="tab-pane fade" id="pills-comp1a1" role="tabpanel" aria-labelledby="pills-comp1a1-tab">
-					<div class="row">
-						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-							<iframe src="./choropleth1a1.html" width="102%" height="503%" allowTransparency="true" scrolling="no" frameborder="0" marginheight="0" marginwidth='0' style="margin-left: -1.1%"></iframe>
-						</div>
-					</div>
-				</div>
-				<div class="tab-pane fade" id="pills-max" role="tabpanel" aria-labelledby="pills-max-tab">
-					<div class="row">
-						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-							<iframe src="./rankingMaximo.html" width="102%" height="503%" allowTransparency="true" scrolling="no" frameborder="0" marginheight="0" marginwidth='0' style="margin-left: -1.1%"></iframe>
-						</div>
-					</div>
-				</div>
-				<div class="tab-pane fade" id="pills-min" role="tabpanel" aria-labelledby="pills-min-tab">
-					<div class="row">
-						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-							<iframe src="./rankingMinimo.html" width="102%" height="503%" allowTransparency="true" scrolling="no" frameborder="0" marginheight="0" marginwidth='0' style="margin-left: -1.1%"></iframe>
-						</div>
-					</div>
-				</div>-->
 				<div class="tab-pane fade" id="pills-dotmap" role="tabpanel" aria-labelledby="pills-dotmap-tab">
 					<div class="row">
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -417,28 +331,16 @@
 								    method="post" action="https://script.google.com/macros/s/AKfycbxGJMYtzRu_4AgM8vhk38rpdI-bMVK5dGnCGJqiJvMv6ZC7nWNp/exec">
 								        <div id="test-form-7" role="tabpanel" class="bs-stepper-pane fade active dstepper-block" aria-labelledby="stepperFormTrigger7">
 								            <div class="form-group" id="7p">
-									    		<!--<input type="hidden" id="3clicksp1" name="clicksp1" value="">
-									        	<input type="hidden" id="3tempop1" name="tempop1" value="">
-									          	<label for="7confianca"> De 1 a 5 sendo 1 pouco confiante e 5 muito confiante, quão confiante você está da sua resposta?</label>
-									        	<input type="text" id="7confianca" name="confianca" value="" />-->
 								            </div>
 								            <button type="button" class="btn btn-primary btn-next-form" id="3next1">Avançar</button>
 								        </div>
 								        <div id="test-form-8" role="tabpanel" class="bs-stepper-pane fade dstepper-none" aria-labelledby="stepperFormTrigger8">
 								            <div class="form-group" id="8p">
-									    		<!--<input type="hidden" id="3clicksp2" name="clicksp2" value="">
-									        	<input type="hidden" id="3tempop2" name="tempop2" value="">
-									          	<label for="8confianca"> De 1 a 5 sendo 1 pouco confiante e 5 muito confiante, quão confiante você está da sua resposta?</label>
-									          	<input type="text" id="8confianca" name="confianca2p" value="" />-->
 								            </div>
 								            <button type="button" class="btn btn-primary btn-next-form" id="3next2">Avançar</button>
 								        </div>
 								        <div id="test-form-9" role="tabpanel" class="bs-stepper-pane fade dstepper-none" aria-labelledby="stepperFormTrigger9">
 								      		<div class="form-group" id='9p'>
-									    		<!--<input type="hidden" id="3clicksp3" name="clicksp3" value="">
-									        	<input type="hidden" id="3tempop3" name="tempop3" value="">
-									    		<label for="9confianca"> De 1 a 5 sendo 1 pouco confiante e 5 muito confiante, quão confiante você está da sua resposta?</label>
-									          	<input type="text" id="9confianca" name="confianca3p" value="" />-->
 								            </div>
 								            <button type="button" class="btn btn-primary" id="3btn1">Avançar</button>
 								        </div>
@@ -494,35 +396,21 @@
 								    method="post" action="https://script.google.com/macros/s/AKfycbzLOg-MT8Zic3zc1fQGDCPl6Upu769FP75yT3KPlpb1LYO0NNTh/exec">
 								        <div id="test-form-10" role="tabpanel" class="bs-stepper-pane fade active dstepper-block" aria-labelledby="stepperFormTrigger10">
 								            <div class="form-group" id="10p">
-									    		<!--<input type="hidden" id="4clicksp1" name="clicksp1" value="">
-									        	<input type="hidden" id="4tempop1" name="tempop1" value="">
-									          	<label for="10confianca"> De 1 a 5 sendo 1 pouco confiante e 5 muito confiante, quão confiante você está da sua resposta?</label>
-									        	<input type="text" id="10confianca" name="confianca" value="" />-->
 								            </div>
 								            <button type="button" class="btn btn-primary btn-next-form" id="4next1">Avançar</button>
 								        </div>
 								        <div id="test-form-11" role="tabpanel" class="bs-stepper-pane fade dstepper-none" aria-labelledby="stepperFormTrigger11">
 								            <div class="form-group" id="11p">
-									    		<!--<input type="hidden" id="4clicksp2" name="clicksp2" value="">
-									        	<input type="hidden" id="4tempop2" name="tempop2" value="">
-									          	<label for="11confianca"> De 1 a 5 sendo 1 pouco confiante e 5 muito confiante, quão confiante você está da sua resposta?</label>
-									          	<input type="text" id="11confianca" name="confianca2p" value="" />-->
 								            </div>
 								            <button type="button" class="btn btn-primary btn-next-form" id="4next2">Avançar</button>
 								        </div>
 								        <div id="test-form-12" role="tabpanel" class="bs-stepper-pane fade dstepper-none" aria-labelledby="stepperFormTrigger12">
 								      		<div class="form-group" id='12p'>
-									    		<!--<input type="hidden" id="4clicksp3" name="clicksp3" value="">
-									        	<input type="hidden" id="4tempop3" name="tempop3" value="">
-									    		<label for="12confianca"> De 1 a 5 sendo 1 pouco confiante e 5 muito confiante, quão confiante você está da sua resposta?</label>
-									          	<input type="text" id="12confianca" name="confianca3p" value="" />-->
 								            </div>
 								            <button type="button" class="btn btn-primary" id="4next3">Avançar</button>
 								        </div>
 								        <div id="test-form-13" role="tabpanel" class="bs-stepper-pane fade dstepper-none" aria-labelledby="stepperFormTrigger13">
 								      		<div class="form-group" id='13p'>
-									    		<!--<input type="hidden" id="4clicksp3" name="clicksp3" value="">
-									        	<input type="hidden" id="4tempop3" name="tempop3" value="">-->
 									    		<label for="feedback"> Gostaria de fazer algum comentário sobre este trabalho? Se sim escreva a baixo</label>
 									    		<textarea class="form-control" id="feedback" name="feedback" rows="3"></textarea>
 								            </div>
@@ -534,10 +422,6 @@
 								      			<div class="invalid-feedback" id="captchaError">
 												    O captcha não pode ficar vazio
 												</div>
-									    		<!--<input type="hidden" id="captcha" name="captcha" value="5">
-									        	<input type="hidden" id="4tempop3" name="tempop3" value="">
-									    		<label for="feedback"> Gostaria de fazer algum comentário sobre este trabalho? Se sim escreva a baixo</label>
-									          	<input type="text" id="feedback" name="feedback" value="" />-->
 								            </div>
 								            <button type="button" class="btn btn-success" id="4btn1">Terminar</button>
 								        </div>
@@ -546,30 +430,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
-				<!--
-				<div class="tab-pane fade" id="pills-mediat" role="tabpanel" aria-labelledby="pills-mediat-tab">
-					<div class="row">
-						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-							<iframe src="./mediat.html" width="102%" height="1103%" allowTransparency="true" scrolling="no" frameborder="0" marginheight="0" marginwidth='0' style="margin-left: -1.1%"></iframe>
-						</div>
-					</div>
-				</div>
-				<div class="tab-pane fade" id="pills-quartil" role="tabpanel" aria-labelledby="pills-quartil-tab">
-					<div class="row">
-						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-							<iframe src="./quartis.html" width="102%" height="1103%" allowTransparency="true" scrolling="no" frameborder="0" marginheight="0" marginwidth='0' style="margin-left: -1.1%"></iframe>
-						</div>
-					</div>
-				</div>	
-				<div class="tab-pane fade" id="pills-glyph" role="tabpanel" aria-labelledby="pills-glyph-tab">
-					<div class="row">
-						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-							<iframe src="./glyph.html" width="102%" height="505%" allowTransparency="true" scrolling="no" frameborder="0" marginheight="0" marginwidth='0' style="margin-left: -1.1%"></iframe>
-						</div>
-					</div>
-				</div>
-				-->								
+				</div>							
 			</div>
 			<!---->
 		</div>
