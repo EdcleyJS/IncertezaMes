@@ -1,12 +1,14 @@
 var filterbymouth,filterbytri,alpha=0,left=60,right=100,database,interOn;
-var mesSelecionado,anoSelecionado,diaSelecionado,trimestreSelecionado;
+var mesSelecionado,anoSelecionado,diaSelecionado,trimestreSelecionado,opcoes=[];
 var map = L.map('vis6').setView([-8.305448,-37.822426], 8);
+var mapRange = L.map('vis2').setView([-8.305448,-37.822426], 8);
+
 map.doubleClickZoom.disable();
 var selecionados=[];
 var featurename;
 var dataset,max;
 var medias=[];
-var GeoLayer;
+var GeoLayer,LayerRange,layerTuto1,layerTuto2,layerTuto3,layerTuto4;
 
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
   attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
@@ -15,14 +17,23 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
   accessToken: 'pk.eyJ1IjoiZWRjbGV5OTQ1MiIsImEiOiJjamdvMGdmZ2owaTdiMndwYTJyM2tteTl2In0.2q25nBNRxzFxeaYahFGQ6g'
 }).addTo(map);
 
+L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+  attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+  maxZoom: 18,
+  id: 'mapbox.streets',
+  accessToken: 'pk.eyJ1IjoiZWRjbGV5OTQ1MiIsImEiOiJjamdvMGdmZ2owaTdiMndwYTJyM2tteTl2In0.2q25nBNRxzFxeaYahFGQ6g'
+}).addTo(mapRange);
+
 d3.json("./data/dados.json",function(error,data){
   database=data;
   d3.json("./data/pe.json",function(error,dados){
     dataset=dados;
-    inicio(dataset);
+    //inicio(dataset);
+    //inicioRange(dataset);
+    //inicioDotMap(dataset);
+    //inicioMedia(dataset);
   });
 });
-
 function cmp(dist1,dist2){
   var count=0;
   dist1.forEach(function(d,i){
@@ -101,7 +112,20 @@ legend.onAdd = function (map) {
   }
   return div;
 };
+
 legend.addTo(map);
+var legendRange = L.control({position: 'bottomright'});
+legendRange.onAdd = function (map) {
+  var div = L.DomUtil.create('div', 'info legend'),grades=[],labels = [];
+  for (var i = 11; i > 0; i--) {
+    grades.push(0.09*i);
+  }
+  for (var i = 0; i < grades.length; i++) {
+    div.innerHTML +='<i style="color:#'+colorN(grades[i])+'; background:#'+colorN(grades[i])+'"></i>'+"<"+grades[i].toFixed(2) +'</br>';
+  }
+  return div;
+};
+legendRange.addTo(mapRange);
 
 function comparando(e){
   var exists=false;
@@ -137,4 +161,14 @@ function comparando(e){
       selecionados=filtered;
       GeoLayer.resetStyle(e.target);
     }
+}
+
+function findP(array,id){
+  var p;
+  array.forEach(function(d,i){
+    if(d[1]==id){
+      p=d;
+    }
+  });
+  return p;
 }

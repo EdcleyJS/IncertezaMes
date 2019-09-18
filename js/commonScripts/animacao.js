@@ -26,12 +26,13 @@ $(document).ready(function () {
 		for (var i = 0; i < sorteados.length; i++) {
 			//anoSelecionado=anos[i];
 			//trimestreSelecionado= trimestre[i];
-			mesSelecionado= sorteados[i];
+			mesmedia= sorteados[i];
 			//diaSelecionado= dias[i];
 			if(i==(sorteados.length-1)){
 				i=-1;
 			}
-			inicio(dataset);
+			inicioMedia(dataset);
+			Vis04TutorialFunction(dataset);
 			await sleep(2000);
 		}
 	}

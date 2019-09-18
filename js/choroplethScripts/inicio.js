@@ -28,6 +28,15 @@ function inicio(dataset){
             color: 'black',
             fillOpacity: 0.6
           };
+      }else if(opcoes.includes(feature.properties.name)){
+        return {
+          weight: 3.0,
+          opacity: 1,
+          fillColor: "#"+colorN(prob),
+          dashArray: '3',
+          color: 'blue',
+          fillOpacity: 0.9
+        };
       }else{
         return {
             weight: 0.5,
