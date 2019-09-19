@@ -51,7 +51,7 @@ function inicioMedia(dados){
             var probArea= new distribuicaoTeste(getDis(feature.properties.name),0);
           }
           var media= probArea.media().toFixed(2);
-          layer.bindPopup(""+feature.properties.name+": "+media+" mm.");
+          layer.bindPopup(""+feature.properties.name+": "+media);
           layer.on('mouseover', function (e) {
               highlightFeature(e);
               this.openPopup();

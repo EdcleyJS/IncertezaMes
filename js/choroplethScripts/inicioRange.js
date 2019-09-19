@@ -31,7 +31,7 @@ function inicioRange(dataset){
         var prob= probArea.cdfintervalo().toFixed(2);
         var area= new distribuicaoTeste(getDis(feature.properties.name),alpha);
         //Criação do Popup de cada feature/polígono contendo o nome do proprietário e o cep de localização do edíficio/lote.
-        layer.bindPopup("Probabilidade em "+feature.properties.name+": "+prob);
+        layer.bindPopup("Probabilidade em "+feature.properties.name+": "+Math.floor(prob*100)+"%");
         layer.on('mouseover', function (e) {
             highlightFeature(e);
             this.openPopup();

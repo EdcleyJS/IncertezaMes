@@ -51,6 +51,7 @@ function inicio(dataset){
         var str = ""+window.location.href;
         if(str.includes("choroplethIntervalo.html")){interOn=true;}
         if(interOn==true){
+          console.log('intervalo');
           var probArea= new distribuicaoIntervalo(getDis(feature.properties.name),left,right);
           var prob= probArea.cdfintervalo().toFixed(2);
         }else{
@@ -68,7 +69,7 @@ function inicio(dataset){
         if(str.includes("choroplethCompare.html")){
           layer.bindPopup(feature.properties.name);
         }else{
-          layer.bindPopup("Probabilidade em "+feature.properties.name+": "+prob);
+          layer.bindPopup("Probabilidade em "+feature.properties.name+": "+Math.floor(prob*100)+"%");
         }
 
         if(str.includes("choroplethCompare.html")){

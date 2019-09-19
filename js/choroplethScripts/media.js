@@ -2,7 +2,7 @@ var mapMedia = L.map('vis4').setView([-8.305448,-37.822426], 8);
 var LayerMedia,GeoLayer2,GeoLayer3,filterbytri,dataset,database;
 var legendMedia = L.control({position: 'bottomright'});
 var mesSelecionado,anoSelecionado,diaSelecionado,trimestreSelecionado,featurename,mesmedia;
-var grades=[0,30,60,90,120,150,180,210,240,250,280];
+var grades=[0,40,80,120,160,200,240,280,320];
 map.doubleClickZoom.disable();
 var infoMedia = L.control();
 var medias=[];
@@ -15,7 +15,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
   }).addTo(mapMedia);
 //Escala de cores para o mapa
 function colorM(media){
-  var cbf = palette('tol-sq', 11);
+  var cbf = palette('cb-YlGn', 9);
   var color;
   grades.forEach(function(d,i){
     if(Number(media)>=d){
@@ -33,7 +33,7 @@ infoMedia.onAdd = function (mymap) {
 legendMedia.onAdd = function (mapMedia) {
   var div = L.DomUtil.create('div', 'info legend');
   for (var i = (grades.length-1); i >=0 ; i--) {
-    div.innerHTML +='<i style="color:'+colorM(grades[i])+'; background:'+colorM(grades[i])+'"></i>'+">"+grades[i]+'</br>';
+    div.innerHTML +='<i style="color:'+colorM(grades[i])+'; background:'+colorM(grades[i])+'"></i>'+grades[i]+'</br>';
   }
   return div;
 };

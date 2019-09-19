@@ -45,27 +45,27 @@ function cmp(dist1,dist2){
 }
 //Escala de cores para o mapa
 function colorN(d){
-  var cbf = palette('cb-RdYlGn', 11);
-  cbf.reverse();
-  if(d>0.9){
+  var cbf = palette('cb-BrBG', 11);
+  //cbf.reverse();
+  if(d>=1.0){
     cor= cbf[10];   
-  }else if (d>0.81) {
+  }else if (d>=0.9) {
     cor= cbf[9];  
-  }else if(d>0.72){
+  }else if(d>=0.8){
     cor= cbf[8];  
-  }else if(d>0.63){
+  }else if(d>=0.7){
     cor= cbf[7];  
-  }else if(d>0.54){
+  }else if(d>=0.6){
     cor= cbf[6];  
-  }else if(d>0.45){
+  }else if(d>=0.5){
     cor= cbf[5];  
-  }else if(d>0.36){
+  }else if(d>=0.4){
     cor= cbf[4];  
-  }else if(d>0.27){
+  }else if(d>=0.3){
     cor= cbf[3];  
-  }else if(d>0.18){
+  }else if(d>=0.2){
     cor= cbf[2];  
-  }else if (d>0.09) {
+  }else if (d>=0.1) {
     cor= cbf[1];  
   }else{
     cor= cbf[0];  
@@ -104,11 +104,12 @@ info.onAdd = function (mymap) {
 var legend = L.control({position: 'bottomright'});
 legend.onAdd = function (map) {
   var div = L.DomUtil.create('div', 'info legend'),grades=[],labels = [];
-  for (var i = 11; i > 0; i--) {
-    grades.push(0.09*i);
+  for (var i = 10; i >= 0; i--) {
+    grades.push((0.1*i).toFixed(2));
+
   }
   for (var i = 0; i < grades.length; i++) {
-    div.innerHTML +='<i style="color:#'+colorN(grades[i])+'; background:#'+colorN(grades[i])+'"></i>'+"<"+grades[i].toFixed(2) +'</br>';
+    div.innerHTML +='<i style="color:#'+colorN(grades[i])+'; background:#'+colorN(grades[i])+'"></i>'+(grades[i]*100)+'%</br>';
   }
   return div;
 };
@@ -117,11 +118,11 @@ legend.addTo(map);
 var legendRange = L.control({position: 'bottomright'});
 legendRange.onAdd = function (map) {
   var div = L.DomUtil.create('div', 'info legend'),grades=[],labels = [];
-  for (var i = 11; i > 0; i--) {
-    grades.push(0.09*i);
+  for (var i = 10; i >= 0; i--) {
+    grades.push((0.1*i).toFixed(2));
   }
   for (var i = 0; i < grades.length; i++) {
-    div.innerHTML +='<i style="color:#'+colorN(grades[i])+'; background:#'+colorN(grades[i])+'"></i>'+"<"+grades[i].toFixed(2) +'</br>';
+    div.innerHTML +='<i style="color:#'+colorN(grades[i])+'; background:#'+colorN(grades[i])+'"></i>'+(grades[i]*100)+'%</br>';
   }
   return div;
 };

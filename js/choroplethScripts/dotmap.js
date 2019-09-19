@@ -28,7 +28,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
   }); 
 });*/
 function colorD(media){
-  var cbf = palette('cb-RdYlGn', 11);
+  var cbf = palette('cb-BrBG', 11);
   var color;
   grades.forEach(function(d,i){
     if(Number(media)>=d){
@@ -76,7 +76,7 @@ var legendDot = L.control({position: 'bottomright'});
 legendDot.onAdd = function (map) {
   var div = L.DomUtil.create('div', 'info legend');
   for (var i = (grades.length-1); i >=0 ; i--) {
-    div.innerHTML +='<i style="color:'+colorD(grades[i])+'; background:'+colorD(grades[i])+'"></i>'+">"+grades[i]+'</br>';
+    div.innerHTML +='<i style="color:'+colorD(grades[i])+'; background:'+colorD(grades[i])+'"></i>'+grades[i]+'</br>';
   }
   return div;
 };

@@ -20,11 +20,11 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 var legendVis01 = L.control({position: 'bottomright'});
 legendVis01.onAdd = function (map) {
   var div = L.DomUtil.create('div', 'info legend'),grades=[],labels = [];
-  for (var i = 11; i > 0; i--) {
-    grades.push(0.09*i);
+  for (var i = 10; i >= 0; i--) {
+    grades.push((0.1*i).toFixed(2));
   }
   for (var i = 0; i < grades.length; i++) {
-    div.innerHTML +='<i style="color:#'+colorN(grades[i])+'; background:#'+colorN(grades[i])+'"></i>'+"<"+grades[i].toFixed(2) +'</br>';
+    div.innerHTML +='<i style="color:#'+colorN(grades[i])+'; background:#'+colorN(grades[i])+'"></i>'+(grades[i]*100)+'%</br>';
   }
   return div;
 };
@@ -73,7 +73,7 @@ function Vis01TutorialFunction(dataset,interOn){
             var prob= probArea.cdf().toFixed(2);
         }
         //Criação do Popup de cada feature/polígono contendo o nome do proprietário e o cep de localização do edíficio/lote.
-        layer.bindPopup("Probabilidade em "+feature.properties.name+": "+prob);
+        layer.bindPopup("Probabilidade em "+feature.properties.name+": "+Math.floor(prob*100)+"%");
         layer.on('mouseover', function (e) {
             highlightFeature(e);
             this.openPopup();
@@ -106,11 +106,11 @@ infoVis02.onAdd = function (mymap) {
 var legendVis02 = L.control({position: 'bottomright'});
 legendVis02.onAdd = function (map) {
   var div = L.DomUtil.create('div', 'info legend'),grades=[],labels = [];
-  for (var i = 11; i > 0; i--) {
-    grades.push(0.09*i);
+  for (var i = 10; i >= 0; i--) {
+    grades.push((0.1*i).toFixed(2));
   }
   for (var i = 0; i < grades.length; i++) {
-    div.innerHTML +='<i style="color:#'+colorN(grades[i])+'; background:#'+colorN(grades[i])+'"></i>'+"<"+grades[i].toFixed(2) +'</br>';
+    div.innerHTML +='<i style="color:#'+colorN(grades[i])+'; background:#'+colorN(grades[i])+'"></i>'+(grades[i]*100)+'%</br>';
   }
   return div;
 };
@@ -159,7 +159,7 @@ function Vis02TutorialFunction(dataset,interOn){
             var prob= probArea.cdf().toFixed(2);
         }
         //Criação do Popup de cada feature/polígono contendo o nome do proprietário e o cep de localização do edíficio/lote.
-        layer.bindPopup("Probabilidade em "+feature.properties.name+": "+prob);
+        layer.bindPopup("Probabilidade em "+feature.properties.name+": "+Math.floor(prob*100)+"%");
         layer.on('mouseover', function (e) {
             highlightFeature(e);
             this.openPopup();
@@ -194,7 +194,7 @@ var legendVis03 = L.control({position: 'bottomright'});
 legendVis03.onAdd = function (map) {
   var div = L.DomUtil.create('div', 'info legend');
   for (var i = (grades.length-1); i >=0 ; i--) {
-    div.innerHTML +='<i style="color:'+colorD(grades[i])+'; background:'+colorD(grades[i])+'"></i>'+">"+grades[i]+'</br>';
+    div.innerHTML +='<i style="color:'+colorD(grades[i])+'; background:'+colorD(grades[i])+'"></i>'+grades[i]+'</br>';
   }
   return div;
 };
@@ -229,7 +229,7 @@ function Vis03TutorialFunction(dataset){
             if (leafletPip.pointInLayer(p, L.geoJSON(layer.toGeoJSON()), true).length > 0) {
 
               var markerCircle=L.circleMarker(p, {radius: 4, weight: 1,fillColor: cor,fillOpacity:1, color: cor,renderer: myRenderer});
-              markerCircle.bindPopup(" "+d[0]+" mm");
+              markerCircle.bindPopup(" "+d[0]);
               dots.push(markerCircle);
             }
           }
@@ -260,7 +260,7 @@ var legendVis04 = L.control({position: 'bottomright'});
 legendVis04.onAdd = function (mapMedia) {
   var div = L.DomUtil.create('div', 'info legend');
   for (var i = (grades.length-1); i >=0 ; i--) {
-    div.innerHTML +='<i style="color:'+colorM(grades[i])+'; background:'+colorM(grades[i])+'"></i>'+">"+grades[i]+'</br>';
+    div.innerHTML +='<i style="color:'+colorM(grades[i])+'; background:'+colorM(grades[i])+'"></i>'+grades[i]+'</br>';
   }
   return div;
 };
@@ -319,7 +319,7 @@ function Vis04TutorialFunction(dados){
             var probArea= new distribuicaoTeste(getDis(feature.properties.name),0);
           }
           var media= probArea.media().toFixed(2);
-          layer.bindPopup(""+feature.properties.name+": "+media+" mm.");
+          layer.bindPopup(""+feature.properties.name+": "+media);
           layer.on('mouseover', function (e) {
               highlightFeature(e);
               this.openPopup();

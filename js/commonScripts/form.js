@@ -233,6 +233,9 @@ $(document).ready(function () {
 					stepper0.next();
 				}
 			}else if($(this)[0].id=='btuto10'){
+				alpha=0;
+				left=60;
+				right=100;
 				$('#tutorial').css('display','none');
 	    		$('#vis').css('display','');
 	    		if($('#Form').is(':visible')){

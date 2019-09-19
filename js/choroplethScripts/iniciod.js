@@ -27,7 +27,7 @@ function inicioDotMap(dataset){
             if (leafletPip.pointInLayer(p, L.geoJSON(layer.toGeoJSON()), true).length > 0) {
 
               var markerCircle=L.circleMarker(p, {radius: 4, weight: 1,fillColor: cor,fillOpacity:1, color: cor,renderer: myRenderer});
-              markerCircle.bindPopup(" "+d[0]+" mm");
+              markerCircle.bindPopup(" "+d[0]);
               dots.push(markerCircle);
             }
           }
