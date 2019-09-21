@@ -6,76 +6,41 @@
 	    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	    <title>Estudo Risco e Incerteza em Mapas</title>
-	    <!--CSS-->
-		<link rel="stylesheet" href="./css/cloropleth.css">
-		<link rel="stylesheet" href="./css/leaflet.css"/>
-		<link rel="shortcut icon" type="image/png" href="./data/favicon-96x96.png"/>
-		<link rel="shortcut icon" type="image/png" href="./data/favicon-96x96.png"/>
-		<link rel="stylesheet" href="./css/bootstrap.min.css">
-		<link rel="stylesheet" href="./css/ion.rangeSlider.min.css"/>
 		<!-- JavaScript-->
-		<!--<script type="text/javascript" src="./js/commonScripts/jquery.min.js"></script>-->
-		<script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
-		<script type="text/javascript" src="./js/commonScripts/popper.min.js"></script>
-		<script type="text/javascript" src="./js/commonScripts/bootstrap.min.js"></script>
-		<script type="text/javascript" src="./js/commonScripts/ion.rangeSlider.min.js"></script> 
-
-		<!--<script src="https://d3js.org/d3.v5.min.js"></script>-->
+		<script type="text/javascript" src="./js/libs/jquery-3.4.1.js"></script>
+		<script type="text/javascript" src="./js/libs/popper.min.js"></script>
+		<script type="text/javascript" src="./js/libs/bootstrap.min.js"></script>
+		<script type="text/javascript" src="./js/libs/ion.rangeSlider.min.js"></script> 
+		<script type="text/javascript" src="./js/libs/leaflet-pip.js"></script>
+		<script type="text/javascript" src="./js/libs/leaflet.js"></script>
+		<script type="text/javascript" src='./js/libs/palette.js'></script>
+		<script type="text/javascript" src="./js/libs/distribuicaoClassTeste.js"></script>
+		<script type="text/javascript" src="./js/libs/distribuicaoIClassTeste.js"></script>
+		<script type="text/javascript" src="./js/libs/funcoesGlobais.js"></script>
+		<script type="text/javascript" src="./js/libs/d3.v4.min.js"></script>
+		<script type="text/javascript" src="./js/libs/math.min.js"></script>
+		<script type="text/javascript" src='./js/libs/turf.min.js'></script>
+		<script type="text/javascript" src="./js/libs/multithread.js"></script>
+		<script type="text/javascript" src="./js/animacao.js"></script>
+		<script type="text/javascript" src="./js/perguntas.js"></script>
 		<!-- JQuery Specific-->
-		<script type="text/javascript" src="./js/choroplethScripts/buttons.js"></script>
-		<!-- JavaScript-->
-
-		<script type="text/javascript" src="./js/commonScripts/math.min.js"></script>
-				<script type="text/javascript" src="./js/leafletScripts/leaflet-pip.js"></script>
-		<script type="text/javascript" src="./js/leafletScripts/leaflet.js"></script>
-		<script type="text/javascript" src='./js/commonScripts/palette.js'></script>
-		<script type="text/javascript" src="./js/commonScripts/distribuicaoClassTeste.js"></script>
-		<script type="text/javascript" src="./js/commonScripts/distribuicaoIClassTeste.js"></script>
-		<script type="text/javascript" src="./js/commonScripts/funcoesGlobais.js"></script>
-		<script type="text/javascript" src="./js/commonScripts/d3.v4.min.js"></script>
-		<!-- Specific Scripts-->
-		<script type="text/javascript" src="./js/commonScripts/math.min.js"></script>
-		<script type="text/javascript" src='./js/heatmapScripts/turf.min.js'></script>
-
-		<script type="text/javascript" src="./js/choroplethScripts/compare.js"></script>
-		<script type="text/javascript" src="./js/choroplethScripts/inicio.js"></script>
-		<script type="text/javascript" src="./js/choroplethScripts/inicioRange.js"></script>
-		<script type="text/javascript" src="./js/choroplethScripts/iniciod.js"></script>
-		<script type="text/javascript" src="./js/choroplethScripts/iniciom.js"></script>
-		<script type="text/javascript" src="./js/commonScripts/animacao.js"></script>
-
-		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bs-stepper/dist/css/bs-stepper.min.css">
-		<script type="text/javascript" src="./js/commonScripts/perguntas.js"></script>
-		<script type="text/javascript" src="./js/commonScripts/form.js"></script>
-		<script src='https://www.google.com/recaptcha/api.js'></script>
-		<script src="https://raw.githubusercontent.com/nomensa/jquery.hide-show/master/jquery.hideShow.js"></script>
-		
-		<style>
-		body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
-		.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
-		.fa-anchor,.fa-coffee {font-size:200px}
-		</style>
+		<script type="text/javascript" src="./js/libs/buttons.js"></script>
+		<script type="text/javascript" src="./js/libs/c071df3350.js"></script>
+		<script type="text/javascript" src='./js/libs/api.js'></script>
+		<!--CSS-->
+		<link rel="shortcut icon" type="image/png" href="./data/favicon-96x96.png"/>
+		<link rel="shortcut icon" type="image/png" href="./data/favicon-96x96.png"/>
+		<link rel="stylesheet" type="text/css" href="./css/w3.css">
+		<link rel="stylesheet" type="text/css" href="./css/Lato.css">
+		<link rel="stylesheet" type="text/css" href="./css/Montserrat.css">
+		<link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="./css/leaflet.css"/>
+		<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="./css/ion.rangeSlider.min.css"/>
+		<link rel="stylesheet" type="text/css" href="./css/bs-stepper.min.css">
+		<link rel="stylesheet" type="text/css" href="./css/styles.css">
 	</head>
-	<style>
-	    .disabled {
-	        pointer-events: none;
-	        background-color: grey;
-	        border-radius: 5px;
-	        cursor: default;
-	        opacity: 0.6;
-	    }
-	    .btn-primary{
-	    	float: right;
-	    }
-	</style>
-	<body >
+	<body>
 		<header class="w3-container w3-sand w3-center" style="padding:28px 16px" id='header'>
 		  	<h1 class="w3-margin w3-jumbo">CIn-UFPE - Estudo de Usuário.</h1>
 		  	<p class="w3-xlarge">Risco e Incerteza em Mapas.</p>
@@ -1506,11 +1471,10 @@
 			  	</div>
 			</div>
 		</footer>
-		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bs-stepper/dist/js/bs-stepper.min.js"></script>
+		<script type="text/javascript" src="./js/libs/bs-stepper.min.js"></script>
 	</body>
 
-	<script type="text/javascript" src="./js/choroplethScripts/choropleth.js"></script>
-	<script type="text/javascript" src="./js/choroplethScripts/dotmap.js"></script>
-	<script type="text/javascript" src="./js/choroplethScripts/media.js"></script>
-	<script type="text/javascript" src="./js/commonScripts/tutorialMaps.js"></script>
+	<script type="text/javascript" src="./js/choropleth.js"></script>
+	<script type="text/javascript" src="./js/dotmap.js"></script>
+	<script type="text/javascript" src="./js/media.js"></script>
 </html>
