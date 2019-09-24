@@ -1,8 +1,9 @@
-var filterbymouth,filterbytri,alpha=0,left=60,right=100,database,interOn,mesSelecionado,anoSelecionado,diaSelecionado,trimestreSelecionado,opcoes=[],GeoLayer,LayerRange,layerTuto1,layerTuto2,layerTuto3,layerTuto4,dataset,max,featurename,selecionados=[],medias=[];
+var filterbymouth,filterbytri,alpha=0,left=60,right=100,database,interOn,mesSelecionado,anoSelecionado,diaSelecionado,trimestreSelecionado,opcoes=[],GeoLayer,LayerRange,layerTuto1,layerTuto2,layerTuto3,layerTuto4,dataset,max,featurename,selecionados=[],medias=[],hops=true;
 var map = L.map('vis6').setView([-8.305448,-37.822426], 8);
 var mapRange = L.map('vis2').setView([-8.305448,-37.822426], 8);
 var mapVis01 = L.map('vis01').setView([-8.305448,-37.822426], 8);
 var mapVis02 = L.map('vis02').setView([-8.305448,-37.822426], 8);
+var gradesR=[0,0.12,0.24,0.36,0.48,0.60,0.72,0.84,1];
 map.doubleClickZoom.disable();
 mapRange.doubleClickZoom.disable();
 mapVis01.doubleClickZoom.disable();
@@ -12,6 +13,7 @@ d3.json("./data/dados.json",function(error,data){
   database=data;
   d3.json("./data/pe.json",function(error,dados){
     dataset=dados;
+    InicioDot();
   });
 });
 //-- MAPA CHOROPLETH DE PROBABILIDADE COM UMA CONSTANTE DA ETAPA DE PERGUNTAS AO USUÁRIO. --
@@ -72,7 +74,7 @@ function inicio(dataset){
       onEachFeature: function (feature, layer) {
         var probArea= new distribuicaoIntervalo(getDis(feature.properties.name),left,right);
         var prob= probArea.cdfintervalo().toFixed(2);
-        layer.bindPopup("Probabilidade em "+feature.properties.name+": "+Math.floor(prob*100)+"%");
+        layer.bindPopup(""+feature.properties.name+": "+Math.floor(prob*100)+"%");
         layer.on('mouseover', function (e) {
             highlightFeature(e);
             this.openPopup();
@@ -125,7 +127,6 @@ function Vis01TutorialFunction(dataset,interOn){
     }
     layerTuto1=L.geoJson(dataset,
       {style: function(feature){
-          //Style para definir configurações dos polígonos a serem desenhados e colorir com base na escala criada.
           if(interOn==true){
             var probArea= new distribuicaoIntervalo(getDis(feature.properties.name),left,right);
             var prob= probArea.cdfintervalo().toFixed(2);
@@ -161,7 +162,7 @@ function Vis01TutorialFunction(dataset,interOn){
             var prob= probArea.cdf().toFixed(2);
         }
         //Criação do Popup de cada feature/polígono contendo o nome do proprietário e o cep de localização do edíficio/lote.
-        layer.bindPopup("Probabilidade em "+feature.properties.name+": "+Math.floor(prob*100)+"%");
+        layer.bindPopup(""+feature.properties.name+": "+Math.floor(prob*100)+"%");
         layer.on('mouseover', function (e) {
             highlightFeature(e);
             this.openPopup();
@@ -178,7 +179,7 @@ function Vis01TutorialFunction(dataset,interOn){
   infoVis01.addTo(mapVis01);
 }
 
-//-- MAPA CHOROPLETH DE PROBABILIDADE COM UMA CONSTANTE DA ETAPA DE PERGUNTAS DO USUÁRIO. --
+//-- MAPA CHOROPLETH DE PROBABILIDADE EM UM INTERVALO DA ETAPA DE PERGUNTAS DO USUÁRIO. --
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
   attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
   maxZoom: 18,
@@ -198,11 +199,11 @@ infoRange.onAdd = function (mymap) {
 var legendRange = L.control({position: 'bottomright'});
 legendRange.onAdd = function (map) {
   var div = L.DomUtil.create('div', 'info legend'),grades=[],labels = [];
-  for (var i = 10; i >= 0; i--) {
+  /*for (var i = 10; i >= 0; i--) {
     grades.push((0.1*i).toFixed(2));
-  }
-  for (var i = 0; i < grades.length; i++) {
-    div.innerHTML +='<i style="color:#'+colorN(grades[i])+'; background:#'+colorN(grades[i])+'"></i>'+(grades[i]*100)+'%</br>';
+  }*/
+  for (var i = (gradesR.length-1); i >=0 ; i--) {
+    div.innerHTML +='<i style="color:#'+colorR(gradesR[i])+'; background:#'+colorR(gradesR[i])+'"></i>'+(gradesR[i]*100)+'%</br>';
   }
   return div;
 };
@@ -221,7 +222,7 @@ function inicioRange(dataset){
           return {
             weight: 3.0,
             opacity: 1,
-            fillColor: "#"+colorN(prob),
+            fillColor: "#"+colorR(prob),
             dashArray: '3',
             color: 'blue',
             fillOpacity: 0.9
@@ -230,7 +231,7 @@ function inicioRange(dataset){
           return {
               weight: 0.5,
               opacity: 1,
-              fillColor: "#"+colorN(prob),
+              fillColor: "#"+colorR(prob),
               color: 'black',
               fillOpacity: 0.9
             };
@@ -239,7 +240,7 @@ function inicioRange(dataset){
     ,onEachFeature: function (feature, layer) {
         var probArea= new distribuicaoIntervalo(getDis(feature.properties.name),left,right);
         var prob= probArea.cdfintervalo().toFixed(2);
-        layer.bindPopup("Probabilidade em "+feature.properties.name+": "+Math.floor(prob*100)+"%");
+        layer.bindPopup(""+feature.properties.name+": "+Math.floor(prob*100)+"%");
         layer.on('mouseover', function (e) {
             highlightFeature(e);
             this.openPopup();
@@ -256,7 +257,7 @@ function inicioRange(dataset){
   infoRange.addTo(mapRange);
 }
 
-//----------- MAPA CHOROPLETH DE PROBABILIDADE COM UMA CONSTANTE DA ETAPA DE TUTORIAL DO USUÁRIO. --
+//----------- MAPA CHOROPLETH DE PROBABILIDADE EM UM INTERVALO DA ETAPA DE TUTORIAL DO USUÁRIO. --
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
   attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
   maxZoom: 18,
@@ -275,11 +276,11 @@ infoVis02.onAdd = function (mymap) {
 var legendVis02 = L.control({position: 'bottomright'});
 legendVis02.onAdd = function (map) {
   var div = L.DomUtil.create('div', 'info legend'),grades=[],labels = [];
-  for (var i = 10; i >= 0; i--) {
+  /*for (var i = 10; i >= 0; i--) {
     grades.push((0.1*i).toFixed(2));
-  }
-  for (var i = 0; i < grades.length; i++) {
-    div.innerHTML +='<i style="color:#'+colorN(grades[i])+'; background:#'+colorN(grades[i])+'"></i>'+(grades[i]*100)+'%</br>';
+  }*/
+  for (var i = (gradesR.length-1); i >=0 ; i--) {
+    div.innerHTML +='<i style="color:#'+colorR(gradesR[i])+'; background:#'+colorR(gradesR[i])+'"></i>'+(gradesR[i]*100)+'%</br>';
   }
   return div;
 };
@@ -304,7 +305,7 @@ function Vis02TutorialFunction(dataset,interOn){
             return {
               weight: 3.0,
               opacity: 1,
-              fillColor: "#"+colorN(prob),
+              fillColor: "#"+colorR(prob),
               dashArray: '3',
               color: 'blue',
               fillOpacity: 0.9
@@ -313,7 +314,7 @@ function Vis02TutorialFunction(dataset,interOn){
             return {
                 weight: 0.5,
                 opacity: 1,
-                fillColor: "#"+colorN(prob),
+                fillColor: "#"+colorR(prob),
                 color: 'black',
                 fillOpacity: 0.9
               };
@@ -328,7 +329,7 @@ function Vis02TutorialFunction(dataset,interOn){
             var prob= probArea.cdf().toFixed(2);
         }
         //Criação do Popup de cada feature/polígono contendo o nome do proprietário e o cep de localização do edíficio/lote.
-        layer.bindPopup("Probabilidade em "+feature.properties.name+": "+Math.floor(prob*100)+"%");
+        layer.bindPopup(""+feature.properties.name+": "+Math.floor(prob*100)+"%");
         layer.on('mouseover', function (e) {
             highlightFeature(e);
             this.openPopup();

@@ -31,8 +31,10 @@ $(document).ready(function () {
 			if(i==(sorteados.length-1)){
 				i=-1;
 			}
-			inicioMedia(dataset);
-			Vis04TutorialFunction(dataset);
+			if(hops){
+				inicioMedia(dataset);
+				Vis04TutorialFunction(dataset);
+			}
 			await sleep(2000);
 		}
 	}

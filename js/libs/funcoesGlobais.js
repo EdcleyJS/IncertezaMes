@@ -514,7 +514,8 @@ function legendonAdd(map) {
 
 //ESCALA DE CORES PARA O MAPA DE PONTOS
 function colorD(media){
-  var cbf = palette('cb-BrBG', 11);
+  var cbf = palette('cb-BuGn', 9);
+  //var cbf = palette('cb-BrBG', 11);
   var color;
   gradesDot.forEach(function(d,i){
     if(Number(media)>=d){
@@ -523,9 +524,48 @@ function colorD(media){
   });
   return color;
 }
+function colorR(prob){
+  var cbf = palette('cb-BuGn', 9);
+  var color;
+  gradesR.forEach(function(d,i){
+    if(Number(prob)>=d){
+      color=cbf[i];
+    }
+  });
+  return color;
+}
+//ESCALA DE CORES PARA PROBABILIDADE
+function colorN(d){
+  var cbf = palette('cb-BrBG', 11);
+  cbf.reverse();
+  if(d>=1.0){
+    cor= cbf[10];   
+  }else if (d>=0.9) {
+    cor= cbf[9];  
+  }else if(d>=0.8){
+    cor= cbf[8];  
+  }else if(d>=0.7){
+    cor= cbf[7];  
+  }else if(d>=0.6){
+    cor= cbf[6];  
+  }else if(d>=0.5){
+    cor= cbf[5];  
+  }else if(d>=0.4){
+    cor= cbf[4];  
+  }else if(d>=0.3){
+    cor= cbf[3];  
+  }else if(d>=0.2){
+    cor= cbf[2];  
+  }else if (d>=0.1) {
+    cor= cbf[1];  
+  }else{
+    cor= cbf[0];  
+  }
+  return cor;
+}
 //ESCALA DE CORES PARA O MAPA DE MÉDIA
 function colorM(media){
-  var cbf = palette('cb-YlGn', 9);
+  var cbf = palette('cb-BuGn', 9);
   var color;
   grades.forEach(function(d,i){
     if(Number(media)>=d){
@@ -600,35 +640,6 @@ function findP(array,id){
     }
   });
   return p;
-}
-//ESCALA DE CORES PARA PROBABILIDADE
-function colorN(d){
-  var cbf = palette('cb-BrBG', 11);
-  //cbf.reverse();
-  if(d>=1.0){
-    cor= cbf[10];   
-  }else if (d>=0.9) {
-    cor= cbf[9];  
-  }else if(d>=0.8){
-    cor= cbf[8];  
-  }else if(d>=0.7){
-    cor= cbf[7];  
-  }else if(d>=0.6){
-    cor= cbf[6];  
-  }else if(d>=0.5){
-    cor= cbf[5];  
-  }else if(d>=0.4){
-    cor= cbf[4];  
-  }else if(d>=0.3){
-    cor= cbf[3];  
-  }else if(d>=0.2){
-    cor= cbf[2];  
-  }else if (d>=0.1) {
-    cor= cbf[1];  
-  }else{
-    cor= cbf[0];  
-  }
-  return cor;
 }
 //QUANDO INVOCADA ESSA FUNÇÃO COMPARA UMA AREA COM AS DEMAIS PARA TECNICA DE INTERVALO.
 function whenClicked(e) {              
@@ -746,4 +757,11 @@ function recaptcha_callback(){
   $('#4Form').submit();
   $('#5Form').submit();
   //$('#captchaError').hide();
+}
+
+function StartHOPS(){
+  hops=true;
+}
+function StopHOPS(){
+  hops=false;
 }

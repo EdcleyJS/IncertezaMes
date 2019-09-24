@@ -1,7 +1,7 @@
 var novaDist,bounds,width,height,area,nump,cont,cor,p,markerCircle;
 var mapVis03 = L.map('vis03').setView([-8.305448,-37.822426], 8);
 var mapDot = L.map('vis3').setView([-8.305448,-37.822426], 8);
-var gradesDot=[0,15,30,45,60,75,90,105,120,135,150];
+var gradesDot=[0,20,40,60,80,100,120,140,160];
 var myRenderer = L.canvas({ padding: 0.5 });
 var LayerDotMap,pontos,pontos2;
 var database,dots=[];
@@ -198,7 +198,7 @@ function InicioDot(){
           for(i=0; i<nump;i++) {
             p = L.latLng(bounds._southWest.lat + Math.random() * height, bounds._southWest.lng + Math.random() * width);
             if (leafletPip.pointInLayer(p, L.geoJSON(layer.toGeoJSON()), true).length > 0) {
-              markerCircle=L.circleMarker(p, {radius: 2, weight: 1,fillColor: cor,fillOpacity:1, color: cor,renderer: myRenderer});
+              markerCircle=L.circleMarker(p, {radius: 3, weight: 1,fillColor: cor,fillOpacity:1, color: cor,renderer: myRenderer});
               markerCircle.bindPopup(" "+d[0]);
               dots.push(markerCircle);
             }

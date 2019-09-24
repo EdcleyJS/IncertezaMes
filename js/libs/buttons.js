@@ -250,27 +250,25 @@ $(document).ready(function () {
 	});
 	// PARA A ETAPA DE TUTORIAL CORRIGE O PROBLEMA DO TAMANHO DO MAPA POR CONTA DAS ANIMAÇÕES E INICIA OS MAPAS.
 	$('.bs-stepper')[0].addEventListener('shown.bs-stepper', function (event) {
-		if (event.detail.indexStep==1) {
+		/*if (event.detail.indexStep==1) {
 			InicioDot();
-		}
-		if(event.detail.indexStep==3){
+		}*/
+		if(event.detail.indexStep==4){
+			mapVis04.invalidateSize();
+			opcoes=['Recife','Caruaru'];
+    		Vis04TutorialFunction(dataset);
+		}else if(event.detail.indexStep==7){
 			mapVis01.invalidateSize();
 		  	opcoes=['Recife','Caruaru'];
     		Vis01TutorialFunction(dataset,false);
-		}else if(event.detail.indexStep==5){
+		}else if(event.detail.indexStep==10){
 			mapVis02.invalidateSize();
 		  	opcoes=['Recife','Caruaru'];
     		Vis02TutorialFunction(dataset,true);
-		}else if(event.detail.indexStep==7){
-    		mapVis03.invalidateSize();
-			if(layerTuto3!= null){
-				layerTuto3.clearLayers();
-			}
+		}else if(event.detail.indexStep==13){
+			mapVis03.invalidateSize();
 		  	opcoes=['Recife','Caruaru'];
 	        Vis03TutorialFunction(dataset);
-		}else if(event.detail.indexStep==9){
-			mapVis04.invalidateSize();
-    		Vis04TutorialFunction(dataset);
 		}
 	});
 	// PARA A ETAPA DE PERGUNTAS CORRIGE O PROBLEMA DO TAMANHO DO MAPA POR CONTA DAS ANIMAÇÕES E INICIA OS MAPAS QUANDO UMA TAB MUDA.
@@ -399,7 +397,7 @@ $(document).ready(function () {
 				if(pontos!= undefined){
 					pontos.clearLayers();
 				}
-				
+				hops=true;
 				$('#tutorial').css('display','none');
 	    		$('#vis').css('display','');
 	    		if($('#Form').is(':visible')){
@@ -452,6 +450,11 @@ $(document).ready(function () {
 			}
 		}
 	});
+	$('.btn-previus-form').click(function(){
+		stepper0.previous();
+	});
+	$("#btn1,#2btn1,#3btn1,#4btn1,#btuto10").css('float','right');
+
 	// PARA CADA BOTÃO DA ÚLTIMA PERGUNTA DE CADA TÉCNICA PREPARA A PRÓXIMA TAB PARA SER EXIBIDA.
 	$("#btn1,#2btn1,#3btn1,#4btn1").click(function() {
 		var ent= $(this).parent().find('.form-group > div > div> div >input')[0].name;
