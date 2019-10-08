@@ -27,6 +27,8 @@
 		<script type="text/javascript" src="./js/libs/buttons.js"></script>
 		<script type="text/javascript" src="./js/libs/c071df3350.js"></script>
 		<script type="text/javascript" src='./js/libs/api.js'></script>
+		<script src="https://d3js.org/d3.v3.min.js"></script>
+		<script src="https://d3js.org/d3-polygon.v1.min.js"></script>
 		<!--CSS-->
 		<link rel="shortcut icon" type="image/png" href="./data/favicon-96x96.png"/>
 		<link rel="shortcut icon" type="image/png" href="./data/favicon-96x96.png"/>
@@ -44,25 +46,75 @@
 		<header class="w3-container w3-sand w3-center" style="padding:28px 16px" id='header'>
 		  	<h1 class="w3-margin w3-jumbo">CIn-UFPE - Estudo de Usuário.</h1>
 		  	<p class="w3-xlarge">Risco e Incerteza em Mapas.</p>
-		  	<div class="w3-row-padding w3-padding-64 w3-container">
+		  	<div class="w3-row-padding  w3-container">
 			  	<div class="w3-content">
-			    	<div style="text-align: justify;">
-				      	<h1>Por favor leia atentamente o texto abaixo.</h1>
-				      	<h5 class="w3-padding-32">Convidamos o (a) Sr. (a) para participar como voluntário (a) da pesquisa VISUALIZANDO INCERTEZAS EM MAPAS: MELHORIAS PARA AS TÉCNICAS EXISTENTES SOBRE CONFIABILIDADE NA TOMADA DE DECISÃO, de responsabilidade do mestrando Edcley José da Silva (e-mail: ejs2@cin.ufpe.br) e que está sob a orientação do pesquisador Dr. Nivan Roberto Ferreira Junior (e-mail: nivan@cin.ufpe.br Endereço: Centro de Informática (CIn) da UFPE Av. Jornalista Aníbal Fernandes, s/n - Cidade Universitária (Campus Recife) - CEP: 50.740-560 | Telefone: (81) 2126-8430, e-mail: nivan@cin.ufpe.br). Todas as suas dúvidas podem ser esclarecidas com o responsável por esta pesquisa. Apenas quando todos os esclarecimentos forem dados e você concordar com a realização do estudo, pedimos que rubrique as folhas e assine ao final deste documento, que está em duas vias. Uma via lhe será entregue e a outra ficará com o pesquisador responsável. Você estará livre para decidir participar ou recusar-se. Caso não aceite participar, não haverá nenhum problema, desistir é um direito seu, bem como será possível retirar o consentimento em qualquer fase da pesquisa, também sem nenhuma penalidade.</h5>
-				      	<p class="w3-text-black">
-				      	Dado o expressivo uso de sistemas de visualizações e a existência de riscos e dados na tomada de decisão através de ferramentas, o presente trabalho tem por objetivo tratar riscos e incertezas na visualização de dados geográficos com base em recomendações da literatura, gerando assim uma alternativa que auxilie a tomada de decisões estratégicas, onde a visualização de informações geradas através de dados permita uma exploração com maior confiança para o usuário. Neste experimento você participante terá que responder perguntas de uma entrevista com base na sua interação com uma visualização e com o cenário proposto pelo pesquisador.<br>
-						<b>RISCOS</b>: Pode ocorrer situações nas quais você se sinta constrangido ou tímido por não saber a resposta para uma pergunta proposta. Há também a possibilidade que você não saiba o que fazer no sistema, visto que se trata de uma visualização desconhecida para você. Durante a utilização do sistema, você poderá ficar à vontade caso não se sinta confortável em falar e poderá utilizar o sistema no momento que se sentir confortável, levando quanto tempo precisar.<br>
-						<b>BENEFÍCIOS</b>: Participar possibilitará que você conheça e aprenda um tipo de visualização de dados, no caso do experimento visualização de mapas com risco e incertezas.<br>
-						Todas as informações desta pesquisa serão confidenciais e serão divulgadas apenas em eventos ou publicações científicas, não havendo identificação dos voluntários, a não ser entre os responsáveis pelo estudo, sendo assegurado o sigilo sobre a sua participação. 
-						Os dados coletados nesta pesquisa (entrevista, perguntas, gravações de áudio, filmagem e fotografias), ficarão armazenados em computador pessoal, sob a responsabilidade do pesquisador no endereço acima informado, pelo período de mínimo 5 anos. Nada lhe será pago e nem será cobrado para participar desta pesquisa, pois a aceitação é voluntária, mas fica também garantida a indenização em casos de danos, comprovadamente decorrentes da participação na pesquisa, conforme decisão judicial ou extrajudicial.
-						Se houver necessidade, as despesas para a sua participação serão assumidas pelos pesquisadores (ressarcimento de transporte e alimentação). Em caso de dúvidas relacionadas aos aspectos éticos deste estudo, você poderá consultar o Comitê de Ética em Pesquisa Envolvendo Seres Humanos da UFPE no endereço: (Avenida da Engenharia s/n – 1º Andar, sala 4 - Cidade Universitária, Recife-PE, CEP: 50740-600, Tel.: (81) 2126.8588 – e-mail: cepccs@ufpe.br ).
-						</p>
+			    	<div style="text-align: justify;" class="w3-margin-left">
+				      	
+				      	<h3><b> Objetivo </b></h3>
+					      	Pedimos que participe desse estudo porque você possui o perfil adequado para contribuir com nossa pequisa.<br> 
+					      	- O objetivo desse estudo é descobrir qual a maneira mais eficaz de retratar riscos e incertezas de dados para a Geovisualização de dados para pessoas com e sem expertise em visualização e estatística.<br>
+							- Os possíveis benefícios desta pesquisa são conhecer e aprender tipos de visualização de dados, técnicas estatísticas e posssíveis integrações entre ambas que possam auxiliar o processo da tomada de decisão por pessoas. <br>
+							- Mas pode ocorrer também situações nas quais você se sinta constrangido e tímido por não saber a resposta para uma pergunta ou porque você não saiba o que fazer no sistema, visto que pode se tratar de algo novo para você.<br>
+							- Sua participação é de grande valor, agradecemos pelo interesse.<br>
+						<h3><b> Incentivo Financeiro de Participação </b></h3>
+							Nada lhe será pago e nem será cobrado para participar desta pesquisa, pois a aceitação é voluntária, mas fica também garantida a indenização em casos de danos, comprovadamente decorrentes da participação na pesquisa, conforme decisão judicial ou extrajudicial.<br>
+							<h3><b>Instruções Básicas</b></h3>
+							- Nas páginas seguintes aparecerão 2 etapas a de tutorial da ferramenta em seguida a de perguntas e respostas sobre a ferramenta. <br>
+							- É importante ler atentamente cada instrução dada. <br>
+							- Quando solicitado responda às questões adequadamente conforme ensinad na etapa do tutorial. <br>
+							- Faça seu melhor e complete cada questão o mais rápido que conseguir.<br>
 
+						<h3><b>Sobre as questões:</b></h3>
+							- Nas Próximas telas você será introduzido a ferramenta da pesquisa.<br>
+							- Serão quatro abordagens de visualizações de mapa.<br>
+							- Cada abordagem será apresentada a seguir e você poderá interagir antes de iniciar o estudo.<br>
+							- A ordem das técnicas no tutorial pode não ser a mesma no estudo.<br>
+							- Não será informado caso tenha acertado ou não.<br>
+							- Uma vez que você submeter uma resposta, não é possível voltar para a questão anterior e mudar a resposta.<br>
+							- Estimamos que pode levar de 30 a 40 minutos para completar o questionário, então pedimos que separe um horário onde possa fazê-lo com calma.<br>
+							- O tempo de resposta será contado, então por favor não faça pausas entre as repostas.<br>
+							- Por favor não use calculadora ou lápis e papel para montar as respostas.<br>
+							- Por favor não pesquise explicações sobre as abordagens durante este questionário.<br>
+
+						<h3><b>Observações Técnicas:</b></h3>
+							- Antes de iniciar o tutorial e as questões, pediremos algumas informações sobre você e sua experiência com visualização e estatística. Essas perguntas são importantes para entendermos melhor o contexto da pesquisa.<br>
+							- Pedimos para abrir esse link no navegador Google Chrome.<br>
+							- Não recarregue ou volte a página durante o preenchimento do formulário, pois vai descartar o seu progresso.<br>
+							- Se uma das abordagens não carregar de imediato, pedimos que aguarde alguns segundos.<br>
+						<h3><b>Dados coletados</b></h3>
+							Ao clicar em "Iniciar", você aceita e consente que:<br>
+							- Utilizaremos os dados das suas respostas para o desenvolvimento de nossa pesquisa e nada além disso.<br>
+							- Os dados coletados neste estudo não serão usados para identificar você.<br>
+							- Você não será identificado em nenhuma publicação deste estudo, ou em qualquer dado compartilhado com outros pesquisadores.<br>
+							- Sua participação é confidencial.<br>
+							- Você pode desistir a qualquer momento.<br>
+							- Os dados são coletados apenas quando o formulário é submetido.<br>
+							- Caso queira mais informações, ou tenha alguma dúvida a respeito da pesquisa, não hesite em entrar em contato conosco:<br>
+							<address>
+						   		(<a href="mailto:ejs@cin.ufpe.br">ejs2@cin.ufpe.br</a>,<a href="mailto:nivan@cin.ufpe.br">nivan@cin.ufpe.br</a>)<br>
+						    </address>
+						<h3><b>Comitê de Ética da UFPE</b></h3>
+						Esse estudo é regido pelos padrões do Comitê de Ética em Pesquisa Envolvendo Seres Humanos da UFPE. <br>
+						É de suma importância que você leia e aceite os termos legais que descrevem os pontos anteriores, os termos estão disponíveis a baixo e ao término da pesquisa serão encaminhados ao seu email para seu total respaldo.<br>
+						<a href="./data/TCLE.pdf" target="_blank">TERMO DE CONSCENTIMENTO LIVRE E ESCLARECIDO.</a><br>
+						<a href="./data/CPPV.pdf" target="_blank">CONSENTIMENTO DA PARTICIPAÇÃO DA PESSOA COMO VOLUNTÁRIO(A)</a><br>
+						Você aceita os termos acima apresentados?<br>
+						<div class="form-check form-check-inline">
+						  	<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Sim">
+						  	<label class="form-check-label" for="inlineRadio1">Sim</label>
+						</div>
+						<div class="form-check form-check-inline">
+						  	<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Não">
+						  	<label class="form-check-label" for="inlineRadio2">Não</label>
+						</div><br>
+						Em caso de dúvidas relacionadas aos aspectos éticos deste estudo, você poderá consultar o Comitê de Ética em Pesquisa Envolvendo Seres Humanos da UFPE no endereço: (Avenida da Engenharia s/n – 1º Andar, sala 4 - Cidade Universitária, Recife-PE, CEP: 50740-600, Tel.: (81) 2126.8588 – e-mail: cepccs@ufpe.br ).
 				    </div>
 			  	</div>
 			</div>
-			<p>Ao clicar em Iniciar Estudo você afirma ter aceitado os termos acima que serão encaminhados por email a você.</p>
-		  	<button class="w3-button w3-green w3-padding-large w3-large w3-margin-top" id="iniciar">Iniciar Estudo</button>
+			<div class="alert alert-danger fade" role="alert" id="alert">
+			  	<strong>Você precisa aceitar os termos!</strong>
+			</div>
+		  	<button class="w3-button w3-blue w3-padding-large w3-large w3-margin-top" id="iniciar">Iniciar</button>
 		</header>
 		<div class="container-fluid" id='tutorial' style="display: none;">
 			<div class="row">
@@ -978,69 +1030,70 @@
 									                <span class="bs-stepper-label">Pergunta</span>
 									            </button>
 									        </div>
-									    	<!--<div class="bs-stepper-line"></div>-->
+ 											<div class="bs-stepper-line"></div>
 									        <div class="step tamanhoP" data-target="#test-form-2">
 									            <button type="button" class="step-trigger" data-toggle="tab2" role="tab2" id="stepperFormTrigger2" aria-controls="test-form-2" aria-selected="false" disabled="disabled">
 									                <span class="bs-stepper-circle">2ª</span>
 									                <span class="bs-stepper-label">Pergunta</span>
 									            </button>
 									        </div>
-									        <!--<div class="bs-stepper-line"></div>-->
+ 											<div class="bs-stepper-line"></div>
 									        <div class="step tamanhoP" data-target="#test-form-3">
 									            <button type="button" class="step-trigger" data-toggle="tab2" role="tab2" id="stepperFormTrigger3" aria-controls="test-form-3" aria-selected="false" disabled="disabled">
 									                <span class="bs-stepper-circle">3ª</span>
 									                <span class="bs-stepper-label">Pergunta</span>
 									            </button>
 									        </div>
-									        <!--<div class="bs-stepper-line"></div>-->
+ 											<div class="bs-stepper-line"></div>
 									        <div class="step tamanhoP" data-target="#test-form-4">
 									            <button type="button" class="step-trigger" data-toggle="tab2" role="tab2" id="stepperFormTrigger4" aria-controls="test-form-4" aria-selected="false" disabled="disabled">
 									                <span class="bs-stepper-circle">4ª</span>
 									                <span class="bs-stepper-label">Pergunta</span>
 									            </button>
 									        </div>
-									        <!--<div class="bs-stepper-line"></div>-->
+ 											<div class="bs-stepper-line"></div>
 									        <div class="step tamanhoP" data-target="#test-form-5">
 									            <button type="button" class="step-trigger" data-toggle="tab2" role="tab2" id="stepperFormTrigger5" aria-controls="test-form-5" aria-selected="false" disabled="disabled">
 									                <span class="bs-stepper-circle">5ª</span>
 									                <span class="bs-stepper-label">Pergunta</span>
 									            </button>
 									        </div>
-									        <!--<div class="bs-stepper-line"></div>-->
+ 											<div class="bs-stepper-line"></div>
 									        <div class="step tamanhoP" data-target="#test-form-6">
 									            <button type="button" class="step-trigger" data-toggle="tab2" role="tab2" id="stepperFormTrigger6" aria-controls="test-form-6" aria-selected="false" disabled="disabled">
 									                <span class="bs-stepper-circle">6ª</span>
 									                <span class="bs-stepper-label">Pergunta</span>
 									            </button>
 									        </div>
-									        <!--<div class="bs-stepper-line"></div>-->
+									        <!--
 									        <div class="step tamanhoP" data-target="#test-form-7">
 									            <button type="button" class="step-trigger" data-toggle="tab2" role="tab2" id="stepperFormTrigger7" aria-controls="test-form-7" aria-selected="false" disabled="disabled">
 									                <span class="bs-stepper-circle">7ª</span>
 									                <span class="bs-stepper-label">Pergunta</span>
 									            </button>
 									        </div>
-									        <!--<div class="bs-stepper-line"></div>-->
+
 									        <div class="step tamanhoP" data-target="#test-form-8">
 									            <button type="button" class="step-trigger" data-toggle="tab2" role="tab2" id="stepperFormTrigger8" aria-controls="test-form-8" aria-selected="false" disabled="disabled">
 									                <span class="bs-stepper-circle">8ª</span>
 									                <span class="bs-stepper-label">Pergunta</span>
 									            </button>
 									        </div>
-									        <!--<div class="bs-stepper-line"></div>-->
+
 									        <div class="step tamanhoP" data-target="#test-form-9">
 									            <button type="button" class="step-trigger" data-toggle="tab2" role="tab2" id="stepperFormTrigger9" aria-controls="test-form-9" aria-selected="false" disabled="disabled">
 									                <span class="bs-stepper-circle">9ª</span>
 									                <span class="bs-stepper-label">Pergunta</span>
 									            </button>
 									        </div>	
-									        <!--<div class="bs-stepper-line"></div>-->
+
 									        <div class="step tamanhoP" data-target="#test-form-10">
 									            <button type="button" class="step-trigger" data-toggle="tab2" role="tab2" id="stepperFormTrigger10" aria-controls="test-form-10" aria-selected="false" disabled="disabled">
 									                <span class="bs-stepper-circle">10ª</span>
 									                <span class="bs-stepper-label">Pergunta</span>
 									            </button>
-									        </div>						        
+									        </div>
+									        -->						        
 									    </div>										
 									</div>
 									<div class="card-body">
@@ -1075,8 +1128,10 @@
 										        <div id="test-form-6" role="tabpanel" class="bs-stepper-pane fade dstepper-none" aria-labelledby="stepperFormTrigger6">
 										      		<div class="form-group" id='6p'>
 										            </div>
-										            <button type="button" class="btn btn-primary btn-next-form" id="next6">Avançar</button>
+										            <!--<button type="button" class="btn btn-primary btn-next-form" id="next6">Avançar</button>-->
+										            <button type="button" class="btn btn-primary" id="btn1">Avançar</button>
 										        </div>
+										        <!--
 										        <div id="test-form-7" role="tabpanel" class="bs-stepper-pane fade dstepper-none" aria-labelledby="stepperFormTrigger7">
 										      		<div class="form-group" id='7p'>
 										            </div>
@@ -1097,6 +1152,7 @@
 										            </div>
 										            <button type="button" class="btn btn-primary" id="btn1">Avançar</button>
 										        </div>
+										    -->
 										    </form>
 										</div>										
 									</div>
@@ -1126,69 +1182,70 @@
 									                <span class="bs-stepper-label">Pergunta</span>
 									            </button>
 									        </div>
-									    	<!--<div class="bs-stepper-line"></div>-->
+ 											<div class="bs-stepper-line"></div>
 									        <div class="step tamanhoP" data-target="#test-form-12">
 									            <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger12" aria-controls="test-form-12" aria-selected="false" disabled="disabled">
 									                <span class="bs-stepper-circle">2ª</span>
 									                <span class="bs-stepper-label">Pergunta</span>
 									            </button>
 									        </div>
-									        <!--<div class="bs-stepper-line"></div>-->
+ 											<div class="bs-stepper-line"></div>
 									        <div class="step tamanhoP" data-target="#test-form-13">
 									            <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger13" aria-controls="test-form-13" aria-selected="false" disabled="disabled">
 									                <span class="bs-stepper-circle">3ª</span>
 									                <span class="bs-stepper-label">Pergunta</span>
 									            </button>
 									        </div>
-									        <!--<div class="bs-stepper-line"></div>-->
+ 											<div class="bs-stepper-line"></div>
 									        <div class="step tamanhoP" data-target="#test-form-14">
 									            <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger14" aria-controls="test-form-14" aria-selected="false" disabled="disabled">
 									                <span class="bs-stepper-circle">4ª</span>
 									                <span class="bs-stepper-label">Pergunta</span>
 									            </button>
 									        </div>
-									        <!--<div class="bs-stepper-line"></div>-->
+ 											<div class="bs-stepper-line"></div>
 									        <div class="step tamanhoP" data-target="#test-form-15">
 									            <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger15" aria-controls="test-form-15" aria-selected="false" disabled="disabled">
 									                <span class="bs-stepper-circle">5ª</span>
 									                <span class="bs-stepper-label">Pergunta</span>
 									            </button>
 									        </div>
-									        <!--<div class="bs-stepper-line"></div>-->
+ 											<div class="bs-stepper-line"></div>
 									        <div class="step tamanhoP" data-target="#test-form-16">
 									            <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger16" aria-controls="test-form-16" aria-selected="false" disabled="disabled">
 									                <span class="bs-stepper-circle">6ª</span>
 									                <span class="bs-stepper-label">Pergunta</span>
 									            </button>
 									        </div>
-									        <!--<div class="bs-stepper-line"></div>-->
+									        <!--
 									        <div class="step tamanhoP" data-target="#test-form-17">
 									            <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger17" aria-controls="test-form-17" aria-selected="false" disabled="disabled">
 									                <span class="bs-stepper-circle">7ª</span>
 									                <span class="bs-stepper-label">Pergunta</span>
 									            </button>
 									        </div>
-									        <!--<div class="bs-stepper-line"></div>-->
+
 									        <div class="step tamanhoP" data-target="#test-form-18">
 									            <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger18" aria-controls="test-form-18" aria-selected="false" disabled="disabled">
 									                <span class="bs-stepper-circle">8ª</span>
 									                <span class="bs-stepper-label">Pergunta</span>
 									            </button>
 									        </div>
-									        <!--<div class="bs-stepper-line"></div>-->
+
 									        <div class="step tamanhoP" data-target="#test-form-19">
 									            <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger19" aria-controls="test-form-19" aria-selected="false" disabled="disabled">
 									                <span class="bs-stepper-circle">9ª</span>
 									                <span class="bs-stepper-label">Pergunta</span>
 									            </button>
 									        </div>
-									        <!--<div class="bs-stepper-line"></div>-->
+
 									        <div class="step tamanhoP" data-target="#test-form-20">
 									            <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger20" aria-controls="test-form-20" aria-selected="false" disabled="disabled">
 									                <span class="bs-stepper-circle">10ª</span>
 									                <span class="bs-stepper-label">Pergunta</span>
 									            </button>
 									        </div>
+									    -->
 									    </div>										
 									</div>
 									<div class="card-body">
@@ -1223,8 +1280,10 @@
 										        <div id="test-form-16" role="tabpanel" class="bs-stepper-pane fade dstepper-none" aria-labelledby="stepperFormTrigger16">
 										      		<div class="form-group" id='16p'>
 										            </div>
-										            <button type="button" class="btn btn-primary btn-next-form" id="2next6">Avançar</button>
+										            <!--<button type="button" class="btn btn-primary btn-next-form" id="2next6">Avançar</button>-->
+										            <button type="button" class="btn btn-primary" id="2btn1">Avançar</button>
 										        </div>
+										        <!--
 										        <div id="test-form-17" role="tabpanel" class="bs-stepper-pane fade dstepper-none" aria-labelledby="stepperFormTrigger17">
 										            <div class="form-group" id="17p">
 										            </div>
@@ -1246,6 +1305,7 @@
 										            <button type="button" class="btn btn-primary" id="2btn1">Avançar</button>
 										            
 										        </div>
+										    -->
 										    </form>
 										</div>										
 									</div>
@@ -1272,67 +1332,70 @@
 									                <span class="bs-stepper-label">Pergunta</span>
 									            </button>
 									        </div>
-									    	<!--<div class="bs-stepper-line"></div>-->
+ 											<div class="bs-stepper-line"></div>
 									        <div class="step tamanhoP" data-target="#test-form-22">
 									            <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger22" aria-controls="test-form-22" aria-selected="false" disabled="disabled">
 									                <span class="bs-stepper-circle">2ª</span>
 									                <span class="bs-stepper-label">Pergunta</span>
 									            </button>
 									        </div>
-									        <!--<div class="bs-stepper-line"></div>-->
+ 											<div class="bs-stepper-line"></div>
 									        <div class="step tamanhoP" data-target="#test-form-23">
 									            <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger23" aria-controls="test-form-23" aria-selected="false" disabled="disabled">
 									                <span class="bs-stepper-circle">3ª</span>
 									                <span class="bs-stepper-label">Pergunta</span>
 									            </button>
 									        </div>
+ 											<div class="bs-stepper-line"></div>
 									        <div class="step tamanhoP" data-target="#test-form-24">
 									            <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger24" aria-controls="test-form-24" aria-selected="false" disabled="disabled">
 									                <span class="bs-stepper-circle">4ª</span>
 									                <span class="bs-stepper-label">Pergunta</span>
 									            </button>
 									        </div>
-									    	<!--<div class="bs-stepper-line"></div>-->
+ 											<div class="bs-stepper-line"></div>
 									        <div class="step tamanhoP" data-target="#test-form-25">
 									            <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger25" aria-controls="test-form-25" aria-selected="false" disabled="disabled">
 									                <span class="bs-stepper-circle">5ª</span>
 									                <span class="bs-stepper-label">Pergunta</span>
 									            </button>
 									        </div>
-									        <!--<div class="bs-stepper-line"></div>-->
+ 											<div class="bs-stepper-line"></div>
 									        <div class="step tamanhoP" data-target="#test-form-26">
 									            <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger26" aria-controls="test-form-26" aria-selected="false" disabled="disabled">
 									                <span class="bs-stepper-circle">6ª</span>
 									                <span class="bs-stepper-label">Pergunta</span>
 									            </button>
 									        </div>
+									        <!--
 									        <div class="step tamanhoP" data-target="#test-form-27">
 									            <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger27" aria-controls="test-form-27" aria-selected="false" disabled="disabled">
 									                <span class="bs-stepper-circle">7ª</span>
 									                <span class="bs-stepper-label">Pergunta</span>
 									            </button>
 									        </div>
-									    	<!--<div class="bs-stepper-line"></div>-->
+
 									        <div class="step tamanhoP" data-target="#test-form-28">
 									            <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger28" aria-controls="test-form-28" aria-selected="false" disabled="disabled">
 									                <span class="bs-stepper-circle">8ª</span>
 									                <span class="bs-stepper-label">Pergunta</span>
 									            </button>
 									        </div>
-									        <!--<div class="bs-stepper-line"></div>-->
+
 									        <div class="step tamanhoP" data-target="#test-form-29">
 									            <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger29" aria-controls="test-form-29" aria-selected="false" disabled="disabled">
 									                <span class="bs-stepper-circle">9ª</span>
 									                <span class="bs-stepper-label">Pergunta</span>
 									            </button>
 									        </div>
-									        <!--<div class="bs-stepper-line"></div>-->
+
 									        <div class="step tamanhoP" data-target="#test-form-30">
 									            <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger30" aria-controls="test-form-30" aria-selected="false" disabled="disabled">
 									                <span class="bs-stepper-circle">10ª</span>
 									                <span class="bs-stepper-label">Pergunta</span>
 									            </button>
 									        </div>
+									    -->
 									    </div>
 									</div>
 									<div class="card-body">
@@ -1367,8 +1430,10 @@
 										        <div id="test-form-26" role="tabpanel" class="bs-stepper-pane fade dstepper-none" aria-labelledby="stepperFormTrigger26">
 										      		<div class="form-group" id='26p'>
 										            </div>
-										            <button type="button" class="btn btn-primary btn-next-form" id="3next6">Avançar</button>
+										            <!--<button type="button" class="btn btn-primary btn-next-form" id="3next6">Avançar</button>-->
+										            <button type="button" class="btn btn-primary" id="3btn1">Avançar</button>
 										        </div>
+										        <!--
 										        <div id="test-form-27" role="tabpanel" class="bs-stepper-pane fade dstepper-none" aria-labelledby="stepperFormTrigger27">
 										            <div class="form-group" id="27p">
 										            </div>
@@ -1389,6 +1454,7 @@
 										            </div>
 										            <button type="button" class="btn btn-primary" id="3btn1">Avançar</button>
 										        </div>
+										    -->
 										    </form>
 										</div>										
 									</div>
@@ -1418,69 +1484,70 @@
 									                <span class="bs-stepper-label">Pergunta</span>
 									            </button>
 									        </div>
-									    	<!--<div class="bs-stepper-line"></div>-->
+ 											<div class="bs-stepper-line"></div>
 									        <div class="step tamanhoP" data-target="#test-form-32">
 									            <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger32" aria-controls="test-form-32" aria-selected="false" disabled="disabled">
 									                <span class="bs-stepper-circle">2ª</span>
 									                <span class="bs-stepper-label">Pergunta</span>
 									            </button>
 									        </div>
-									        <!--<div class="bs-stepper-line"></div>-->
+ 											<div class="bs-stepper-line"></div>
 									        <div class="step tamanhoP" data-target="#test-form-33">
 									            <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger33" aria-controls="test-form-33" aria-selected="false" disabled="disabled">
 									                <span class="bs-stepper-circle">3ª</span>
 									                <span class="bs-stepper-label">Pergunta</span>
 									            </button>
 									        </div>
-									        <!--<div class="bs-stepper-line"></div>-->
+ 											<div class="bs-stepper-line"></div>									        
 									        <div class="step tamanhoP" data-target="#test-form-34">
 									            <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger34" aria-controls="test-form-34" aria-selected="false" disabled="disabled">
 									                <span class="bs-stepper-circle">4ª</span>
 									                <span class="bs-stepper-label">Pergunta</span>
 									            </button>
 									        </div>
-									        <!--<div class="bs-stepper-line"></div>-->
+ 											<div class="bs-stepper-line"></div>
 									        <div class="step tamanhoP" data-target="#test-form-35">
 									            <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger35" aria-controls="test-form-35" aria-selected="false" disabled="disabled">
 									                <span class="bs-stepper-circle">5ª</span>
 									                <span class="bs-stepper-label">Pergunta</span>
 									            </button>
 									        </div>
-									        <!--<div class="bs-stepper-line"></div>-->
+ 											<div class="bs-stepper-line"></div>
 									        <div class="step tamanhoP" data-target="#test-form-36">
 									            <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger36" aria-controls="test-form-36" aria-selected="false" disabled="disabled">
 									                <span class="bs-stepper-circle">6ª</span>
 									                <span class="bs-stepper-label">Pergunta</span>
 									            </button>
 									        </div>
-									        <!--<div class="bs-stepper-line"></div>-->
+									        <!--
 									        <div class="step tamanhoP" data-target="#test-form-37">
 									            <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger37" aria-controls="test-form-37" aria-selected="false" disabled="disabled">
 									                <span class="bs-stepper-circle">7ª</span>
 									                <span class="bs-stepper-label">Pergunta</span>
 									            </button>
 									        </div>
-									        <!--<div class="bs-stepper-line"></div>-->
+									        
 									        <div class="step tamanhoP" data-target="#test-form-38">
 									            <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger38" aria-controls="test-form-38" aria-selected="false" disabled="disabled">
 									                <span class="bs-stepper-circle">8ª</span>
 									                <span class="bs-stepper-label">Pergunta</span>
 									            </button>
 									        </div>
-									        <!--<div class="bs-stepper-line"></div>-->
+									        
 									        <div class="step tamanhoP" data-target="#test-form-39">
 									            <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger39" aria-controls="test-form-39" aria-selected="false" disabled="disabled">
 									                <span class="bs-stepper-circle">9ª</span>
 									                <span class="bs-stepper-label">Pergunta</span>
 									            </button>
 									        </div>
-									        <!--<div class="bs-stepper-line"></div>-->
+									        
 									        <div class="step tamanhoP" data-target="#test-form-40">
 									            <button type="button" class="step-trigger" role="tab" id="stepperFormTrigger40" aria-controls="test-form-40" aria-selected="false" disabled="disabled">
 									                <span class="bs-stepper-circle">10ª</span>
 									                <span class="bs-stepper-label">Pergunta</span>
 									            </button>
 									        </div>
+											-->
 									    </div>
 									</div>
 									<div class="card-body">	
@@ -1515,8 +1582,11 @@
 										        <div id="test-form-36" role="tabpanel" class="bs-stepper-pane fade dstepper-none" aria-labelledby="stepperFormTrigger36">
 										      		<div class="form-group" id='36p'>
 										            </div>
-										            <button type="button" class="btn btn-primary btn-next-form" id="4next6">Avançar</button>
+										            <!--<button type="button" class="btn btn-primary btn-next-form" id="4next6">Avançar</button>-->
+										            <button type="button" class="btn btn-primary" id="4btn1">Avançar</button>
+
 										        </div>
+										        <!--
 										        <div id="test-form-37" role="tabpanel" class="bs-stepper-pane fade dstepper-none" aria-labelledby="stepperFormTrigger37">
 										            <div class="form-group" id="37p">
 										            </div>
@@ -1537,7 +1607,8 @@
 										            </div>
 										            <textarea hidden class="form-control" id="feedback" name="feedback" rows="3"></textarea>
 										            <button type="button" class="btn btn-primary" id="4btn1">Avançar</button>
-										        </div>								        
+										        </div>
+										        -->							        
 										    </form>
 										</div>
 									</div>

@@ -1,5 +1,9 @@
-var arr = [0,1,2,3,4,5,6,7,8,9],clicks=0,d1 = new Date(),stepper1,stepper2,stepper3,stepper4,d4,list,d2,diff,post_url,request_method,form_data,forms;
+var arr = [0,1,2,3,4,5/*,6,7,8,9*/],clicks=0,d1 = new Date(),stepper1,stepper2,stepper3,stepper4,d4,list,d2,diff,post_url,request_method,form_data,forms;
 $(document).ready(function () {
+	perguntasT1=shuffle(perguntasT1);
+	perguntasT2=shuffle(perguntasT2);
+	perguntasT3=shuffle(perguntasT3);
+	perguntasT4=shuffle(perguntasT4);
 	//PREENCHE TODAS AS PERGUNTAS.
 	arr.forEach(function(d,i){
 		switch(i) {
@@ -87,6 +91,7 @@ $(document).ready(function () {
 		  		list = document.getElementById("36p");
 				list.insertBefore(d4, list.childNodes[0]);
 		    break;
+		    /*
 		    case 6:
 		  		d4= geraperguntas(perguntasT1,d,1);
 		  		list = document.getElementById("7p");
@@ -142,7 +147,7 @@ $(document).ready(function () {
 		  		d4= geraperguntas(perguntasT4,d,4);
 		  		list = document.getElementById("40p");
 				list.insertBefore(d4, list.childNodes[0]);
-		    break;
+		    break;*/
 		  default:
 		}
 	});
@@ -150,7 +155,7 @@ $(document).ready(function () {
 	var nv= $('#pills-tab > li');
    	var nvf=nv.slice(4,5);
 	nv=nv.slice(0,4);
-	shuffle(nv);
+	nv=shuffle(nv);
 	$('#pills-tab').empty();
 	nv.each(function(d,i){
 	 	$('#pills-tab').append(nv[d]);
@@ -169,8 +174,13 @@ $(document).ready(function () {
 	stepper4 = new Stepper($('.bs-stepper')[4]);
 	//OCULTA A TELA INICIAL E EXIBE O TUTORIAL
 	$('#iniciar').click(function(){
-    	$('#header').css('display','none');
-    	$('#tutorial').css('display','');
+		if($('input[name ="inlineRadioOptions"]:checked').val()==undefined || $('input[name ="inlineRadioOptions"]:checked').val()=='Não'){
+			$('.alert').addClass("show");//alert('Você Precisa aceitar os termos para começar.');
+		}else{
+			$('.alert').removeClass("show");
+	    	$('#header').css('display','none');
+	    	$('#tutorial').css('display','');			
+		}
     });
 	// CONTA OS CLICKS PARA DEPOIS ENVIAR COM OS FORMULÁRIOS.
     $(document).on("click",function() {
@@ -300,7 +310,7 @@ $(document).ready(function () {
 	    mapMedia.invalidateSize();
 	    var id= $('#4Form > div.active > div > div > div > div> input')[0].id;
 		id=id.substring(0, 3);
-		var p=findP(perguntasT2,id);
+		var p=findP(perguntasT4,id);
 		p=p.slice(2,p.length);
 		opcoes=[];
 		p.forEach(function(d,i){
@@ -426,7 +436,7 @@ $(document).ready(function () {
 					mapMedia.invalidateSize();
 					var id= $('#4Form > div.active > div > div > div > div> input')[0].id;
 				    id=id.substring(0, 3);
-				    var p=findP(perguntasT2,id);
+				    var p=findP(perguntasT4,id);
 				    p=p.slice(2,p.length);
 				    opcoes=[];
 				    p.forEach(function(d,i){

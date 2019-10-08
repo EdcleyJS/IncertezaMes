@@ -33,6 +33,8 @@ legendDot.addTo(mapDot);
 function inicioDotMap(dataset){
   if(LayerDotMap!= null){
     LayerDotMap.clearLayers();
+  }
+  if (pontos2!=null) {
     pontos2.clearLayers();
   }
   //dots = [];
@@ -41,7 +43,7 @@ function inicioDotMap(dataset){
       style: function(feature){
         if(opcoes.includes(feature.properties.name)){
           return {
-            weight:1.5,
+            weight:2.5,
             opacity: 1,
             fillOpacity: 0,
             color: 'blue'
@@ -51,7 +53,6 @@ function inicioDotMap(dataset){
             weight:0.8,
             opacity: 0.5,
             fillOpacity: 0,
-            dashArray: '5',
             color: 'black',
           };
         }
@@ -64,25 +65,6 @@ function inicioDotMap(dataset){
         layer.on('mouseout', function (e) {
             this.closePopup();
         });
-        /*novaDist= dotMapPrep(getDis(feature.properties.name));  
-        bounds = layer.getBounds();
-        width = Math.abs(bounds._northEast.lng - bounds._southWest.lng);
-        height = Math.abs(bounds._northEast.lat - bounds._southWest.lat);
-        area= (turf.area(feature.geometry)/100000000);      
-        area= area/2;
-        novaDist.forEach(function(d,i){
-          nump= area*d[1];
-          cont=0;
-          cor= colorD(d[0]);
-          while(nump<cont) {
-            p = L.latLng(bounds._southWest.lat + Math.random() * height, bounds._southWest.lng + Math.random() * width);
-            if (leafletPip.pointInLayer(p, L.geoJSON(layer.toGeoJSON()), true).length > 0) {
-              var markerCircle=L.circleMarker(p, {radius: 4, weight: 1,fillColor: cor,fillOpacity:1, color: cor,renderer: myRenderer});
-              markerCircle.bindPopup(" "+d[0]);
-              dots.push(markerCircle);
-            }
-          }
-        });*/
   }}).addTo(mapDot);
   pontos2 = L.layerGroup(dots);
   pontos2.addTo(mapDot);
@@ -129,7 +111,7 @@ function Vis03TutorialFunction(dataset){
       style: function(feature){
         if(opcoes.includes(feature.properties.name)){
           return {
-            weight:1.5,
+            weight:2.5,
             opacity: 1,
             fillOpacity: 0,
             color: 'blue'
@@ -139,7 +121,6 @@ function Vis03TutorialFunction(dataset){
             weight:0.8,
             opacity: 0.5,
             fillOpacity: 0,
-            dashArray: '5',
             color: 'black',
           };
         }
@@ -181,29 +162,127 @@ function Vis03TutorialFunction(dataset){
   };
   infoVis03.addTo(mapVis03);
 }
-function InicioDot(){
+var recife;
+var pointsdots = [];
+var xMin,yMin,xMax,yMax;
+var contdots=0;
+ function InicioDot(){
+
   L.geoJson(dataset,{
-    onEachFeature: function (feature, layer) {
+    onEachFeature: async function (feature, layer) {
+        await sleep(3000);
         novaDist= dotMapPrep(getDis(feature.properties.name));
+        
         //console.log(Math.max.apply(Math, getDis(feature.properties.name)));
         bounds = layer.getBounds();
         width = Math.abs(bounds._northEast.lng - bounds._southWest.lng);
         height = Math.abs(bounds._northEast.lat - bounds._southWest.lat);
-        area= (turf.area(feature.geometry)/10000000);      
+        area= (turf.area(feature.geometry)/10000000);     
         //area= area/3;
+          xMin = Infinity;
+          yMin = Infinity;
+          xMax = -Infinity;
+          yMax = -Infinity;
+        /*var LatLngs=layer.getLatLngs()[0];  
+        LatLngs.forEach(p=>{
+          var nova= map.unproject([p.lat,p.lng]);
+          p.lat=nova.lat;
+          p.lng=nova.lng;
+        });*/
+        
+        layer.getLatLngs()[0].forEach(function(p,i){
+            if (p.lat<xMin) xMin = p.lat;
+            if (p.lat>xMax) xMax = p.lat;
+            if (p.lng<yMin) yMin = p.lng;
+            if (p.lng>yMax) yMax = p.lng;
+        });
+        var widthh = layer.getBounds().getNorth()-layer.getBounds().getSouth();//(xMax - xMin); 
+        var heightt = layer.getBounds().getEast()-layer.getBounds().getWest();//(yMax - yMin);
+        var polygon=layer.getLatLngs()[0];
+        //console.log(widthh+'-'+heightt);
+                  //console.log(bounds);
+        //console.log(width+" "+height);
+        //console.log(feature.properties.name);
+        var enveloped = turf.envelope(feature);
+        var a=turf.bbox(enveloped);
+        var grid = turf.pointGrid(a,2);
+        //console.log(grid.features.length);
+        var pointsGrid=[];
+        grid.features.forEach(function(d){
+            var aux=d.geometry.coordinates;
+            var q=L.latLng(aux[1],aux[0]);
+            //if (leafletPip.pointInLayer(q, L.geoJSON(layer.toGeoJSON()), true).length > 0) {console.log('circulo dentro');}
+            //p = L.latLng(bounds._southWest.lat + Math.random() * height, bounds._southWest.lng + Math.random() * width);
+            if (leafletPip.pointInLayer(q, L.geoJSON(layer.toGeoJSON()), true).length > 0) {
+              pointsGrid.push(q);
+            }
+        });
+        var indice=0;
+        pointsGrid=shuffle(pointsGrid);
+        var pdisponiveis= pointsGrid.length;
+        novaDist.forEach(function(d){
+          cor= colorD(d[0]);
+          var limite=Math.round((pointsGrid.length)*d[1]);
+          var i= indice;
+          var l=limite+indice;
+          for (i; i<l; i++) {
+              if (pdisponiveis>0) {
+                dots.push(L.circleMarker(pointsGrid[i], {radius: 1.3, weight: 1,fillColor: cor,fillOpacity:1, color: cor,renderer: myRenderer}));
+                pdisponiveis--; 
+                //indice++;              
+              }
+          }
+          indice+=limite;
+        });
+        
+        //var circledot = poissonDiscSampler(widthh, heightt, 0.015,layer,xMin,yMin);
+        //var points=[];
+        /*var contnump=0;
         novaDist.forEach(function(d,i){
           nump= area*d[1];
-          cont=0;
+          contador=0;
+          nump=Math.ceil(nump);
           cor= colorD(d[0]);
-          for(i=0; i<nump;i++) {
-            p = L.latLng(bounds._southWest.lat + Math.random() * height, bounds._southWest.lng + Math.random() * width);
-            if (leafletPip.pointInLayer(p, L.geoJSON(layer.toGeoJSON()), true).length > 0) {
-              markerCircle=L.circleMarker(p, {radius: 3, weight: 1,fillColor: cor,fillOpacity:1, color: cor,renderer: myRenderer});
+          contnump=contnump+nump;
+          for(i=0; contador<nump;i++) {
+            //var aux=circledot();
+            //console.log(aux);
+            var aux=grid.features[i].geometry.coordinates;
+            var q=L.latLng(aux[1],aux[0]);
+            //if (leafletPip.pointInLayer(q, L.geoJSON(layer.toGeoJSON()), true).length > 0) {console.log('circulo dentro');}
+            //p = L.latLng(bounds._southWest.lat + Math.random() * height, bounds._southWest.lng + Math.random() * width);
+            if (leafletPip.pointInLayer(q, L.geoJSON(layer.toGeoJSON()), true).length > 0) {
+              markerCircle=L.circleMarker(q, {radius: 2, weight: 1,fillColor: cor,fillOpacity:1, color: cor,renderer: myRenderer});
               markerCircle.bindPopup(" "+d[0]);
               dots.push(markerCircle);
+              contador++;
             }
           }
-        });
+          /*var points=[];
+            outer: while(contador<nump){
+              debugger
+              let p = [xMin + Math.random() * widthh, yMin + Math.random() * heightt];
+              if (d3.polygonContains(feature.geometry.coordinates[0], p)) {
+                // check distance to other points
+                for (let j=0; j<points.length; j++) {
+                  let dx = p[0]-points[j][0],dy = p[1]-points[j][1];
+                  if (Math.sqrt(dx*dx+dy*dy) < 0.01) continue outer;
+                }
+                points.push(p);
+                contador++;
+                if (points.length == nump) break;
+              }
+            }*/
+        //});
+        //console.log(contnump);
+        /*
+        points.forEach(function(d){
+          var q=L.latLng(d[0],d[1]);
+          markerCircle=L.circleMarker(q, {radius: 2, weight: 1,fillColor: cor,fillOpacity:1, color: cor,renderer: myRenderer});
+          //markerCircle.bindPopup(" "+d[0]);
+          dots.push(markerCircle);
+        });*/
     }
   });
 }
+

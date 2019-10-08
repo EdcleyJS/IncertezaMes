@@ -641,6 +641,9 @@ function findP(array,id){
   });
   return p;
 }
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
 //QUANDO INVOCADA ESSA FUNÇÃO COMPARA UMA AREA COM AS DEMAIS PARA TECNICA DE INTERVALO.
 function whenClicked(e) {              
   var slider = $("#example_id").data("ionRangeSlider");
@@ -676,7 +679,7 @@ function geraperguntas(perguntas,index,vis){
   label.setAttribute('id',"pergunta1");
   label.innerText= pergunta[0];//"Pergunta 1 ?";
 
-  for (var i = 2; i < pergunta.length; i++) {
+  for (var i = 2; i < pergunta.length-1; i++) {
     var div1 = document.createElement("div");
     div1.setAttribute('class',"custom-control custom-radio custom-control-inline ");
     var input1= document.createElement("input");
