@@ -679,7 +679,7 @@ function geraperguntas(perguntas,index,vis){
   label.setAttribute('id',"pergunta1");
   label.innerText= pergunta[0];//"Pergunta 1 ?";
 
-  for (var i = 2; i < pergunta.length-1; i++) {
+  for (var i = 2; i < pergunta.length-2; i++) {
     var div1 = document.createElement("div");
     div1.setAttribute('class',"custom-control custom-radio custom-control-inline ");
     var input1= document.createElement("input");
@@ -724,7 +724,7 @@ function geraperguntas(perguntas,index,vis){
 
     div1.appendChild(radio1);
     div1.appendChild(label1);
-    if(i==pergunta.length-1){
+    if(i==pergunta.length-2){
       var input4= document.createElement("div");
       var input7= document.createElement("br");
       var input6= document.createElement("p");

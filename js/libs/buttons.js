@@ -196,7 +196,7 @@ $(document).ready(function () {
         max: 5,
         skin: "big",
         grid: true,
-        onFinish: function (data) {
+        onChange: function (data) {
         	$('#'+data.input[0].id).value=data.input[0].value; 
         }
 	});
@@ -206,7 +206,7 @@ $(document).ready(function () {
         max: 300,
         skin: "big",
         grid: true,
-        onFinish: function (data) {
+        onChange: function (data) {
             alpha=data.from;
             inicio(dataset);
         }
@@ -221,7 +221,7 @@ $(document).ready(function () {
         drag_interval: true,
         skin: "big",
         grid: true,
-        onFinish: function (data) {
+        onChange: function (data) {
         	interOn=true;
             left=data.from;
             right=data.to;
@@ -235,7 +235,7 @@ $(document).ready(function () {
         max: 300,
         skin: "big",
         grid: true,
-        onFinish: function (data) {
+        onChange: function (data) {
         	opcoes=['Recife','Caruaru'];
             alpha=data.from;
             Vis01TutorialFunction(dataset,false);
@@ -251,7 +251,7 @@ $(document).ready(function () {
         drag_interval: true,
         skin: "big",
         grid: true,
-        onFinish: function (data) {
+        onChange: function (data) {
         	opcoes=['Recife','Caruaru'];
             left=data.from;
             right=data.to;

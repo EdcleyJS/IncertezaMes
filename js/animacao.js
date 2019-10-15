@@ -11,8 +11,8 @@ $(document).ready(function () {
 	//var laço= trimestre.length;
 	//var laço= dias.length;
 	//console.log(laço);
-	var sorteados=[];
-	for (var i = 0; i <3; i++) {
+	var sorteados=shuffle(meses); //[];
+	/*for (var i = 0; i <3; i++) {
 		n=true;
 		while(n==true){
 			var s= Math.floor((Math.random()*12));
@@ -21,7 +21,7 @@ $(document).ready(function () {
 				sorteados.push(meses[s]);
 			}
 		}
-	}
+	}*/
 	async function animacao(){
 		for (var i = 0; i < sorteados.length; i++) {
 			//anoSelecionado=anos[i];
@@ -35,7 +35,7 @@ $(document).ready(function () {
 				inicioMedia(dataset);
 				Vis04TutorialFunction(dataset);
 			}
-			await sleep(2000);
+			await sleep(460);
 		}
 	}
 	animacao();
