@@ -157,6 +157,7 @@ $(document).ready(function () {
 	nv=nv.slice(0,4);
 	nv=shuffle(nv);
 	$('#pills-tab').empty();
+
 	nv.each(function(d,i){
 	 	$('#pills-tab').append(nv[d]);
 	});

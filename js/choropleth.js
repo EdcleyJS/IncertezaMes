@@ -72,8 +72,8 @@ function inicio(dataset){
       }
     },
       onEachFeature: function (feature, layer) {
-        var probArea= new distribuicaoIntervalo(getDis(feature.properties.name),left,right);
-        var prob= probArea.cdfintervalo().toFixed(2);
+      var probArea= new distribuicaoTeste(getDis(feature.properties.name),alpha);
+      var prob= probArea.cdf().toFixed(2);
         layer.bindPopup(""+feature.properties.name+": "+Math.floor(prob*100)+"%");
         layer.on('mouseover', function (e) {
             highlightFeature(e);

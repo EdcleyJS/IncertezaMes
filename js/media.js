@@ -192,7 +192,7 @@ function Vis04TutorialFunction(dados){
               this.openPopup();
           });
           layer.on('mouseout', function (e) {
-              LayerMedia.resetStyle(e.target);
+              layerTuto4.resetStyle(e.target);
               this.closePopup();
           });
         }

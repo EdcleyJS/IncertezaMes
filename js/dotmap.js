@@ -4,7 +4,7 @@ var mapDot = L.map('vis3').setView([-8.305448,-37.822426], 8);
 var gradesDot=[0,20,40,60,80,100,120,140,160];
 var myRenderer = L.canvas({ padding: 0.5 });
 var LayerDotMap,pontos,pontos2;
-var database,dots=[];
+var database,dots=[],dotsZ1=[],dotsZ2=[],dotsZ3=[];
 //-- MAPA DE PONTOS DA ETAPA DE PERGUNTAS AO USUÁRIO. --
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
   attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
@@ -12,6 +12,9 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
   id: 'mapbox.streets',
   accessToken: 'pk.eyJ1IjoiZWRjbGV5OTQ1MiIsImEiOiJjamdvMGdmZ2owaTdiMndwYTJyM2tteTl2In0.2q25nBNRxzFxeaYahFGQ6g'
 }).addTo(mapDot);
+mapDot.on('zoomend', function() {
+  inicioDotMap(dataset);
+});
 //-- DIV INFO DO MAPA CONTROLADO --
 var infoDot = L.control();
 infoDot.onAdd = function (mymap) {
@@ -66,7 +69,16 @@ function inicioDotMap(dataset){
             this.closePopup();
         });
   }}).addTo(mapDot);
-  pontos2 = L.layerGroup(dots);
+  var nZoom= mapDot.getZoom();
+  if(nZoom>11){
+    pontos2 = L.layerGroup(dotsZ3);
+  }else if(nZoom>9){
+    pontos2 = L.layerGroup(dotsZ2);
+  }else if(nZoom>8){
+    pontos2 = L.layerGroup(dotsZ1);
+  }else{
+    pontos2 = L.layerGroup(dots);
+  }
   pontos2.addTo(mapDot);
   infoDot.update = function (props) {
     this._div.innerHTML= infoprops(props);
@@ -80,6 +92,9 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
   id: 'mapbox.streets',
   accessToken: 'pk.eyJ1IjoiZWRjbGV5OTQ1MiIsImEiOiJjamdvMGdmZ2owaTdiMndwYTJyM2tteTl2In0.2q25nBNRxzFxeaYahFGQ6g'
 }).addTo(mapVis03);
+mapVis03.on('zoomend', function() {
+  Vis03TutorialFunction(dataset);
+});
 //-- DIV INFO DO MAPA CONTROLADO --
 var infoVis03=L.control();
 infoVis03.onAdd = function (mymap) {
@@ -155,7 +170,16 @@ function Vis03TutorialFunction(dataset){
           }
         });*/
   }}).addTo(mapVis03);
-  pontos = L.layerGroup(dots);
+  var nZoom= mapVis03.getZoom();
+  if(nZoom>11){
+    pontos = L.layerGroup(dotsZ3);
+  }else if(nZoom>9){
+    pontos = L.layerGroup(dotsZ2);
+  }else if(nZoom>8){
+    pontos = L.layerGroup(dotsZ1);
+  }else{
+    pontos = L.layerGroup(dots);
+  }
   pontos.addTo(mapVis03);
   infoVis03.update = function (props) {
     this._div.innerHTML= infoprops(props);
@@ -228,6 +252,9 @@ var contdots=0;
           for (i; i<l; i++) {
               if (pdisponiveis>0) {
                 dots.push(L.circleMarker(pointsGrid[i], {radius: 1.3, weight: 1,fillColor: cor,fillOpacity:1, color: cor,renderer: myRenderer}));
+                dotsZ1.push(L.circleMarker(pointsGrid[i], {radius: 2.2, weight: 1,fillColor: cor,fillOpacity:1, color: cor,renderer: myRenderer}));
+                dotsZ2.push(L.circleMarker(pointsGrid[i], {radius: 3.0, weight: 1,fillColor: cor,fillOpacity:1, color: cor,renderer: myRenderer}));
+                dotsZ3.push(L.circleMarker(pointsGrid[i], {radius: 4.6, weight: 1,fillColor: cor,fillOpacity:1, color: cor,renderer: myRenderer}));
                 pdisponiveis--; 
                 //indice++;              
               }
