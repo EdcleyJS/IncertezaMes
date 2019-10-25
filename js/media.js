@@ -1,7 +1,7 @@
 var mapMedia = L.map('vis4').setView([-8.305448,-37.822426], 8);
 var mapVis04 = L.map('vis04').setView([-8.305448,-37.822426], 8);
 var legendMedia = L.control({position: 'bottomright'});
-var grades=[0,40,80,120,160,200,240,280,320];
+var grades=[0,20,40,60,80,100,120,140,160];
 var LayerMedia,GeoLayer2,GeoLayer3;
 mapMedia.doubleClickZoom.disable();
 mapVis04.doubleClickZoom.disable();

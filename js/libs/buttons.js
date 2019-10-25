@@ -335,7 +335,9 @@ $(document).ready(function () {
 	$(".btn-next-form").click(function() {
 		if($(this).hasClass('tutorial')==false){
 			var ent= $(this).parent().find('.form-group > div > div> div >input')[0].name;
-			if($('input[name='+ent+']:checked').val()==undefined){
+			if($('input[name='+ent+']:checked').val()==undefined && $('input[name='+ent+']').hasClass('custom-control-input')==true){
+				$(this).parent().parent()[0].classList.add('was-validated');
+			}else if($('input[name='+ent+']').val()==""&& $('input[name='+ent+']').hasClass('custom-control-input')==false){
 				$(this).parent().parent()[0].classList.add('was-validated');
 			}else{
 			   	var formName=$(this).parent().parent()[0].id;
@@ -488,6 +490,7 @@ $(document).ready(function () {
 	});
 	// SUBMETE OS FORMS PARA O GOOGLE SCRIPT WEB SERVICE PARA A API GRAVAR OS DADOS NO GOOGLE SHEETS.
     $('#Form,#2Form,#3Form,#4Form,#5Form').submit(function(){
+    	console.log($(this).serialize());
 	    $.ajax({
 		    url: $(this).attr('action'),
 		    type: 'POST',

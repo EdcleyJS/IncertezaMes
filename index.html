@@ -52,7 +52,7 @@
 				      	
 				      	<h3><b> Objetivo </b></h3>
 					      	Pedimos que participe desse estudo porque você possui o perfil adequado para contribuir com nossa pequisa.<br> 
-					      	- O objetivo desse estudo é descobrir qual a maneira mais eficaz de retratar riscos e incertezas de dados para a Geovisualização de dados para pessoas com e sem experiência em visualização (gráficos e afins para tomada de decisão) e estatística (coleta, registro e análise de dados númericos por amostras).<br>
+					      	- O objetivo desse estudo é descobrir qual a maneira mais eficaz de retratar riscos e incertezas para a visualização geográfica de dados para pessoas com e sem experiência em visualização (gráficos e afins) e estatística (coleta, registro e análise de dados númericos por amostras).<br>
 							- Os possíveis benefícios desta pesquisa são conhecer e aprender tipos de visualização de dados, técnicas estatísticas e posssíveis integrações entre ambas que possam auxiliar o processo da tomada de decisão por pessoas. <br>
 							- Mas pode ocorrer também situações nas quais você se sinta constrangido e tímido por não saber a resposta para uma pergunta ou porque você não saiba o que fazer no sistema, visto que pode se tratar de algo novo para você.<br>
 							- Sua participação é de grande valor, agradecemos pelo interesse.<br>
@@ -294,7 +294,7 @@
 													</div>
 											    </div>
 											    <div class="form-group col-md-4">
-											      	<label for="visualizacao">Você tem experiência com visualização?</label>
+											      	<label for="visualizacao">Você tem experiência com visualização? (gráficos e afins)</label>
 											      	<select id="visualizacao" class="form-control" name="visualizacao" required>
 											      		<option disabled selected value> Escolha Um </option>
 											        	<option>Não</option>
@@ -375,7 +375,7 @@
 											<li class="list-group-item d-flex justify-content-between align-items-center">
 												<div>
 													<h4>
-														O objetivo dessa técnica é exibir uma amostra extraída de resultados hipotéticos (sorteios) da distribuição de médias. Para cada cidade, é criado um mapa que se torne uma espécie de quadro em uma apresentação animada. Você terá que juntar informações de vários quadros, usando o sistema visual ou algum processo mais mecânico, como a contagem para entender os dados.A média da distribuição representada pela cidade é mapeada como uma cor para a cidade correspondente. Essa visualização usa um esquema de cores de extremidade única; quão alta ou baixa é a média de cada cidade em cada quadro.
+														O objetivo dessa técnica é exibir uma amostra extraída de resultados hipotéticos (sorteados) de uma distribuição. Para cada cidade, é criado um mapa que se torna uma espécie de quadro em uma apresentação animada que vai mudando com o passar do tempo dando a impressão de um filme. Você terá que juntar informações de vários quadros, usando o sistema visual ou algum processo mais mecânico, como a contagem para entender os dados. O valor da distribuição representada pela cidade é mapeado como uma cor para a cidade correspondente. Essa visualização usa um esquema de cores de extremidade única; quão alta ou baixa é o valor de cada cidade em cada quadro.
 													</h4>
 												</div>
 											</li>
@@ -516,7 +516,7 @@
 								  		<ul class="list-group">
 											<li class="list-group-item d-flex justify-content-between align-items-center">
 												<div>
-													<h4>O Objetivo desta visualização é permitir que você compare um determinado valor às distribuições de probabilidade acumulada (% - chances) representadas pelas cidades do mapa. Você pode arrastar uma linha horizontal que representa um valor constante;<br> a probabilidade de a distribuição ser maior que esse valor constante é mapeada como uma cor para a cidade correspondente.<br> Uma escala de cores divergente é usada para representar o espaço total de "totalmente baixo" a "totalmente alto".
+													<h4>O Objetivo desta visualização é permitir que você descubra qual a chance (%) de uma distribuição ter valores menores do que um dado valor X comparando o valor X ao conjunto de valores que compõe a distribuição de cada cidade, cada cidades possui seu próprio conjunto de valores. Você pode arrastar uma linha horizontal que representa um valor X constante a ser comparado com o conjunto de valores que cada possui;<br> a probabilidade de a distribuição da cidade ser menor que esse valor constante é representada como uma cor para a cidade correspondente.<br> Uma escala de cores divergente é usada para representar o espaço total de "totalmente baixo" a "totalmente alto".
 													</h4>
 												</div>
 											</li>
@@ -631,7 +631,7 @@
 											<li class="list-group-item d-flex justify-content-between align-items-center">
 												<div>
 													<span><i class="fa fa-caret-right" aria-hidden="true"></i></span>
-													Agora Você pode repetir o processo com outras cidades de sua escolha.
+													Mova o cursor de seleção de valor X várias vezes quanto achar necessário e tente encontrar padrões de cores e diferenças para diferentes valores de X.
 												</div>
 											</li>
 											<li class="list-group-item d-flex justify-content-between align-items-center">
@@ -657,7 +657,7 @@
 											<li class="list-group-item d-flex justify-content-between align-items-center">
 												<div>
 													<h4>
-														A visualização de Intervalo é semelhante à comparação com uma constante. Ela é usada para avaliar a probabilidade do valor de uma distribuição cair dentro de um intervalo. Você pode arrastar e dimensionar uma faixa horizontal. A probabilidade (% - chance) de a distribuição representada pela cidade estar contida na região é mapeada como uma cor para a cidade correspondente. Essa visualização usa um esquema de cores de extremidade única; se é provável que o valor esteja dentro ou fora do intervalo.
+														A visualização de Intervalo é semelhante à comparação com uma constante. Só que ao invés de compara com um valor X ela compara com um intervalo de valores de X a Y. Ela é usada para avaliar a probabilidade do valor de uma distribuição cair dentro de um intervalo. Você pode arrastar e dimensionar uma faixa horizontal. A probabilidade (% - chance) de a distribuição representada pela cidade estar contida na região é mapeada como uma cor para a cidade correspondente. Essa visualização usa um esquema de cores de extremidade única; se é provável que o valor esteja dentro ou fora do intervalo.
 													</h4>
 												</div>
 											</li>
@@ -767,13 +767,13 @@
 											<li class="list-group-item d-flex justify-content-between align-items-center">
 												<div>
 													<span><i class="fa fa-caret-right" aria-hidden="true"></i></span>
-													Qual a chance de acontecer um evento entre 50 e 150 em cada cidade?
+													Qual a chance de acontecer um evento entre 50 à 150 em cada cidade?
 												</div>
 											</li>
 											<li class="list-group-item d-flex justify-content-between align-items-center">
 												<div>
 													<span><i class="fa fa-caret-right" aria-hidden="true"></i></span>
-													Agora Você pode repetir o processo com outras cidades de sua escolha.
+													Mova o cursor de seleção de valor do intervalo de X a Y várias vezes quanto achar necessário e tente encontrar padrões de cores e diferenças para diferentes valores de X. Não esqueça de testar diferentes comprimentos de intervalos como pequeno, médio e grande.
 												</div>
 											</li>
 											<li class="list-group-item d-flex justify-content-between align-items-center">
@@ -1710,9 +1710,9 @@
 		<script type="text/javascript" src="./js/libs/bs-stepper.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="./css/styles.css">
 	</body>
-
-	<script type="text/javascript" src="./js/choropleth.js"></script>
 	<script type="text/javascript" src="./js/dotmap.js"></script>
+	<script type="text/javascript" src="./js/choropleth.js"></script>
+
 	<script type="text/javascript" src="./js/media.js"></script>
 
 </html>
