@@ -498,7 +498,7 @@ $(document).ready(function () {
     	console.log($(this).serialize());
 	    $.ajax({
 		    url: $(this).attr('action'),
-		    dataType : "jsonp",
+		    jsonp: "doPost",
 		    type: 'POST',
 		    data : $(this).serialize(),
 		    success: function(result, status, request){
