@@ -495,21 +495,22 @@ $(document).ready(function () {
 	});
 	// SUBMETE OS FORMS PARA O GOOGLE SCRIPT WEB SERVICE PARA A API GRAVAR OS DADOS NO GOOGLE SHEETS.
     $('#Form,#2Form,#3Form,#4Form,#5Form').submit(function(){
-    	console.log($(this).serialize());
-	    $.ajax({
-		    url: $(this).attr('action'),
-		    jsonp: "doPost",
-		    crossDomain: true,
-    		dataType: 'jsonp',
-		    type: 'POST',
-		    data : $(this).serialize(),
-		    success: function(result, status, request){
-		        console.log($(this).id+"Estado atual ---\n" + status + "\nResultado: " + JSON.stringify(result));
-		    },
-		    error: function (request, status, erro) {
-		      	console.log($(this).id+"Problema ocorrido: " + status + "\nDescrição: " + erro);
-		    }
-	    });
+    	var nameform=$(this)[0];
+    		$.ajax({
+		    	type: "POST",
+			    url: $(this).attr('action'),
+			    data : $(this).serialize(),
+			    success: function(result, status, request){
+			        console.log(nameform.id+" Estado atual ---\n" + status + "\nResultado: " + JSON.stringify(result));
+			        //end=true;
+			    },
+			    error: function (request, status, erro) {
+			      	console.log(nameform.id+" Problema ocorrido: " + status + "\nDescrição: " + erro);
+			      	$.ajax(this);
+			      	return;
+			      	//nameform.submit();
+			    }
+		    });
 	    return false;
 	});
 });
