@@ -470,8 +470,13 @@ $(document).ready(function () {
 
 	// PARA CADA BOTÃO DA ÚLTIMA PERGUNTA DE CADA TÉCNICA PREPARA A PRÓXIMA TAB PARA SER EXIBIDA.
 	$("#btn1,#2btn1,#3btn1,#4btn1").click(function() {
+		/*if($('input[name='+ent+']:checked').val()==undefined){
+			$(this).parent().parent()[0].classList.add('was-validated');
+		}*/
 		var ent= $(this).parent().find('.form-group > div > div> div >input')[0].name;
-		if($('input[name='+ent+']:checked').val()==undefined){
+		if($('input[name='+ent+']:checked').val()==undefined && $('input[name='+ent+']').hasClass('custom-control-input')==true){
+			$(this).parent().parent()[0].classList.add('was-validated');
+		}else if($('input[name='+ent+']').val()==""&& $('input[name='+ent+']').hasClass('custom-control-input')==false){
 			$(this).parent().parent()[0].classList.add('was-validated');
 		}else{
 			d2 = new Date();
@@ -493,6 +498,7 @@ $(document).ready(function () {
     	console.log($(this).serialize());
 	    $.ajax({
 		    url: $(this).attr('action'),
+		    dataType : "jsonp",
 		    type: 'POST',
 		    data : $(this).serialize(),
 		    success: function(result, status, request){
