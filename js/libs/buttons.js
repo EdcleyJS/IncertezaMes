@@ -499,13 +499,15 @@ $(document).ready(function () {
 	    $.ajax({
 		    url: $(this).attr('action'),
 		    jsonp: "doPost",
+		    crossDomain: true,
+    		dataType: 'jsonp',
 		    type: 'POST',
 		    data : $(this).serialize(),
 		    success: function(result, status, request){
-		        console.log("Estado atual---\n" + status + "\nResultado: " + JSON.stringify(result));
+		        console.log($(this).id+"Estado atual ---\n" + status + "\nResultado: " + JSON.stringify(result));
 		    },
 		    error: function (request, status, erro) {
-		      	console.log("Problema ocorrido: " + status + "\nDescição: " + erro);
+		      	console.log($(this).id+"Problema ocorrido: " + status + "\nDescrição: " + erro);
 		    }
 	    });
 	    return false;
