@@ -54,7 +54,7 @@ function inicio(dataset){
       var prob= probArea.cdf().toFixed(2);
       if(opcoes.includes(feature.properties.name)){
         return {
-          weight: 3.0,
+          weight: 3.5,
           opacity: 1,
           fillColor: "#"+colorN(prob),
           dashArray: '3',
@@ -136,7 +136,7 @@ function Vis01TutorialFunction(dataset,interOn){
           }
       if(opcoes.includes(feature.properties.name)){
             return {
-              weight: 3.0,
+              weight: 3.5,
               opacity: 1,
               fillColor: "#"+colorN(prob),
               dashArray: '3',
@@ -220,7 +220,7 @@ function inicioRange(dataset){
         var prob= probArea.cdfintervalo().toFixed(2);
         if(opcoes.includes(feature.properties.name)){
           return {
-            weight: 3.0,
+            weight: 3.5,
             opacity: 1,
             fillColor: "#"+colorR(prob),
             dashArray: '3',
@@ -303,7 +303,7 @@ function Vis02TutorialFunction(dataset,interOn){
           }
       if(opcoes.includes(feature.properties.name)){
             return {
-              weight: 3.0,
+              weight: 3.5,
               opacity: 1,
               fillColor: "#"+colorR(prob),
               dashArray: '3',

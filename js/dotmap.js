@@ -46,7 +46,7 @@ function inicioDotMap(dataset){
       style: function(feature){
         if(opcoes.includes(feature.properties.name)){
           return {
-            weight:2.5,
+            weight: 3.5,
             opacity: 1,
             fillOpacity: 0,
             color: 'blue'
@@ -126,7 +126,7 @@ function Vis03TutorialFunction(dataset){
       style: function(feature){
         if(opcoes.includes(feature.properties.name)){
           return {
-            weight:2.5,
+            weight: 3.5,
             opacity: 1,
             fillOpacity: 0,
             color: 'blue'

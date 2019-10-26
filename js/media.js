@@ -54,7 +54,7 @@ function inicioMedia(dados){
       var media= probArea.media().toFixed(2);
       if(opcoes.includes(feature.properties.name)){
         return {
-          weight: 3.0,
+          weight: 3.5,
           opacity: 1,
           fillColor: colorM(media),
           dashArray: '3',
@@ -156,7 +156,7 @@ function Vis04TutorialFunction(dados){
       var media= probArea.media().toFixed(2);
       if(opcoes.includes(feature.properties.name)){
         return {
-          weight: 3.0,
+          weight: 3.5,
           opacity: 1,
           fillColor: colorM(media),
           dashArray: '3',
